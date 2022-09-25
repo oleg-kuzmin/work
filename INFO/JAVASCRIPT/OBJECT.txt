@@ -1,0 +1,17 @@
+const person = {               // object
+  name: 'Oleg',                // string
+  age: 18,                     // number
+  isProgrammer: true,          // boolean
+  cars: ['Lada', 'Porshe']     // array
+}
+
+// в объект можно передать данные в виде ключа-значения,
+// а также переменные (значения можно не писать если они дублируются)
+
+const person2 = {
+  myName, // (name: 'Oleg' || name: name)
+  age,
+  isProgrammer,
+  cars
+}
+

@@ -1,0 +1,43 @@
+Для начала, откройте HTML-файл страницы, которую хотите отредактировать. 
+Добавьте пустой тег <div> в месте, где вы хотите отобразить что-нибудь с помощью React.
+Затем назначьте созданному <div> уникальный атрибут id.
+Это позволит впоследствии найти тег из JavaScript-кода и отобразить React-компоненты внутри него.
+
+Например
+1. <div id="root"></div>
+
+Совет
+«Контейнер» <div> можно поместить где угодно внутри тега <body>. 
+Вы можете создать любое количество независимых DOM-контейнеров на одной странице. 
+Эти контейнеры принято оставлять пустыми, так как React в любом случае заменяет всё их содержимое.
+
+// добавить в конце head html-файла
+// основная библиотека react универсальна и предназначена не только для веб-проектов
+2. <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+
+// отвечает исключительно за взаимодействие с DOM.
+3. <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+// Примечание
+Публикуя ваш сайт на продакшен, имейте в виду, что несжатый JavaScript значительно замедляет страницу для ваших пользователей.
+Если вы уже минифицируете свои скрипты, то не забудьте подготовить к продакшену сам React. 
+Для этого поменяйте окончания ссылок на React на production.min.js:
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+
+Если же вы не настроили минификацию для ваших скриптов, то вот один из вариантов, как это сделать
+
+In production, it is recommended to minify any JavaScript code that is included with your application. 
+Minification can help your website load several times faster, especially as the size of your JavaScript source code grows.
+
+Here's one way to set it up:
+
+1. Install Node.js
+2. Run npm init -y in your project folder (don't skip this step!)
+3. Run npm install terser
+Now, to minify a file called like_button.js, run in the terminal:
+
+npx terser -c -m -o like_button.min.js -- like_button.js
+
+This will produce a file called like_button.min.js with the minified code in the same directory. 
+If you're typing this often, you can create an npm script to give this command a name.

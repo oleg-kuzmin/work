@@ -1,0 +1,19 @@
+Ctrl + Shift + f         // поиск слева в проводнике
+Ctrl + S                 // сохранение и автоматическое выравнивание
+
+!                        // красный комментарий                  (Better Comments)
+TODO                     // желтый комментарий                   (Better Comments)
+?                        // синий комментарий                    (Better Comments)
+//                       // серый перечеркнутный комментарий     (Better Comments)
+*                        // зеленый комментарий                  (Better Comments)
+
+f12                      // перемещаемся на класс в scss         (CSS Navigation)
+ctrl+ЛКМ                 // перемещаемся на класс в scss         (CSS Navigation)
+alt+f12                  // вызвать окно совпадений CSS          (CSS Navigation)
+
+
+ctrl+numpad1             // скопировать классы из html           (eCSStractor for VSCode)
+ctrl+numpad2             // запустить Live Server
+ctrl+numpad3             // запустить Quokka
+ctrl+numpad4             // перевести на другой язык по умолчанию
+ctrl+numpad5             // перевести на другой язык с выбором

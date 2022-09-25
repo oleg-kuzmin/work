@@ -1,0 +1,2 @@
+для чтения JSON - плагин JSON Viewer
+
