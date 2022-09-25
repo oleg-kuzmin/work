@@ -62,6 +62,7 @@ Quokka start on current file       ctrl+numpad2
     "last 2 versions"
   ],
   "terminal.integrated.fontSize": 18, // шрифт в терминале
+  
   //Дополнительно
   // "editor.defaultFormatter": "esbenp.prettier-vscode", // выбор форматировщика для всех
   //"editor.guides.highlightActiveIndentation": false, // убирает вертикальные линии
