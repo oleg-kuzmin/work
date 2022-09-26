@@ -1,6 +1,6 @@
 const person = {               // object
   name: 'Oleg',                // string
-  age: 18,                     // number
+  age: 100,                    // number
   isProgrammer: true,          // boolean
   cars: ['Lada', 'Porshe']     // array
 }

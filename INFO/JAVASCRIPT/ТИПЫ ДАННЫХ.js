@@ -13,13 +13,13 @@ var   c = 3; // устаревшее, область видимости макс
 */
 
 const myName = 'Oleg';
-const age = 18;
+const age = 100;
 const isProgrammer = true;
 const cars = ['Lada', 'Porshe'];
 
 const person = {               // object
   myName: 'Oleg',              // string
-  age: 18,                     // number
+  age: 100,                    // number
   isProgrammer: true,          // boolean
   cars: ['Lada', 'Porshe']     // array
 }
