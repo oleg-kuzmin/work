@@ -1,3 +1,7 @@
+// TODO Создаёт массив из «массивоподобного» объекта. Метод Array.from
+const posts = content.querySelectorAll('.post');
+const postsArray = Array.from(posts); // такой вызов вернёт полноценный массив
+
 // TODO Метод concat. Создает новый массив добавляя элемент.
 const toDoList = ['Посадить дерево', 'Построить дом']; // создает новый массив
 const toDoListUpdated = toDoList.concat('Вырастить сына'); // Все аргументы, переданные методу, будут добавлены в новый массив в том же порядке
@@ -90,3 +94,4 @@ const crow = birds.find(function (bird) {
 });
 console.log(crow); // "Чёрно-белая ворона"
 console.log(students.find(student => student.name === 'Max'));
+
