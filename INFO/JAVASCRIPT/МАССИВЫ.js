@@ -96,8 +96,23 @@ console.log(crow); // "Чёрно-белая ворона"
 console.log(students.find(student => student.name === 'Max'));
 
 
-// TODO  Метод forEach. Функция для каждого элемента массива (ничего не возвращает)
+// TODO Метод forEach. Функция для каждого элемента массива (ничего не возвращает)
 const how = ['быстрее', 'выше', 'сильнее'];
 how.forEach(function (item) {
   console.log(item + '.'); // быстрее. выше. сильнее.
 });
+
+// TODO Метод some. Проверка элементов массива.
+const oceanResidents = ['Флаундер', 'Немо', 'Губка Боб', 'Аквамен'];
+const nemo = oceanResidents.some(function (resident) {
+    return resident === 'Немо';
+});
+console.log(nemo); // true
+
+
+// TODO Метод every. Проверка всех элементов массива.
+const jokes = ['смешная шутка и доля правды', 'не очень смешной анекдот + доля правды', 'доля правды в дурацкой шутке'];
+const allJokesWithTruth = jokes.every(function (joke) {
+  return joke.indexOf('доля правды') > -1;
+});
+console.log(allJokesWithTruth); // true
