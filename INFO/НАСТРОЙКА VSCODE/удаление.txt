@@ -1,0 +1,3 @@
+Удалить из приложений windows
+Удалить папку C:\Users\Alex\.vscode
+Удалить папку C:\Users\Alex\AppData\Roaming\Code

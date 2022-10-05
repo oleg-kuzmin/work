@@ -1,0 +1,72 @@
+как только мы нажимаем изменить в setting.json
+сразу же открывается и туда добавляется строчка, даже если мы не меняем
+ C:\Users\Alex\AppData\Roaming\Code\User\settings.json
+
+Интерфейс
+- установить все расширения
+- скопировать json
+- слева можно убрать лишнее: структура и прочее (нажать на 3 точки)
+- терминал можно настроить на отображение справа
+- настроить строку состояния внизу
+- настроить сочетания клавиш:
+
+ecsstractor run (with BEM Nesting) ctrl+numpad1
+Quokka start on current file       ctrl+numpad2
+закомментировать строку            ctrl+numpad/
+
+{
+  "breadcrumbs.enabled": false, // выключает хлебные крошки
+  "css.lint.emptyRules": "ignore", // выключает волнистая линия в пустых css-файлах
+  "files.autoSave": "afterDelay", // автосохранение
+  "files.trimTrailingWhitespace": true, // удаляет лишние пробелы при сохранении
+  "editor.cursorStyle": "line-thin", // тонкий стиль курсора
+  "editor.fontSize": 18, // размер шрифта
+  "editor.formatOnSave": true, // форматирование при сохранении
+  "editor.hover.enabled": false, // выключает подсказки при наведении в редакторе
+  "editor.insertSpaces": true, // пробелы при нажатии на tab
+  "editor.linkedEditing": true, // одновременное редактирование совместных тэгов
+  "editor.matchBrackets": "never", // выключает выделение скобок (example)
+  "editor.minimap.enabled": false, // выключает мину-карту
+  "editor.mouseWheelZoom": true, // изменение размера шрифта при нажатии ctrl+/ctrl-
+  "editor.occurrencesHighlight": false, // выключает лишнюю подсветку слов
+  "editor.overviewRulerBorder": false, // скрывает линию полосы прокрутки
+  "editor.renderLineHighlight": "none", // выключает выделение текущей строки
+  "editor.scrollbar.vertical": "hidden", // скрывает ползунок полосы прокрутки
+  "editor.tabSize": 2, // размер табов
+  "editor.wordWrap": "on", // перенос текста по словам
+  "explorer.confirmDelete": false, // подтверждение удаления файла в корзину
+  "workbench.editor.closeEmptyGroups": false, // сохраняет разделение экрана при закрытии вкладки
+  "workbench.tree.renderIndentGuides": "none", // вертикальные линии проводника с файлами
+  "workbench.colorTheme": "Space Ocean Kit Refined", // цветовая тема
+  "liveServer.settings.donotShowInfoMsg": true, // не показывать сообщения
+  "[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter" // выбор форматировщика для scss
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // выбор форматировщика для js
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features" // выбор форматировщика для html
+  },
+  "vscodeGoogleTranslate.preferredLanguage": "Russian", // на какой язык переводить
+  "liveSassCompile.settings.generateMap": false, // отключает генерацию карты в scss
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/styles", // путь сохранения
+    }
+  ],
+  "liveSassCompile.settings.autoprefix": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "terminal.integrated.fontSize": 18, // шрифт в терминале
+  
+  //Дополнительно
+  // "editor.defaultFormatter": "esbenp.prettier-vscode", // выбор форматировщика для всех
+  //"editor.guides.highlightActiveIndentation": false, // убирает вертикальные линии
+  //"window.zoomLevel": 1,                             // увеличит размер интерфейса
+  //"editor.glyphMargin": false,                       // скрывает точки остановки для отладки
+  //"editor.renderIndentGuides": false                 // скрывает вертикальные линии функции
+}

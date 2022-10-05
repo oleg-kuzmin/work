@@ -1,0 +1,7 @@
+// справочник с примерами и другой информацией
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference
+
+// таблица совместимости
+https://caniuse.com/
+
+

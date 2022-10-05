@@ -1,0 +1,54 @@
+типы потоков:
+Readable - читающий
+Writeable - пишущий
+Duplex - дуплексный (и чтение и запись)
+Transform - преобразующий (аналогичен дуплексному, но позволяет их менять, например сжатие)
+
+1. Подключаем модуль filesystem
+const fs = require('fs');
+
+2. Создаем читающий поток
+const readStream = fs.createReadStream('./docs/test.txt');
+
+3. Включаем событие
+readStream.on('data', (chunk) => {
+  console.log('----------');
+  console.log(chunk);
+})
+
+4. Создаем записывающий поток
+const writeStream = fs.createWriteStream('./docs/new-text.txt');
+
+Каждый записанный буфер передаем в новый файл
+readStream.on('data', (chunk) => {
+  writeStream.write('\n---CHUNK START---\n');
+  writeStream.write(chunk);
+  writeStream.write('\n---CHUNK END---\n');
+})
+
+5. Дуплексный поток. Метод pipe
+readStream.pipe(writeStream);
+
+const handleError = () => {
+  console.log('Error');
+  readStream.destroy();
+  writeStream.end('Finished with error...');
+}
+
+readStream
+  .on('error', handleError)
+  .pipe(writeStream)
+  .on('error', handleError);
+
+6. Преобразующий
+// подключаем модуль сжатия 
+const zlib = require('zlib');
+
+// создаем поток
+const compressStream = zlib.createGzip();
+
+readStream
+  .on('error', handleError) // читаем поток и ловим ошибку при чтении
+  .pipe(compressStream)     // сжимаем поток
+  .pipe(writeStream)        // записываем поток
+  .on('error', handleError); // записываем поток и ловим ошибку при записи

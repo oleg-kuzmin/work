@@ -1,0 +1,6 @@
+// документация к JavaScript
+https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+
+// документация к Node.js
+https://nodejs.org/ru/docs/
+
