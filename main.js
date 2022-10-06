@@ -1,28 +1,16 @@
-const person = {
-  name: "Oleg",
-  age: 100,
-  city: "Spb",
-  getName: function () {
-    return this.name;
-  },
-  getName2() {
-    return this.name;
-  },
-};
+// Строковое преобразование
+// происходит, когда требуется представление чего-либо в виде строки.
 
-const profit = {
-  cost: "$ 100 000",
-};
+// Например
+alert(value) // преобразует значение к строке.
 
-console.log(person.getName2());
+// Также мы можем использовать функцию String(value), чтобы преобразовать значение к строке:
+let value = true;
+alert(typeof value); // boolean
+value = String(value); // теперь value это строка "true"
+alert(typeof value); // string
 
-// TODO Метод assign. Объединение объектов
-console.log(Object.assign(person, profit));
-console.log({ ...person, ...profit });
 
-// TODO Метод entries. Преобразует объект в массив (по строчкам ключ-значение)
-console.log(Object.entries(person));
 
-// Keys and Values
-console.log(Object.keys(person));
-console.log(Object.values(person));
+
+
