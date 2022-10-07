@@ -2,14 +2,6 @@
 const posts = content.querySelectorAll('.post');
 const postsArray = Array.from(posts); // такой вызов вернёт полноценный массив
 
-
-// TODO Метод join. Преобразование массива в строку.
-const bremenMusicians = ["Кот", "Пёс", "Трубадур", "Осёл", "Петух"];
-console.log(bremenMusicians.join()); // "Кот,Пёс,Трубадур,Осёл,Петух" ПО УМОЛЧАНИЮ ЗАПЯТАЯ
-console.log(`Представляем музыкантов: ${bremenMusicians.join(", ")}`); // "Представляем музыкантов: Кот, Пёс, Трубадур, Осёл, Петух"
-console.log(bremenMusicians); // при этом с исходным массивом ничего не произошло: ["Кот", "Пёс", "Трубадур", "Осёл", "Петух"]
-console.log(bremenMusicians.join(" | ")); // "Кот | Пёс | Трубадур | Осёл | Петух"
-
 // TODO Метод filter. Отсеиванивание элементов массива по признаку.
 const a = [1, 9, 2, 2, 3, 4, 1, 7, 8, 0, 9, 0, 1, 5, 3];
 const b = a.filter(function (item) {
