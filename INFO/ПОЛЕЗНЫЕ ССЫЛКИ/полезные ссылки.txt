@@ -4,4 +4,5 @@ https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference
 // таблица совместимости
 https://caniuse.com/
 
-
+// тестирование rest api
+https://jsonplaceholder.typicode.com/
