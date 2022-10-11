@@ -1,5 +1,5 @@
-// TODO String
+// TODO toString
 // преобразовывает значение к строке
 
 // Синтаксис:
-result = String(value);
+result = result.toString();
