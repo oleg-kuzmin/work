@@ -3,5 +3,6 @@
 
 // Синтаксис:
 result = Number(value);
-result = +result;
+result = +result; // альтернатива
+result = parseInt(result); // альтернатива
 
