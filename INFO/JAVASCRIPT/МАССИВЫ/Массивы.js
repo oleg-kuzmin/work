@@ -13,8 +13,6 @@ console.log(crow); // "Чёрно-белая ворона"
 console.log(students.find(student => student.name === 'Max'));
 
 
-
-
 // TODO Метод some. Проверка элементов массива.
 const oceanResidents = ['Флаундер', 'Немо', 'Губка Боб', 'Аквамен'];
 const nemo = oceanResidents.some(function (resident) {
