@@ -13,11 +13,7 @@ console.log(crow); // "Чёрно-белая ворона"
 console.log(students.find(student => student.name === 'Max'));
 
 
-// TODO Метод forEach. Функция для каждого элемента массива (ничего не возвращает)
-const how = ['быстрее', 'выше', 'сильнее'];
-how.forEach(function (item) {
-  console.log(item + '.'); // быстрее. выше. сильнее.
-});
+
 
 // TODO Метод some. Проверка элементов массива.
 const oceanResidents = ['Флаундер', 'Немо', 'Губка Боб', 'Аквамен'];
