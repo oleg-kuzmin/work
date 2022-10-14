@@ -1,14 +1,3 @@
-
-
-
-// TODO Метод some. Проверка элементов массива.
-const oceanResidents = ['Флаундер', 'Немо', 'Губка Боб', 'Аквамен'];
-const nemo = oceanResidents.some(function (resident) {
-    return resident === 'Немо';
-});
-console.log(nemo); // true
-
-
 // TODO Метод every. Проверка всех элементов массива.
 const jokes = ['смешная шутка и доля правды', 'не очень смешной анекдот + доля правды', 'доля правды в дурацкой шутке'];
 const allJokesWithTruth = jokes.every(function (joke) {
