@@ -1,11 +1,3 @@
-// TODO Метод every. Проверка всех элементов массива.
-const jokes = ['смешная шутка и доля правды', 'не очень смешной анекдот + доля правды', 'доля правды в дурацкой шутке'];
-const allJokesWithTruth = jokes.every(function (joke) {
-  return joke.indexOf('доля правды') > -1;
-});
-console.log(allJokesWithTruth); // true
-
-
 // TODO Метод reduce. Сведение массива.
   //числа или строки
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
