@@ -1,9 +1,48 @@
-// проверим версию Node.js
 node -v
+  # проверим версию Node.js
 
-// проверим версию npm (включен в Node.js)
 npm -v
+  # проверим версию npm (включен в Node.js)
 
-// подключение react (****** название)
-npx create-react-app ****** (--template typescript разобраться)
+npx create-react-app ******
+  # подключение react (****** название)
 
+npx create-react-app ****** --template typescript
+  # подключение react (****** название)
+
+npm install -g sass
+  # установка sass
+
+npm start
+  # запуск development server
+
+pwd
+  # где я нахожусь
+
+cd
+cd ~
+  # перемещение в домашний каталог
+
+cd ..
+  # Перемещение на один уровень выше
+
+cd -
+  Перемещение в предыдущий каталог
+
+cd ******
+  # перейти в папку выше (****** название)
+
+
+
+
+
+
+npm run build
+  Bundles the app into static files for production.
+
+npm test
+  Starts the test runner.
+
+npm run eject
+  Removes this tool and copies build dependencies, configuration files
+  and scripts into the app directory. If you do this, you can’t go back!
