@@ -1,6 +1,9 @@
 // проверим версию Node.js
 node -v
 
-// # проверим версию npm (включен в Node.js)
+// проверим версию npm (включен в Node.js)
 npm -v
+
+// подключение react (****** название)
+npx create-react-app ****** (--template typescript разобраться)
 
