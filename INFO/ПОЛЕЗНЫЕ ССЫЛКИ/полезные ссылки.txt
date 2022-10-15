@@ -10,4 +10,9 @@ https://jsonplaceholder.typicode.com/
 // приоритеты операторов
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
+// скачать Node.js
+https://nodejs.org/en/
+
+
+
 
