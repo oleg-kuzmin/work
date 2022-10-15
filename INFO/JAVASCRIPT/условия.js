@@ -32,3 +32,9 @@ function getStatus4(model) {
       return null;
   }
 }
+
+// новый вариант знак ||=
+let text = '';
+let newText = 'Новая запись';
+text ||= newText;
+console.log(text);
