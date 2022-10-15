@@ -1,0 +1,8 @@
+Структура файлов по бэм:
+modules
+	blocks
+		_header.scss
+		_page.scss
+	variables
+		color.scss
+		index.scss

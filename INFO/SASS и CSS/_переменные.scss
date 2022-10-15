@@ -1,0 +1,14 @@
+$base-width: 260px;
+$desktop: 1920px;
+
+// использование переменной
+.block {
+  width: $base-width;
+}
+
+// интерполяция переменной
+.block {
+  width: calc(100% - #{$base-width})
+}
+
+

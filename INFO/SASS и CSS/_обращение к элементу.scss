@@ -1,0 +1,11 @@
+.header { /* к классу header */
+  > button { /* к button, вложенному в header */
+    color: black;
+    &.active { /* к button.active */
+      display: flex;
+    }
+    &:hover { /* псевдоэлемент */
+      color: green;
+    }
+  }
+}

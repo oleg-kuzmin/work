@@ -1,0 +1,2 @@
+.header { /* к классу header */}
+.header > button { /* к button, вложенному в header */ }
