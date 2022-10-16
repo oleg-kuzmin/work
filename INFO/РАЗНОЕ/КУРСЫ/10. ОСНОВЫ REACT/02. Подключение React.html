@@ -1,30 +1,74 @@
-<!--
-В этом уроке расскажем, как подключить React и написать с его использованием первый код.
-
+<!--В этом уроке расскажем, как подключить React и написать с его использованием первый код.
 Вы уже знаете, что React — библиотека, созданная на JavaScript, а любую библиотеку можно добавить на HTML-страницу и воспользоваться её
-функциональностью. Мы подключим две библиотеки: react и react-dom.
+функциональностью.
 
+Мы подключим две библиотеки: react и react-dom.
 Основная библиотека react универсальна и предназначена не только для веб-проектов, а
 react-dom отвечает исключительно за взаимодействие с DOM.
-
 При работе с браузерным приложением нам потребуются обе эти библиотеки.
 
-Подключим react и react-dom на HTML-страницу:
--->
+Подключим react и react-dom на HTML-страницу:-->
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <script
-      src="https://unpkg.com/react@17/umd/react.development.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-      crossorigin
-    ></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
   </head>
 
   <body></body>
 </html>
+
+<!--Мы использовали версии библиотек с расширением .development.js — они содержат дополнительные инструменты для отладки кода на React.
+
+Для начала работы с библиотекой React нам нужно добавить «точку входа», или «корневой узел».
+Так называют DOM-узел, в котором React управляет содержимым.
+Не удивляйтесь, что в HTML-документе этот узел пустой.
+Дело в том, что React использует концепцию Virtual DOM, то есть определяет структуру HTML в недрах JavaScript, а не напрямую в HTML-документе.
+Мы расскажем об этом подробнее в следующих уроках, а пока рассмотрим корневой узел:-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
+<!-- В примере используется <div id="root"></div>, но корневым может быть любой уникальный элемент.
+Обычно в приложениях, которые целиком написаны на React, существует только один корневой узел.
+Но бывает, что React встраивают в приложение частично, по кусочкам, в этом случае корневых узлов может быть несколько.
+
+Вы уже готовы написать первое приложение на React.
+Для этого создайте .html файл и скопируйте в него код: -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      ReactDOM.render(React.createElement("h1", null, "Привет, Мир!"), document.getElementById("root"));
+    </script>
+  </body>
+</html>
+
+<!-- Откройте этот файл в браузере, вы увидите заголовок h1 с текстом «Привет, Мир!».
+Этот код — один из самых простых примеров использования React.
+
+Мы добавили тег <script></script> на страницу и вызвали внутри функцию ReactDOM.render с двумя аргументами.
+Первый её аргумент выглядит громоздко, но в следующих уроках вы узнаете, как описывать разметку способом, больше похожим на привычный HTML. Функция ReactDOM.render отвечает за рендеринг нашей разметки.
+
+Процесс появления HTML-разметки на странице называется рендеринг (от англ. render — «изображать»).
+В следующих уроках подробнее расскажем о рендеринге и возможности React управлять разметкой, которая попадает в корневой узел. -->
+
+
