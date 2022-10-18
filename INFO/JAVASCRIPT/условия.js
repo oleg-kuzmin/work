@@ -33,8 +33,29 @@ function getStatus4(model) {
   }
 }
 
-// новый вариант знак ||=
-let text = '';
-let newText = 'Новая запись';
-text ||= newText;
-console.log(text);
+// x &&= y
+// Если x === true, выражение x = y сработает
+let a = 1;
+let b = 0;
+a &&= 2;
+console.log(a); // output: 2
+b &&= 2;
+console.log(b); // output: 0
+
+// x ||= y
+// Если x === false, выражение x = y сработает
+const a1 = 50;
+const b1 = '';
+a1 ||= 10;
+console.log(a1);  // output: 50
+b1 ||= 'string is empty.';
+console.log(b1); // output: "string is empty."
+
+// x ??= y
+// Если x имеет значение null или undefined.
+const a2 = { limit: 50 };
+a2.limit ??= 10;
+console.log(a.limit); // output: 50
+a2.speed ??= 25;
+console.log(a.speed); // output: 25
+
