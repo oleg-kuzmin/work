@@ -11,8 +11,10 @@ Prettier - Code formatter v9.8.0 Prettier               // форматиров�
 W3C Web Validator v1.2.2 Celian Riboulet                // проверка валидности
 Quokka.js v1.0.497 Wallaby.js                           // Выполнит JS code прямо в редакторе
 
+
 Дополнительно:
 Vscode Google Translate v1.4.13 funkyremi               // переводчик
+html to JSX                                             // преобразование html в jsx
 
 
 ***

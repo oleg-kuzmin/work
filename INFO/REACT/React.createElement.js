@@ -11,7 +11,7 @@ ReactDOM.render(
     React.createElement("h1", null, "Текущее время:"),
     React.createElement("h2", null, new Date().toLocaleTimeString())
   ),
-  document.getElementById("root")
+  document.querySelector('#root')
 );
 
 // Функция вызывается с тремя аргументами:
