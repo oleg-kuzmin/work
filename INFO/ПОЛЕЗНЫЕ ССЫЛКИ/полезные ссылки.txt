@@ -13,6 +13,9 @@ https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operato
 // скачать Node.js
 https://nodejs.org/en/
 
+// Теория, перевод es5
+https://javascript.ru/
+
 
 
 
