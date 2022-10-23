@@ -13,7 +13,6 @@ alert( null || 0 || 1 ); // 1 (первое истинное значение)
 alert( undefined || null || 0 ); // 0 (поскольку все ложно, возвращается последнее значение)
 let name = currentUser || defaultUser || "unnamed";
 
-
 // оператор && (И)
 // result = value1 && value2 && value3;
 // Оператор && выполняет следующие действия:
@@ -26,7 +25,6 @@ alert( 1 && 0 ); // 0
 alert( 1 && 5 ); // 5
 alert( null && 5 ); // null
 alert( 0 && "no matter what" ); // 0
-
 
 // оператор !(НЕ)
 // result = !value;
@@ -41,4 +39,28 @@ alert( !0 ); // true
 alert( !!"non-empty string" ); // true
 alert( !!null ); // false
 
+// x &&= y
+// Если x === true, выражение x = y сработает
+let a = 1;
+let b = 0;
+a &&= 2;
+console.log(a); // output: 2
+b &&= 2;
+console.log(b); // output: 0
 
+// x ||= y
+// Если x === false, выражение x = y сработает
+const a1 = 50;
+const b1 = '';
+a1 ||= 10;
+console.log(a1);  // output: 50
+b1 ||= 'string is empty.';
+console.log(b1); // output: "string is empty."
+
+// x ??= y
+// Если x имеет значение null или undefined.
+const a2 = { limit: 50 };
+a2.limit ??= 10;
+console.log(a.limit); // output: 50
+a2.speed ??= 25;
+console.log(a.speed); // output: 25
