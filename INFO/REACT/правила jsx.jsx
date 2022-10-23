@@ -120,8 +120,7 @@ ReactDOM.render((
 
 // Для всех остальных свойств в JSX используется camelCase стиль вместо обычных имён HTML-атрибутов:
 
-// TODO Стили
-// с указанием переменной
+// TODO Стили с указанием переменной
 const styles = {
   width: 6792,
   height: 6752,
@@ -133,7 +132,7 @@ ReactDOM.render((
   <div style={styles}>Какая я планета?</div>
 ), document.querySelector('#root'));
 
-// без переменной. Используем {{...}}
+// TODO Стили без переменной. Используем {{...}}
 ReactDOM.render((
   <div style={{
       width: 3475,

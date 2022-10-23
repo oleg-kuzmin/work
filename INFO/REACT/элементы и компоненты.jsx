@@ -1,3 +1,6 @@
+// создается компонент - функция, которая принимает на вход объект — props и рендерит разметку
+// создается элемент, который объединяя их JSX-атрибуты в один объект — props и передает его в компонент
+
 // TODO создание компонента
 
 function UserGreeting(props) {
@@ -19,15 +22,17 @@ class UserGreeting extends React.Component {
   }
 }
 
-// TODO использование компонента
+// TODO создание элемента и использование компонента
 function UserGreeting(props) {
   return <h1>Здравствуйте, {props.fullName}</h1>;
 }
 
-const element3 = <UserGreeting fullName="Павел Валерьевич" />;
+const element3 = <UserGreeting fullName="Павел Валерьевич" />; // передача пропсов в виде строки
+const player = <Player children={{user: 'Alex'}} /> // передача пропсов в виде объекта
+const price = <Player price={14299} /> // передача пропсов в виде числа
 
 ReactDOM.render(
-  element,
+  element3,
   document.querySelector('#root')
 );
 
