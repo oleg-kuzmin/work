@@ -6,8 +6,45 @@ const person = {               // object
   cars: ['Lada', 'Porshe']     // array
 }
 
-// доступ к элементу
+// Короткий способ
+function makeUser(name, age) {
+  return {
+    name,
+    age,
+    // ...другие свойства
+  };
+}
+
+let user2 = makeUser("John", 30);
+alert(user.name); // John
+
+// TODO доступ к свойству через точку
 console.log(person.name);
+
+// TODO доступ к свойству через []
+console.log(person[info]);
+
+let fruit = 'apple';
+let bag = {
+  [fruit + 'Computers']: 5 // bag.appleComputers = 5
+};
+
+// TODO удаление свойства-
+delete person.name;
+
+// TODO Свойство из нескольких слов
+// имя свойства из нескольких слов должно быть в кавычках
+let user = {
+  name: "John",
+  age: 30,
+  "likes birds": true
+};
+// присваивание значения свойству
+user["likes birds"] = true;
+// получение значения свойства
+alert(user["likes birds"]); // true
+// удаление свойства
+delete user["likes birds"];
 
 // а также переменные (значения можно не писать если они дублируются)
 const person2 = {
