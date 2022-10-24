@@ -16,6 +16,14 @@ https://nodejs.org/en/
 // Теория, перевод es5
 https://javascript.ru/
 
+// Цвета
+https://htmlcolorcodes.com/color-names
 
+// Градиенты
+https://webgradients.com
 
+// Фотографии без авторского права
+https://unsplash.com
 
+// Библиотека простая анимация
+https://code.s3.yandex.net/web-code/smoothly/index.html
