@@ -15,7 +15,7 @@ function getStatus2(age) {
 const getStatus3 = (age) =>
   age < 14 ? "Children" : age < 20 ? "Teen" : age < 50 ? "Adult" : "Old";
 
-// swith (всегда строгое равенство)
+// swith (всегда строгое равенство) (применяют, когда в условии только один ответ правильный)
 let a = 2 + 2;
 switch (a) {
   case 3:
