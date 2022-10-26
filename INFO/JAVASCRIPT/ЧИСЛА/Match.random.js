@@ -1,3 +1,10 @@
+// возвращает случайное число между 0 и 1, включая ноль, но не включая единицу
+let randomNumber = Math.random();
+
+// округление вниз
+randomNumber = Math.floor(randomNumber);
+
+
 // ценерация целого числа в диапазоне, не включая минимальное и максимальное.
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
