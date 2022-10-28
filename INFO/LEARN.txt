@@ -4,6 +4,8 @@ https://developer.mozilla.org/ru/docs/Web/JavaScript
 https://learn.javascript.ru/
 https://www.npmjs.com/package/number-to-words-ru
 
+разработчики рекомендуют использовать не классы, а функциональные компоненты и хуки
+bind?
 глубокое клонирование яндекс
 контекст bind
 снипет для log
