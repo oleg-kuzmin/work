@@ -1,0 +1,1 @@
+GIT STASH APPLY STASH @{n} (вернуть только нужные изменения, n - номер в stash list)
