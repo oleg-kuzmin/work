@@ -1,0 +1,8 @@
+git branch ## Посмотрим список веток и в какой ветке мы сейчас находимся
+* feat/new-header
+main
+
+git stash ## Спрячем незакоммиченные изменения в ветке develop
+Saved working directory and index state WIP on feat/new-header: b6e5dd3 Added style.css
+
+git checkout main ## Перейдём в main 
