@@ -4,8 +4,8 @@ src
   src/ui (для графических компонентов)
     src/ui/button
       src/ui/button.jsx
-      src/ui/button.module.css
-    src/ui/input
+      src/ui/button.module.css (создание уникального класса)
+    src/ui/input1
       src/ui/input.jsx
-      src/ui/input.module.css
+      src/ui/input.module.css (создание уникального класса)
   src/styles
