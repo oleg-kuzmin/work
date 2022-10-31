@@ -1,1 +1,11 @@
-все компоненты лежат в папке src/components
+
+src
+  src/components
+  src/ui (для графических компонентов)
+    src/ui/button
+      src/ui/button.jsx
+      src/ui/button.module.css
+    src/ui/input
+      src/ui/input.jsx
+      src/ui/input.module.css
+  src/styles
