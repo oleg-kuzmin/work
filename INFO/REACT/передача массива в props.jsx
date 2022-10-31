@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       {posts.map((post) => (
-        <Postitem post={post} />
+        <Postitem post={post} key={post.id} />
       ))}
     </div>
   );
