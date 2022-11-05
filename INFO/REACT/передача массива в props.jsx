@@ -14,3 +14,12 @@ function App() {
     </div>
   );
 }
+
+import jokesData from "./jokesData";
+function App() {
+  const jokeComponents = jokesData.map((joke) => (
+    <Joke question={joke.question} punchLine={joke.punchLine} key={joke.id} />
+  ));
+
+  return <div>{jokeComponents}</div>;
+}
