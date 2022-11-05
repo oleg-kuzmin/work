@@ -15,11 +15,16 @@ function App() {
   );
 }
 
+// Еще пример
+
+import Joke from "./Joke";
 import jokesData from "./jokesData";
 function App() {
-  const jokeComponents = jokesData.map((joke) => (
+  const jokeComponents = jokesData
+  .filter((joke) => joke.question)
+  .map((joke) => (
     <Joke question={joke.question} punchLine={joke.punchLine} key={joke.id} />
   ));
-
   return <div>{jokeComponents}</div>;
 }
+export default App;
