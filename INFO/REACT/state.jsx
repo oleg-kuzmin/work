@@ -1,3 +1,19 @@
+// TODO для создания state раньше был нужен конструктор
+class App extends Component() {
+  constructor() {
+    super();
+    this.state = {};
+  }
+  render() {}
+}
+export default App;
+
+// TODO сейчас можно так
+class App extends Component() {
+  state = {theme: "светлая"}
+  render() {}
+}
+
 // TODO state
 
 class ThemeToggle extends React.Component {
