@@ -10,3 +10,6 @@ git stash clear
 // вернуть только нужные изменения, n - номер в stash list
 git stash apply stash @{n}
 
+// вернуть последние спрятанные изменения в любой ветке
+git stash pop
+
