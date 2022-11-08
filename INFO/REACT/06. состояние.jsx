@@ -15,7 +15,6 @@ class App extends Component() {
 }
 
 // TODO state
-
 class ThemeToggle extends React.Component {
   state = { theme: "светлая" };
   render() {
