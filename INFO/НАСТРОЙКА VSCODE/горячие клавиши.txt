@@ -14,8 +14,6 @@ alt+f12                  // вызвать окно совпадений CSS    
 
 ctrl+numpad1             // скопировать классы из html           (eCSStractor for VSCode)
 ctrl+numpad2             // запустить Live Server
-ctrl+numpad3             // запустить Quokka
-ctrl+numpad6             // остановить Quokka
-
-ctrl+numpad4             // перевести на другой язык по умолчанию
-ctrl+numpad5             // перевести на другой язык с выбором
+ctrl+numpad3             // console.log
+ctrl+numpad4             // запустить Quokka
+ctrl+numpad5             // остановить Quokka
