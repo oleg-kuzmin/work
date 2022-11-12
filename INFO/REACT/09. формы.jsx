@@ -44,3 +44,10 @@ class App extends React.Component {
 }
 
 export default App;
+
+import { useState } from "react";
+
+function YourComponentName() {
+  const [checked, setChecked] = useState(true);
+  return <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />;
+}
