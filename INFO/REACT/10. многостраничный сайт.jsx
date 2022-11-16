@@ -1,61 +1,56 @@
-// 1. Подключить npm install react-router-dom
+// TODO 1. Подключить npm install react-router-dom
 
-// ? 2. Подключить npm install --save styled-components
+// TODO 2. Подключить npm install --save styled-components
 
-// 3. App.jsx
+// TODO 3. Структура файлов
+// src/pages/Home.jsx       - старт
+// src/pages/About.jsx      - другая страничка
+// src/index.js             - начальный js
+// src/components/Menu.jsx  - навигационное меню
+
+// TODO 4. index.js
 import React from "react";
-import Navbar from "./components/Navbar";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/home";
-import About from "./pages/about";
-import Blogs from "./pages/blogs";
-import SignUp from "./pages/signup";
-import Contact from "./pages/contact";
-
-export function App() {
-  return (
+import "./styles/index.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+const root = ReactDOM.createRoot(document.querySelector("#root"));
+root.render(
+  <React.StrictMode>
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/sign-up" element={<SignUp />} />
       </Routes>
     </Router>
-  );
-}
+  </React.StrictMode>
+);
 
-// 4. Navbar.jsx
+// TODO 5. Home.jsx
 import React from "react";
-import { NavLink } from "react-router-dom";
+import Page from "../components/Page";
+import Header from "../components/Header";
+import Menu from "../components/Menu";
+class Home extends React.Component {
+  render() {
+    return (
+      <Page>
+        <Header>Заголовок сайта</Header>
+        <Menu />
+      </Page>
+    );
+  }
+}
+export default Home;
 
-export const Navbar = () => {
-  return (
-    <nav>
-      <ul className="nav-list">
-        <li className="nav-list__element">
-          <NavLink className="nav-list__link" to="/about">
-            About
-          </NavLink>
-        </li>
-        <li className="nav-list__element">
-          <NavLink className="nav-list__link" to="/contact">
-            Contact Us
-          </NavLink>
-        </li>
-        <li className="nav-list__element">
-          <NavLink className="nav-list__link" to="/blogs">
-            Blogs
-          </NavLink>
-        </li>
-        <li className="nav-list__element">
-          <NavLink className="nav-list__link" to="/sign-up">
-            Sign Up
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
-  );
-};
+// TODO 6. Menu.jsx
+class Menu extends React.Component {
+  render() {
+    return (
+      <nav>
+        <NavLink to="/about">О нас</NavLink>;
+      </nav>
+    );
+  }
+}
