@@ -31,6 +31,10 @@ https://code.s3.yandex.net/web-code/smoothly/index.html
 // Иконки
 https://icon-icons.com
 
+// Анимации
+https://www.theappguruz.com/tag-tools/web/CSSAnimations/
+https://tools.webdevpuneet.com/css-animation-generator/
+
 ****** Разобрать
 https://www.prisma.io
 
