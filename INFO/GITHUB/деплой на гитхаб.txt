@@ -1,0 +1,15 @@
+// установить плагин для создания в репозитории ветки gh-pages и загрузки туда проекта
+
+npm install gh-pages --save-dev
+
+
+// добавить в скрипты packaje.json
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",   # скрипт: перед deploy собери проект (включи build)
+    "deploy": "gh-pages -d build"    # скрипт: запустит пакет gh-pages и передаст ему папку собранного проекта
+  },
