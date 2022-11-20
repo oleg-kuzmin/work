@@ -28,7 +28,8 @@ https://unsplash.com
 // Библиотека простая анимация
 https://code.s3.yandex.net/web-code/smoothly/index.html
 
-
+// Иконки
+https://icon-icons.com
 
 ****** Разобрать
 https://www.prisma.io

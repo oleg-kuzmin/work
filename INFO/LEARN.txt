@@ -1,6 +1,9 @@
 яндекс
 Структура HTML-документа
 
+удалить из проекта?
+React Transition Group
+
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Language_Overview
 https://www.taniarascia.com/getting-started-with-react/
 https://developer.mozilla.org/ru/docs/Web/JavaScript
