@@ -1,0 +1,31 @@
+// Выбор по тегу (не рекомендуется)
+h1 {
+  color: black;
+}
+
+// выбор по классу
+.selector-name {
+  background-color: white;     // Цвет фона
+  color: black;                // Цвет шрифта
+  text-transform: uppercase;     // Заглавные буквы
+  font-family: 'William', serif; // Семейство шрифта
+  font-style: italic;            // Курсив
+  font-size: 24px;               // Размер шрифта
+  font-weight: normal;           // Жирность шрифта
+  line-height: 18px;             // Междустрочный размер шрифта
+  width: 500px;                  // Ширина
+  height: 500px;                 // Высота
+  text-align: center;            // Расположение текста по центру
+
+  margin: 20px; // Внешние отступы с 4 сторон
+  margin-top: 20px; // Внешний отступ сверху
+  margin-left: 20px; // Внешний отступ слева
+  margin-right: 20px; // Внешний отступ справа
+  margin-bottom: 20px; // Внешний отступ снизу
+
+  padding: 20px; // Внутренние отступы с 4 сторон
+  padding-top: 20px; // Внутренний отступ сверху
+  padding-left: 20px; // Внутренний отступ слева
+  padding-right: 20px; // Внутренний отступ справа
+  padding-bottom: 20px; // Внутренний отступ снизу
+}
