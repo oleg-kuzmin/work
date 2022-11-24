@@ -1,9 +1,9 @@
-.class {
+.class-name {
+
   /* Цвет фона */
-  background-color: blue;
+  background-color: white;
 
   /* Цвет шрифта */
-  color: white;
+  color: black;
 
-  
 }
