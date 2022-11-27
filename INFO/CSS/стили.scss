@@ -5,41 +5,50 @@ h1 {
 
 // выбор по классу
 .selector-name {
-  width: 500px;                  // Блок (ширина)
-  height: 500px;                 // Блок (высота)
-  text-align: center;            // Блок (расположение текста по центру)
-  background-color: white;     // Блок-цвет фона
-  border: 1px solid white;     // Блок-граница (толщина/тип - сплошная/цвет)
-  border: 1px dashed white;    // Блок-граница (толщина/тип - пунктирная/цвет)
-  border-radius: 1px;            // Блок-граница (скругление углов)
+  width: 500px; // Блок (ширина)
+  height: 500px; // Блок (высота)
+  text-align: center; // Блок (расположение текста по центру)
+  background-color: white; // Блок-цвет фона
+  border: 1px solid white; // Блок-граница (толщина/тип - сплошная/цвет)
+  border: 1px dashed white; // Блок-граница (толщина/тип - пунктирная/цвет)
+  border-radius: 1px; // Блок-граница (скругление углов)
   box-shadow: 1px 1px 1px blue; // Блок-тень: (влево- или вправо+ / вниз+ или вверх- / радиус размытия / цвет)
 
-  display: block;                // Блок-отображение (блочный - по умолчанию)
-  display: inline;               // Блок-отображение (строчный)
-  display: inline-block;         // Блок-отображение (блочно-строчный)
-  display: flex;                 // Блок-отображение (флекс)
-  display: grid;                 // Блок-отображение (гриды)
+  display: block; // Блок-отображение (блочный - по умолчанию)
+  display: inline; // Блок-отображение (строчный)
+  display: inline-block; // Блок-отображение (блочно-строчный)
+  display: flex; // Блок-отображение (флекс)
+  display: grid; // Блок-отображение (гриды)
 
-  font-family: 'William', serif; // Шрифт (семейство) // Шрифт (стандарт, Apple, Windows, default)
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-family: inherit;          // Шрифт (семейство наследуется от родителя)
-  color: black;                // Шрифт (цвет)
-  font-size: 24px;               // Шрифт (размер)
-  font-weight: normal;           // Шрифт-начертание (нормальный)
-  font-weight: bold;             // Шрифт-начертание (полужирное)
-  font-weight: lighter;          // Шрифт-начертание (тонкое)
-  text-transform: uppercase;     // Шрифт (заглавные буквы)
-  font-style: normal;            // Шрифт-стиль (нормальный)
-  font-style: italic;            // Шрифт-стиль (курсив)
-  font-style: oblique;           // Шрифт-стиль (наклонный)
-  line-height: 18px;             // Шрифт (междустрочный размер)
+  font-family: "William", serif; // Шрифт (семейство) // Шрифт (стандарт, Apple, Windows, default)
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: inherit; // Шрифт (семейство наследуется от родителя)
+  color: black; // Шрифт (цвет)
+  font-size: 24px; // Шрифт (размер)
 
-  direction: ltr;                // Поток (направление слева направо)
-  direction: rtl;                // Поток (направление справа налево)
-  direction: inherit;            // Поток (наследует значение родителя)
+  font-weight: normal; // Шрифт-начертание (нормальный)
+  font-weight: bold; // Шрифт-начертание (жирное)
+  font-weight: lighter; // Шрифт-начертание (тонкое)
 
+  font-weight: 100; // Шрифт-начертание Thin (Hairline) / Тонкий (Волосяной)
+  font-weight: 200; // Шрифт-начертание Extra Light (Ultra Light) / Дополнительный Светлый (Сверхсветлый)
+  font-weight: 300; // Шрифт-начертание Light / Светлый
+  font-weight: 400; // Шрифт-начертание Normal /	Нормальный
+  font-weight: 500; // Шрифт-начертание Medium	/ Средний
+  font-weight: 600; // Шрифт-начертание Semi Bold (Demi Bold) / Полужирный
+  font-weight: 700; // Шрифт-начертание Bold	/ Жирный
+  font-weight: 800; // Шрифт-начертание Extra Bold (Ultra Bold) / Дополнительный Жирный (Сверхжирный)
+  font-weight: 900; // Шрифт-начертание Black (Heavy) / Черный (Густой)
 
+  text-transform: uppercase; // Шрифт (заглавные буквы)
+  font-style: normal; // Шрифт-стиль (нормальный)
+  font-style: italic; // Шрифт-стиль (курсив)
+  font-style: oblique; // Шрифт-стиль (наклонный)
+  line-height: 18px; // Шрифт (междустрочный размер)
 
+  direction: ltr; // Поток (направление слева направо)
+  direction: rtl; // Поток (направление справа налево)
+  direction: inherit; // Поток (наследует значение родителя)
 
   margin: 20px; // Внешние отступы с 4 сторон
   margin-top: 20px; // Внешний отступ сверху
