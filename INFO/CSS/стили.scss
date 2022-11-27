@@ -7,15 +7,11 @@ h1 {
 .selector-name {
   width: 500px;                  // Блок (ширина)
   height: 500px;                 // Блок (высота)
-
   text-align: center;            // Блок (расположение текста по центру)
-
   background-color: white;     // Блок-цвет фона
-
   border: 1px solid white;     // Блок-граница (толщина/тип - сплошная/цвет)
   border: 1px dashed white;    // Блок-граница (толщина/тип - пунктирная/цвет)
   border-radius: 1px;            // Блок-граница (скругление углов)
-  
   box-shadow: 1px 1px 1px blue; // Блок-тень: (влево- или вправо+ / вниз+ или вверх- / радиус размытия / цвет)
 
   display: block;                // Блок-отображение (блочный - по умолчанию)
@@ -24,12 +20,18 @@ h1 {
   display: flex;                 // Блок-отображение (флекс)
   display: grid;                 // Блок-отображение (гриды)
 
+  font-family: 'William', serif; // Шрифт (семейство) // Шрифт (стандарт, Apple, Windows, default)
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: inherit;          // Шрифт (семейство наследуется от родителя)
   color: black;                // Шрифт (цвет)
-  text-transform: uppercase;     // Шрифт (заглавные буквы)
-  font-family: 'William', serif; // Шрифт (семейство)
-  font-style: italic;            // Шрифт (курсив)
   font-size: 24px;               // Шрифт (размер)
-  font-weight: normal;           // Шрифт (жирность)
+  font-weight: normal;           // Шрифт-начертание (нормальный)
+  font-weight: bold;             // Шрифт-начертание (полужирное)
+  font-weight: lighter;          // Шрифт-начертание (тонкое)
+  text-transform: uppercase;     // Шрифт (заглавные буквы)
+  font-style: normal;            // Шрифт-стиль (нормальный)
+  font-style: italic;            // Шрифт-стиль (курсив)
+  font-style: oblique;           // Шрифт-стиль (наклонный)
   line-height: 18px;             // Шрифт (междустрочный размер)
 
   direction: ltr;                // Поток (направление слева направо)
