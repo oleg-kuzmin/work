@@ -5,21 +5,22 @@ h1 {
 
 // выбор по классу
 .selector-name {
-  background-color: white;     // Цвет фона
-  border: 1px solid white;     // Граница (толщина/тип - сплошная/цвет)
-  border: 1px dashed white;    // Граница (толщина/тип - пунктирная/цвет)
-  border-radius: 1px;            // Граница (скругление углов)
+  width: 500px;                  // Блок (ширина)
+  height: 500px;                 // Блок (высота)
+  text-align: center;            // Блок (расположение текста по центру)
+  background-color: white;     // Блок-цвет фона
+  border: 1px solid white;     // Блок-граница (толщина/тип - сплошная/цвет)
+  border: 1px dashed white;    // Блок-граница (толщина/тип - пунктирная/цвет)
+  border-radius: 1px;            // Блок-граница (скругление углов)
+  box-shadow: 1px 1px 1px blue; // Блок-тень: (влево- или вправо+ / вниз+ или вверх- / радиус размытия / цвет)
 
-  color: black;                // Цвет шрифта
-  text-transform: uppercase;     // Заглавные буквы
-  font-family: 'William', serif; // Семейство шрифта
-  font-style: italic;            // Курсив
-  font-size: 24px;               // Размер шрифта
-  font-weight: normal;           // Жирность шрифта
-  line-height: 18px;             // Междустрочный размер шрифта
-  width: 500px;                  // Ширина
-  height: 500px;                 // Высота
-  text-align: center;            // Расположение текста по центру
+  color: black;                // Шрифт (цвет)
+  text-transform: uppercase;     // Шрифт (заглавные буквы)
+  font-family: 'William', serif; // Шрифт (семейство)
+  font-style: italic;            // Шрифт (курсив)
+  font-size: 24px;               // Шрифт (размер)
+  font-weight: normal;           // Шрифт (жирность)
+  line-height: 18px;             // Шрифт (междустрочный размер)
 
   margin: 20px; // Внешние отступы с 4 сторон
   margin-top: 20px; // Внешний отступ сверху
