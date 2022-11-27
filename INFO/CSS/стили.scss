@@ -6,6 +6,10 @@ h1 {
 // выбор по классу
 .selector-name {
   background-color: white;     // Цвет фона
+  border: 1px solid white;     // Граница (толщина/тип - сплошная/цвет)
+  border: 1px dashed white;    // Граница (толщина/тип - пунктирная/цвет)
+  border-radius: 1px;            // Граница (скругление углов)
+
   color: black;                // Цвет шрифта
   text-transform: uppercase;     // Заглавные буквы
   font-family: 'William', serif; // Семейство шрифта
