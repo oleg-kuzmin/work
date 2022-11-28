@@ -1,5 +1,5 @@
 яндекс
-Базовые CSS-свойства - 1.Собрать лендинг
+HTML, CSS, JavaScript: вводный модуль - Больше CSS - 1.Пик вёрстки
 
 прочитать
 float: left | right | none | inherit

@@ -29,13 +29,41 @@ h1 {
   background-repeat: no-repeat; // Фон-повторение (отмена повтора)
   background-repeat: repeat-y; // Фон-повторение (только по вертикали)
   background-repeat: repeat-x; // Фон-повторение (только по горизонтали)
-
   background-position: center; // Фон-позиционирование (горизонталь - по цетру, вертикаль - по центру)
   background-position: right bottom; // Фон-позиционирование (горизонталь - к правому краю, вертикаль — к нижнему краю)
   background-position: 150px -50px; // Фон-позиционирование: смотрим на левый верхний угол блока
   // (горизонталь - сдвиг на 150px вправо, вертикаль — на 50px вверх)
 
+  //* ШРИФТ
+  color: black; // Шрифт (цвет)
+  font-family: "William", serif; // Шрифт (семейство) // Шрифт (стандарт, Apple, Windows, default)
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: inherit; // Шрифт (семейство наследуется от родителя)
+  font-size: 24px; // Шрифт (размер)
+  font-weight: normal; // Шрифт-начертание (нормальный)
+  font-weight: bold; // Шрифт-начертание (жирное)
+  font-weight: lighter; // Шрифт-начертание (тонкое)
+  font-weight: 100; // Шрифт-начертание Thin (Hairline) / Тонкий (Волосяной)
+  font-weight: 200; // Шрифт-начертание Extra Light (Ultra Light) / Дополнительный Светлый (Сверхсветлый)
+  font-weight: 300; // Шрифт-начертание Light / Светлый
+  font-weight: 400; // Шрифт-начертание Normal /	Нормальный
+  font-weight: 500; // Шрифт-начертание Medium	/ Средний
+  font-weight: 600; // Шрифт-начертание Semi Bold (Demi Bold) / Полужирный
+  font-weight: 700; // Шрифт-начертание Bold	/ Жирный
+  font-weight: 800; // Шрифт-начертание Extra Bold (Ultra Bold) / Дополнительный Жирный (Сверхжирный)
+  font-weight: 900; // Шрифт-начертание Black (Heavy) / Черный (Густой)
+  font-style: normal; // Шрифт-стиль (нормальный)
+  font-style: italic; // Шрифт-стиль (курсив)
+  font-style: oblique; // Шрифт-стиль (наклонный)
+
+  //* ПОВЕДЕНИЕ ТЕКСТОВЫХ ЭЛЕМЕНТОВ
   text-align: center; // Элемент (расположение текста по центру)
+  text-transform: uppercase; // Текст (заглавные буквы)
+  text-transform: lowercase; // Текст (строчные буквы)
+  text-decoration: underline; // Текст (подчеркнутый текст)
+  text-decoration: none; // Текст (убирает подчёркивание)
+  line-height: 18px; // Текст (высота строки)
+  letter-spacing: 10px; // Текст (расстояние между символами в тексте)
 
   border: 1px solid white; // Элемент-граница (толщина/тип - сплошная/цвет)
   border: 1px dashed white; // БлоЭлементк-граница (толщина/тип - пунктирная/цвет)
@@ -47,32 +75,6 @@ h1 {
   display: inline-block; // Элемент-отображение (блочно-строчный)
   display: flex; // Элемент-отображение (флекс)
   display: grid; // Элемент-отображение (гриды)
-
-  font-family: "William", serif; // Шрифт (семейство) // Шрифт (стандарт, Apple, Windows, default)
-  font-family: "Helvetica", "Arial", sans-serif;
-  font-family: inherit; // Шрифт (семейство наследуется от родителя)
-  color: black; // Шрифт (цвет)
-  font-size: 24px; // Шрифт (размер)
-
-  font-weight: normal; // Шрифт-начертание (нормальный)
-  font-weight: bold; // Шрифт-начертание (жирное)
-  font-weight: lighter; // Шрифт-начертание (тонкое)
-
-  font-weight: 100; // Шрифт-начертание Thin (Hairline) / Тонкий (Волосяной)
-  font-weight: 200; // Шрифт-начертание Extra Light (Ultra Light) / Дополнительный Светлый (Сверхсветлый)
-  font-weight: 300; // Шрифт-начертание Light / Светлый
-  font-weight: 400; // Шрифт-начертание Normal /	Нормальный
-  font-weight: 500; // Шрифт-начертание Medium	/ Средний
-  font-weight: 600; // Шрифт-начертание Semi Bold (Demi Bold) / Полужирный
-  font-weight: 700; // Шрифт-начертание Bold	/ Жирный
-  font-weight: 800; // Шрифт-начертание Extra Bold (Ultra Bold) / Дополнительный Жирный (Сверхжирный)
-  font-weight: 900; // Шрифт-начертание Black (Heavy) / Черный (Густой)
-
-  text-transform: uppercase; // Шрифт (заглавные буквы)
-  font-style: normal; // Шрифт-стиль (нормальный)
-  font-style: italic; // Шрифт-стиль (курсив)
-  font-style: oblique; // Шрифт-стиль (наклонный)
-  line-height: 18px; // Шрифт (междустрочный размер)
 
   direction: ltr; // Поток (направление слева направо)
   direction: rtl; // Поток (направление справа налево)
