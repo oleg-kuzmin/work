@@ -1,5 +1,5 @@
 яндекс
-HTML, CSS, JavaScript: вводный модуль - Больше CSS - 1.Пик вёрстки
+HTML, CSS, JavaScript: вводный модуль - 5.JavaScript. Начало - 1.Новая цель
 
 прочитать
 float: left | right | none | inherit
