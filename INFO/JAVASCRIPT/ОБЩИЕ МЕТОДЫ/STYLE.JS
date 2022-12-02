@@ -1,0 +1,1 @@
+element.style.fontSize = '33px' // установит размер шрифта
