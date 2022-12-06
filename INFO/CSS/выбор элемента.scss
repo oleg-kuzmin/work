@@ -1,0 +1,36 @@
+//* Выбор всех элементов сразу
+* {
+  font-size: 14px;
+}
+
+//* Выбор по тегу
+h1 {
+  font-size: 14px;
+}
+
+//* Выбор нескольких тегов
+body,
+h1 {
+  font-size: 14px;
+}
+
+//* Селекторы вложенности (все p внутри div)
+div p {
+  font-size: 14px;
+}
+div .class-name {
+  font-size: 14px;
+}
+
+//* Комбинированные селекторы (c несколькими классами/тегами)
+a.class-name {
+  font-size: 14px;
+}
+.my-button.my-button_large {
+  font-size: 14px;
+}
+
+//* Выбор по классу
+.class-name {
+  font-size: 14px;
+}
