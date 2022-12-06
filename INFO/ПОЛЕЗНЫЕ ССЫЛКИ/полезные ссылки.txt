@@ -38,6 +38,9 @@ https://tools.webdevpuneet.com/css-animation-generator/
 // БЭМ
 https://ru.bem.info
 
+// Префиксы и как их писать
+https://autoprefixer.github.io/ru/
+
 ****** Разобрать
 https://www.prisma.io
 
