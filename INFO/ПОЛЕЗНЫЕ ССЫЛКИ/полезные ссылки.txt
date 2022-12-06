@@ -35,6 +35,9 @@ https://icon-icons.com
 https://www.theappguruz.com/tag-tools/web/CSSAnimations/
 https://tools.webdevpuneet.com/css-animation-generator/
 
+// БЭМ
+https://ru.bem.info
+
 ****** Разобрать
 https://www.prisma.io
 
