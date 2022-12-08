@@ -9,7 +9,6 @@ fetch("url", { object });
 // DELETE	УДАЛИТЬ
 // PUT ОТПРАВИТЬ ЕДЕНИЧНЫЙ ЗАПРОС
 
-
 function test() {
   return (
     fetch("https://yandex.ru", {
@@ -56,7 +55,7 @@ const makeRequest = (url, method, data) => {
   });
 };
 // вызов функции тогда будет выглядить так:
-makeRequest ('https://yandex.ru', 'GET', {user: "Oleg", age: "100"})
+makeRequest("https://yandex.ru", "GET", { user: "Oleg", age: "100" });
 
 // Promise
 // проверка статуса запроса
@@ -128,3 +127,8 @@ const fetchToDo = async () => {
   }
 };
 fetchToDo();
+
+// EventLoop:
+// CallStack - текущие задачи
+// TaskQueue - setTimeout
+// MicroTaskQueue - Promise
