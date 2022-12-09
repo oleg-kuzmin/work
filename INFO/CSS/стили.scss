@@ -58,15 +58,16 @@
   font-family: "Helvetica", "Arial", sans-serif; // Шрифт (Apple, Windows, default)
   font-family: inherit; // Шрифт (семейство наследуется от родителя)
   font-size: 24px; // Шрифт (размер)
-   // Шрифт-начертание (жирное)
-  font-weight: lighter; // Шрифт-начертание (тонкое)
-  font-weight: 100; // Шрифт-начертание Thin (Hairline) / Тонкий (Волосяной)
+  font-weight: 100;
+  font-weight: lighter; // Шрифт-начертание Thin (Hairline) / Тонкий (Волосяной)
   font-weight: 200; // Шрифт-начертание Extra Light (Ultra Light) / Дополнительный Светлый (Сверхсветлый)
   font-weight: 300; // Шрифт-начертание Light / Светлый
-  font-weight: 400; font-weight: normal; // Шрифт-начертание Normal /	Нормальный
+  font-weight: 400;
+  font-weight: normal; // Шрифт-начертание Normal /	Нормальный
   font-weight: 500; // Шрифт-начертание Medium	/ Средний
   font-weight: 600; // Шрифт-начертание Semi Bold (Demi Bold) / Полужирный
-  font-weight: 700; font-weight: bold; // Шрифт-начертание Bold	/ Жирный
+  font-weight: 700;
+  font-weight: bold; // Шрифт-начертание Bold	/ Жирный
   font-weight: 800; // Шрифт-начертание Extra Bold (Ultra Bold) / Дополнительный Жирный (Сверхжирный)
   font-weight: 900; // Шрифт-начертание Black (Heavy) / Черный (Густой)
   font-style: normal; // Шрифт-стиль (нормальный)
