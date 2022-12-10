@@ -30,6 +30,11 @@ a.class-name {
   font-size: 14px;
 }
 
+//*стиль для третьего по счёту тега <a>, вложенного на первом уровне в <div>, если у этого <a> атрибут href заканчивается на '.pdf'
+div > a[href$='.pdf']:nth-of-type(3) {
+  font-size: 14px;
+}
+
 //* По ID
 #id-name {
   font-size: 14px;
