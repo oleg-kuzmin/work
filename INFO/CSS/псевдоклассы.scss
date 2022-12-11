@@ -1,0 +1,44 @@
+//* если пользователь ещё не посещал ссылку
+.link-element:link {
+  font-size: 14px;
+}
+
+//* уже посещал ссылку
+.link-element:visited {
+  font-size: 14px;
+}
+
+//* навёл на элемент указатель мыши
+.element:hover {
+  font-size: 14px;
+}
+
+//* нажал на элемент
+.element:active {
+  font-size: 14px;
+}
+
+//* первый элемент этого типа
+.element:first-of-type {
+  font-size: 14px;
+}
+
+//* последний элемент этого типа
+.element:last-of-type {
+  font-size: 14px;
+}
+
+//* n-й(2) элемент этого типа
+.element:nth-of-type(2) {
+  font-size: 14px;
+}
+
+//* HAS. Стили применятся только к секциям, внутри которых есть заголовок второго уровня
+section:has(h2) {
+  font-size: 14px;
+}
+
+//* NOT. Выберет все ссылки, по которым пользователь ещё не переходил
+a:not(:visited) {
+  font-size: 14px;
+}
