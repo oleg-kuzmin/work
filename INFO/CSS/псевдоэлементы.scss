@@ -1,0 +1,12 @@
+
+// Псевдоэлементы ::before и ::after всегда содержат свойство content.
+// Оно определяет, каким содержимым будут наполнены псевдоэлементы.
+
+.selector::before {
+  font-size: 14px;
+  content: 'Зима';
+}
+.selector::after {
+  font-size: 14px;
+  content: 'Лето';
+}
