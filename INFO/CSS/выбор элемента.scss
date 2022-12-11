@@ -30,6 +30,11 @@ a.class-name {
   font-size: 14px;
 }
 
+//* Вложенные селекторы (element-child, вложенный в element-parent)
+.element-parent .element-child {
+  font-size: 14px;
+}
+
 //* Селекторы по атрибутам (выберет только изображение с источником по адресу logo.png)
 img[src='logo.png'] {
   font-size: 14px;
