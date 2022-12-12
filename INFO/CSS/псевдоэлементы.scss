@@ -1,12 +1,16 @@
-
-// Псевдоэлементы ::before и ::after всегда содержат свойство content.
+//* Псевдоэлементы ::before и ::after всегда содержат свойство content.
 // Оно определяет, каким содержимым будут наполнены псевдоэлементы.
 
 .selector::before {
   font-size: 14px;
-  content: 'Зима';
+  content: "Зима";
 }
 .selector::after {
   font-size: 14px;
-  content: 'Лето';
+  content: "Лето";
+}
+
+//* оформление placeholder
+.input::placeholder {
+  color: #c0392b;
 }
