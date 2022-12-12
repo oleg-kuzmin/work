@@ -18,6 +18,13 @@
   font-size: 14px;
 }
 
+//* выключенный
+.element:disabled{
+  font-size: 14px;
+}
+
+
+
 //* первый элемент этого типа
 .element:first-of-type {
   font-size: 14px;
