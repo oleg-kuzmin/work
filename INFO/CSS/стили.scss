@@ -96,6 +96,9 @@
   border-color: #000; // Граница (цвет)
   border: 1px solid red; // Граница (толщина начертание цвет)
   border-radius: 1px; // Граница (скругление углов)
+  outline-color: black; // Внутренняя граница (цвет)
+  outline-style: dashed; // Внутренняя граница (начертание)
+  outline-width: 3px; // Внутренняя граница (толщина)
 
   //* ТЕНИ
   box-shadow: 1px 1px 1px blue;
