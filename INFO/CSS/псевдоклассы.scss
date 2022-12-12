@@ -19,16 +19,19 @@
 }
 
 //* выключенный
-.element:disabled{
+.element:disabled {
   font-size: 14px;
 }
 
 //* выбранный
-.element:checked{
+.element:checked {
   font-size: 14px;
 }
 
-
+//* в фокусе
+.element:focus {
+  font-size: 14px;
+}
 
 //* первый элемент этого типа
 .element:first-of-type {
