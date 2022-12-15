@@ -14,4 +14,9 @@
   font-weight: bold;
 }
 
-
+//* Медиазапросы (screen, all)
+@media screen and (max-width: 720px) {
+  body {
+    background-color: red;
+  }
+}
