@@ -52,6 +52,10 @@
   // 1 - left, center и right  для горизонтального выравнивания (-... 0 +...)
   // 2- top, center и bottom для вертикального выравнивания     (-... 0 +...)
 
+  //*ВИДИМОСТЬ
+  opacity: 0; // прозрачность от 0.0 до 1.0
+  visibility: hidden; // отображение (скрыто)
+
   //* ШРИФТ
   color: black; // Шрифт (цвет)
   font-family: "William", serif; // Шрифт (семейство)
@@ -195,7 +199,7 @@
   color: black;
 }
 
-//* КРАСИВЫЕ ШРИФТЫ
+//* СГЛАЖИВАНИЕ ШРИФТОВ
 .font {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
