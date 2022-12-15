@@ -201,10 +201,14 @@
 
 //* СГЛАЖИВАНИЕ ШРИФТОВ
 .font {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; // Сглаживание шрифтов (Chrome, Яндекс Браузер, Опера)
+  -moz-osx-font-smoothing: grayscale; // Сглаживание шрифтов (Mozilla Firefox)
   text-rendering: optimizeLegibility;
+
   -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+
   -ms-font-feature-settings: "kern" 1;
   font-feature-settings: "kern";
 }
