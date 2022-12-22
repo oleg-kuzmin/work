@@ -5,3 +5,4 @@ element.addEventListener('event', function () {
 
 //* Варианты событий
 // click - клик мышкой
+// scroll - прокрутка окна

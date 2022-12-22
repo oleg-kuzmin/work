@@ -41,6 +41,10 @@ https://ru.bem.info
 // Префиксы и как их писать
 https://autoprefixer.github.io/ru/
 
+// Api Youtube
+https://developers.google.com/youtube/youtube_player_demo?hl=ru
+https://developers.google.com/youtube/iframe_api_reference
+
 ****** Разобрать
 https://www.prisma.io
 
