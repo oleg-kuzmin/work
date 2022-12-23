@@ -1,0 +1,7 @@
+# необходимо изменить параметр quotepath в секции [core], установив его в false.
+# или изменить глобальный файл C:\Program Files\Git\etc\gitconfig
+
+открыть файл \.git\config
+добавить параметр quotepath = false
+
+
