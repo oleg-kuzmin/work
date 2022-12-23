@@ -1,0 +1,4 @@
+# List Directory Contents (вывести список содержимого каталога)
+
+# GitBash
+ls
