@@ -1,9 +1,10 @@
-2. Настройка имени и почты. В Git Bash (терминале) ввести:
-  git config --global user.name "Oleg Kuzmin"
-  git config --global user.email alex-dust@yandex.ru
 
-3. Проверка глобальных настроек
-  git config --list
+
+
+
+
+
+
 
 4. Подключение к проекту
   git init

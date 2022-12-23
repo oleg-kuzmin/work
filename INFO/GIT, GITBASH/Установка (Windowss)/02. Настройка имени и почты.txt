@@ -1,0 +1,5 @@
+# GitBash
+git config --global user.name "Oleg Kuzmin"
+git config --global user.email alex-dust@yandex.ru
+
+git config --list # проверка всех свойств конфига
