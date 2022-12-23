@@ -1,7 +1,9 @@
+# Создать новый файл
+
 # Синтаксис:
 touch имя_файла
 touch имя_файла имя_файла имя_файла
 
 # GitBash
-touch index.html            # создаст файл index.html в текущей папке
-touch index.html style.css  # создаст файлы index.html style.css в текущей папке
+touch index.html              # создаст файл index.html в текущей папке
+touch index.html style.css    # создаст файлы index.html style.css в текущей папке

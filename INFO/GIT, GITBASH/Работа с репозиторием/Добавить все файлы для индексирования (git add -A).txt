@@ -1,3 +1,0 @@
-# GitBash
-git add --all
-git add -A

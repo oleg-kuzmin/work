@@ -1,5 +1,7 @@
+# Удалить файл
+
 # Синтаксис:
 rm имя_файла
 
 # GitBash
-rm about.html # удалит about.html из текущей папки
+rm about.html   # удалит about.html из текущей папки

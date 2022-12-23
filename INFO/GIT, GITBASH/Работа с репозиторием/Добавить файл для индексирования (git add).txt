@@ -1,2 +1,0 @@
-# GitBash
-git add
