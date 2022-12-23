@@ -1,0 +1,5 @@
+# Синтаксис:
+touch имя_файла
+
+# GitBash
+touch index.html # создаст файл index.html в текущей папке
