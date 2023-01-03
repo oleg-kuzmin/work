@@ -1,8 +1,3 @@
 # Добавить файл для отслеживания (индексации) в staging area
-
-# Синтаксис:
-git add имя_файла
-git add имя_папки
-
-# GitBash
-git add
+git add file-name
+git add folfer-name

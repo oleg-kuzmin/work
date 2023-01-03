@@ -1,4 +1,2 @@
-# List Directory Contents (вывести список содержимого каталога)
-
-# GitBash
+# Показать файлы в рабочей папке (List Directory Contents)
 ls

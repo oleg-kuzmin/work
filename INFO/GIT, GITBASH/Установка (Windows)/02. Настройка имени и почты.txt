@@ -1,5 +1,8 @@
-# GitBash
+# установка имени
 git config --global user.name "Oleg Kuzmin"
+
+# установка почты
 git config --global user.email alex-dust@yandex.ru
 
-git config --list # проверка всех свойств конфига
+# проверка всех свойств конфига
+git config --list

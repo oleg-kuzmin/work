@@ -1,4 +1,2 @@
-# Print Working Directory (покажи рабочую папку)
-
-# GitBash
+# Показать рабочую папку (Print Working Directory)
 pwd

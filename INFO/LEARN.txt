@@ -1,5 +1,5 @@
 яндекс
-Bash и Git
+Генерируем SSH-ключи
 
 прочитать
 float: left | right | none | inherit
