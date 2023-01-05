@@ -11,6 +11,8 @@ f12                      // перемещаемся на класс в scss    
 ctrl+ЛКМ                 // перемещаемся на класс в scss         (CSS Navigation)
 alt+f12                  // вызвать окно совпадений CSS          (CSS Navigation)
 
+alt+ЛКМ                  // мультикурсор
+ctrl+Space               // подсказки
 
 ctrl+numpad1             // скопировать классы из html           (eCSStractor for VSCode)
 ctrl+numpad2             // запустить Live Server
