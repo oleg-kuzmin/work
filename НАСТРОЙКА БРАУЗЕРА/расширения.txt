@@ -1,2 +1,2 @@
-для чтения JSON - плагин JSON Viewer
-
+JSON Viewer
+PerfectPixel by WellDoneCode

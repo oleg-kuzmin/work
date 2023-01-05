@@ -45,6 +45,11 @@ https://autoprefixer.github.io/ru/
 https://developers.google.com/youtube/youtube_player_demo?hl=ru
 https://developers.google.com/youtube/iframe_api_reference
 
+// Оптимизация изображений
+https://tinypng.com
+
 ****** Разобрать
 https://www.prisma.io
+
+
 
