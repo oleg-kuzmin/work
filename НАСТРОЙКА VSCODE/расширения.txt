@@ -20,3 +20,4 @@ html to JSX                                             // преобразов�
 
 ***
 Settings Sync.
+EditorConfig for VS Code v0.16.4
