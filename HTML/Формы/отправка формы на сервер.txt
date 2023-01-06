@@ -1,1 +1,1 @@
-адрес_сервера/form.html?firstname=Аркадий&authorized=yes&search=yandex
+адрес_сервера/form.html?firstname=Олег&authorized=yes&search=yandex
