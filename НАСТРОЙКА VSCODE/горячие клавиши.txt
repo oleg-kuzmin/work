@@ -13,6 +13,8 @@ alt+f12                  // вызвать окно совпадений CSS    
 
 alt+ЛКМ                  // мультикурсор
 ctrl+Space               // подсказки
+alt+shift+стрелка вниз   // скопировать строчку вниз
+alt+shift+стрелка вверх  // скопировать строчку вверх
 
 ctrl+numpad1             // скопировать классы из html           (eCSStractor for VSCode)
 ctrl+numpad2             // запустить Live Server
