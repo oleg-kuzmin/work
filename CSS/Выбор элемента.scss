@@ -45,6 +45,12 @@ div > a {
   font-size: 14px;
 }
 
+//* Cелектор первого соседа, следующего за селектором ранее
+/* так для чекбокса выглядит первый сосед с именем span */
+input[type="checkbox"] + span {
+  font-size: 14px;
+}
+
 //* По ID
 #id-name {
   font-size: 14px;
