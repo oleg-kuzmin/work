@@ -10,7 +10,13 @@
   content: "Лето";
 }
 
-//* оформление placeholder
+//* оформление placeholder (не работает для IE)
 .input::placeholder {
   color: #c0392b;
 }
+
+//* Кросбраузерность placeholder
+input::-webkit-input-placeholder {color:#c0392b;}
+input::-moz-placeholder          {color:#c0392b;}
+input::-ms-input-placeholder     {color:#c0392b;}
+input::placeholder               {color:#c0392b;}
