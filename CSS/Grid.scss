@@ -13,10 +13,11 @@
   display: inline-grid; // Элементы занимают лишь то пространство, которое необходимо для контента внутри
   grid-template-columns: 100px 100px 150px; // 3 колонки
   grid-template-columns: repeat(/* количество столбцов или строк, нужная ширина */);
-  grid-template-columns: repeat(5, 20%);
+  grid-template-columns: repeat(5, 20%); // 5 колонок по 20%
+  grid-template-columns: repeat(6, 1fr);  // фракция, 6 колонок одинаковой ширины
   grid-template-rows: 150px 150px 100px; // 3 строки
   grid-template-rows: repeat(/* количество столбцов или строк, нужная ширина */);
-  grid-template-rows: repeat(5, 20%); 
+  grid-template-rows: repeat(5, 20%);
   gap: 10px; // Отступы между элементами (между строчками и колонками)
   column-gap: 20px; // Отступы между элементами (между колонками)
   row-gap: 10px; // Отступы между элементами (между строчками)
