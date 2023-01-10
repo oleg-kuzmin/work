@@ -1,19 +1,19 @@
-# Мой первый сайт! :) Учебный проект how-to-learn (Лендинг, cтатическая верстка)
+# My first site! :) Educational project how-to-learn (Landing, static layout)
 
-## Используется:
-* семантическая структура html
-* внешние шрифты
-* наименование классов по BEM nested
-* структура папок и файлов по BEM nested
-* iframe
+### technologies:
+* html semantic structure
+* external fonts
+* name of classes by BEM nested
+* folder and file structure by BEM nested
 * flex
-* несколько слоев фона через z-index
-* CSS-анимации с помощью keyframes
-**работа проверена код-ревьюером**
+* multiple background layers via z-index
+* CSS animations using keyframes
 
-> В репозитории есть файлы брифа и чек-лист
+**project checked by code reviewer**
 
-* [Ссылка на Githubpages](https://oleg-kuzmin.github.io/how-to-learn/)
+> There are brief files and a checklist in the this repository
+
+* [Link to Github Pages](https://oleg-kuzmin.github.io/how-to-learn/)
 
 
 

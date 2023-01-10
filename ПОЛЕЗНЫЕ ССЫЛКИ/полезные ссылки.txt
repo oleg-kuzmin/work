@@ -51,5 +51,8 @@ https://tinypng.com
 ****** Разобрать
 https://www.prisma.io
 
+// html полезное по тегам
+https://htmlreference.io
+
 
 

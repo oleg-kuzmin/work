@@ -1,7 +1,10 @@
+// документация html
+https://html.spec.whatwg.org/multipage/
+https://www.w3.org/TR/2012/WD-html-markup-20121025/
+
 // документация к JavaScript
 https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
 https://262.ecma-international.org/13.0/
 
 // документация к Node.js
 https://nodejs.org/ru/docs/
-
