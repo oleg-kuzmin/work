@@ -1,0 +1,58 @@
+//# Выбор селектора по тегу
+body,
+h1 {
+  font-size: 14px;
+}
+
+//# Выбор селектора по id
+#id-name {
+  font-size: 14px;
+}
+
+//# Выбор селектора по классу
+.class-name {
+  font-size: 14px;
+}
+
+//# Выбор селектора всех элементов сразу
+* {
+  font-size: 14px;
+}
+
+//# Выбор селектора по вложенности
+div p {
+  // тег <p>, вложенный в <div>
+  font-size: 14px;
+}
+div .class-name {
+  // "class-name", вложенный в <div>
+  font-size: 14px;
+}
+
+//# Выбор селектора по вложенности на первом уровне
+div > a {
+  // тег <a>, вложенный на первом уровне в <div>
+  font-size: 14px;
+}
+
+//# Выбор селектора по нескольким комбинированным селекторам
+a.class-name {
+  // тег <a> с классом "class-name"
+  font-size: 14px;
+}
+.my-button.my-button_large {
+  // элемент с классами "my-button" "my-button_large"
+  font-size: 14px;
+}
+
+//# Выбор селектора по атрибуту
+img[src="logo.png"] {
+  // тег <a> с атрибутом src="logo.png"
+  font-size: 14px;
+}
+
+//# Выбор селектора первого соседа, следующего за селектором ранее
+input[type="checkbox"] + span {
+  // первый тег <span> после тега <input> с type="checkbox"
+  font-size: 14px;
+}
