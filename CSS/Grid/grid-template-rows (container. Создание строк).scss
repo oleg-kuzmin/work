@@ -1,0 +1,7 @@
+.grid-container {
+  grid-template-rows: 150px 150px 100px; // 3 строки
+  grid-template-rows: repeat(5, 20%); // 5 строк по 20%
+  
+  grid-template-rows: repeat(6, 1fr); // 6 строк по 1 фракции (т.е. 6 строк одинаковой высоты)
+  grid-template-rows: [aside-start] 300px [aside-end]; // строки с названиями
+}
