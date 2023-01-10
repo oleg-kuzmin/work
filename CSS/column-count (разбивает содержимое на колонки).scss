@@ -1,0 +1,9 @@
+.selector {
+  column-count: auto; // количество столбцов определяется другими свойствами CSS, такими как column-width (en-US).
+  column-count: 3; // количество столбцов (целое значение)
+
+  /* глобальные значения */
+  column-count: inherit;
+  column-count: initial;
+  column-count: unset;
+}

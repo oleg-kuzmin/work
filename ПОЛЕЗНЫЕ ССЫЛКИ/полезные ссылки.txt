@@ -1,5 +1,7 @@
-// справочник с примерами и другой информацией
-https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference
+// mdn
+https://developer.mozilla.org/ru/docs/Web/HTML
+https://developer.mozilla.org/ru/docs/Web/CSS
+https://developer.mozilla.org/ru/docs/Web/JavaScript
 
 // таблица совместимости
 https://caniuse.com/
