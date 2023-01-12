@@ -10,9 +10,6 @@
 
 .flex-container {
   margin: auto; // Выравнивание по центру:
-
-  //*ПОРЯДОК ЭЛЕМЕНТОВ И ПЕРЕНОС
-  flex-flow: row wrap; // 1 - flex-direction, 2 - flex-wrap
 }
 
 .flex-element {
