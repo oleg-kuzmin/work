@@ -11,12 +11,6 @@
 .flex-container {
   margin: auto; // Выравнивание по центру:
 
-  //* ПОРЯДОК ЭЛЕМЕНТОВ
-  flex-direction: row; // ПО УМОЛЧАНИЮ обычный ряд, элементы следуют в потоке, слева направо
-  flex-direction: row-reverse; // ряд в обратном порядке
-  flex-direction: column; // колонка в обычном порядке
-  flex-direction: column-reverse; // колонка в обратном порядке.
-
   //*ПОРЯДОК ЭЛЕМЕНТОВ И ПЕРЕНОС
   flex-flow: row wrap; // 1 - flex-direction, 2 - flex-wrap
 
