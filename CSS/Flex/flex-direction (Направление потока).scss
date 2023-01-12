@@ -1,0 +1,13 @@
+.flex-container {
+  flex-direction: row;
+  // строка слева направо (по умолчанию)
+
+  flex-direction: row-reverse;
+  // строка в обратном порядке
+
+  flex-direction: column;
+  // колонка сверху вниз
+
+  flex-direction: column-reverse;
+  // колонка в обратном порядке
+}
