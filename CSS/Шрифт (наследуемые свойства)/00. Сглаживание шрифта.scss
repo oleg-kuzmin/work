@@ -1,0 +1,26 @@
+//# Сглаживание шрифта
+.class {
+  -webkit-font-smoothing: antialiased;
+  // Сглаживание шрифта (Chrome, Яндекс Браузер, Опера)
+
+  -moz-osx-font-smoothing: grayscale;
+  // Сглаживание шрифта (Mozilla Firefox)
+
+  text-rendering: optimizeLegibility;
+  // кёрнинг и лигатуры (говорит браузеру, что кёрнинг и лигатуры должны быть отрисованы)
+  // сильно замедлит рендеринг страницы
+  //! использовать в заголовках
+
+  -webkit-text-size-adjust: 100%;
+  // Подгонка размера текста (Chrome, Яндекс Браузер, Опера)
+
+  -moz-text-size-adjust: 100%;
+  // Подгонка размера текста (Mozilla Firefox)
+
+  -ms-text-size-adjust: 100%;
+  // Подгонка размера текста (Edge)
+
+  -ms-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern";
+  // низкоуровневый контроль над функциями шрифтов OpenType (использовать только в особых случаях)
+}

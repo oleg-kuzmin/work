@@ -1,0 +1,7 @@
+//# text-transform (Трансформация текста)
+.class {
+  text-transform: none; // обычное неизмененное состояние (по умолчанию)
+  text-transform: uppercase; // заглавные буквы
+  text-transform: lowercase; // строчные буквы
+  text-transform: capitalize; // Преобразует Каждую Первую Букву В Заглавную
+}

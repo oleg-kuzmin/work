@@ -1,0 +1,6 @@
+//# font-family (Семейство шрифта)
+.class {
+  font-family: "William", serif;
+  font-family: "Helvetica", "Arial", sans-serif; // Apple, Windows, default
+  font-family: inherit; // семейство наследуется от родителя
+}
