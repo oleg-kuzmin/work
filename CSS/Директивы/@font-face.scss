@@ -1,0 +1,8 @@
+//# @font-face (декларация шрифта)
+//* Чтобы шрифты работали во всех современных браузерах, достаточно подключить шрифты в форматах woff2 и woff
+@font-face {
+  src: url() format("woff2"), url() format("woff"), url() format("truetype"), url() format("eot");
+  font-family: "Best Font Ever";
+  font-style: italic;
+  font-weight: bold;
+}
