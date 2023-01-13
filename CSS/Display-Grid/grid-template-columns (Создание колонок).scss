@@ -1,7 +1,0 @@
-.grid-container {
-  grid-template-columns: 100px 100px 150px; // 3 колонки
-  grid-template-columns: repeat(5, auto); // 5 колонок с автоматическим размером
-  grid-template-columns: repeat(5, 20%); // 5 колонок по 20%
-  grid-template-columns: repeat(6, 1fr); // 6 колонок по 1 фракции (т.е. 6 колонок одинаковой ширины)
-  grid-template-columns: [aside-start] 300px [aside-end]; // колонки с названиями
-}

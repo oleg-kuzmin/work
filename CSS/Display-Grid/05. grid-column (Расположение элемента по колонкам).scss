@@ -1,0 +1,20 @@
+//# grid-column (grid-column-start + grid-column-end (Расположение элемента по колонкам)
+.grid-element {
+  grid-column: 1 / 3; // = grid-column-start: 1; grid-column-end: 3;
+  grid-column: 1; // = grid-column-start: 1; grid-column-end: auto;
+
+  grid-column: 1 / 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  // Расположение элемента по горизонтали с 1 грид-линии до 3 грид-линии
+
+  grid-column: aside-start / aside-end;
+  grid-column-start: aside-start;
+  grid-column-end: aside-end;
+  // Расположение элемента по горизонтали с aside-start до aside-end
+
+  grid-column: 2 / span 2;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  // Расположение элемента по горизонтали с 2 грид-линии до +2
+}

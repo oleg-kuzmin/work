@@ -1,0 +1,13 @@
+//# grid-template-areas (Грид-область)
+// Если какую-то область нужно оставить пустой, вместо имени ставится точка или несколько точек
+.grid-container {
+  grid-template-areas:
+    "header header header"
+    "news news aside"
+    "promo promo aside"
+    ". footer footer";
+}
+
+.grid-element {
+  grid-area: header;
+}
