@@ -1,0 +1,17 @@
+//# font-stretch (Ширина начертания)
+//! Если используемый шрифт не предполагает таких начертаний, то свойство font-stretch действовать не будет
+//! Не все браузеры поддерживают вариативность шрифтов
+.class {
+  font-stretch: normal; // нормальная ширина шрифта (по умолчанию)
+
+  //* Сопоставление ключевых слов с числовыми значениями:
+  font-stretch: ultra-condensed; // = 50%
+  font-stretch: extra-condensed; // = 62.5%
+  font-stretch: condensed; // = 75%
+  font-stretch: semi-condensed; // 87.5%
+  font-stretch: normal; // = 100%
+  font-stretch: semi-expanded; // = 112.5%
+  font-stretch: expanded; // = 125%
+  font-stretch: extra-expanded; // = 150%
+  font-stretch: ultra-expanded; // = 200%
+}
