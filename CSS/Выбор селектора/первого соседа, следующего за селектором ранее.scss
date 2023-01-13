@@ -1,0 +1,5 @@
+//# Выбор селектора первого соседа, следующего за селектором ранее
+input[type="checkbox"] + span {
+  // первый тег <span> после тега <input> с type="checkbox"
+  font-size: 14px;
+}

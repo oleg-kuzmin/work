@@ -1,0 +1,9 @@
+//# Выбор селектора по вложенности
+div p {
+  // тег <p>, вложенный в <div>
+  font-size: 14px;
+}
+div .class-name {
+  // "class-name", вложенный в <div>
+  font-size: 14px;
+}

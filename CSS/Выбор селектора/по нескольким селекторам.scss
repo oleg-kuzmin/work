@@ -1,0 +1,9 @@
+//# Выбор селектора по нескольким комбинированным селекторам
+a.class-name {
+  // тег <a> с классом "class-name"
+  font-size: 14px;
+}
+.my-button.my-button_large {
+  // элемент с классами "my-button" "my-button_large"
+  font-size: 14px;
+}
