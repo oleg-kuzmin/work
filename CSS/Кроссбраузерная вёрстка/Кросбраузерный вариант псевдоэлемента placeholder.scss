@@ -1,0 +1,5 @@
+//# Кросбраузерный вариант псевдоэлемента placeholder
+input::-webkit-input-placeholder {color:#c0392b;}
+input::-moz-placeholder          {color:#c0392b;}
+input::-ms-input-placeholder     {color:#c0392b;}
+input::placeholder               {color:#c0392b;}
