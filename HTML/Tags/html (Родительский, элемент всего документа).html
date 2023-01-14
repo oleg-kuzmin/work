@@ -1,0 +1,44 @@
+<!-- # html (Родительский, элемент всего документа) -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<!-- # Атрибут lang -->
+<html lang="ru"></html>
+<!-- установили русский язык для правильного отображения символов -->
+
+<!-- # Атрибут title -->
+<html title="Сайт сделан лошадкой!"></html>
+<!-- добавляет всплывающую подсказку, которая появляется, когда курсор мыши задерживается в окне веб-страницы -->
+
+<!-- # Атрибут prefix -->
+<html prefix="og: [http://ogp.me/ns#](http://ogp.me/ns#)"></html>
+<html lang="ru" prefix="og: http://ogp.me/ns#"></html>
+<!-- open-graph разметка -->
+<!-- Для разметки страницы нужно в раздел <head> добавить дополнительные теги <meta> -->
+
+<!--* ОБЯЗАТЕЛЬНЫЕ СВОЙСТВА  -->
+<meta property="og:title" content="Заголовок страницы - Мой сайт" />
+<!-- Уникальный заголовок страницы, оптимальный размер ~65 символов. -->
+<meta property="og:type" content="website" />
+<!-- og:type нужен для определения типа контента, в большинстве случаев можно использовать по стандарту website -->
+<!-- варианты: website, article, audio, image, video -->
+<meta property="og:url" content="https://example.com/page" />
+<!-- Адрес текущей страницы сайта. -->
+<meta property="og:image" content="https://example.com/image.jpg" />
+<!-- Основное изображение вашей карточки. Размер рекомендуется использовать не менее 600*315. -->
+
+<!--* ДОПОЛНИТЕЛЬНЫЕ СВОЙСТВА -->
+<meta property="og:description" content="Описание страницы" />
+<!-- Описание страницы. Оптимальный размер ~165 символов. -->
+<meta property="og:image:alt" content="Описание изображения" />
+<!-- используется для описания изображения карточки. -->
+<meta property="og:locale" content="ru_RU" />
+<!-- указывает на используемый язык текущей страницы. -->
