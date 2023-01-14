@@ -15,13 +15,13 @@ alt+ЛКМ                  // мультикурсор
 ctrl+Space               // подсказки
 alt+shift+стрелка вниз   // скопировать строчку вниз
 alt+shift+стрелка вверх  // скопировать строчку вверх
+ctrl+Z                   // отмена последнего действия
+ctrl+Y                   // обратная операция
 
 ctrl+numpad1             // eCSStractor Run (With BEM Nesting)
 ctrl+numpad2             // Live Server: Open with Live Server
-ctrl+numpad3             // Emmet: Перенести с сокращением
+ctrl+numpad3             // Emmet: Перенести с сокращением (обернуть в тег)
 
 ctrl+numpad4             // Turbo Console Log: Display Log Message
 ctrl+numpad5             // Quokka.js: Start on Current File
 ctrl+numpad6             // Quokka.js: Stop All
-
-

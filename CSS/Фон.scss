@@ -1,6 +1,7 @@
 //* Фон
 .background {
   background-color: #e3d50e; // цвет
+  background-color: transparent; // цвет прозрачный
   background-image: url(); // изображение (адрес)
   background-size: contain; // фон целиком вписывается в блок, сохранит пропорции, умещает изображение целиком, но оставляет поля
   background-size: cover; // фон накрывает блок, сохранит пропорции, не оставляет полей, но обрезает изображение
