@@ -56,5 +56,9 @@ https://www.prisma.io
 // html полезное по тегам
 https://htmlreference.io
 
+// Типографы
+https://www.artlebedev.ru/typograf/
+https://typograf.ru
+
 
 
