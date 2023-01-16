@@ -1,5 +1,5 @@
 <!--# blockquote (Для вставки большой цитаты) -->
-<blockquote>
+<blockquote cite="http://www.vothouse.ru/points/citaty-steve-jobs/">
   <p>
     Ваша работа заполнит большую часть жизни и единственный способ быть полностью довольным — делать
     то, что по-вашему является великим делом. И единственный способ делать великие дела — любить то,
@@ -8,12 +8,17 @@
 </blockquote>
 
 <!--# Атрибут cite -->
-<blockquote cite="http://www.vothouse.ru/points/citaty-steve-jobs/">
-  <p>
-    Ваша работа заполнит большую часть жизни и единственный способ быть полностью довольным — делать
-    то, что по-вашему является великим делом. И единственный способ делать великие дела — любить то,
-    что вы делаете.
-  </p>
-</blockquote>
+<blockquote cite="http://www.vothouse.ru/points/citaty-steve-jobs/"></blockquote>
 <!-- источник цитаты -->
-<!--! В теге <cite> или в атрибуте cite указывается именно источник цитаты, а не её автор -->
+<!--* в теге <cite> или в атрибуте cite указывается именно источник цитаты, а не её автор -->
+
+<!--# Стили user agent stylesheet -->
+<style>
+  blockquote {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+  }
+</style>
