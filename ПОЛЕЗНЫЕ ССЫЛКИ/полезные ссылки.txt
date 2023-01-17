@@ -5,6 +5,7 @@ https://developer.mozilla.org/ru/docs/Web/JavaScript
 
 // таблица совместимости
 https://caniuse.com/
+https://caninclude.glitch.me
 
 // тестирование rest api
 https://jsonplaceholder.typicode.com/
