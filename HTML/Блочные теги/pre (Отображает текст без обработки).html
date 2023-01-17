@@ -1,0 +1,30 @@
+<!--# pre (Отображает текст без обработки) -->
+<pre aria-label="Изображение кота, собранное из текстовых символов.">
+  ../\„„./\.
+  .(='•'= ) .
+  .(") „. (").
+  . \,\„„/,/
+  . │„„. „│
+  . /„/„ \„\
+  .(„)''l l''(„)
+  . .. ((...
+  . . . ))..
+  . . .((..
+</pre>
+
+<pre><code>
+  &lt;div&gt;Какой-то текст&lt;/div&gt;
+</code></pre>
+
+<!-- cхлопывание пробелов и переносов строк можно избежать с помощью свойства white-space: pre -->
+<!-- cлишком длинные строчки - добавление прокрутки – overflow: auto, или – white-space: pre-wrap -->
+
+<!--# Стили user agent stylesheet -->
+<style>
+  pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
+  }
+</style>
