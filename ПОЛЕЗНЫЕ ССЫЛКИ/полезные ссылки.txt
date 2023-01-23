@@ -61,5 +61,8 @@ https://htmlreference.io
 https://www.artlebedev.ru/typograf/
 https://typograf.ru
 
+// Регулярные выражения
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions
+
 
 
