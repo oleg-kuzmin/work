@@ -1,0 +1,44 @@
+<!--# placeholder (Подсказка в поле ввода) -->
+<!-- Атрибут, который подсказывает пользователю, что именно нужно ввести в поле ввода (обычно это пример слова или фразы). Выглядит это как будто поле уже заполнено, только гораздо бледнее. А ещё значение атрибута исчезает, как только пользователь начинает вводить текст. -->
+
+<input type="email" id="email" placeholder="your_email@gmail.com" />
+<textarea placeholder="about you"></textarea>
+
+<!--# Атрибут placeholder можно задать для <input> и <textarea>. -->
+<!-- Атрибут работает со следующими типами:
+  text
+  search
+  url
+  telephone
+  email
+  password -->
+
+<!--# Внешний вид можно стилизовать при помощи псевдоэлемента ::placeholder. -->
+<!-- Для браузеров старых версий нужны вендорные префиксы: -->
+<style>
+  input::-webkit-input-placeholder {
+    color: #f0bbd7;
+  }
+
+  input:-moz-placeholder {
+    color: #f0bbd7;
+  }
+
+  input::-moz-placeholder {
+    color: #f0bbd7;
+  }
+
+  input:-ms-input-placeholder {
+    color: #f0bbd7;
+  }
+
+  input::-ms-input-placeholder {
+    color: #f0bbd7;
+  }
+</style>
+
+<!--# Если для заполнения поля нужна инструкция (формате номера телефона или длина пароля), то такую инструкцию лучше оформить отдельно от поля ввода -->
+
+<label for="password">Пароль</label>
+<input type="text" id="password" placeholder="Введите пароль" aria-describedby="hint" />
+<span id="hint">Пароль должен состоять из 8 символов, включая цифры и буквы.</span>
