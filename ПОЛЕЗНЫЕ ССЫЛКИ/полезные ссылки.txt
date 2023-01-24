@@ -64,5 +64,6 @@ https://typograf.ru
 // Регулярные выражения
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_Expressions
 
-
+// Оптимизация SVG
+https://jakearchibald.github.io/svgomg/
 
