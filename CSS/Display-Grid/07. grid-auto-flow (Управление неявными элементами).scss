@@ -1,0 +1,12 @@
+//# grid-auto-flow (Управление неявными элементами)
+.grid-container {
+  display: grid;
+  grid-template-rows: repeat(2, 100px);
+  grid-template-columns: repeat(4, 100px);
+
+  grid-auto-flow: row;
+  // добавлятся будут неявные строки (по умолчанию)
+
+  grid-auto-flow: column;
+  // добавлятся будут неявные столбцы
+}
