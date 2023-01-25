@@ -1,0 +1,12 @@
+//# grid-auto-rows (Неявные строки)
+.grid-container  {
+  display: grid;
+  grid-template-rows: repeat(2, 100px);
+  grid-template-columns: repeat(4, 100px);
+
+  grid-auto-rows: 100px;
+  // все неявные треки будут высотой в 100px
+
+  grid-auto-rows: 100px 300px;
+  // высота первого трека 100px, а второго — 300px, и далее сначала
+}
