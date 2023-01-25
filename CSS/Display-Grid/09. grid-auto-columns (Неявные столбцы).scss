@@ -1,0 +1,10 @@
+//# 09. grid-auto-columns (Неявные столбцы)
+.grid-container {
+  display: grid;
+  grid-template-rows: repeat(2, 100px);
+  grid-template-columns: repeat(4, 100px);
+  grid-auto-flow: column;
+
+  grid-auto-columns: 100px;
+  // ширина неявных столбцов 100px
+}
