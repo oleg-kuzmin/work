@@ -1,0 +1,14 @@
+//# align-self (Выравнивание сетки по X)
+.grid-element {
+  align-self: start;
+  // в начале контейнера (по умолчанию)
+
+  align-self: end;
+  // в конце контейнера
+
+  align-self: center;
+  // посередине контейнера
+
+  align-self: stretch;
+  // растянут
+}
