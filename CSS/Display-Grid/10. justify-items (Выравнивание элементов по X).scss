@@ -1,14 +1,14 @@
-//# align-items (Выравнивание по оси Y)
+//# justify-items (Выравнивание элементов по X)
 .grid-container {
-  align-items: stretch;
+  justify-items: stretch;
   // растягивает элементы в контейнере  (по умолчанию)
 
-  align-items: start;
+  justify-items: start;
   // сначала идут элементы, за ними — оставшееся пустое пространство
 
-  align-items: end;
+  justify-items: end;
   // сначала идёт пустое пространство, а к концу контейнера прижаты элементы
 
-  align-items: center;
+  justify-items: center;
   // элементы собраны посередине, а пустое пространство распределено поровну с двух сторон от них
 }
