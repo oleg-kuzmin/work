@@ -1,0 +1,14 @@
+//# justify-self (Выравнивание сетки по X)
+.grid-element {
+  justify-self: start;
+  // в начале контейнера (по умолчанию)
+
+  justify-self: end;
+  // в конце контейнера
+
+  justify-self: center;
+  // посередине контейнера
+
+  justify-self: stretch;
+  // растянут
+}
