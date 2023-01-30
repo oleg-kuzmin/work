@@ -1,3 +1,2 @@
 # Показать файлы в рабочей папке (List Directory Contents)
-
 ls
