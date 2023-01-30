@@ -1,0 +1,6 @@
+# Скопировать файл (copy)
+# синтаксис: cp ****** (что) / ****** (куда)
+# примеры:
+
+cp index.html /src
+cp index.html style.css script.js /src

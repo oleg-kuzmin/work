@@ -1,3 +1,4 @@
 # Добавить файл для отслеживания (индексации) в staging area
+
 git add file-name
 git add folfer-name

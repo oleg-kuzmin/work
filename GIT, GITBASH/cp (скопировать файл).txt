@@ -1,9 +1,0 @@
-// копирование: что /куда
-cp ****** / ******
-
-// пример
-cp index.html /src
-
-// пример
-cp index.html style.css script.js /src
-

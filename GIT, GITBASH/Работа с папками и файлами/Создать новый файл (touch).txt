@@ -1,3 +1,4 @@
 # Создать новый файл в текущей папке
+
 touch index.html              # создаст файл index.html
 touch index.html style.css    # создаст файлы index.html, style.css

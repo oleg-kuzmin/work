@@ -1,9 +1,0 @@
-// своё имя или ник латиницей и в кавычках
-git config --global user.name "Oleg Kuzmin"
-
-// свой e-mail
-git config --global user.email alex-dust@yandex.ru
-
-// список всех свойств конфига
-git config --list
-
