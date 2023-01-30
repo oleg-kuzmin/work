@@ -1,0 +1,5 @@
+# удалить файл из staged (файл останется на месте)
+git rm --cached readme.txt
+
+# удалить папку из staged (папка останется на месте)
+git rm --cached -r folder
