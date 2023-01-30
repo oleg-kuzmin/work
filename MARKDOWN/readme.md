@@ -1,4 +1,5 @@
-# My first site! :) Educational project how-to-learn (Landing, static layout)
+# Educational project: how-to-learn (Landing, static layout)
+My first site! :)
 
 ### technologies:
 * html semantic structure
@@ -14,6 +15,35 @@
 > There are brief files and a checklist in the this repository
 
 * [Link to Github Pages](https://oleg-kuzmin.github.io/how-to-learn/)
+
+
+
+
+
+# Educational project: russian-travel (Landing, adaptive rubber layout)
+My second site! :) Screen resolution: 320px/ 768px/ 1024px/ 1280px
+
+### technologies
+* html semantic structure
+* external fonts
+* name of classes by BEM nested
+* folder and file structure by BEM nested
+* flex
+* grid
+* multiple background layers via z-index
+
+**project checked by code reviewer**
+
+> There are brief files and a checklist in the this repository
+
+* [Link to Figma](https://www.figma.com/file/5S2WSbEFL6awjVWJ0NWL8Q/Sprint-3_-Russia-_-desktop-mobile?node-id=28503%3A0)
+
+* [Link to Github Pages](https://oleg-kuzmin.github.io/russian-travel)
+
+
+
+
+
 
 
 
