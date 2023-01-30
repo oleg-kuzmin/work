@@ -2,3 +2,13 @@
 .element:hover {
   font-size: 14px;
 }
+
+//* Для плавности нужно вешать transition на элемент, а необходимое свойство на hover
+.resources__logo {
+  transition: opacity 0.1s ease-in;
+  transition: transform 0.3s ease-in;
+}
+.resources__logo:hover {
+  opacity: 0.7;
+  transform: scale(1.2);
+}
