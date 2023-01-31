@@ -1,0 +1,6 @@
+# для красивого оформления кода
+highlight.js
+prism.js.
+
+# для работы с cookie
+https://www.npmjs.com/package/js-cookie
