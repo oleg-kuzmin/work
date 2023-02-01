@@ -1,2 +1,0 @@
-# клонирование репозитория (SSH)
-git clone git@github.com:oleg-kuzmin/work.git
