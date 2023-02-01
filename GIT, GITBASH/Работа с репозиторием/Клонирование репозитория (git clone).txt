@@ -1,0 +1,2 @@
+# Клонирование репозитория с GitHub (git clone)
+git clone https://github.com/oleg-kuzmin/how-to-learn.git
