@@ -16,27 +16,6 @@ npm install -g sass
 npm start
   # запуск development server
 
-pwd
-  # где я нахожусь
-
-cd
-cd ~
-  # перемещение в домашний каталог
-
-cd ..
-  # Перемещение на один уровень выше
-
-cd -
-  Перемещение в предыдущий каталог
-
-cd ******
-  # перейти в папку выше (****** название)
-
-
-
-
-
-
 npm run build
   Bundles the app into static files for production.
 
