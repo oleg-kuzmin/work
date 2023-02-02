@@ -72,3 +72,6 @@ https://www.fontsquirrel.com/tools/webfont-generator
 
 // Для показа кода
 https://codepen.io
+
+// Онлайн аналог Avocode
+https://psdetch.com
