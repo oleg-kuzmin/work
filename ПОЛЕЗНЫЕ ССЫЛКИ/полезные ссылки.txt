@@ -47,6 +47,7 @@ https://code.s3.yandex.net/web-code/smoothly/index.html
 https://icon-icons.com
 
 // Анимации
+https://freefrontend.com
 https://www.theappguruz.com/tag-tools/web/CSSAnimations/
 https://tools.webdevpuneet.com/css-animation-generator/
 
