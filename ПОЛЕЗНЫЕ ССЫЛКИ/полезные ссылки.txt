@@ -24,6 +24,9 @@ https://javascript.ru/
 // Цвета
 https://htmlcolorcodes.com/color-names
 
+// Конвертор цвета
+https://convertacolor.com
+
 // Градиенты
 https://webgradients.com
 
@@ -40,8 +43,9 @@ https://icon-icons.com
 https://www.theappguruz.com/tag-tools/web/CSSAnimations/
 https://tools.webdevpuneet.com/css-animation-generator/
 
-// БЭМ
+// БЭМ (BEM)
 https://ru.bem.info
+https://nglazov.github.io/bem-validator-page/
 
 // Префиксы и как их писать
 https://autoprefixer.github.io/ru/
