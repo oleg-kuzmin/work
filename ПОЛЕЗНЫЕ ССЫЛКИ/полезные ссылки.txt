@@ -27,7 +27,14 @@ https://htmlcolorcodes.com/color-names
 // Конвертор цвета
 https://convertacolor.com
 
-// Градиенты
+// Генератор всего и вся
+https://cssgenerator.org/
+
+// Генератор теней, углов
+https://www.cssmatic.com/box-shadow
+
+// Генератор градиентов
+https://cssgradient.io/
 https://webgradients.com
 
 // Фотографии без авторского права
