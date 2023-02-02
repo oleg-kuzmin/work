@@ -48,7 +48,7 @@ https://autoprefixer.github.io/ru/
 https://developers.google.com/youtube/youtube_player_demo?hl=ru
 https://developers.google.com/youtube/iframe_api_reference
 
-// Оптимизация изображений
+// Оптимизация изображений, сжатие
 https://tinypng.com
 
 ****** Разобрать
