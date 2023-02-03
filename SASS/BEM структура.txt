@@ -6,3 +6,5 @@ modules
 	variables
 		color.scss
 		index.scss
+
+Компонент (БЛОК) не должен содержать margin, border без свойства box-sizing, а также не должен быть спозиционирован, не должен вырываться из потока, без размеров, padding можно
