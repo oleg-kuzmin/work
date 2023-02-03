@@ -1,2 +1,9 @@
 JSON Viewer
+
 PerfectPixel by WellDoneCode
+
+WHATFONT - РАСШИРЕНИЕ, КОТОРОЕ ПО КЛИКУ ПОКАЗЫВАЕТ, КАКОЙ ШРИФТ ИСПОЛЬЗУЕТСЯ НА СТРАНИЦЕ
+https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en
+
+
+
