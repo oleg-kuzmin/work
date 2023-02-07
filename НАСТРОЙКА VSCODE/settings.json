@@ -4,7 +4,7 @@
   "files.autoSave": "afterDelay", // автосохранение
   "files.trimTrailingWhitespace": true, // удаляет лишние пробелы при сохранении
   "editor.cursorStyle": "line-thin", // тонкий стиль курсора
-  "editor.fontSize": 18, // размер шрифта
+  "editor.fontSize": 17, // размер шрифта 17-18
   "editor.formatOnSave": true, // форматирование при сохранении
   "editor.hover.enabled": false, // выключает подсказки при наведении в редакторе
   "editor.insertSpaces": true, // пробелы при нажатии на tab
@@ -39,11 +39,11 @@
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "/DEMO"
+      "savePath": "/styles"
     }
   ],
   "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
-  "terminal.integrated.fontSize": 18, // шрифт в терминале
+  "terminal.integrated.fontSize": 16, // шрифт в терминале
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
   "git.autofetch": true,
@@ -51,12 +51,92 @@
   // убирает подсказки
   "explorer.confirmDragAndDrop": false,
   // размер ширины строчки prettier
-  "prettier.printWidth": 120
+  "prettier.printWidth": 120,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.startupEditor": "none",
 
-  //Дополнительно
+  // настройка турбоконсоли
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+  "turboConsoleLog.insertEnclosingClass": false,
+  "turboConsoleLog.insertEnclosingFunction": false,
+  "turboConsoleLog.logMessagePrefix": "",
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "scss.lint.emptyRules": "ignore",
+  "liveServer.settings.donotVerifyTags": true,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "better-comments.tags": [
+    {
+      "tag": "#",
+      "color": "#e3d50e",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "workbench.editor.restoreViewState": false, // отключает запоминания состояния файла
+  "window.zoomLevel": 0.3,
+  "editor.wordBasedSuggestions": false, // отключает подсказки abc эммета
+
+  // Дополнительно
+  // "javascript.suggest.names": false, // нужно уточнить
+  // "editor.suggest.showWords": false, // нужно уточнить
   // "editor.defaultFormatter": "esbenp.prettier-vscode", // выбор форматировщика для всех
-  //"editor.guides.highlightActiveIndentation": false, // убирает вертикальные линии
-  //"window.zoomLevel": 1,                             // увеличит размер интерфейса
-  //"editor.glyphMargin": false,                       // скрывает точки остановки для отладки
-  //"editor.renderIndentGuides": false                 // скрывает вертикальные линии функции
+  // "editor.guides.highlightActiveIndentation": false, // убирает вертикальные линии
+  // "window.zoomLevel": 0.3 - 0.4,                     // увеличит размер интерфейса
+  // "editor.glyphMargin": false,                       // скрывает точки остановки для отладки
+  // "editor.renderIndentGuides": false                 // скрывает вертикальные линии функции
 }
