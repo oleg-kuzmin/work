@@ -10,3 +10,11 @@ button {
   border: none;
   background-color: inherit;
 }
+
+input {
+  margin: 0; // margin в принципе можно не сбрасывать, т.к. по умолчанию - 0em
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
