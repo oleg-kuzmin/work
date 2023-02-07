@@ -139,7 +139,7 @@
   <input type="file" id="cat-picture" name="cat-picture" accept=".jpg, .jpeg, .png" />
   <button>Прикрепить</button>
 </form>
-<input type="file" name="cat-pic-video" accept="video/*, .jpg, .jpeg, .png">
+<input type="file" name="cat-pic-video" accept="video/*, .jpg, .jpeg, .png" />
 <!-- 'audio/*' — принимает звуковые файлы любого формата. -->
 <!-- 'video/*' — принимает видео любого формата. -->
 <!-- 'image/*' — принимает изображения любого формата. -->
@@ -148,3 +148,32 @@
 <!-- Важно понимать, что атрибут accept лишь показывает пользователю в открывшемся диалоговом окне файлы типов, которые вы указываете в значении атрибута, но не фильтрует их. Проверка типов файлов должна происходить на стороне сервера. Без этого ничто не помешает пользователю прикрепить скучный текстовый документ, хотя вы ждали фото котика. -->
 <!-- Что делать, если у пользователя несколько котов и он хочет показать вам всех? Поможет атрибут multiple. -->
 
+<!--# Стили user agent stylesheet -->
+<style>
+  input[type="text" i] {
+    padding: 1px 2px;
+  }
+  input {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+  }
+</style>
