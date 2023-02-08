@@ -33,18 +33,3 @@
   transform: skew(30deg, 40deg); // (скос по оси X, скос по оси Y)
   // наклонит объект на 30 градусов влево и скосит левую сторону на 40 градусов вверх, а правую на 40 градусов вниз
 }
-
-//* Эффекты перехода
-.transition {
-  transition: background-color 1s linear 2s; // (property | duration | timing-function | delay (можно не указывать))
-  transition-property: background-color; // cообщает, какие именно свойства должны меняться плавно
-  transition-duration: 1s; // время перехода в секундах;
-  transition-timing-function: ease; // непринуждённо
-  transition-timing-function: linear; // линейно
-  transition-timing-function: ease-in; // осторожно
-  transition-timing-function: ease-out; // отпустить
-  transition-timing-function: ease-in-out; // сначала осторожно, потом отпустить
-  transition-timing-function: cubic-bezier(1, 0.2, 0.52, 0.46); //
-  // Если нужно что-то особенное, переходное поведение можно определить кривой Безье — инструментами, подобными http://cubic-bezier.com
-  transition-delay: 2s; // задержка в секундах между изменением состояния элемента и запуском анимации
-}
