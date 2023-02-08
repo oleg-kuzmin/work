@@ -1,0 +1,17 @@
+//# 1 Контейнер, 2 элемента внутри, меняется пустое пространство между элементами посередине
+.flex-container {
+  width: 500px; // Или ничего не писать, если берет от родителя
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.flex-element-1 {
+  min-width: 100px;
+  margin-top: 36px;
+  margin-left: 98px;
+}
+.flex-element-2 {
+  min-width: 149px;
+}
+
+
