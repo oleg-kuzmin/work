@@ -30,40 +30,38 @@ $width-480: 480px;
 
 //# Создать миксины для адаптива (styes/modules/mixins/_mixins.scss)
 @import "./modules/mixins/mixins"; // Подключение
-
-//* 1440
-@mixin desktop-max-width-1440 {
+@mixin desktop-max-width {
   @media screen and (max-width: $desktop-max-width) {
     @content;
   }
 }
-//* 1280
-@mixin desktop-width-1280 {
-  @media screen and (max-width: $desktop-width) {
+@mixin width-1280 {
+  @media screen and (max-width: $width-1280) {
     @content;
   }
 }
-//* 1024
-@mixin tablet-plus-width-1024 {
-  @media screen and (max-width: $tablet-plus-width) {
+@mixin width-1024 {
+  @media screen and (max-width: $width-1024) {
     @content;
   }
 }
-//* 768
-@mixin tablet-width-768 {
-  @media screen and (max-width: $tablet-width) {
+@mixin width-900 {
+  @media screen and (max-width: $width-900) {
     @content;
   }
 }
-//* 600
-@mixin mobile-plus-width-600 {
-  @media screen and (max-width: $mobile-plus-width) {
+@mixin width-800 {
+  @media screen and (max-width: $width-800) {
     @content;
   }
 }
-//*480
-@mixin mobile-width-480 {
-  @media screen and (max-width: $mobile-width) {
+@mixin width-600 {
+  @media screen and (max-width: $width-600) {
+    @content;
+  }
+}
+@mixin width-480 {
+  @media screen and (max-width: $width-480) {
     @content;
   }
 }
