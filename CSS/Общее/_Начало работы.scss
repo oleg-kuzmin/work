@@ -22,6 +22,11 @@ $tablet-width: 768px;
 $mobile-plus: 600px;
 $mobile: 480px;
 
+//# Подключение миксина
+@include desktop {
+	background-color: green;
+}
+
 //# Создать миксины для адаптива (styes/modules/mixins/_mixins.scss)
 @import "./modules/mixins/mixins"; // Подключение
 //* 1440
