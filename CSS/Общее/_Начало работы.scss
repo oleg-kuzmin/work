@@ -29,39 +29,40 @@ $mobile: 480px;
 
 //# Создать миксины для адаптива (styes/modules/mixins/_mixins.scss)
 @import "./modules/mixins/mixins"; // Подключение
+
 //* 1440
-@mixin desktop-max {
+@mixin desktop-max-width-1440 {
   @media screen and (max-width: $desktop-max-width) {
     @content;
   }
 }
 //* 1280
-@mixin desktop {
+@mixin desktop-width-1280 {
   @media screen and (max-width: $desktop-width) {
     @content;
   }
 }
 //* 1024
-@mixin tablet-plus {
+@mixin tablet-plus-width-1024 {
   @media screen and (max-width: $tablet-plus-width) {
     @content;
   }
 }
 //* 768
-@mixin tablet {
-  @media screen and (max-width: $tablet-plus) {
+@mixin tablet-width-768 {
+  @media screen and (max-width: $tablet-width) {
     @content;
   }
 }
 //* 600
-@mixin tablet {
-  @media screen and (max-width: $mobile-plus) {
+@mixin mobile-plus-width-600 {
+  @media screen and (max-width: $mobile-plus-width) {
     @content;
   }
 }
 //*480
-@mixin tablet {
-  @media screen and (max-width: $mobile) {
+@mixin mobile-width-480 {
+  @media screen and (max-width: $mobile-width) {
     @content;
   }
 }
