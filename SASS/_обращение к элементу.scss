@@ -1,4 +1,4 @@
-.header { /* к классу header */
+.class-header { /* к классу header */
   > button { /* к button, вложенному в header */
     color: black;
     &.active { /* к button.active */
