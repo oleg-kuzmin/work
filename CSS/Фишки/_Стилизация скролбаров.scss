@@ -1,0 +1,27 @@
+//# Стилизация скролбаров
+
+//* Стилизация для webkit
+.scroller-container::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+.scroller-container::-webkit-scrollbar-track {
+  background-color: rgb(101, 101, 113);
+}
+.scroller-container::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border: 1px solid orange;
+  border-radius: 50px;
+}
+.scroller-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(251, 251, 251);
+}
+.scroller-container::-webkit-scrollbar-button {
+  background-color: rgb(123, 208, 54);
+}
+
+//* Стилизация firefox
+.scroller-container {
+  scrollbar-color: #458245 #714826;
+  scrollbar-width: thin;
+}
