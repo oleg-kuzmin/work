@@ -45,3 +45,7 @@ audio {
   // Значение свойства display у тега <audio> по умолчанию inline, а значит внизу может появиться отступ, который зависит от высоты строки.
   display: block;
 }
+
+address {
+  font-style: inherit;
+}
