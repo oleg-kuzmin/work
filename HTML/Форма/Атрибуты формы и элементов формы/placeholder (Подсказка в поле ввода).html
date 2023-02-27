@@ -1,0 +1,49 @@
+<!--# PLACEHOLDER (ПОДСКАЗКА В ПОЛЕ ВВОДЕ) (input, textarea) -->
+<!-- Атрибут, который подсказывает пользователю, что именно нужно ввести в поле ввода (обычно это пример слова или фразы). Выглядит это как будто поле уже заполнено, только гораздо бледнее. А ещё значение атрибута исчезает, как только пользователь начинает вводить текст. -->
+
+<!--# ПРИМЕР -->
+<div>
+  <label for="name">Ваше имя:</label>
+  <input type="text" id="name" placeholder="Евгений Онегин" />
+</div>
+<div>
+  <label for="about">О вас:</label>
+  <textarea
+    id="about"
+    placeholder="Томясь в бездействии досуга&#10;Без службы, без жены, без дел,&#10;Ничем заняться не умел"
+  >
+  </textarea>
+</div>
+
+<label for="password">Пароль</label>
+<input type="text" id="password" placeholder="Введите пароль" aria-describedby="hint" />
+<span id="hint">Пароль должен состоять из 8 символов, включая цифры и буквы.</span>
+
+<!--# ОБЩАЯ ИНФОРМАЦИЯ
+- Атрибут работает со следующими типами: text, search, url, telephone, email, password.
+- Внешний вид можно стилизовать при помощи псевдоэлемента ::placeholder.
+- Для браузеров старых версий нужны вендорные префиксы.
+- Если для заполнения поля нужна инструкция, то такую инструкцию лучше оформить отдельно от поля ввода. -->
+
+<!--# ВЕНДОРНЫЕ ПРЕФИКСЫ -->
+<style>
+  input::-webkit-input-placeholder {
+    color: #f0bbd7;
+  }
+
+  input:-moz-placeholder {
+    color: #f0bbd7;
+  }
+
+  input::-moz-placeholder {
+    color: #f0bbd7;
+  }
+
+  input:-ms-input-placeholder {
+    color: #f0bbd7;
+  }
+
+  input::-ms-input-placeholder {
+    color: #f0bbd7;
+  }
+</style>
