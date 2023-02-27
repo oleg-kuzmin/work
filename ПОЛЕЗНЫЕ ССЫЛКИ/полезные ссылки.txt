@@ -90,6 +90,9 @@ https://codepen.io
 // онлайн-аналог Avocode
 https://psdetch.com
 
+// Руководство по доступности веб-сайтов
+https://www.w3.org/WAI/WCAG21/quickref/
+
 // Фигма макеты
 https://www.figma.com/file/DbFAkE2hcBXD0Dw1o9pVyx/Delivery?node-id=1%3A3
 https://www.figma.com/file/zpEryUaC1ranXzf9jAsK2c/Premium-Car-Blog-Template?node-id=0%3A1
