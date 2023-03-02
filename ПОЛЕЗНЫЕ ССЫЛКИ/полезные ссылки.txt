@@ -37,6 +37,9 @@ https://www.cssmatic.com/box-shadow
 https://cssgradient.io/
 https://webgradients.com
 
+// Генератор фавиконок
+https://realfavicongenerator.net/
+
 // Фотографии без авторского права
 https://unsplash.com
 
