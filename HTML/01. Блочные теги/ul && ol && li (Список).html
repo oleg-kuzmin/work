@@ -1,8 +1,8 @@
-<!--# OL (УПОРЯДОЧЕННЫЙ СПИСОК) -->
-<!-- Тег упорядоченного списка <ol> используется для вёрстки перечня однотипных элементов, когда важен их порядок. -->
-
 <!--# UL (НЕУПОРЯДОЧЕННЫЙ СПИСОК) -->
 <!-- Если нам нужно сверстать перечень однотипных элементов, порядок которых неважен -->
+
+<!--# OL (УПОРЯДОЧЕННЫЙ СПИСОК) -->
+<!-- Тег упорядоченного списка <ol> используется для вёрстки перечня однотипных элементов, когда важен их порядок. -->
 
 <!--# LI (ЭЛЕМЕНТ СПИСКА) -->
 <!-- <li> — отдельный элемент списка <ol> или <ul>. -->
@@ -104,5 +104,39 @@
   .poems-item::marker {
     color: #1a5ad7;
     font-size: 1.4em;
+  }
+</style>
+
+<!--# USER AGENT STYLESHEET -->
+<style>
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+  ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+  ::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
   }
 </style>
