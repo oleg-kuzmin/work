@@ -9,9 +9,9 @@ CSS Navigation v1.13.3 pucelle                          // для удобног
 Project Manager v12.7.0 Alessandro Fragnani             // для нескольких проектов
 Prettier - Code formatter v9.8.0 Prettier               // форматирование кода Js
 W3C Web Validator v1.2.2 Celian Riboulet                // проверка валидности
-Quokka.js v1.0.497 Wallaby.js                           // Выполнит JS code прямо в редакторе
+Quokka.js v1.0.497 Wallaby.js                           // выполнит JS code прямо в редакторе
 Auto Complete Tag                                       // автоматическое редактирование и закрытие тегов
-
+HTMLHint v1.0.4                                         // подсветка ошибок в html
 
 Дополнительно:
 Vscode Google Translate v1.4.13 funkyremi               // переводчик
@@ -20,5 +20,5 @@ html to JSX                                             // преобразов�
 
 ***
 EditorConfig for VS Code v0.16.4
-HTMLHint v1.0.4
+
 GitLens — Git supercharged v13.2.0
