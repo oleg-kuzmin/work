@@ -5,14 +5,7 @@
   visibility: hidden; // отображение (скрыто)
 
   //* ГРАНИЦА
-  border-width: 1px; // Граница (толщина)
-  border-style: solid; // Граница (начертание - сплошная)
-  border-style: dashed; // Граница (начертание - пунктирная)
-  border-style: dotted; // Граница (начертание - точками)
-  border-style: double; // Граница (начертание - двойная)
-  border-color: #000; // Граница (цвет)
-  border: 1px solid red; // Граница (толщина начертание цвет)
-  border-radius: 1px; // Граница (скругление углов)
+
   outline-color: black; // Внутренняя граница (цвет)
   outline-style: dashed; // Внутренняя граница (начертание)
   outline-width: 3px; // Внутренняя граница (толщина)
