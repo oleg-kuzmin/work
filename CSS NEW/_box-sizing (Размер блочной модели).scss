@@ -3,17 +3,11 @@
 
 //# ПРИМЕР
 .element {
-  box-sizing: content-box; // (по умолчанию)
-  box-sizing: border-box;
+  box-sizing: content-box; // border, padding расширяют элемент (по умолчанию)
+  box-sizing: border-box; // border, padding отрисуются внутрь
 }
 
 //# ОБЩАЯ ИНФОРМАЦИЯ
 /* Свойство нельзя анимировать при помощи transition.
 - Свойство не наследуется.
 - При любом значении свойства внешние отступы (margin) в расчёт не берутся.*/
-
-//* box-sizing: content-box
-// Border, padding расширяют элемент.
-
-//* box-sizing: border-box
-// Border, padding отрисуются внутрь.
