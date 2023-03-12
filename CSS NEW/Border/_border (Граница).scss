@@ -4,6 +4,7 @@
 //# ПРИМЕР
 .element {
   border: 5px solid #ed6742; // граница со всех сторон
+  //* граница для каждой стороны по отдельности
   border-top: 5px solid #ed6742; // рамка верхней границы
   border-right: 5px solid #ed6742; // рамка правой границы
   border-bottom: 5px solid #ed6742; // рамка нижней границы
@@ -36,12 +37,12 @@
   border-style: dashed; // пунктирная
   border-style: dotted; // точками
   border-style: double; // двойная
-  //* Граница по отдельности блока
+  //* граница для каждой стороны по отдельности
   border-bottom-style: solid;
   border-left-style: solid;
   border-right-style: solid;
   border-top-style: solid;
-  //* Редкие значения:
+  //* редкие значения
   border-style: groove; // рамка объёмная, с тенями от источника света, находящегося в верхнем левом наружном углу
   border-style: ridge; // рамка объёмная, с тенями от источника света, находящегося в нижнем правом внешнем углу
   border-style: inset; // рамка с тенями от источника света, находящегося в нижнем правом внутреннем углу
