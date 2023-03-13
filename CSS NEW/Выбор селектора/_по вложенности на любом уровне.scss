@@ -1,12 +1,12 @@
-//# Выбор селектора по вложенности
+//# ВЫБОР СЕЛЕКТОРА ПО ВЛОЖЕННОСТИ НА ЛЮБОМ УРОВНЕ
 div p {
   // тег <p>, вложенный в <div>
   font-size: 14px;
 }
-div .class-name {
+div .class {
   // "class-name", вложенный в <div>
   font-size: 14px;
 }
-.class-name .class-name {
+.class .class {
   font-size: 14px;
 }
