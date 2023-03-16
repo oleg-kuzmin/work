@@ -99,6 +99,9 @@ https://www.w3.org/WAI/WCAG21/quickref/
 // Код-стайл
 https://codeguide.maxgraph.ru/
 
+// Все шорткаты
+https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties
+
 // Фигма макеты
 https://www.figma.com/file/DbFAkE2hcBXD0Dw1o9pVyx/Delivery?node-id=1%3A3
 https://www.figma.com/file/zpEryUaC1ranXzf9jAsK2c/Premium-Car-Blog-Template?node-id=0%3A1

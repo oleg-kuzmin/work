@@ -1,0 +1,35 @@
+// Ось X: inline-size / Ось Y: block-size
+
+//                      margin-block-start
+//                      border-block-start
+//                      padding-block-start
+// margin-inline-start                      margin-inline-end
+// border-inline-start                      border-inline-end
+// padding-inline-start                     padding-inline-end
+//                      padding-block-end
+//                      border-block-end
+//                      margin-block-end
+
+//# MARGIN
+.element {
+  margin-block-start: 10px; // margin-top
+  margin-inline-start: 10px; // margin-left
+  margin-inline-end: 10px; // margin-right
+  margin-block-end: 10px; // margin-bottom
+}
+
+//# BORDER
+.element {
+  border-block-start: 10px; // border-top
+  border-inline-start: 10px; // border-left
+  border-inline-end: 10px; // border-right
+  border-block-end: 10px; // border-bottom
+}
+
+//# PADDING
+.element {
+  padding-block-start: 10px; // padding-top
+  padding-inline-start: 10px; // padding-left
+  padding-inline-end: 10px; // padding-right
+  padding-block-end: 10px; // padding-bottom
+}
