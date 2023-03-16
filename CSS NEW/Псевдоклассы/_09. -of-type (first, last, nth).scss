@@ -1,11 +1,21 @@
-//# LAST-OF-TYPE (ПОСЛЕДНИЙ ЭЛЕМЕНТ)
+//# -OF-TYPE
 // Псевдоклассы -of-type позволяют выбирать из группы элементы одного уровня вложенности на основании их порядка.
+
 // :first-of-type — первый;
-// :nth-of-type(n-число) — каждый n-й элемент;
 // :last-of-type — последний;
+// :nth-of-type(n-число) — каждый n-й элемент;
 // :nth-last-of-type(n-число) — каждый n-й элемент с отсчётом «с конца».
 
 //# ПРИМЕР
+.element:first-of-type {
+  color: #ffffff;
+}
 .element:last-of-type {
+  color: #ffffff;
+}
+.element:nth-of-type(1) {
+  color: #ffffff;
+}
+.element:nth-last-of-type(1) {
   color: #ffffff;
 }
