@@ -1,0 +1,52 @@
+//# HOVER (НАВЕДЕНИЕ КУРСОРА)
+// Оживляем элементы, реагируем на наведение курсора.
+
+//# ПРИМЕР
+.link {
+  color: #000;
+  text-decoration: none;
+}
+.link:hover {
+  color: pink;
+  text-decoration: underline;
+}
+.link::before:hover {
+  // Стили
+}
+
+//* исключаем тач-устройства, но не полностью
+.link {
+  color: #ffffff;
+  text-decoration-color: #2e9aff;
+  transition: background-color 0.5s linear;
+}
+// Есть возможность навести указатель на элемент
+@media (any-hover: hover) {
+  .link:hover {
+    background-color: #2e9aff;
+    transition: background-color 0.1s linear;
+  }
+}
+
+//* для плавности нужно вешать transition на сам элемент, а необходимое свойство на hover
+.resources__logo {
+  transition: opacity 0.1s ease-in;
+  transition: transform 0.3s ease-in;
+}
+.resources__logo:hover {
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+
+//* появляется быстро, пропадает медленно
+.link {
+  color: #ffffff;
+  text-decoration-color: #2e9aff;
+  // Скорость исчезновения фонового цвета
+  transition: background-color 0.5s linear;
+}
+.link:hover {
+  background-color: #2e9aff;
+  // Скорость изменения фонового цвета на голубой
+  transition: background-color 0.1s linear;
+}

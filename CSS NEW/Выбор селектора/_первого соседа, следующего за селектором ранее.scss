@@ -1,5 +1,10 @@
 //# ВЫБОР СЕЛЕКТОРА ПЕРВОГО СОСЕДА, СЛЕДУЮЩЕГО ЗА СЕЛЕКТОРОМ РАНЕЕ
+//* первый тег <span> после тега <input> с type="checkbox"
 input[type="checkbox"] + span {
-  // первый тег <span> после тега <input> с type="checkbox"
+  font-size: 14px;
+}
+
+//* первый тег <span> после тега <input> с type="checkbox" (если они оба имеют общего родителя)
+input[type="checkbox"] ~ span {
   font-size: 14px;
 }
