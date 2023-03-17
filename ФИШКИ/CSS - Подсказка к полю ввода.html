@@ -1,0 +1,27 @@
+<form>
+  <div class="form-row">
+    <label class="label-required" for="first_name">Имя</label>
+    <input type="text" id="first_name" required />
+    <span class="hint">Обязательно к заполнению</span>
+  </div>
+  <div class="form-row">
+    <label for="last_name">Фамилия</label>
+    <input type="text" id="last_name" />
+    <span class="hint">Необязательно</span>
+  </div>
+</form>
+
+<style>
+  .label-required::after {
+    content: "*";
+    font-size: 0.7em;
+  }
+
+  .hint {
+    color: #ffffff;
+  }
+
+  input:required + .hint {
+    color: #2e9aff;
+  }
+</style>

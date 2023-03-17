@@ -1,0 +1,9 @@
+//# :REQUIRED (ОБЯЗАТЕЛЬНЫЕ ПОЛЯ)
+// Псевдокласс :required, дополняющий основной селектор, поможет выбрать элементы <input>, <textarea> или <select>, у которых задан атрибут required.
+
+//# ПРИМЕР
+input:required {
+  border-width: 2px;
+  border-color: #FF8630;
+  background-color: rgba(255, 134, 48, 0.1);
+}
