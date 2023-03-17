@@ -3,3 +3,30 @@
 <!--# META -->
 <!-- В <meta>, помимо стандартных метаданных, передаются всякие специальные. Например, есть такой браузер, как Safari: он очень любит подстраивать номера телефонов в какой-то удобный для себя вид. Чтобы отключить это своеволие, нужен отдельный метатег: -->
 <meta name="format-detection" content="telephone=no">
+
+<!--# Как кросбраузерно скрыть элемент -->
+<style>
+  .hide-element {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+  }
+</style>
+
+<!--# Кросбраузерный placeholder -->
+<style>
+  input::-webkit-input-placeholder {
+    color: #c0392b;
+  }
+  input::-moz-placeholder {
+    color: #c0392b;
+  }
+  input::-ms-input-placeholder {
+    color: #c0392b;
+  }
+  input::placeholder {
+    color: #c0392b;
+  }
+</style>
