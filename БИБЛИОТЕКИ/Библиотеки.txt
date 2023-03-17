@@ -4,3 +4,7 @@ prism.js.
 
 # для работы с cookie
 https://www.npmjs.com/package/js-cookie
+
+# слайдер
+https://fotorama.io/#f55e6755-198a-408d-8e82-a50370527aed
+
