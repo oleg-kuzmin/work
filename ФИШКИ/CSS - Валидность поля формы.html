@@ -1,0 +1,30 @@
+<form>
+  <div class="form-row">
+    <label for="first-name">Имя:</label>
+    <input type="text" name="first-name" id="first-name" placeholder="Например, Пётр" required />
+    <span class="validity-icon"></span>
+  </div>
+  <div class="form-row">
+    <label for="email">E-mail:</label>
+    <input type="email" name="email" id="email" placeholder="Например, mymail@gmail.com" />
+    <span class="validity-icon"></span>
+  </div>
+  <div class="form-row">
+    <button type="submit">Отправить</button>
+  </div>
+</form>
+
+<style>
+  input:invalid {
+    border: 2px solid red;
+  }
+
+  input:invalid:placeholder-shown {
+    border-color: black;
+  }
+
+  input:invalid:placeholder-shown + .validity-icon::before,
+  input:valid:placeholder-shown + .validity-icon::before {
+    visibility: hidden;
+  }
+</style>
