@@ -1,0 +1,29 @@
+<header class="header">
+  <h1 class="header__title">Good evening, Clarice.</h1>
+</header>
+
+<style>
+  .header {
+    background: #999999 url("background.svg") no-repeat center / cover;
+    position: relative;
+    z-index: 0;
+  }
+
+  .header__title {
+    color: #ffffff;
+    font-size: 82px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 0.7);
+    z-index: -1;
+  }
+</style>
