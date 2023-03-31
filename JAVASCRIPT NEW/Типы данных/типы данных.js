@@ -9,10 +9,3 @@
 7) символ           - symbol (для уникальных идентификаторов.)
 8) объект           - object (для более сложных структур данных.)
 */
-
-//# typeof - определяет тип данных и возвращает значения
-// Оператор typeof некорректно определяет тип у null и возвращает значение 'object' по историческим причинам.
-console.log(typeof null); // object
-
-// С undefined всё куда лучше и typeof(undefined) выдаст нам 'undefined'.
-console.log(typeof undefined); // undefined
