@@ -49,3 +49,5 @@ console.log(Boolean("Привет!")); // true
 console.log(Boolean(""));        // false
 console.log(Boolean("0"));       // true
 console.log(Boolean(" "));       // пробел это тоже true (любая непустая строка это true)
+console.log(Boolean([]));        // true
+console.log(Boolean({}));        // true
