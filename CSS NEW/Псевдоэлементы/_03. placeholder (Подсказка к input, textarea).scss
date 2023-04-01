@@ -1,0 +1,21 @@
+//# placeholder (Подсказка к input, textarea)
+// Он позволяет стилизовать подсказку, которая выводится в поле ввода текста (<input> <textarea>). Текст подсказки задаётся при помощи атрибута placeholder.
+
+//# пример
+input::placeholder {
+  color: #2e9aff;
+}
+
+//# кросбраузерный вариант псевдоэлемента placeholder
+input::-webkit-input-placeholder {
+  color: #c0392b;
+}
+input::-moz-placeholder {
+  color: #c0392b;
+}
+input::-ms-input-placeholder {
+  color: #c0392b;
+}
+input::placeholder {
+  color: #c0392b;
+}
