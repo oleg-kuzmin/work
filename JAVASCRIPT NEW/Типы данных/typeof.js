@@ -19,3 +19,6 @@ console.log(typeof NaN); // "number"
 
 // хоть такого типа и нет
 console.log(typeof function () {}); // "function"
+
+// infinite (бесконечность тоже является числом)
+console.log(typeof Infinity); // number

@@ -16,12 +16,19 @@ const octal = 0o77; // 63
 const hexadecimal = 0xff; // 255
 
 //* бесконечность Infinity
-console.log(5 / 0); // Infinity
-console.log(-3 / 0); // -Infinity
+console.log(5 / 0); // деление на 0 - это бесконечность (Infinity)
+console.log(-3 / 0); // если разделить на 0 отрицательное число получим минус бесконечность (-Infinity)
+console.log(Infinity - 1000000000); // бесконечность минус что угодно — бесконечность (Infinity)
+console.log(Infinity + -Infinity); // NaN
+console.log(Infinity * 0); // NaN
+console.log(Infinity * -1); // -Infinity
+console.log(Infinity * -Infinity); // -Infinity
 
 //* не число (not a number) NaN
 const result = NaN;
 console.log(Number.isNaN(result)); // true
+console.log(typeof NaN); // "number"
+console.log(NaN === NaN); // false
 
 //* неточные вычисления
 console.log(0.2 + 0.7); // 0.8999999999999999
