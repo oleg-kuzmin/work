@@ -4,6 +4,8 @@
 //# пример
 const firstElement = document.querySelector(".class"); // поиск по классу
 const secondElement = document.querySelector("#id"); // поиск по id
+const ulElement = document.querySelector("ul")[0]; // ищем ul
+const lastLi = ulElement.querySelector("li:last-child"); // последний li
 
 //# общая информация
 /* Метод принимает один параметр — CSS-селектор в виде строки. Если передан не CSS-селектор, то система выбросит ошибку.
