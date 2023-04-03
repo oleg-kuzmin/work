@@ -1,18 +1,12 @@
-//# dataset
+//# .dataset
 // Свойство dataset позволяет считывать или устанавливать любые дата-атрибуты на HTML-элементе.
 
 //# пример
 //* дата-атрибут (получение)
 <ul>
-  <li data-id="1541" data-episode="1">
-    Дарт Мол
-  </li>
-  <li data-id="9434" data-episode="4">
-    Дарт Вейдер
-  </li>
-  <li data-id="5549" data-episode="4">
-    Дарт Сидиус
-  </li>
+  <li data-id="1541" data-episode="1">Дарт Мол</li>
+  <li data-id="9434" data-episode="4">Дарт Вейдер</li>
+  <li data-id="5549" data-episode="4">Дарт Сидиус</li>
 </ul>;
 const items = document.querySelectorAll("li");
 const firstItem = items[0];
