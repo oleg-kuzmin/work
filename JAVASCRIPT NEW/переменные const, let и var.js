@@ -14,10 +14,10 @@ obj.a = 10;
 console.log(obj); // { a: 10 }
 
 //* Имена констант (переменные, которые не меняют своё значение) принято писать, используя screaming_snake_case. В данной нотации все слова пишутся заглавными буквами, а разделителем является символ _.
-const BASE_URL = "https://doka.guide";
+const BASE_URL = 'https://doka.guide';
 const PORT = 3000;
 const UNAUTHORIZED_CODE = 401;
-const COLOR_ORANGE = "#FF7F00";
+const COLOR_ORANGE = '#FF7F00';
 
 //# let
 //* Значение в переменной, созданной через let, можно изменять.
