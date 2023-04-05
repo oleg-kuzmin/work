@@ -1,13 +1,13 @@
 //# приоритет операторов
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
-// 19 скобки                    (value)
-// 16 постфиксный инкремент     value++ (увеличивает переменную на 1, аналогично value = value + 1, возвращает старое значение)
-// 16 постфиксный декремент     value-- (уменьшает переменную на 1, аналогично value = value - 1, возвращает старое значение)
-// 15 префиксный инкремент      ++value (увеличивает переменную на 1, аналогично value + 1 = value, возвращает новое значение)
-// 15 префиксный декремент      --value (уменьшает переменную на 1, аналогично value - 1 = value, возвращает новое значение)
-// 15	унарный плюс	            + (преобразует в число)
+// 19 скобки                    (VALUE)
+// 16 постфиксный инкремент     VALUE++ (увеличивает переменную на 1, аналогично value = value + 1, возвращает старое значение)
+// 16 постфиксный декремент     VALUE-- (уменьшает переменную на 1, аналогично value = value - 1, возвращает старое значение)
+// 15 префиксный инкремент      ++VALUE (увеличивает переменную на 1, аналогично value + 1 = value, возвращает новое значение)
+// 15 префиксный декремент      --VALUE (уменьшает переменную на 1, аналогично value - 1 = value, возвращает новое значение)
+// 15	унарный плюс	            + (преобразует нечисловые значения в число)
 // 15	унарный минус	            - (меняет знак числа на противоположный)
-// 15 логическое отрицание      !value
+// 15 логическое отрицание      !VALUE
 // 14	возведение в степень	    **
 // 13	умножение	                *
 // 13	деление	                  /
@@ -98,38 +98,38 @@ console.log(7 >= 6); // true (больше или равно)
 console.log(7 <= 6); // false (меньше или равно)
 console.log(7 === 6); // false (проверка на равенство)
 console.log(7 !== 6); // true (проверка на неравенство)
-console.log("казнить" === "помиловать"); // false (это разные строки)
-console.log("казнить" !== "помиловать"); // true (это разные строки)
-console.log("2" !== 2); // true (строка "2" не равна числу 2)
-console.log("Я" > "А"); // true (строки сравниваются посимвольно)
-console.log("Коты" > "Кода"); // true (строки сравниваются посимвольно)
-console.log("Сонный" > "Сон"); // true (строки сравниваются посимвольно)
+console.log('казнить' === 'помиловать'); // false (это разные строки)
+console.log('казнить' !== 'помиловать'); // true (это разные строки)
+console.log('2' !== 2); // true (строка "2" не равна числу 2)
+console.log('Я' > 'А'); // true (строки сравниваются посимвольно)
+console.log('Коты' > 'Кода'); // true (строки сравниваются посимвольно)
+console.log('Сонный' > 'Сон'); // true (строки сравниваются посимвольно)
 console.log(+true); // 1
-console.log(+""); // 0
+console.log(+''); // 0
 console.log(1 || 0); // 1
-console.log(true || "no matter what"); // true
+console.log(true || 'no matter what'); // true
 console.log(null || 1); // 1 (первое истинное значение)
 console.log(null || 0 || 1); // 1 (первое истинное значение)
 console.log(undefined || null || 0); // 0 (поскольку все ложно, возвращается последнее значение)
 console.log(1 && 0); // 0
 console.log(1 && 5); // 5
 console.log(null && 5); // null
-console.log(0 && "no matter what"); // 0
+console.log(0 && 'no matter what'); // 0
 console.log(!true); // false
 console.log(!0); // true
-console.log(!!"non-empty string"); // true
+console.log(!!'non-empty string'); // true
 console.log(!!null); // false
-console.log("" + 1 + 0); // "10"
-console.log("" - 1 + 0); // -1
+console.log('' + 1 + 0); // "10"
+console.log('' - 1 + 0); // -1
 console.log(true + false); // 1
-console.log(6 / "3"); // 2
-console.log("2" * "3"); // 6
-console.log(4 + 5 + "px"); // "9px"
-console.log("$" + 4 + 5); // "$45"
-console.log("4" - 2); // 2
-console.log("4px" - 2); // NaN
-console.log("  -9  " + 5); // "  -9  5"
-console.log("  -9  " - 5); // -14
+console.log(6 / '3'); // 2
+console.log('2' * '3'); // 6
+console.log(4 + 5 + 'px'); // "9px"
+console.log('$' + 4 + 5); // "$45"
+console.log('4' - 2); // 2
+console.log('4px' - 2); // NaN
+console.log('  -9  ' + 5); // "  -9  5"
+console.log('  -9  ' - 5); // -14
 console.log(null + 1); // 1
 console.log(undefined + 1); // NaN
-console.log(" \t \n" - 2); // -2
+console.log(' \t \n' - 2); // -2
