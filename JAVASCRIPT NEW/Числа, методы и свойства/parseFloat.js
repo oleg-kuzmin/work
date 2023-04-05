@@ -5,9 +5,9 @@
 - Если встречается вторая точка, то остаток строки так же отбрасывается.*/
 
 //# пример
-parseFloat('12.12'); // 12.12
-parseFloat('12'); // 12
-parseFloat('  12.42'); // 12.42, пробелы в начале игнорируются
-parseFloat('absa'); // NaN
-parseFloat('123.123hello'); // 123.123
-parseFloat('123.123.569'); // 123.123
+console.log(parseFloat('12.12')); // 12.12
+console.log(parseFloat('12')); // 12
+console.log(parseFloat('  12.42')); // 12.42, пробелы в начале игнорируются
+console.log(parseFloat('absa')); // NaN
+console.log(parseFloat('123.123hello')); // 123.123
+console.log(parseFloat('123.456.789')); // 123.456
