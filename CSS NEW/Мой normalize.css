@@ -1,0 +1,4 @@
+/* по умолчанию у body margin 8px */
+body {
+  margin: 0;
+}
