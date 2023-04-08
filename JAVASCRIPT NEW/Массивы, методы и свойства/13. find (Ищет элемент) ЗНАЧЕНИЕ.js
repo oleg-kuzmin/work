@@ -1,5 +1,5 @@
-//# .some()
-// Метод some проверяет, есть ли в массиве хотя бы один элемент, который соответствует определённому правилу. Колбэк с этим правилом проверяет каждый элемент и возвращает true или false.
+//# .find()
+// Метод find очень похож на some. Единственное отличие: some возвращает булево значение, а find — значение элемента, на котором он завершил проверку.
 
 //# Аргументы колбек-функции
 //* Аргумент 1. Текущий элемент массива
@@ -12,14 +12,15 @@
 // Исходный массив как аргумент пригодится, когда нужно обратиться к свойствам этого исходного массива.
 
 //# пример
-const haystack = ['сено', 'сено', 'сено', 'сено', 'лошадь', 'сено', 'сено'];
+const birds = ['Ворона', 'Чёрно-белая ворона', 'Белая ворона', 'Ворона обыкновенная'];
 
-const needle = haystack.some(function (item) {
-  return item === 'иголка';
+const includesCrow = birds.some(function (bird) {
+  return bird.includes('ворона');
 });
-console.log(needle); // false
 
-const horse = haystack.some(function (item) {
-  return item === 'лошадь';
+const crow = birds.find(function (bird) {
+  return bird.includes('ворона');
 });
-console.log(needle); // true
+
+console.log(includesCrow); // true
+console.log(crow); // "Чёрно-белая ворона"
