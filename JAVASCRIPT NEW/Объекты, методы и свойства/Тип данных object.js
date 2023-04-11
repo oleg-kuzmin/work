@@ -30,6 +30,10 @@ console.log(`На полке стоит «${book.title}»`);
 //* через квадратные скобки (если ключ содержит пробел, то обращаться к нему возможно только так)
 console.log(`На полке стоит «${book["title"]}»`);
 
+//* ключ-переменная
+const key = 'one';
+console.log(obj[key]); // 1
+
 //* если прочитать свойство, которого нет у объекта, то вернётся undefined
 console.log(book.signature); // undefined
 
