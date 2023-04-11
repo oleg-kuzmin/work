@@ -1,7 +1,7 @@
 //# function declaration
 // Объявленную функцию можно вызвать до объявления, функциональное выражение — нельзя.
 
-
+//# пример
 //* может принимать аргументы
 function showMessage(user, message) {
   console.log(user + ": " + message);

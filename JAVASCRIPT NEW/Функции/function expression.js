@@ -1,6 +1,7 @@
 //# function expression
 // Объявленную функцию можно вызвать до объявления, функциональное выражение — нельзя.
 
+//# пример
 const hello = function (name) {
   console.log(`Привет ${name}`);
 };
@@ -11,6 +12,9 @@ const boatDeparture = (eater, food) => {
   console.log(`через речку в лодке поплывут ${eater} и ${food}`);
 };
 boatDeparture('козёл', 'капуста');
+
+//* использование параметра по умолчанию (text = 'текст не добавлен')
+const showMessage = (from, text = 'текст не добавлен') => console.log(from + ': ' + text);
 
 //* короткий return
 // Если директива return — единственное действие в теле стрелочной функции, можно опустить и директиву return, и фигурные скобки
