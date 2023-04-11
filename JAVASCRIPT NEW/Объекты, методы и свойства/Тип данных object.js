@@ -12,16 +12,10 @@ const сat = {
     name: "мячик",
     size: "маленький",
   },
-  meow: function () {
-    console.log("мяу мяу");
-  },
-  meow() {
+  meow() { // новый синтаксис метода
     console.log("мяу мяу");
   },
 };
-
-//* конструктор Object
-const book = new Object({ title: "Война и мир", author: "Лев Толстой" });
 
 //# чтение свойств
 //* через точку
@@ -37,19 +31,7 @@ console.log(obj[key]); // 1
 //* если прочитать свойство, которого нет у объекта, то вернётся undefined
 console.log(book.signature); // undefined
 
-//# удаление свойств
-// Для удаления свойств используют оператор delete
-delete book.usersReading;
-delete book["isFinished"];
-
 //# новый синтаксис
-//* объявление метода
-const myCat = {
-  meow() {
-    console.log("мяу мяу");
-  },
-};
-
 //* переменная со значением, и вы хотите создать свойство с тем же именем
 const firstName = "Иван";
 const username = "Killer3000";
@@ -57,14 +39,6 @@ const user = {
   firstName,
   username,
 };
-
-//* проверка, есть ли свойство у объекта (оператор in)
-const newUser = {
-  firstName: "Марина",
-  username: "zloyDuh",
-};
-console.log("firstName" in newUser); // true
-console.log("age" in newUser); // false
 
 //* поверхностное копирование (свойства первого уровня вложенности)
 const superUser = {
