@@ -1,0 +1,4 @@
+# синтаксис: mv ****** (что переместить) /****** (куда переместить)
+
+mv index.html /src
+mv index.html style.css script.js /src

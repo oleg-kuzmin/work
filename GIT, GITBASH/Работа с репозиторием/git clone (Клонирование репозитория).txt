@@ -1,0 +1,8 @@
+# HTTPS: этот вариант возможен только если репозиторий публичный, при push нужен логин и пароль
+
+git clone https://github.com/oleg-kuzmin/how-to-learn.git
+
+*****************************************************************
+# SSH: клонирование с использованием ключа
+
+git clone git@github.com:oleg-kuzmin/work.git
