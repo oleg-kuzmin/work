@@ -17,14 +17,14 @@
   text-decoration-style: wavy;   // волнистая линия
 
   //* Тип декоративной линии
-  text-decoration-line: none; // декорация отсутствует (по умолчанию)
-  text-decoration-line: underline; // подчеркнутый текст
-  text-decoration-line: overline; // линии над текстом
+  text-decoration-line: none;         // декорация отсутствует (по умолчанию)
+  text-decoration-line: underline;    // подчеркнутый текст
+  text-decoration-line: overline;     // линии над текстом
   text-decoration-line: line-through; // зачеркнутый текст
 
   //* Цвет декоративной линии
   text-decoration-color: currentColor; // цвет такой же, что и у текста (по умолчанию)
-  text-decoration-color: red; // цвет красный
+  text-decoration-color: red;        // цвет красный
 }
 
 //# общая информация
