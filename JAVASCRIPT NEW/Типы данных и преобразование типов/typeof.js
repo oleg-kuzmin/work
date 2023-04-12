@@ -1,27 +1,25 @@
 //# typeof - определяет тип данных и возвращает строку с именем типа
+//* проверка на массив не получится: делается через Array.isArray()
 const arr = [1, 2, 3];
-console.log(typeof arr); // "object"
+console.log(typeof arr); // object
 
-// работает без скобок, но их ставят, когда нужно определить тип целого выражения
-console.log(typeof (10 + 5)); // "number"
+//* проверка на функцию: работает
+function multiply(a, b) {
+  return a * b;
+}
+console.log(typeof multiply); // function
 
-// оператор typeof некорректно определяет тип у null и возвращает значение 'object'. Это официально признанная ошибка.
+//* проверка на null: официально признанная ошибка
 console.log(typeof null); // object
 
-// с undefined всё куда лучше и typeof(undefined) выдаст нам 'undefined'.
+//* проверка на undefined: работает
 console.log(typeof undefined); // undefined
 
-// функции относятся к объектному типу. Но typeof обрабатывает их особым образом, возвращая "function".
-console.log(typeof alert); // "function" (3)
+//* проверка на NaN: делается через Number.isNaN()
+console.log(typeof NaN); // number
 
-// Math — это встроенный объект, который предоставляет математические операции и константы.
-console.log(typeof Math); // "object" (1)
-
-// "Not a Number" имеет тип данных "number".
-console.log(typeof NaN); // "number"
-
-// хоть такого типа и нет
-console.log(typeof function () {}); // "function"
-
-// infinite (бесконечность тоже является числом)
+//* проверка на Infinity: делается через Number.isFinite()
 console.log(typeof Infinity); // number
+
+//* проверка выражения: нужны скобки
+console.log(typeof (10 + 5)); // "number"
