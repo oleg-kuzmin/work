@@ -16,6 +16,9 @@ playlist.addEventListener('click', function (evt) {
   }
 });
 
+//* evt.type
+// в свойстве хранится тип события
+
 //* evt.currentTarget
 // evt.target хранит элемент, где возникло событие
 // evt.currentTarget — элемент, где сработал обработчик
