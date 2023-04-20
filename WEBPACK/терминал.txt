@@ -6,4 +6,3 @@ npx create-react-app ****** --template typescript
 
 npm install -g sass
   # установка sass
-
