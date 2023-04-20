@@ -1,5 +1,6 @@
 const path = require('path'); // подключаем path к конфигу вебпак (утилита, которая превращает относительный путь в абсолютный)
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // подключаем плагин html-webpack-plugin (для работы с html)
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // подключаем плагин clean-webpack-plugin (для очистки dist)
 
 // module.exports — это синтаксис экспорта в Node.js
 module.exports = {
@@ -42,5 +43,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html', // путь к файлу index.html
     }),
+    //# настройка clean-webpack-plugin
+    new CleanWebpackPlugin(),
   ],
 };

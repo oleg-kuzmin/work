@@ -1,0 +1,8 @@
+# установка плагина для работы с html
+
+npm i clean-webpack-plugin --save-dev
+
+# изменения в package.json:
+"devDependencies": {
+  "clean-webpack-plugin": "^4.0.0",
+}
