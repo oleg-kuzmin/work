@@ -1,0 +1,8 @@
+# установка Babel
+
+npm i @babel/core --save-dev
+
+# изменения в package.json:
+"devDependencies": {
+  "@babel/core": "^7.21.4",
+}
