@@ -2,18 +2,33 @@
   "name": "my project",     // название проекта
   "version": "1.0.0",       // версия
   "description": "",        // описание
-  "main": "index.js",       // стартовый файл js
+  "main": "index.js",       // точка входа (по умолчанию это файл index.js внутри папки src) (точка выхода: файл main.js в папке dist)
 
   "scripts": {              // скрипты
-    "build": "webpack"      // запуск npm run build (Cкомандовали Node.js найти в папке node_modules модуль webpack и запустить его)
+    "build": "rd /s /q dist && webpack --mode production",
+    // запуск npm run build:
+    // rd /s /q dist (удаление предыдущей папки) windows
+    // rm -rf dist (удаление предыдущей папки) mac
+    // webpack (найти в папке node_modules модуль webpack и запустить его)
+    // --mode production (флаг режима: mode flag)
+
+    "dev": "webpack serve --mode development"
+    // запуск npm run dev:
+    // webpack (найти в папке node_modules модуль webpack и запустить его в режим сервера)
+
+    // отключить выполнение сервера: Ctrl + C (Windows)
+    // чтобы создать новую вкладку: Cmd + T (macOS)
+    // чтобы создать новую вкладку: Ctrl +Shift + T (Linux)
   },
 
   "author": "Oleg Kuzmin",  // автор
   "license": "",            // лицензия
+  "keywords": [],           // ключевые слова
 
-  "devDependencies": {      // зависимости (для разработки)
-    "webpack": "^5.80.0",   // webpack
-    "webpack-cli": "^5.0.1" // webpack-cli
+  "devDependencies": {              // зависимости (для разработки)
+    "webpack": "^5.80.0",           // webpack
+    "webpack-cli": "^5.0.1"         // webpack-cli
+    "webpack-dev-server": "^4.13.3" // webpack-dev-server
   }
 }
 
