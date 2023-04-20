@@ -4,5 +4,5 @@ npm i webpack --save-dev
 
 # изменения в package.json:
 "devDependencies": {
-  "webpack": "^5.80.0"
+  "webpack": "^5.80.0",
 }

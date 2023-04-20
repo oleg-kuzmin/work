@@ -1,0 +1,8 @@
+# установка библиотеки полифилов
+
+npm i core-js --save
+
+# изменения в package.json:
+"dependencies": {
+  "core-js": "^3.30.1",
+}

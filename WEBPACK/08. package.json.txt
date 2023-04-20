@@ -26,11 +26,16 @@
   "keywords": [],           // ключевые слова
 
   "devDependencies": {              // зависимости (для разработки)
-    "@babel/core": "^7.21.4",       // babel библиотека
-    "@babel/preset-env": "^7.21.4", // babel пресет для перевода кода
+    "@babel/core": "^7.21.4",       // babel-core
+    "@babel/preset-env": "^7.21.4", // babel-preset-env
+    "babel-loader": "^9.1.2",       // babel-loader
     "webpack": "^5.80.0",           // webpack
     "webpack-cli": "^5.0.1"         // webpack-cli
     "webpack-dev-server": "^4.13.3" // webpack-dev-server
+  },
+
+  "dependencies": {                 // зависимости (для продакшна)
+    "core-js": "^3.30.1"            // core-js
   }
 }
 

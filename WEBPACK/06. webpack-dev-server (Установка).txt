@@ -4,5 +4,5 @@ npm i webpack-dev-server --save-dev
 
 # изменения в package.json:
 "devDependencies": {
-  "webpack-dev-server": "^4.13.3"
+  "webpack-dev-server": "^4.13.3",
 }

@@ -1,0 +1,8 @@
+# установка пакета, который позволяет подключить Babel к Webpack
+
+npm i babel-loader --save-dev
+
+# изменения в package.json:
+"devDependencies": {
+  "babel-loader": "^9.1.2",
+}
