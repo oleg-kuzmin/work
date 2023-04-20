@@ -1,0 +1,19 @@
+{
+  "name": "my project",     // название проекта
+  "version": "1.0.0",       // версия
+  "description": "",        // описание
+  "main": "index.js",       // стартовый файл js
+
+  "scripts": {              // скрипты
+    "build": "webpack"      // запуск npm run build (Cкомандовали Node.js найти в папке node_modules модуль webpack и запустить его)
+  },
+
+  "author": "Oleg Kuzmin",  // автор
+  "license": "",            // лицензия
+
+  "devDependencies": {      // зависимости (для разработки)
+    "webpack": "^5.80.0",   // webpack
+    "webpack-cli": "^5.0.1" // webpack-cli
+  }
+}
+

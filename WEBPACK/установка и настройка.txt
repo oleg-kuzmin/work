@@ -39,7 +39,7 @@ license:        пропустить
 }
 
 *****************************************************************
-# установка webpack (создаст файл package-lock.json)
+# установка webpack (создаст файл package-lock.json и папку node_modules)
 
 npm i webpack --save-dev
 
@@ -49,4 +49,16 @@ npm i webpack --save-dev
 }
 
 *****************************************************************
+# установка webpack-cli (интерфейса командной строки для webpack)
+
+npm i webpack-cli --save-dev
+
+# изменения в package.json:
+"devDependencies": {
+  "webpack-cli": "^5.0.1"
+}
+
+*****************************************************************
+
+
 
