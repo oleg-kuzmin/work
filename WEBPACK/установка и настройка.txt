@@ -1,0 +1,52 @@
+# проверим версию Node.js
+
+node -v
+
+*****************************************************************
+# проверим версию npm (по умолчанию уже включен в Node.js)
+
+npm -v
+
+*****************************************************************
+# инициализация npm в проекте (создаст файл package.json)
+
+npm init --yes (пропустит все вопросы)
+npm init       (запустит автоматическую настройку package.json)
+
+# вопросы
+package name:   вписать имя проекта
+version:        вписать 1.0.0
+description:    пропустить
+entry point:    пропустить
+test command:   пропустить
+git repository: пропустить
+keywords:       пропустить
+author:         вписать Oleg Kuzmin
+license:        пропустить
+
+# package.json:
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+*****************************************************************
+# установка webpack (создаст файл package-lock.json)
+
+npm i webpack --save-dev
+
+# изменения в package.json:
+"devDependencies": {
+  "webpack": "^5.80.0"
+}
+
+*****************************************************************
+

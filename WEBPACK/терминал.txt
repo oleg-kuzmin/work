@@ -1,8 +1,6 @@
-node -v
-  # проверим версию Node.js
 
-npm -v
-  # проверим версию npm (включен в Node.js)
+
+
 
 npx create-react-app ******
   # подключение react (****** название)
