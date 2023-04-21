@@ -1,9 +1,11 @@
 //# КОМБИНИРОВАННЫЙ ВЫБОР ПО НЕСКОЛЬКИМ СЕЛЕКТОРАМ
+
+//* тег <a> с классом "class-name" (будет приоритетнее чем по классу)
 a.class {
-  // тег <a> с классом "class-name"
   font-size: 14px;
 }
+
+//* элемент с классами "my-button" "my-button_large"
 .my-button.my-button_large {
-  // элемент с классами "my-button" "my-button_large"
   font-size: 14px;
 }
