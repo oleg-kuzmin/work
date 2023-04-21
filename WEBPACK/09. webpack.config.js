@@ -34,6 +34,10 @@ module.exports = {
         use: 'babel-loader', // при обработке этих файлов нужно использовать babel-loader
         exclude: '/node_modules/', // исключает папку node_modules, файлы в ней обрабатывать не нужно
       },
+      {
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/, // регулярное выражение, которое ищет все файлы с такими расширениями
+        type: 'asset/resource', // значение asset/resource позволяет переносить исходные файлы в конечную сборку в том же формате
+      },
     ],
   },
 
