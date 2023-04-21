@@ -1,0 +1,8 @@
+# Пакет css-loader нужен для того, чтобы научить «Вебпак» работать с определённым типом файлов — с CSS.
+
+npm i css-loader --save-dev
+
+# изменения в package.json:
+"devDependencies": {
+  "css-loader": "^6.7.3",
+}
