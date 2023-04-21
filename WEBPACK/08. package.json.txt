@@ -26,7 +26,7 @@
   "license": "",            // лицензия
   "keywords": [],           // ключевые слова
 
-  "devDependencies": {                // зависимости (для разработки)
+  "devDependencies": {                // --save-dev
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "babel-loader": "^9.1.2",
@@ -39,7 +39,7 @@
     "webpack-dev-server": "^4.13.3"
   },
 
-  "dependencies": {                 // зависимости (для продакшна)
+  "dependencies": {                 // --save
     "core-js": "^3.30.1"
   }
 }
