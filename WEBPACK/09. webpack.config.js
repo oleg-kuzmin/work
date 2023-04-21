@@ -41,12 +41,14 @@ module.exports = {
       },
       {
         test: /\.css$/, // регулярное выражение, которое ищет все css файлы
-        // при обработке этих файлов нужно использовать MiniCssExtractPlugin.loader и css-loader
+        // при обработке этих файлов нужно использовать MiniCssExtractPlugin.loader, css-loader и postcss-loader
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
+            options: { importLoaders: 1 }, // Значение 1 говорит о том, что некоторые трансформации PostCSS нужно применить до css-loader.
           },
+          'postcss-loader',
         ],
       },
     ],

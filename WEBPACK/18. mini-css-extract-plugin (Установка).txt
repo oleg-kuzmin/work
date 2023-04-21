@@ -4,5 +4,5 @@ npm i mini-css-extract-plugin --save-dev
 
 # изменения в package.json:
 "devDependencies": {
-  
+  "mini-css-extract-plugin": "^2.7.5",
 }

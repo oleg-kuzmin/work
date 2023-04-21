@@ -1,0 +1,8 @@
+# плагин autoprefixer научит PostCSS добавлять вендорные префиксы
+
+npm i autoprefixer --save-dev
+
+# изменения в package.json:
+"devDependencies": {
+  "autoprefixer": "^10.4.14",
+}
