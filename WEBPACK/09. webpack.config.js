@@ -1,6 +1,7 @@
 const path = require('path'); // подключаем path к конфигу вебпак (утилита, которая превращает относительный путь в абсолютный)
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // подключаем плагин html-webpack-plugin (для работы с html)
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // подключаем плагин clean-webpack-plugin (для очистки dist)
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // подключаем плагин mini-css-extract-plugin (объединение css)
 
 // module.exports — это синтаксис экспорта в Node.js
 module.exports = {
@@ -38,6 +39,16 @@ module.exports = {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/, // регулярное выражение, которое ищет все файлы с такими расширениями
         type: 'asset/resource', // значение asset/resource позволяет переносить исходные файлы в конечную сборку в том же формате
       },
+      {
+        test: /\.css$/, // регулярное выражение, которое ищет все css файлы
+        // при обработке этих файлов нужно использовать MiniCssExtractPlugin.loader и css-loader
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+          },
+        ],
+      },
     ],
   },
 
@@ -48,6 +59,8 @@ module.exports = {
       template: './src/index.html', // путь к файлу index.html
     }),
     //# настройка clean-webpack-plugin
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(), // подключение плагина для работы Webpack с html
+    //# настройка mini-css-extract-plugin
+    new MiniCssExtractPlugin(), // подключение плагина для объединения файлов
   ],
 };
