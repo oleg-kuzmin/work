@@ -1,0 +1,16 @@
+//# по вложенности любого уровня
+
+//* тег <p>, вложенный в <div>
+div p {
+  font-size: 14px;
+}
+
+//* "element", вложенный в <div>
+div .element {
+  font-size: 14px;
+}
+
+//* "first-element", вложенный в "second-element"
+.first-element .second-element {
+  font-size: 14px;
+}
