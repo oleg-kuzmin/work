@@ -26,7 +26,6 @@ ctrl+numpad3             // Emmet: Перенести с сокращением 
 
 ctrl+numpad4             // Quokka.js: Start on Current File
 ctrl+numpad5             // Quokka.js: Stop All
-ctrl+numpad6             // Turbo Console Log: Display Log Message
 
 Quokka:
 //?  - покажет все итерации цикла
