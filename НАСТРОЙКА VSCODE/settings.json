@@ -25,6 +25,8 @@
   "workbench.editor.restoreViewState": false, // отключает запоминание положения редактора в файле
   "terminal.integrated.fontSize": 16, // шрифт в терминале
   "terminal.integrated.defaultProfile.windows": "Git Bash", // использование Git Bash по умолчанию
+  "git.autofetch": false, // переодически использует автоматический fetch
+  "git.confirmSync": false, // подтверждение синхронизации с Git
 
   // форматировщики
   "[jsonc]": {
@@ -120,9 +122,6 @@
 
   //! РАЗОБРАТЬ
   // "explorer.confirmDragAndDrop": false, //?
-  // "git.enableSmartCommit": true, //?
-  // "git.confirmSync": false, //?
-  // "git.autofetch": true, //?
   // "liveServer.settings.donotVerifyTags": true, //?
 
   "emmet.includeLanguages": {
