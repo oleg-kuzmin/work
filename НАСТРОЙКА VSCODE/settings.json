@@ -27,6 +27,7 @@
   "terminal.integrated.defaultProfile.windows": "Git Bash", // использование Git Bash по умолчанию
   "git.autofetch": false, // переодически использует автоматический fetch
   "git.confirmSync": false, // подтверждение синхронизации с Git
+  "git.enableSmartCommit": true, // добавление в stage всех файлов при коммите
 
   // форматировщики
   "[jsonc]": {
