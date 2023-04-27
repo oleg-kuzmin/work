@@ -1,7 +1,6 @@
 {
   //# ПО УМОЛЧАНИЮ
   "workbench.startupEditor": "none", // что будет отображаться при запуске, если содержимое редактора не было восстановлено
-  "workbench.colorTheme": "Space Ocean Kit Refined", // цветовая тема
   "security.workspace.trust.untrustedFiles": "open", // открытие недоверенных файлов в доверенной области
   "files.autoSave": "afterDelay", // автосохранение
   "files.trimTrailingWhitespace": true, // удаляет лишние пробелы при сохранении
@@ -106,6 +105,7 @@
       "italic": false
     }
   ],
+  "workbench.colorTheme": "Space Ocean Kit Refined", // цветовая тема
 
   // "css.lint.emptyRules": "ignore", // ?выключает волнистая линия в пустых css-файлах
   // "editor.hover.enabled": false, // ?выключает подсказки при наведении в редакторе
