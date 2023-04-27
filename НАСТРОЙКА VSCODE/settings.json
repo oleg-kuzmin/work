@@ -1,6 +1,6 @@
 {
   //# ПО УМОЛЧАНИЮ
-  "workbench.startupEditor": "none", // управляет тем, что будет отображаться при запуске, если содержимое редактора не было восстановлено
+  "workbench.startupEditor": "none", // что будет отображаться при запуске, если содержимое редактора не было восстановлено
   "workbench.colorTheme": "Space Ocean Kit Refined", // цветовая тема
   "security.workspace.trust.untrustedFiles": "open", // открытие недоверенных файлов в доверенной области
   "files.autoSave": "afterDelay", // автосохранение
@@ -22,6 +22,7 @@
   "workbench.editor.closeEmptyGroups": false, // сохраняет разделение экрана при закрытии вкладки
   "workbench.tree.renderIndentGuides": "none", // вертикальные линии проводника с файлами
   "breadcrumbs.enabled": false, // выключает хлебные крошки
+  "workbench.editor.restoreViewState": false, // отключает запоминание положения редактора в файле
   "terminal.integrated.fontSize": 16, // шрифт в терминале
   "terminal.integrated.defaultProfile.windows": "Git Bash", // использование Git Bash по умолчанию
 
@@ -100,14 +101,12 @@
     }
   ],
 
-  // "breadcrumbs.enabled": false, // ?выключает хлебные крошки
   // "css.lint.emptyRules": "ignore", // ?выключает волнистая линия в пустых css-файлах
   // "editor.hover.enabled": false, // ?выключает подсказки при наведении в редакторе
   // "editor.matchBrackets": "never", // ?выключает выделение скобок
   // "editor.occurrencesHighlight": false, // ?выключает лишнюю подсветку слов
   // "vscodeGoogleTranslate.preferredLanguage": "Russian", // ?на какой язык переводить
   // "editor.parameterHints": false, //? убирает подсказки
-  // "workbench.editor.restoreViewState": false, //? отключает запоминания состояния файла
   // "editor.wordBasedSuggestions": false //? отключает подсказки abc эммета
   // "window.zoomLevel": 0.3, //? увеличение интерфейса
   // "scss.lint.emptyRules": "ignore", //? игнорирование пустых scss
@@ -125,7 +124,6 @@
   // "git.confirmSync": false, //?
   // "git.autofetch": true, //?
   // "liveServer.settings.donotVerifyTags": true, //?
-
 
   "emmet.includeLanguages": {
     //?
