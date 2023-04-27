@@ -110,6 +110,7 @@
     }
   ],
   "workbench.colorTheme": "Space Ocean Kit Refined", // цветовая тема
+  "explorer.autoReveal": false, // проводник не реагирует на открытие файла
 
   // "css.lint.emptyRules": "ignore", // ?выключает волнистая линия в пустых css-файлах
   // "editor.matchBrackets": "never", // ?выключает выделение скобок
@@ -118,8 +119,8 @@
   // "editor.parameterHints": false, //? убирает подсказки
   // "editor.wordBasedSuggestions": false //? отключает подсказки abc эммета
   // "scss.lint.emptyRules": "ignore", //? игнорирование пустых scss
-  // "javascript.suggest.names": false, //? нужно уточнить
-  // "editor.suggest.showWords": false, //? нужно уточнить
+  // "javascript.suggest.names": false, //? отключает подсказки abc эммета
+  // "editor.suggest.showWords": false, //? отключает подсказки abc эммета
   // "editor.defaultFormatter": "esbenp.prettier-vscode", //? выбор форматировщика для всех
   // "editor.guides.highlightActiveIndentation": false, //? убирает вертикальные линии
   // "editor.glyphMargin": false,                       //? скрывает точки остановки для отладки
