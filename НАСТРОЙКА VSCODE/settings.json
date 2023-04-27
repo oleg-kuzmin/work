@@ -39,6 +39,9 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   //* liveServer
   "liveServer.settings.donotShowInfoMsg": true, // не показывать информационные сообщения
