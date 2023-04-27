@@ -12,7 +12,7 @@
   "editor.formatOnSave": true, // форматирование при сохранении
   "editor.insertSpaces": true, // пробелы при нажатии на tab
   "editor.linkedEditing": true, // одновременное редактирование совместных тэгов
-  "editor.minimap.enabled": false, // выключение мину-карты
+  "editor.minimap.enabled": false, // выключение мини-карты
   "editor.overviewRulerBorder": false, // скрывает границу ползуна вертикального скролла
   "editor.renderLineHighlight": "none", // выключает выделение черной границей текущей строки
   "editor.scrollbar.vertical": "hidden", // скрывает ползунок полосы прокрутки
@@ -21,6 +21,7 @@
   "explorer.confirmDelete": false, // выключение подтверждения удаления файла в корзину
   "workbench.editor.closeEmptyGroups": false, // сохраняет разделение экрана при закрытии вкладки
   "workbench.tree.renderIndentGuides": "none", // вертикальные линии проводника с файлами
+  "breadcrumbs.enabled": false, // выключает хлебные крошки
   "terminal.integrated.fontSize": 16, // шрифт в терминале
   "terminal.integrated.defaultProfile.windows": "Git Bash", // использование Git Bash по умолчанию
 
