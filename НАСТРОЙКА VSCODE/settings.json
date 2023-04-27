@@ -28,6 +28,7 @@
   "git.autofetch": false, // переодически использует автоматический fetch
   "git.confirmSync": false, // подтверждение синхронизации с Git
   "git.enableSmartCommit": true, // добавление в stage всех файлов при коммите
+  "editor.parameterHints": false, // убирает все подсказки
 
   // форматировщики
   "[jsonc]": {
@@ -116,7 +117,6 @@
   // "editor.matchBrackets": "never", // ?выключает выделение скобок
   // "editor.occurrencesHighlight": false, // ?выключает лишнюю подсветку слов
   // "vscodeGoogleTranslate.preferredLanguage": "Russian", // ?на какой язык переводить
-  // "editor.parameterHints": false, //? убирает подсказки
   // "editor.wordBasedSuggestions": false //? отключает подсказки abc эммета
   // "scss.lint.emptyRules": "ignore", //? игнорирование пустых scss
   // "javascript.suggest.names": false, //? отключает подсказки abc эммета
