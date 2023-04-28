@@ -111,9 +111,9 @@
   ],
   "workbench.colorTheme": "Kimbie Dark", // цветовая тема
   "explorer.autoReveal": false, // проводник не реагирует на открытие файла
+  "editor.matchBrackets": "never", // выключает выделение скобок
 
   // "css.lint.emptyRules": "ignore", // ?выключает волнистая линия в пустых css-файлах
-  // "editor.matchBrackets": "never", // ?выключает выделение скобок
   // "editor.occurrencesHighlight": false, // ?выключает лишнюю подсветку слов
   // "vscodeGoogleTranslate.preferredLanguage": "Russian", // ?на какой язык переводить
   // "editor.wordBasedSuggestions": false //? отключает подсказки abc эммета
@@ -125,6 +125,7 @@
   // "editor.glyphMargin": false,                       //? скрывает точки остановки для отладки
   // "editor.renderIndentGuides": false                 //? скрывает вертикальные линии функции
   // "editor.guides.indentation": false
+  // "editor.parameterHints": false, // убирает все подсказки
 
   //! РАЗОБРАТЬ
   // "explorer.confirmDragAndDrop": false, //?
