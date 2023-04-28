@@ -21,13 +21,3 @@
   writing-mode: initial; // значение по умолчанию.
   writing-mode: inherit; // наследует значение от родительского элемента.
 }
-
-//* ПСЕВДОКЛАССЫ
-// изменение при наведение мышки
-.class:hover {
-  color: black;
-}
-// выключенный
-.class:disabled {
-  color: black;
-}
