@@ -12,4 +12,4 @@ Adaptive for screen resolution: 320px/ 768px/ 1440px
 
 **project checked by code reviewer**
 
-* [Link to Github Pages](https://oleg-kuzmin.github.io/film-camera-repair)
+* [Link to Github Pages](https://oleg-kuzmin.github.io/film-camera-repair/)
