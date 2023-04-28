@@ -1,11 +1,10 @@
 {
-  //# ПО УМОЛЧАНИЮ
   "workbench.startupEditor": "none", // что будет отображаться при запуске, если содержимое редактора не было восстановлено
   "security.workspace.trust.untrustedFiles": "open", // открытие недоверенных файлов в доверенной области
   "files.autoSave": "afterDelay", // автосохранение
   "files.trimTrailingWhitespace": true, // удаляет лишние пробелы при сохранении
   "editor.cursorStyle": "line-thin", // тонкий стиль курсора
-  "editor.fontSize": 16, // размер шрифта
+  "editor.fontSize": 17, // размер шрифта
   "window.zoomLevel": 0.2, // увеличение интерфейса
   "editor.mouseWheelZoom": false, // изменение размера шрифта при скроле колесиком
   "editor.formatOnSave": true, // форматирование при сохранении
@@ -110,7 +109,7 @@
       "italic": false
     }
   ],
-  "workbench.colorTheme": "Space Ocean Kit Refined", // цветовая тема
+  "workbench.colorTheme": "Kimbie Dark", // цветовая тема
   "explorer.autoReveal": false, // проводник не реагирует на открытие файла
 
   // "css.lint.emptyRules": "ignore", // ?выключает волнистая линия в пустых css-файлах
@@ -125,6 +124,7 @@
   // "editor.guides.highlightActiveIndentation": false, //? убирает вертикальные линии
   // "editor.glyphMargin": false,                       //? скрывает точки остановки для отладки
   // "editor.renderIndentGuides": false                 //? скрывает вертикальные линии функции
+  // "editor.guides.indentation": false
 
   //! РАЗОБРАТЬ
   // "explorer.confirmDragAndDrop": false, //?
