@@ -112,6 +112,7 @@
   "explorer.autoReveal": false, // проводник не реагирует на открытие файла
   "editor.matchBrackets": "never", // выключает выделение скобок
   "editor.suggest.showWords": false, // отключает подсказки abc эммета
+  "editor.parameterHints": false, // убирает все подсказки
 
   // "css.lint.emptyRules": "ignore", // ?выключает волнистая линия в пустых css-файлах
   // "editor.occurrencesHighlight": false, // ?выключает лишнюю подсветку слов

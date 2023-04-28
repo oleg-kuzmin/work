@@ -1,4 +1,5 @@
-/* GET - получить, POST - разместить
+/*
+GET - получить, POST - разместить
 
 Формат запроса:
 
@@ -24,4 +25,5 @@ Accept-Language: ru,en
 HTTP/1.1 200 OK
 Content-Type: text/html, charset=UTF-8;
 Location: http://ya.ru
-<!DOCTYPE html><html class="page">...</html> */
+<!DOCTYPE html><html class="page">...</html>
+*/

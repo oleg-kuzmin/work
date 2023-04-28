@@ -10,7 +10,51 @@
 fetch('https://swapi.nomoreparties.co/people').then((res) => console.log(res));
 
 //# метод .json()
-// Метод json читает ответ от сервера в формате json и возвращает промис. Из этого промиса потом можно доставать нужные нам данные.Поскольку метод json асинхронный, то и использовать его нужно таким образом:
+// Метод json читает ответ от сервера в формате json и возвращает промис. Из этого промиса потом можно доставать нужные нам данные. Метод json асинхронный.
+
+//# status и statusText
+// status - число статуса. После числа статуса идёт сообщение статуса — оно объясняет, что произошло. Код и сообщения статуса хранятся в свойствах объекта ответа status и statusText.
+fetch('https://api.kanye.rest').then((res) => {
+  console.log(res.status, res.statusText); // 200 OK
+});
+
+//# ok
+// Для удобства также доступно булево свойство ok. Оно хранит в себе true, если ответ успешный (начинается с 2), и false — в любом другом случае.
+fetch('https://api.kanye.rest').then((res) => {
+  console.log(res.ok); // true
+});
+
+const quoteElement = document.querySelector('div.quote');
+
+fetch('https://api.kanye.rest')
+  .then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+    // отклоняем промис, чтобы перейти в блок catch, если сервер вернул ошибку
+    return Promise.reject(`Что-то пошло не так: ${res.status}`);
+  })
+  .then((data) => {
+    quoteElement.textContent = data.quote;
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+//# заголовки ответа (headers)
+// Для работы с заголовками есть специальные методы. Чтобы получить значение заголовка, есть метод get. заголовки ответа можно только читать, но нельзя редактировать.
+fetch('https://api.kanye.rest').then((res) => {
+  if (res.headers.get('Content-Type').contains('application/json')) {
+    return res.json();
+  }
+});
+
+//# тело ответа
+/*
+res.json — разбирает JSON в объект, этот метод вы уже знаете;
+res.text — разбирает тело как текст;
+res.blob — разбирает тело ответа как бинарные данные: это нужно при получении файлов (изображений, видео, pdf-документов).
+*/
 
 //# GET
 // GET — самый распространённый метод. Данные обычно получают именно этим методом. Если метод не прописать явно, fetch будет отправлять запросы методом GET.
