@@ -1,4 +1,4 @@
-# Educational project: how-to-learn (Landing, static layout)
+# Learning project: how-to-learn (Landing, static layout)
 My first site! :)
 
 ### technologies:
@@ -16,12 +16,8 @@ My first site! :)
 
 * [Link to Github Pages](https://oleg-kuzmin.github.io/how-to-learn/)
 
-
-
-
-
-# Educational project: russian-travel (Landing, adaptive rubber layout)
-My second site! :) Screen resolution: 320px/ 768px/ 1024px/ 1280px
+# Learning project: russian-travel (Landing, adaptive rubber layout)
+Adaptive for screen resolution: 320px/ 768px/ 1024px/ 1280px
 
 ### technologies
 * html semantic structure
@@ -34,7 +30,7 @@ My second site! :) Screen resolution: 320px/ 768px/ 1024px/ 1280px
 
 **project checked by code reviewer**
 
-> There are brief files and a checklist in the this repository
+> There is checklist in the this repository
 
 * [Link to Figma](https://www.figma.com/file/5S2WSbEFL6awjVWJ0NWL8Q/Sprint-3_-Russia-_-desktop-mobile?node-id=28503%3A0)
 
@@ -46,13 +42,7 @@ My second site! :) Screen resolution: 320px/ 768px/ 1024px/ 1280px
 
 
 
-
-
-
-
-
-
-# Проект: Film camera repair (landing)
+# Learning project: Film camera repair (landing)
 
 ### Обзор
 * Интро
