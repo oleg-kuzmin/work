@@ -1,14 +1,15 @@
-1. Установить расширение Russian Language Pack for Visual Studio Code (Microsoft)  // языковой пакет
-2. Установить расширение Space Ocean Kit Refined v0.3.1  (space-ocean-kit-refined) // цветовая тема
-3. Установить расширение Live Server v5.7.9 (Ritwick Dey)                          // виртуальный сервер
-4. Установить расширение Better Comments v3.0.2 (Aaron Bond)                       // красивые комментарии
-5. Установить расширение eCSStractor for VSCode v0.0.3 (diz)                       // копирование классов из html в css
-6. Установить расширение CSS Navigation v1.13.3 (pucelle)                          // навигация по файлам css
-7. Установить расширение Prettier - Code formatter v9.12.0 (Prettier)              // форматировщик кода
-8. Установить расширение W3C Web Validator v1.3.0 (Celian Riboulet)                // проверка валидности W3C
-9. Установить расширение Quokka.js v1.0.533 (Wallaby.js)                           // для запуска js в vscode
+01. Установить расширение Russian Language Pack for Visual Studio Code (Microsoft)  // языковой пакет
+02. Установить расширение Space Ocean Kit Refined v0.3.1  (space-ocean-kit-refined) // цветовая тема
+03. Установить расширение Live Server v5.7.9 (Ritwick Dey)                          // виртуальный сервер
+04. Установить расширение Better Comments v3.0.2 (Aaron Bond)                       // красивые комментарии
+05. Установить расширение eCSStractor for VSCode v0.0.3 (diz)                       // копирование классов из html в css
+06. Установить расширение CSS Navigation v1.13.3 (pucelle)                          // навигация по файлам css
+07. Установить расширение Prettier - Code formatter v9.12.0 (Prettier)              // форматировщик кода
+08. Установить расширение W3C Web Validator v1.3.0 (Celian Riboulet)                // проверка валидности W3C
+09. Установить расширение Quokka.js v1.0.533 (Wallaby.js)                           // для запуска js в vscode
 10. Установить расширение HTMLHint v1.0.4 (HTMLHint)                               // подсветка ошибок в html
-11. Скопировать settings.json
+11. Markdown Preview Enhanced v0.6.8 (Yiyi Wang)                                   // просмотр md в vscode
+12. Скопировать settings.json
 
 
 
