@@ -15,7 +15,7 @@ const cubeChecker = function (volume, side) {
   return volume > 0 && side > 0 && side ** 3 === volume;
 };
 
-//* лучше
+//* лучшеe на сайте
 var cubeCheckerBest = function (volume, side) {
   return Math.pow(side, 3) === volume && side > 0;
 };
