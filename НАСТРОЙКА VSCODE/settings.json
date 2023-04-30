@@ -27,6 +27,11 @@
   "git.autofetch": false, // переодически использует автоматический fetch
   "git.confirmSync": false, // подтверждение синхронизации с Git
   "git.enableSmartCommit": true, // добавление в stage всех файлов при коммите
+  "explorer.autoReveal": false, // проводник не реагирует на открытие файла
+  "editor.matchBrackets": "never", // выключает выделение скобок
+  "editor.suggest.showWords": false, // отключает подсказки abc эммета
+  "editor.parameterHints": false, // убирает все подсказки
+  "editor.occurrencesHighlight": false, // выключает лишнюю подсветку слов
 
   // форматировщики
   "[jsonc]": {
@@ -109,10 +114,6 @@
     }
   ],
   "workbench.colorTheme": "Kimbie Dark", // цветовая тема
-  "explorer.autoReveal": false, // проводник не реагирует на открытие файла
-  "editor.matchBrackets": "never", // выключает выделение скобок
-  "editor.suggest.showWords": false, // отключает подсказки abc эммета
-  "editor.parameterHints": false, // убирает все подсказки
 
   // "css.lint.emptyRules": "ignore", // ?выключает волнистая линия в пустых css-файлах
   // "editor.occurrencesHighlight": false, // ?выключает лишнюю подсветку слов
@@ -126,6 +127,7 @@
   // "editor.renderIndentGuides": false                 //? скрывает вертикальные линии функции
   // "editor.guides.indentation": false
   // "editor.parameterHints": false, // убирает все подсказки
+  // "diffEditor.ignoreTrimWhitespace": false
 
   //! РАЗОБРАТЬ
   // "explorer.confirmDragAndDrop": false, //?
