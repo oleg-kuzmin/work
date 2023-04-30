@@ -106,6 +106,18 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties
 https://yandex.kz/support/webmaster/recommendations/intro.html
 https://developers.google.com/search/docs/essentials?hl=ru
 
+// документация html
+https://html.spec.whatwg.org/multipage/
+https://www.w3.org/TR/2012/WD-html-markup-20121025/
+
+// документация к JavaScript
+https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+https://262.ecma-international.org/13.0/
+
+// документация к Node.js
+https://nodejs.org/ru/docs/
+
+
 // Фигма макеты
 https://www.figma.com/file/DbFAkE2hcBXD0Dw1o9pVyx/Delivery?node-id=1%3A3
 https://www.figma.com/file/zpEryUaC1ranXzf9jAsK2c/Premium-Car-Blog-Template?node-id=0%3A1

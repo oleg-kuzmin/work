@@ -30,7 +30,7 @@
   "explorer.autoReveal": false, // проводник не реагирует на открытие файла
   "editor.matchBrackets": "never", // выключает выделение скобок
   "editor.suggest.showWords": false, // отключает подсказки abc эммета
-  "editor.parameterHints": false, // убирает все подсказки
+  "editor.parameterHints.enabled": false, // убирает все подсказки
   "editor.occurrencesHighlight": false, // выключает лишнюю подсветку слов
 
   // форматировщики
@@ -128,6 +128,9 @@
   // "editor.guides.indentation": false
   // "editor.parameterHints": false, // убирает все подсказки
   // "diffEditor.ignoreTrimWhitespace": false
+  // "editor.suggest.snippetsPreventQuickSuggestions": false,
+  // "html.suggest.html5": false,
+  // "editor.snippetSuggestions": "none",
 
   //! РАЗОБРАТЬ
   // "explorer.confirmDragAndDrop": false, //?
