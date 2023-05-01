@@ -53,7 +53,7 @@
   "liveServer.settings.donotShowInfoMsg": true, // не показывать информационные сообщения
 
   //* prettier
-  "prettier.printWidth": 120, // размер страницы
+  "prettier.printWidth": 140, // размер страницы
   "prettier.singleQuote": true, // одиночные кавычки
 
   //* better-comments
