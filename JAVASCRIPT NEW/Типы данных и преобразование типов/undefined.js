@@ -4,19 +4,20 @@
 //# пример
 //* JavaScript автоматически устанавливает значение undefined объявленным переменным, которые не были проинициализированы значением
 let userName;
-console.log(userName); // undefined
+console.log(userName); // undefined (в Chrome и Safari)
+console.log(userName); // undefined (в Firefox)
 
 //* Также JavaScript автоматически устанавливает значение undefined в аргумент функции, если значение не передали при вызове
 function hello(name) {
-  console.log("Привет, " + name);
+  console.log('Привет, ' + name);
 }
-hello("Витя"); // Привет, Витя
+hello('Витя'); // Привет, Витя
 hello(); // Привет, undefined
 
 //* Вручную установленное undefined используют, чтобы обозначить неизвестное значение
 const person = {
-  name: "Пётр",
-  lastName: "Романов",
+  name: 'Пётр',
+  lastName: 'Романов',
   age: undefined,
 };
 
