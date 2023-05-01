@@ -28,6 +28,7 @@ ctrl+numpad3             // Emmet: Перенести с сокращением 
 
 ctrl+numpad4             // Quokka.js: Start on Current File
 ctrl+numpad5             // Quokka.js: Stop All
+ctrl+numpad6             // запуск сервера в отдельном окне
 
 Quokka:
 //?  - покажет все итерации цикла
