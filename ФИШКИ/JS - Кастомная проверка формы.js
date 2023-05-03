@@ -4,7 +4,7 @@
 3. Добавить уникальный class для span (class="email-input-error)
 */
 
-//* html
+//# html
 <form class="form" novalidate>
   <label class="form__field">
     Введите адрес электронной почты
@@ -14,140 +14,101 @@
   <button class="form__submit">Войти</button>
 </form>;
 
-//* 1 — Функция, которая найдёт и переберёт все формы на странице
+//# настройка валидации
+
+const validateConfig = {
+  formClass: '.popup__form',
+  buttonSubmitClass: '.popup__button-save',
+  buttonSubmitDisabledClass: 'popup__button-save_disabled',
+  inputClass: '.popup__input',
+  inputInvalidClass: 'popup__input_type_error',
+  spanDisabledClass: 'popup__input-error',
+  spanActiveClass: 'popup__input-error_active',
+};
+
+//# 1 — Функция, которая найдет и переберет все формы на странице
 const enableValidation = () => {
-  // найдём все формы с указанным классом в DOM, сделаем из них массив
-  const formList = Array.from(document.querySelectorAll('.form'));
+  //* найдём все формы с указанным классом в DOM, сделаем из них массив
+  const formList = Array.from(document.querySelectorAll(validateConfig.formClass));
 
-  // Переберём полученную коллекцию
-  formList.forEach((formElement) => {
-
-    // отменим событие submit по умолчанию
-    formElement.addEventListener('submit', function (evt) {
+  //* Переберём полученную коллекцию
+  formList.forEach((form) => {
+    form.addEventListener('submit', function (evt) {
       evt.preventDefault();
     });
 
-    // при необходимости можно выделить отдельно fieldsetы
-    const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));
+    //* при необходимости можно выделить отдельно fieldsetы
+    const fieldsetList = Array.from(form.querySelectorAll('.form__set'));
     fieldsetList.forEach((element) => {
       setEventListeners(element);
     });
 
-    // или для каждой формы вызовем функцию setEventListeners, передав ей элемент формы
-    setEventListeners(formElement);
+    //* или для каждой формы отдельно вызовем функцию setEventListeners, передав ей элемент формы
+    setEventListeners(form);
   });
 };
 
-//* 2 — Функция, которая примет параметром элемент формы и добавит её полям нужные обработчики
-// 1) formElement — html-элемент формы
-const setEventListeners = (formElement) => {
+//# 2 — Функция, которая примет параметром элемент формы и добавит её полям нужные обработчики
+const setEventListeners = (form) => {
+  //* находим все поля input внутри формы с указанным классом, сделаем из них массив
+  const inputList = Array.from(form.querySelectorAll(validateConfig.inputClass));
 
-  // находим все поля внутри формы, сделаем из них массив
-  const inputList = Array.from(formElement.querySelectorAll('.form__input'));
+  //* найдём в форме кнопку submit
+  const buttonSubmit = form.querySelector(validateConfig.buttonSubmitClass);
 
-  // найдём в текущей форме кнопку отправки
-  const buttonElement = formElement.querySelector('.form__submit');
+  //* проверим состояние кнопки submit
+  checkButtonSubmit(inputList, buttonSubmit);
 
-  // вызовем toggleButtonState, чтобы не ждать ввода данных в поля
-  toggleButtonState(inputList, buttonElement);
-
-  // обойдём все элементы полученной коллекции
-  inputList.forEach((inputElement) => {
-
-    // каждому полю добавим обработчик события input
-    inputElement.addEventListener('input', () => {
-
-      // внутри колбэка вызовем isValid, передав ей форму и проверяемый элемент
-      checkInputValidity(formElement, inputElement);
-
-      // вызовем toggleButtonState и передадим ей массив полей и кнопку
-      toggleButtonState(inputList, buttonElement);
+  //* обойдём все элементы массива input и каждому добавим обработчик события
+  inputList.forEach((input) => {
+    input.addEventListener('input', () => {
+      checkInputValidity(form, input);
+      checkButtonSubmit(inputList, buttonSubmit);
     });
   });
 };
 
-//* 3 — Вызовем функцию
-enableValidation();
+//# 3 - Функция принимает массив полей ввода и элемент кнопки, состояние которой нужно менять
+const checkButtonSubmit = (inputList, buttonSubmit) => {
+  if (hasInvalidInput(inputList)) {
+    buttonSubmit.disabled = true;
+    buttonSubmit.classList.add(validateConfig.buttonSubmitDisabledClass);
+  } else {
+    buttonSubmit.disabled = false;
+    buttonSubmit.classList.remove(validateConfig.buttonSubmitDisabledClass);
+  }
+};
 
-//* Функция, которая проверяет валидность массива всех полей
+//# 4 - Функция, которая проверяет валидность массива всех полей
 const hasInvalidInput = (inputList) => {
-  // проходим по этому массиву методом some
+  //* проходим по этому массиву методом some
   return inputList.some((inputElement) => {
-    // если поле не валидно, колбэк вернёт true, Обход массива прекратится и вся функция вернёт true
+    //* если поле не валидно, колбэк вернёт true, обход массива прекратится и вся функция вернёт true
     return !inputElement.validity.valid;
   });
 };
 
-//* Функция принимает массив полей ввода и элемент кнопки, состояние которой нужно менять
-const toggleButtonState = (inputList, buttonElement) => {
-  // если есть хотя бы один невалидный инпут
-  if (hasInvalidInput(inputList)) {
-
-    // сделай кнопку неактивной
-    buttonElement.disabled = true;
-    buttonElement.classList.add('form__submit_inactive');
+//# 5 — Функция, которая проверяет валидность поля
+const checkInputValidity = (form, input) => {
+  if (!input.validity.valid) {
+    showInputError(form, input, input.validationMessage);
   } else {
-
-    // иначе сделай кнопку активной
-    buttonElement.disabled = false;
-    buttonElement.classList.remove('form__submit_inactive');
+    hideInputError(form, input);
   }
 };
 
-//* 4 — Функция, которая проверяет валидность поля
-// функция принимает сразу два параметра:
-// 1) formElement — html-элемент формы, в которой находится проверяемое поле ввода. Он нужен для поиска элемента ошибки в форме.
-// 2) inputElement — проверяемое поле ввода.
-const checkInputValidity = (formElement, inputElement) => {
-  // если inputElement не валидный вызовем функцию showInputError
-  if (!inputElement.validity.valid) {
-
-    // 1) formElement — html-элемент формы
-    // 2) inputElement — проверяемое поле ввода
-    // 3) inputElement.validationMessage — текст ошибки
-    showInputError(formElement, inputElement, inputElement.validationMessage);
-  } else {
-
-    // иначе вызовем функцию hideInputError:
-    // 1) formElement — html-элемент формы
-    // 2) inputElement — проверяемое поле ввода
-    hideInputError(formElement, inputElement);
-  }
+//# 6 — Функция, которая добавляет класс с ошибкой
+const showInputError = (form, input, errorMessage) => {
+  const span = form.querySelector(`.${input.id}-error`);
+  input.classList.add(validateConfig.inputInvalidClass);
+  span.textContent = errorMessage;
+  span.classList.add(validateConfig.spanActiveClass);
 };
 
-//* 5 — Функция, которая добавляет класс с ошибкой, передадим текст ошибки вторым параметром
-// 1) formElement — html-элемент формы
-// 2) inputElement — проверяемое поле ввода
-// 3) errorMessage — текст ошибки
-const showInputError = (formElement, inputElement, errorMessage) => {
-
-  // находим элемент ошибки внутри самой функции
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-
-  // добавим класс для невалидного input
-  inputElement.classList.add('form__input_type_error');
-
-  // заменим содержимое span с ошибкой на переданный параметр errorMessage
-  errorElement.textContent = errorMessage;
-
-  // добавим класс для показа элемента текста с ошибкой
-  errorElement.classList.add('form__input-error_active');
-};
-
-//* 6 — Функция, которая удаляет класс с ошибкой
-// 1) formElement — html-элемент формы
-// 2) inputElement — проверяемое поле ввода
-const hideInputError = (formElement, inputElement) => {
-
-  // находим элемент ошибки внутри самой функции
-  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-
-  // удалим класс для невалидного input
-  inputElement.classList.remove('form__input_type_error');
-
-  // удалим класс для показа элемента текста с ошибкой
-  errorElement.classList.remove('form__input-error_active');
-
-  // очистим текст ошибки
-  errorElement.textContent = '';
+//# 7 — Функция, которая удаляет класс с ошибкой
+const hideInputError = (form, input) => {
+  const span = form.querySelector(`.${input.id}-error`);
+  input.classList.remove(validateConfig.inputInvalidClass);
+  span.classList.remove(validateConfig.spanActiveClass);
+  span.textContent = '';
 };
