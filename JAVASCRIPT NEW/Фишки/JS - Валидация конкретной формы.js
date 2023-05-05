@@ -17,19 +17,18 @@
 //# настройка валидации
 
 const validateConfig = {
-  formClass: '.popup__form',
-  buttonSubmitClass: '.popup__button-save',
-  buttonSubmitDisabledClass: 'popup__button-save_disabled',
-  inputClass: '.popup__input',
-  inputInvalidClass: 'popup__input_type_error',
-  spanDisabledClass: 'popup__input-error',
-  spanActiveClass: 'popup__input-error_active',
+  form: '.popup__form',
+  buttonSubmit: '.popup__button-save',
+  buttonSubmitInvalid: 'popup__button-save_disabled',
+  input: '.popup__input',
+  inputInvalid: 'popup__input_type_error',
+  spanInvalid: 'popup__input-error_active',
 };
 
 //# 1 — Функция, которая найдет и переберет все формы на странице
 const enableValidation = () => {
   //* найдём все формы с указанным классом в DOM, сделаем из них массив
-  const formList = Array.from(document.querySelectorAll(validateConfig.formClass));
+  const formList = Array.from(document.querySelectorAll(validateConfig.form));
 
   //* Переберём полученную коллекцию
   formList.forEach((form) => {
@@ -51,10 +50,10 @@ const enableValidation = () => {
 //# 2 — Функция, которая примет параметром элемент формы и добавит её полям нужные обработчики
 const setEventListeners = (form) => {
   //* находим все поля input внутри формы с указанным классом, сделаем из них массив
-  const inputList = Array.from(form.querySelectorAll(validateConfig.inputClass));
+  const inputList = Array.from(form.querySelectorAll(validateConfig.input));
 
   //* найдём в форме кнопку submit
-  const buttonSubmit = form.querySelector(validateConfig.buttonSubmitClass);
+  const buttonSubmit = form.querySelector(validateConfig.buttonSubmit);
 
   //* проверим состояние кнопки submit
   checkButtonSubmit(inputList, buttonSubmit);
@@ -72,10 +71,10 @@ const setEventListeners = (form) => {
 const checkButtonSubmit = (inputList, buttonSubmit) => {
   if (hasInvalidInput(inputList)) {
     buttonSubmit.disabled = true;
-    buttonSubmit.classList.add(validateConfig.buttonSubmitDisabledClass);
+    buttonSubmit.classList.add(validateConfig.buttonSubmitInvalid);
   } else {
     buttonSubmit.disabled = false;
-    buttonSubmit.classList.remove(validateConfig.buttonSubmitDisabledClass);
+    buttonSubmit.classList.remove(validateConfig.buttonSubmitInvalid);
   }
 };
 
@@ -100,15 +99,15 @@ const checkInputValidity = (form, input) => {
 //# 6 — Функция, которая добавляет класс с ошибкой
 const showInputError = (form, input, errorMessage) => {
   const span = form.querySelector(`.${input.id}-error`);
-  input.classList.add(validateConfig.inputInvalidClass);
+  input.classList.add(validateConfig.inputInvalid);
   span.textContent = errorMessage;
-  span.classList.add(validateConfig.spanActiveClass);
+  span.classList.add(validateConfig.spanInvalid);
 };
 
 //# 7 — Функция, которая удаляет класс с ошибкой
 const hideInputError = (form, input) => {
   const span = form.querySelector(`.${input.id}-error`);
-  input.classList.remove(validateConfig.inputInvalidClass);
-  span.classList.remove(validateConfig.spanActiveClass);
+  input.classList.remove(validateConfig.inputInvalid);
+  span.classList.remove(validateConfig.spanInvalid);
   span.textContent = '';
 };
