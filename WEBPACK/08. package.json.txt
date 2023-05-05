@@ -12,7 +12,7 @@
     // webpack (найти в папке node_modules модуль webpack и запустить его)
     // --mode production (флаг режима: mode flag)
 
-    "dev": "webpack serve --mode development"
+    "dev": "webpack serve --mode development",
     // запуск npm run dev:
     // webpack (найти в папке node_modules модуль webpack и запустить его в режим сервера)
     // --mode development (флаг режима: mode flag)
@@ -20,6 +20,12 @@
     // отключить выполнение сервера: Ctrl + C (Windows)
     // чтобы создать новую вкладку: Cmd + T (macOS)
     // чтобы создать новую вкладку: Ctrl +Shift + T (Linux)
+
+    "deploy": "gh-pages -d dist",
+    // Он должен вызывать пакет gh-pages и передавать ему папку, в которой находится собранный проект. В нашем случае это папка dist.
+
+    "predeploy": "npm run build"
+    // Обычно перед деплоем нужно собрать проект командой npm run build.
   },
 
   "author": "Oleg Kuzmin",  // автор
