@@ -15,20 +15,20 @@
 </form>;
 
 //# настройка валидации
-
 const validateConfig = {
-  form: '.popup__form',
   buttonSubmit: '.popup__button-save',
   buttonSubmitInvalid: 'popup__button-save_disabled',
   input: '.popup__input',
   inputInvalid: 'popup__input_type_error',
   spanInvalid: 'popup__input-error_active',
+  pattern: /^([а-яА-ЯёЁa-zA-Z]|\s|-|\n)+$/,
+  patternMessage: 'Допустимы только латинские буквы, кириллические буквы, знаки дефиса или пробелы',
 };
 
 //# 1 — Функция, которая найдет и переберет все формы на странице
 const enableValidation = () => {
-  //* найдём все формы с указанным классом в DOM, сделаем из них массив
-  const formList = Array.from(document.querySelectorAll(validateConfig.form));
+  //* найдём все формы, сделаем из них массив
+  const formList = Array.from(document.forms);
 
   //* Переберём полученную коллекцию
   formList.forEach((form) => {
@@ -36,13 +36,7 @@ const enableValidation = () => {
       evt.preventDefault();
     });
 
-    //* при необходимости можно выделить отдельно fieldsetы
-    const fieldsetList = Array.from(form.querySelectorAll('.form__set'));
-    fieldsetList.forEach((element) => {
-      setEventListeners(element);
-    });
-
-    //* или для каждой формы отдельно вызовем функцию setEventListeners, передав ей элемент формы
+    //* вызовем функцию setEventListeners, передав ей элемент формы
     setEventListeners(form);
   });
 };
@@ -80,10 +74,10 @@ const checkButtonSubmit = (inputList, buttonSubmit) => {
 
 //# 4 - Функция, которая проверяет валидность массива всех полей
 const hasInvalidInput = (inputList) => {
-  //* проходим по этому массиву методом some
   return inputList.some((inputElement) => {
-    //* если поле не валидно, колбэк вернёт true, обход массива прекратится и вся функция вернёт true
-    return !inputElement.validity.valid;
+    if (!inputElement.validity.valid || !validateConfig.pattern.test(inputElement.value)) {
+      return true;
+    } else return false;
   });
 };
 
@@ -91,6 +85,8 @@ const hasInvalidInput = (inputList) => {
 const checkInputValidity = (form, input) => {
   if (!input.validity.valid) {
     showInputError(form, input, input.validationMessage);
+  } else if (!validateConfig.pattern.test(input.value)) {
+    showInputError(form, input, validateConfig.patternMessage);
   } else {
     hideInputError(form, input);
   }
