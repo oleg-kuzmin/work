@@ -8,3 +8,5 @@ npm install gh-pages --save-dev
 }
 
 # после настроить package.json
+
+# если появилась ошибка ввести npx gh-pages-clean
