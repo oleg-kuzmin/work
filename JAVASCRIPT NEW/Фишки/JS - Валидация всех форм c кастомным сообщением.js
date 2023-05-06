@@ -64,12 +64,26 @@ const setEventListeners = (form) => {
 //# 3 - Функция принимает массив полей ввода и элемент кнопки, состояние которой нужно менять
 const checkButtonSubmit = (inputList, buttonSubmit) => {
   if (hasInvalidInput(inputList)) {
+    // disableButtonSubmit(buttonSubmit);
     buttonSubmit.disabled = true;
     buttonSubmit.classList.add(validateConfig.buttonSubmitInvalid);
   } else {
+    // enableButtonSubmit(buttonSubmit);
     buttonSubmit.disabled = false;
     buttonSubmit.classList.remove(validateConfig.buttonSubmitInvalid);
   }
+};
+
+//# Функция выключает кнопку
+const disableButtonSubmit = (button) => {
+  button.disabled = true;
+  button.classList.add(validateConfig.buttonSubmitInvalid);
+};
+
+//# Функция включает кнопку
+const enableButtonSubmit = (button) => {
+  button.disabled = false;
+  button.classList.remove(validateConfig.buttonSubmitInvalid);
 };
 
 //# 4 - Функция, которая проверяет валидность массива всех полей
