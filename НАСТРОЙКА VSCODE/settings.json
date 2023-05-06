@@ -32,6 +32,9 @@
   "editor.suggest.showWords": false, // отключает подсказки abc эммета
   "editor.parameterHints.enabled": false, // убирает все подсказки
   "editor.occurrencesHighlight": false, // выключает лишнюю подсветку слов
+  "css.lint.emptyRules": "ignore", // выключает подсветку пустых css
+  "scss.lint.emptyRules": "ignore", // выключает подсветку пустых scss
+
 
   // форматировщики
   "[jsonc]": {
@@ -115,11 +118,9 @@
   ],
   "workbench.colorTheme": "Kimbie Dark", // цветовая тема
 
-  // "css.lint.emptyRules": "ignore", // ?выключает волнистая линия в пустых css-файлах
   // "editor.occurrencesHighlight": false, // ?выключает лишнюю подсветку слов
   // "vscodeGoogleTranslate.preferredLanguage": "Russian", // ?на какой язык переводить
   // "editor.wordBasedSuggestions": false //? отключает подсказки abc эммета
-  // "scss.lint.emptyRules": "ignore", //? игнорирование пустых scss
   // "javascript.suggest.names": false, //? отключает подсказки abc эммета
   // "editor.defaultFormatter": "esbenp.prettier-vscode", //? выбор форматировщика для всех
   // "editor.guides.highlightActiveIndentation": false, //? убирает вертикальные линии
