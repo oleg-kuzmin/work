@@ -32,9 +32,15 @@
   "editor.suggest.showWords": false, // отключает подсказки abc эммета
   "editor.parameterHints.enabled": false, // убирает все подсказки
   "editor.occurrencesHighlight": false, // выключает лишнюю подсветку слов
+  // "editor.glyphMargin": false, // скрывает точки остановки для отладки
   "css.lint.emptyRules": "ignore", // выключает подсветку пустых css
   "scss.lint.emptyRules": "ignore", // выключает подсветку пустых scss
-
+  // отмена серого цвета для игнорируемых файлов
+  "workbench.colorCustomizations": {
+    "[Kimbie Dark]": {
+      "gitDecoration.ignoredResourceForeground": "#cccccc"
+    }
+  },
 
   // форматировщики
   "[jsonc]": {
@@ -117,46 +123,5 @@
     }
   ],
   "workbench.colorTheme": "Kimbie Dark", // цветовая тема
-
-  // "editor.occurrencesHighlight": false, // ?выключает лишнюю подсветку слов
-  // "vscodeGoogleTranslate.preferredLanguage": "Russian", // ?на какой язык переводить
-  // "editor.wordBasedSuggestions": false //? отключает подсказки abc эммета
-  // "javascript.suggest.names": false, //? отключает подсказки abc эммета
-  // "editor.defaultFormatter": "esbenp.prettier-vscode", //? выбор форматировщика для всех
-  // "editor.guides.highlightActiveIndentation": false, //? убирает вертикальные линии
-  // "editor.glyphMargin": false,                       //? скрывает точки остановки для отладки
-  // "editor.renderIndentGuides": false                 //? скрывает вертикальные линии функции
-  // "editor.guides.indentation": false
-  // "editor.parameterHints": false, // убирает все подсказки
-  // "diffEditor.ignoreTrimWhitespace": false
-  // "editor.suggest.snippetsPreventQuickSuggestions": false,
-  // "html.suggest.html5": false,
-  // "editor.snippetSuggestions": "none",
-
-  //! РАЗОБРАТЬ
-  // "explorer.confirmDragAndDrop": false, //?
-  // "liveServer.settings.donotVerifyTags": true, //?
-
-  "emmet.includeLanguages": {
-    //?
-    "javascript": "javascriptreact"
-  },
-  "[javascriptreact]": {
-    //?
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
-  },
-
-  //! liveSassCompile
-  "liveSassCompile.settings.generateMap": false,
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/styles"
-    }
-  ],
-  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"]
+  "workbench.iconTheme": "material-icon-theme" // иконки
 }
