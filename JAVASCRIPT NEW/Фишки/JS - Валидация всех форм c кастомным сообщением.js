@@ -1,6 +1,6 @@
 /*
 1. Сделать пустой span (в него будем добавлять текст из validationMessage)
-2. Добавить id для input (id="email-input")
+2. Добавить id/name для input (id="email-input") или (name="email-input")
 3. Добавить уникальный class для span (class="email-input-error)
 */
 
