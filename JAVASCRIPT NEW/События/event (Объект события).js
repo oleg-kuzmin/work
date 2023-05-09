@@ -1,4 +1,10 @@
 //# event (Объект события)
+/* У события 3 фазы:
+1 - Capture (погружение), событие идет сверху вниз от родителя к детям
+2 - Target (цель), событие достигло целевого назначения
+3 - Bubbling (всплытие), событие начинает всплывать обратно к родителю
+*/
+
 const button = document.querySelector('.button');
 button.addEventListener('click', function (evt) {
   const eventTarget = evt.target;
@@ -7,18 +13,6 @@ button.addEventListener('click', function (evt) {
 
 //* evt.preventDefault();
 // отмена стандартного события
-
-//* evt.target
-// хранит элемент, на котором сработало событие (самый глубокий элемент DOM-дерева из всех, где сработало событие)
-playlist.addEventListener('click', function (evt) {
-  if (evt.target.classList.contains('song__like')) {
-    like(evt.target);
-  }
-});
-
-//* evt.currentTarget
-// evt.target хранит элемент, где возникло событие
-// evt.currentTarget — элемент, где сработал обработчик
 
 //* evt.key
 // хранит название нажатой клавиши
@@ -47,6 +41,25 @@ function callback(evt) {
 element.addEventListener('click', function (evt) {
   evt.stopImmediatePropagation();
 });
+
+//* evt.screenX и evt.screenY
+// Координаты
+
+//* evt.target и evt.currentTarget
+// evt.target - хранит элемент, на котором сработало событие (самый глубокий элемент DOM-дерева из всех, где сработало событие)
+// evt.currentTarget - элемент, где сработал обработчик (тот, на который мы повесили обработчик)
+
+playlist.addEventListener('click', function (evt) {
+  if (evt.target.classList.contains('song__like')) {
+    like(evt.target);
+  }
+});
+
+//* evt.target.dataset
+// Получаем доступ к атрибуту data в html
+<input type="button" data-number="1"></input>;
+evt.target.dataset // {number : '1'}
+evt.target.dataset.number // '1'
 
 //* evt.type
 // Тип события
