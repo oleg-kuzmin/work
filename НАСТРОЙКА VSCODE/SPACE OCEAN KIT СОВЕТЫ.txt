@@ -1,8 +1,0 @@
-{
-  "editor.fontFamily": "IBM Plex Mono",  // другой шрифт
-  "editor.fontLigatures": true,          // лигатуры (всякие красивые штучки)
-  "editor.fontSize": 13,                 // размер шрифта
-  "editor.fontWeight": "100",            // жирность шрифта
-  "editor.insertSpaces": true,           // вставлять пробелы при нажатии клавиши tab
-  "editor.tabSize": 2,                   // размер пробелов при нажатии клавиши tab
-}
