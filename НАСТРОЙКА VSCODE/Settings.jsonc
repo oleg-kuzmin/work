@@ -4,7 +4,7 @@
   "files.autoSave": "afterDelay", // автосохранение
   "files.trimTrailingWhitespace": true, // удаляет лишние пробелы при сохранении
   "editor.cursorStyle": "line-thin", // тонкий стиль курсора
-  "editor.fontSize": 17, // размер шрифта
+  "editor.fontSize": 18, // размер шрифта
   "window.zoomLevel": 0.2, // увеличение интерфейса
   "editor.mouseWheelZoom": false, // изменение размера шрифта при скроле колесиком
   "editor.formatOnSave": true, // форматирование при сохранении
@@ -32,9 +32,14 @@
   "editor.suggest.showWords": false, // отключает подсказки abc эммета
   "editor.parameterHints.enabled": false, // убирает все подсказки
   "editor.occurrencesHighlight": false, // выключает лишнюю подсветку слов
-  // "editor.glyphMargin": false, // скрывает точки остановки для отладки
+  "editor.glyphMargin": false, // скрывает точки остановки для отладки
   "css.lint.emptyRules": "ignore", // выключает подсветку пустых css
   "scss.lint.emptyRules": "ignore", // выключает подсветку пустых scss
+  "editor.smoothScrolling": true, // плавный скролл
+  "window.openFilesInNewWindow": "off", // запрет открытия файлов в новом окне
+  "explorer.compactFolders": false, // не сжимает в одну строчку папки в проводнике
+  "explorer.confirmDragAndDrop": false, // убирает подтверждение переноса папки
+
   // отмена серого цвета для игнорируемых файлов
   "workbench.colorCustomizations": {
     "[Kimbie Dark]": {
@@ -64,6 +69,7 @@
   //* prettier
   "prettier.printWidth": 140, // размер страницы
   "prettier.singleQuote": true, // одиночные кавычки
+  "prettier.arrowParens": "avoid",
 
   //* better-comments
   "better-comments.tags": [
@@ -123,5 +129,6 @@
     }
   ],
   "workbench.colorTheme": "Kimbie Dark", // цветовая тема
-  "workbench.iconTheme": "material-icon-theme" // иконки
+  "workbench.iconTheme": "material-icon-theme", // иконки проводника
+  "workbench.productIconTheme": "material-product-icons" // иконки проводника
 }
