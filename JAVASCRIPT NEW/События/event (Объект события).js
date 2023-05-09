@@ -1,4 +1,4 @@
-//# event
+//# event (Объект события)
 const button = document.querySelector('.button');
 button.addEventListener('click', function (evt) {
   const eventTarget = evt.target;
@@ -16,9 +16,6 @@ playlist.addEventListener('click', function (evt) {
   }
 });
 
-//* evt.type
-// в свойстве хранится тип события
-
 //* evt.currentTarget
 // evt.target хранит элемент, где возникло событие
 // evt.currentTarget — элемент, где сработал обработчик
@@ -26,9 +23,8 @@ playlist.addEventListener('click', function (evt) {
 //* evt.key
 // хранит название нажатой клавиши
 
-//* evt.keyCode
+//* evt.keyCode (устарел)
 // хранит уникальный код нажатой клавиши
-// по новым стандартам устарел, браузеры могут перестать его поддерживать
 
 //* evt.pageX и evt.pageY
 // координаты по горизонтали и вертикали от угла веб-страницы
@@ -45,9 +41,15 @@ function callback(evt) {
   evt.stopPropagation();
 }
 
-//* event.stopImmediatePropagation()
+//* evt.stopImmediatePropagation()
 // отменяет не только всплытие событий, но и срабатывание всех других обработчиков того же события на этом элементе.
 // остановит только те обработчики, которые описаны после него. Он попросту не знает о тех, которые стоят в коде раньше.
-element.addEventListener('click', function (event) {
-  event.stopImmediatePropagation();
+element.addEventListener('click', function (evt) {
+  evt.stopImmediatePropagation();
 });
+
+//* evt.type
+// Тип события
+
+//* evt.isTrusted
+// Проверяет пользователь ли сделал клик (защита от бота)
