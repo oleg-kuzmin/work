@@ -14,8 +14,6 @@ Color Highlight                              (Sergii N)                // под
 Path Intellisense                            (Christian Kohler)        // подсказка путей
 Svg Preview                                  (Simon Siefke)            // просмотр svg
 
-
-
 - установить все расширения
 - скопировать json
 - слева можно убрать лишнее: структура и прочее (нажать на 3 точки)
@@ -45,3 +43,4 @@ Svg Preview                                  (Simon Siefke)            // про
 -RED Group's themes                          (htmllessons_ru)          // темы
 -TODO Highlight                              (Wayou Liu)               // подсказки в коде todo
 -webpack                                     (Jeremy Rajan)            // для лучшей поддержки webpack
+-Indent Rainbow                              (oderwat)                 // раскрашивает отступы справа
