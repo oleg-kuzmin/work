@@ -15,7 +15,6 @@
 </form>;
 
 //# настройка валидации
-
 const validateConfig = {
   form: '.popup__form',
   buttonSubmit: '.popup__button-save',
