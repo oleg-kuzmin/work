@@ -32,13 +32,13 @@
   "editor.suggest.showWords": false, // отключает подсказки abc эммета
   "editor.parameterHints.enabled": false, // убирает все подсказки
   "editor.occurrencesHighlight": false, // выключает лишнюю подсветку слов
-  "editor.glyphMargin": false, // скрывает точки остановки для отладки
   "css.lint.emptyRules": "ignore", // выключает подсветку пустых css
   "scss.lint.emptyRules": "ignore", // выключает подсветку пустых scss
   "editor.smoothScrolling": true, // плавный скролл
   "window.openFilesInNewWindow": "off", // запрет открытия файлов в новом окне
   "explorer.compactFolders": false, // не сжимает в одну строчку папки в проводнике
   "explorer.confirmDragAndDrop": false, // убирает подтверждение переноса папки
+  "editor.mouseWheelScrollSensitivity": 1.5, // скорость прокрутки мышки
 
   // отмена серого цвета для игнорируемых файлов
   "workbench.colorCustomizations": {
@@ -129,6 +129,6 @@
     }
   ],
   "workbench.colorTheme": "Kimbie Dark", // цветовая тема
-  "workbench.iconTheme": "material-icon-theme", // иконки проводника
-  "workbench.productIconTheme": "material-product-icons" // иконки проводника
+  "workbench.iconTheme": "material-icon-theme", // иконки
+  "workbench.productIconTheme": "material-product-icons" // иконки
 }
