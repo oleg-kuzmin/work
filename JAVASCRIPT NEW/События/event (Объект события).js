@@ -58,11 +58,27 @@ playlist.addEventListener('click', function (evt) {
 //* evt.target.dataset
 // Получаем доступ к атрибуту data в html
 <input type="button" data-number="1"></input>;
-evt.target.dataset // {number : '1'}
-evt.target.dataset.number // '1'
+evt.target.dataset; // {number : '1'}
+evt.target.dataset.number; // '1'
 
 //* evt.type
 // Тип события
 
 //* evt.isTrusted
 // Проверяет пользователь ли сделал клик (защита от бота)
+
+//# Передача аргументов
+//* Вариант 1. Привязываем контекст и первые по порядку параметры
+function someFunk(a, b, event) {
+  console.log(a, b, event);
+}
+element.addEventListener('click', someFunk.bind(null, 1, 2));
+
+//* Вариант 2. Используем интерфейс EventListener
+function someFunk(event) {
+  console.log(this.a, this.b, event);
+}
+element.addEventListener('click', { handleEvent: someFunk, a: 1, b: 2 });
+
+//* Вариант 3.
+element.addEventListener('click', () => someFunk(param));
