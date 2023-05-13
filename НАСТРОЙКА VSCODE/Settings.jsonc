@@ -39,6 +39,9 @@
   "explorer.compactFolders": false, // не сжимает в одну строчку папки в проводнике
   "explorer.confirmDragAndDrop": false, // убирает подтверждение переноса папки
   "editor.mouseWheelScrollSensitivity": 1.5, // скорость прокрутки мышки
+  "editor.hideCursorInOverviewRuler": true, // убирает курсор вертикального скролбара
+  "editor.scrollbar.verticalScrollbarSize": 0, // размер вертикального скролбара
+  "editor.glyphMargin": false, // скрывает точки остановки для отладки
 
   // отмена серого цвета для игнорируемых файлов
   "workbench.colorCustomizations": {
