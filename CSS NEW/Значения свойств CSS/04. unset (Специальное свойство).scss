@@ -8,13 +8,13 @@
 //# пример
 //* Для наследуемых свойств unset будет работать как inherit
 h2 {
-  color: unset; // color: inherit
+  color: unset;     // color: inherit
   font-size: unset; // font-size: inherit
 }
 
 //* Для ненаследуемых свойств unset будет работать как initial
 .selector {
-  display: unset; // display: initial;
+  display: unset;   // display: initial;
 }
 
 //# использование со свойством "all"
