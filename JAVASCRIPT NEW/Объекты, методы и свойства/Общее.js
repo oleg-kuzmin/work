@@ -18,6 +18,9 @@ const сat = {
   },
 };
 
+//* через конструктор
+const myObject = new Object();
+
 //# чтение свойств
 //* через точку
 console.log(`На полке стоит «${book.title}»`);
