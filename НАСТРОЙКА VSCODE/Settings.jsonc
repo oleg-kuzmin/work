@@ -48,7 +48,8 @@
   "workbench.colorCustomizations": {
     "[Kimbie Dark]": {
       "gitDecoration.ignoredResourceForeground": "#cccccc",
-      "tab.activeBackground": "#5e4416"
+      // "tab.activeBackground": "#5e4416",
+      "tab.activeBorder": "#cc8d21"
     }
   },
 
