@@ -47,7 +47,8 @@
   // отмена серого цвета для игнорируемых файлов
   "workbench.colorCustomizations": {
     "[Kimbie Dark]": {
-      "gitDecoration.ignoredResourceForeground": "#cccccc"
+      "gitDecoration.ignoredResourceForeground": "#cccccc",
+      "tab.activeBackground": "#5e4416"
     }
   },
 
