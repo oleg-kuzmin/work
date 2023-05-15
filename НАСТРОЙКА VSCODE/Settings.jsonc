@@ -42,6 +42,7 @@
   "editor.hideCursorInOverviewRuler": true, // убирает курсор вертикального скролбара
   "editor.scrollbar.verticalScrollbarSize": 0, // размер вертикального скролбара
   "editor.glyphMargin": false, // скрывает точки остановки для отладки
+  "editor.showDeprecated": false, // выключает перечеркивание для устаревших переменных, в том числе name
 
   // отмена серого цвета для игнорируемых файлов
   "workbench.colorCustomizations": {
