@@ -1,6 +1,5 @@
-//# .getFullYear () (Возвращает number - текущий год)
+//# .getFullYear () (return number - год)
 
-//# пример
 //* без переменной
 new Date().getFullYear(); // 2023 (number)
 

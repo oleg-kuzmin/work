@@ -1,6 +1,5 @@
-//# .getDate() (Возвращает number - текущий день)
+//# .getDate() (return number - день недели с 0 до 6)
 
-//# пример
 //* без переменной
 new Date().getDate(); // 7 (number)
 

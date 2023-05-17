@@ -1,6 +1,5 @@
-//# .getHours() (Возвращает number - текущий час)
+//# .getHours() (return number - час с 0 до 23)
 
-//# пример
 //* без переменной
 new Date().getHours(); // 17 (number)
 

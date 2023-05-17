@@ -1,6 +1,5 @@
-//# .toLocaleTimeString() (Возвращает string - текущее время)
+//# .toLocaleTimeString() (return string - время HH-MM-SS)
 
-//# пример
 //* без переменной
 new Date().toLocaleTimeString(); // 17:46:28 (string)
 

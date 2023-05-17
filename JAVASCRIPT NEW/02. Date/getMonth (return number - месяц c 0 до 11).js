@@ -1,7 +1,5 @@
-//# .getMonth() (Возвращает number - текущий месяц)
-// Отсчет начинается с 0
+//# .getMonth() (return number - месяц с 0 до 11)
 
-//# пример
 //* без переменной
 new Date().getMonth(); // 4 (number)
 
