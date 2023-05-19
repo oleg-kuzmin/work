@@ -1,4 +1,4 @@
-//# .getMinutes() (return number - минуты с 0 до 59)
+//# .getMinutes() (Возвращает число - минуты с 0 до 59)
 
 //* без переменной
 new Date().getMinutes(); // 17 (number)

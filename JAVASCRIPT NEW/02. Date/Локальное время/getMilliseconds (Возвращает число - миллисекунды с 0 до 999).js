@@ -1,4 +1,4 @@
-//# .getMilliseconds() (return number - милисекунды с 0 до 999)
+//# .getMilliseconds() (Возвращает число - миллисекунды с 0 до 999)
 
 //* без переменной
 new Date().getMilliseconds(); // 123 (number)

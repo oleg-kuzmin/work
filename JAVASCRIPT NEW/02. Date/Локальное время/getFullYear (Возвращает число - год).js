@@ -1,4 +1,4 @@
-//# .getFullYear () (return number - год)
+//# .getFullYear () (Возвращает число - год)
 
 //* без переменной
 new Date().getFullYear(); // 2023 (number)

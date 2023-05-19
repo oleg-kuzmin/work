@@ -1,4 +1,4 @@
-//# .getMonth() (return number - месяц с 0 до 11)
+//# .getMonth() (Возвращает число - месяц c 0 до 11)
 
 //* без переменной
 new Date().getMonth(); // 4 (number)

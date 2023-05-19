@@ -1,4 +1,4 @@
-//# .getSeconds () (return number - секунды с 0 до 59)
+//# .getSeconds() (Возвращает число - секунды с 0 до 59)
 
 //* без переменной
 new Date().getSeconds(); // 17 (number)

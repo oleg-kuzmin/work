@@ -1,4 +1,4 @@
-//# .getTimezoneOffset() (return number - минуты смещения с UTC)
+//# .getTimezoneOffset() (Возвращает число - минуты смещения с UTC)
 // возвращает смещение в минутах между текущей часовой зоной и UTC.
 
 const currentDate = new Date();

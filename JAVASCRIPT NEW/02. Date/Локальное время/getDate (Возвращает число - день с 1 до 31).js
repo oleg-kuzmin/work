@@ -1,4 +1,4 @@
-//# .getDate() (return number - день недели с 0 до 6)
+//# .getDate() (Возвращает число - день с 1 до 31)
 
 //* без переменной
 new Date().getDate(); // 7 (number)

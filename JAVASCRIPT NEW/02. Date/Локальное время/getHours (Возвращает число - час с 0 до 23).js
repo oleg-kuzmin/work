@@ -1,4 +1,4 @@
-//# .getHours() (return number - час с 0 до 23)
+//# .getHours() (Возвращает число - час с 0 до 23)
 
 //* без переменной
 new Date().getHours(); // 17 (number)
