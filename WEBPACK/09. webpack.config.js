@@ -24,7 +24,7 @@ module.exports = {
     compress: true, // это ускорит загрузку в режиме разработки
     port: 8080, // порт, чтобы открывать сайт по адресу localhost:8080, но можно поменять порт
     open: true, // сайт будет открываться сам при запуске npm run dev
-    // static: path.resolve(__dirname, './dist'), // старое
+    // static: path.resolve(__dirname, './dist'), старое
   },
 
   //# настройка модулей
@@ -55,15 +55,17 @@ module.exports = {
           'postcss-loader',
         ],
       },
+
       //# обработка scss и sass
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 },
+          },
+          'postcss-loader',
           'sass-loader',
         ],
       },
@@ -79,6 +81,8 @@ module.exports = {
     //# настройка clean-webpack-plugin
     new CleanWebpackPlugin(), // подключение плагина для работы Webpack с html
     //# настройка mini-css-extract-plugin
-    new MiniCssExtractPlugin(), // подключение плагина для объединения файлов
+    new MiniCssExtractPlugin({
+      filename: 'main.css',
+    }), // подключение плагина для объединения файлов
   ],
 };

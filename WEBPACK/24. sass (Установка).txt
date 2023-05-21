@@ -1,4 +1,11 @@
 # установить пакеты
 
-npm install sass-loader sass webpack --save-dev
-npm install style-loader --save-dev
+npm install sass-loader sass --save-dev
+
+# изменения в package.json:
+"devDependencies": {
+  "sass": "^1.62.1",
+  "sass-loader": "^13.2.2",
+}
+
+# после настроить webpack.config.js
