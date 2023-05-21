@@ -27,19 +27,22 @@ module.exports = {
     // static: path.resolve(__dirname, './dist'), // старое
   },
 
-  //# настройка Babel
+  //# настройка модулей
   module: {
     // rules — это массив правил, добавим в него объект правил для бабеля
     rules: [
+      //# babel
       {
         test: /\.js$/, // регулярное выражение, которое ищет все js файлы
         use: 'babel-loader', // при обработке этих файлов нужно использовать babel-loader
         exclude: '/node_modules/', // исключает папку node_modules, файлы в ней обрабатывать не нужно
       },
+      //# обработка файлов
       {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/, // регулярное выражение, которое ищет все файлы с такими расширениями
         type: 'asset/resource', // значение asset/resource позволяет переносить исходные файлы в конечную сборку в том же формате
       },
+      //# обработка css
       {
         test: /\.css$/, // регулярное выражение, которое ищет все css файлы
         // при обработке этих файлов нужно использовать MiniCssExtractPlugin.loader, css-loader и postcss-loader
@@ -50,6 +53,18 @@ module.exports = {
             options: { importLoaders: 1 }, // Значение 1 говорит о том, что некоторые трансформации PostCSS нужно применить до css-loader.
           },
           'postcss-loader',
+        ],
+      },
+      //# обработка scss и sass
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
         ],
       },
     ],

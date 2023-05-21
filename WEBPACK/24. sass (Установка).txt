@@ -1,0 +1,4 @@
+# установить пакеты
+
+npm install sass-loader sass webpack --save-dev
+npm install style-loader --save-dev
