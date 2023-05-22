@@ -10,7 +10,7 @@ Quokka.js                                    (Wallaby.js)              // для
 HTMLHint                                     (HTMLHint)                // подсветка ошибок в html
 Markdown Preview Enhanced                    (Yiyi Wang)               // просмотр md в vscode
 Backticks                                    (FractalBrew)             // автоматическое исправление на шаблонные строки
-Color Highlight                              (Sergii N)                // подстветка цветов
+
 Path Intellisense                            (Christian Kohler)        // подсказка путей
 Svg Preview                                  (Simon Siefke)            // просмотр svg
 
@@ -44,3 +44,4 @@ Svg Preview                                  (Simon Siefke)            // про
 -TODO Highlight                              (Wayou Liu)               // подсказки в коде todo
 -webpack                                     (Jeremy Rajan)            // для лучшей поддержки webpack
 -Indent Rainbow                              (oderwat)                 // раскрашивает отступы справа
+-Color Highlight                             (Sergii N)                // подстветка цветов

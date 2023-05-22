@@ -1,0 +1,38 @@
+.element {
+  font-family: 'Custom', 'Helvetica', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+//* font-family: 'Gilroy', 'Helvetica', 'Arial', sans-serif;
+// Custom, Apple, Windows, default
+
+//* -webkit-font-smoothing: antialiased;
+// Сглаживание шрифта (Chrome, Яндекс Браузер, Опера)
+
+//* -moz-osx-font-smoothing: grayscale;
+// Сглаживание шрифта (Mozilla Firefox)
+
+//* -webkit-text-size-adjust;
+// Подгонка размера текста (Chrome, Яндекс Браузер, Опера)
+
+//* -moz-text-size-adjust: 100%;
+// Подгонка размера текста (Mozilla Firefox)
+
+//* -ms-text-size-adjust: 100%;
+// Подгонка размера текста (Edge)
+
+//# дополнительно
+//* text-rendering: optimizeLegibility;
+/*
+Кёрнинг и Лигатуры (говорит браузеру, что кёрнинг и лигатуры должны быть отрисованы), сильно замедлит рендеринг страницы, лучше использовать только в заголовках
+
+1) Кёрнинг — это выборочное изменение расстояния между буквами, чтобы они лучше смотрелись рядом, для некоторых пар символов выигрышна меньшая дистанция.
+
+2) Лигатуры — знаки, образованные слиянием символов, например: њ, љ, œ, æ,  редко попадаются в русских текстах, но, к примеру, французские без них смотрятся неважно.
+*/
+
+
