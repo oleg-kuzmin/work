@@ -61,6 +61,13 @@ playlist.addEventListener('click', function (evt) {
 evt.target.dataset; // {number : '1'}
 evt.target.dataset.number; // '1'
 
+//* evt.target.parentElement
+// получаем доступ к родителю
+
+//* evt.target.closest;
+// ищет ближайщего родителя с селектором
+evt.target.closest('.******');
+
 //* evt.type
 // Тип события
 
