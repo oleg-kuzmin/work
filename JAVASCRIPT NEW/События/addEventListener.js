@@ -10,15 +10,24 @@ element.addEventListener(eventName, handler);
 //# пример
 //* первый способ записи (неименованная функция)
 const element = document.querySelector('button');
-element.addEventListener('click', function (event) {
-  console.log('Произошло событие', event.type);
+element.addEventListener('click', function (evt) {
+  console.log('Произошло событие', evt.type);
 });
 
 //* второй способ записи (неименованная функция)
-element.addEventListener('click', (event) => {
+element.addEventListener('click', evt => {
   alert('Анонимная функция');
 });
 
 //* третий способ записи (именованная функция)
 element.addEventListener('click', showClick);
 // Обратите внимание, что в такой записи вторым параметром обработчика указывают только имя функции без скобок. Скобки не ставят, потому что мы не вызываем функцию, а просто передаём её как аргумент. Тем самым мы говорим браузеру: «вот функция showClick, вызови её, когда сработает событие click». Функция showClick в данном случае называется. Её передают другой функции в качестве аргумента, чтобы быть вызванной позже.
+
+//# однократное событие
+element.addEventListener(
+  'click',
+  evt => {
+    console.log(evt);
+  },
+  { once: true }
+);
