@@ -1,0 +1,14 @@
+//# grid-template (Строки и Колонки, шорткат)
+/*
+grid-template-rows (первое значение)
+grid-template-columns (второе значение)
+
+- Используйте все доступные значения свойств grid-template-rows и grid-template-columns, разделяя их слэшем.
+- В этом же свойстве можно задавать значение и для grid-template-areas. Но тогда код превращается в кашу и становится совершенно нечитабельным. Лучше всё же использовать это свойство отдельно.
+*/
+
+//# пример
+.container {
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(3, 500px);
+}
