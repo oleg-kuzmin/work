@@ -1,0 +1,17 @@
+//# place-content (Выравнивание элементов и строк, шорткат)
+/*
+align-content (первое значение)
+justify-content (второе значение)
+
+- С его помощью можно выровнять элементы во флекс- или грид-контейнерах.
+- Не любой флекс-контейнер подружится с place-content, для этого он обязательно должен быть многострочным! С этим поможет свойство flex-wrap в значении wrap или wrap-reverse.
+*/
+
+//# пример
+.element {
+  //* 2 значения (align-content, justify-content)
+  place-content: space-around end;
+
+  //* 1 значение (align-content, justify-content)
+  place-content: end;
+}
