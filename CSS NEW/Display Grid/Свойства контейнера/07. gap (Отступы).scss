@@ -1,0 +1,26 @@
+//# gap (Отступы между элементами, шорткат)
+/*
+row-gap (первое значение)
+column-gap (первое значение)
+
+- Работает как с гридами, так и с флексбоксами.
+*/
+
+//# пример
+.container {
+  //* 1 значение (row-gap, column-gap)
+  gap: 20px;
+
+  //* 2 значения (row-gap, column-gap)
+  gap: 10px 10px;
+}
+
+//# column-gap
+.container {
+  column-gap: 20px;
+}
+
+//# row-gap
+.container {
+  row-gap: 20px;
+}
