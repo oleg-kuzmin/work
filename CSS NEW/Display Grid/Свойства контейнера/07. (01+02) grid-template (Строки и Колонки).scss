@@ -9,6 +9,5 @@ grid-template-columns (второе значение)
 
 //# пример
 .container {
-  display: grid;
   grid-template: repeat(4, 1fr) / repeat(3, 500px);
 }

@@ -1,0 +1,10 @@
+//# place-items (Выравнивание внутри грид ячеек, шорткат)
+/*
+align-items (первое значение)
+justify-items (второе значение)
+*/
+
+//# пример
+.container {
+  place-items: stretch end;
+}
