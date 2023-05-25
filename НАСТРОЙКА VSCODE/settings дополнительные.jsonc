@@ -1,39 +1,145 @@
 {
-  "editor.glyphMargin": false, // скрывает точки остановки для отладки
+  "workbench.startupEditor": "none", // что будет отображаться при запуске, если содержимое редактора не было восстановлено
+  "security.workspace.trust.untrustedFiles": "open", // открытие недоверенных файлов в доверенной области
+  "files.autoSave": "afterDelay", // автосохранение
+  "files.trimTrailingWhitespace": true, // удаляет лишние пробелы при сохранении
+  "editor.cursorStyle": "line-thin", // тонкий стиль курсора
+  "editor.fontSize": 18, // размер шрифта
+  "window.zoomLevel": 0.2, // увеличение интерфейса
+  "editor.mouseWheelZoom": false, // изменение размера шрифта при скроле колесиком
+  "editor.formatOnSave": true, // форматирование при сохранении
+  "editor.insertSpaces": true, // пробелы при нажатии на tab
+  "editor.linkedEditing": true, // одновременное редактирование совместных тэгов
+  "editor.minimap.enabled": false, // выключение мини-карты
+  "editor.overviewRulerBorder": false, // скрывает границу ползуна вертикального скролла
+  "editor.renderLineHighlight": "none", // выключает выделение черной границей текущей строки
+  "editor.scrollbar.vertical": "hidden", // скрывает ползунок полосы прокрутки
+  "editor.tabSize": 2, // размер табов
+  "editor.wordWrap": "on", // включение переноса текста по словам
+  "explorer.confirmDelete": false, // выключение подтверждения удаления файла в корзину
+  "workbench.editor.closeEmptyGroups": false, // сохраняет разделение экрана при закрытии вкладки
+  "workbench.tree.renderIndentGuides": "none", // вертикальные линии проводника с файлами
+  "breadcrumbs.enabled": false, // выключает хлебные крошки
+  "editor.hover.enabled": false, // выключает подсказки при наведении в редакторе
+  "workbench.editor.restoreViewState": false, // отключает запоминание положения редактора в файле
+  "terminal.integrated.fontSize": 16, // шрифт в терминале
+  "terminal.integrated.defaultProfile.windows": "Git Bash", // использование Git Bash по умолчанию
+  "git.autofetch": false, // переодически использует автоматический fetch
+  "git.confirmSync": false, // подтверждение синхронизации с Git
+  "git.enableSmartCommit": true, // добавление в stage всех файлов при коммите
+  "explorer.autoReveal": false, // проводник не реагирует на открытие файла
+  "editor.matchBrackets": "never", // выключает выделение скобок
+  "editor.suggest.showWords": false, // отключает подсказки abc эммета
+  "editor.parameterHints.enabled": false, // убирает все подсказки
   "editor.occurrencesHighlight": false, // выключает лишнюю подсветку слов
-  "vscodeGoogleTranslate.preferredLanguage": "Russian", // на какой язык переводить
-  "editor.wordBasedSuggestions": false, // отключает подсказки abc эммета
-  "javascript.suggest.names": false, // отключает подсказки abc эммета
-  "editor.defaultFormatter": "esbenp.prettier-vscode", // выбор форматировщика для всех
-  "editor.guides.highlightActiveIndentation": false, // убирает вертикальные линии
-  "editor.renderIndentGuides": false, // скрывает вертикальные линии функции
-  "editor.guides.indentation": false,
-  "editor.parameterHints": false, // убирает все подсказки
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "html.suggest.html5": false,
-  "editor.snippetSuggestions": "none",
-  "explorer.confirmDragAndDrop": false,
-  "liveServer.settings.donotVerifyTags": true,
+  "css.lint.emptyRules": "ignore", // выключает подсветку пустых css
+  "scss.lint.emptyRules": "ignore", // выключает подсветку пустых scss
+  "editor.smoothScrolling": true, // плавный скролл
+  "window.openFilesInNewWindow": "off", // запрет открытия файлов в новом окне
+  "explorer.compactFolders": false, // не сжимает в одну строчку папки в проводнике
+  "explorer.confirmDragAndDrop": false, // убирает подтверждение переноса папки
+  "editor.mouseWheelScrollSensitivity": 1.5, // скорость прокрутки мышки
+  "editor.hideCursorInOverviewRuler": true, // убирает курсор вертикального скролбара
+  "editor.scrollbar.verticalScrollbarSize": 0, // размер вертикального скролбара
+  "editor.glyphMargin": false, // скрывает точки остановки для отладки
+  "editor.showDeprecated": false, // выключает перечеркивание для устаревших переменных, в том числе name
 
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+  // отмена серого цвета для игнорируемых файлов
+  "workbench.colorCustomizations": {
+    "[Kimbie Dark]": {
+      "gitDecoration.ignoredResourceForeground": "#cccccc",
+      // "tab.activeBackground": "#5e4416",
+      "tab.activeBorder": "#cc8d21"
+    }
   },
-  "[javascriptreact]": {
+
+  // форматировщики
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.singleQuote": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.singleQuote": false
+  },
+  "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  //# liveSassCompile
-  "liveSassCompile.settings.generateMap": false,
-  "liveSassCompile.settings.formats": [
+  //* liveServer
+  "liveServer.settings.donotShowInfoMsg": true, // не показывать информационные сообщения
+
+  //* prettier
+  "prettier.printWidth": 120, // размер страницы
+  "prettier.singleQuote": true, // одиночные кавычки
+  "prettier.arrowParens": "avoid",
+
+  //* better-comments
+  "better-comments.tags": [
     {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/styles"
+      "tag": "#",
+      "color": "#e3d50e",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
     }
   ],
-  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"]
+  "workbench.colorTheme": "Kimbie Dark", // цветовая тема
+  "workbench.iconTheme": "material-icon-theme", // иконки material-icon-theme
+  "workbench.productIconTheme": "material-product-icons", // иконки material-icon-theme
+  "material-icon-theme.activeIconPack": "react_redux", // режим material-icon-theme
+  "material-icon-theme.hidesExplorerArrows": true // скрыть стрелки возле папок в проводнике
 }
