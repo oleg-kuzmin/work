@@ -8,3 +8,5 @@ https://www.npmjs.com/package/js-cookie
 # слайдер
 https://fotorama.io/#f55e6755-198a-408d-8e82-a50370527aed
 
+# библиотека утилит lodash (функцию глубокого копирования)
+https://lodash.com/docs/4.17.15#cloneDeep

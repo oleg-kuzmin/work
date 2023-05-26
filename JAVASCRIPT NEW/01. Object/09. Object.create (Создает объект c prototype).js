@@ -1,5 +1,4 @@
-//# Object.create (Создает новый пустой объект)
-
+//# Object.create (Создает объект c prototype)
 // Первый аргумент метода — обязательный — объект, который должен стать прототипом нового объекта.
 
 //# пример
@@ -10,9 +9,5 @@ const songPrototype = {
   },
 };
 
-// создаём пустой объект с указанным прототипом
-const newSong = Object.create(songPrototype);
-
+const newSong = Object.create(songPrototype); // создаём пустой объект с указанным прототипом
 console.log(newSong); // пустой объект
-
-
