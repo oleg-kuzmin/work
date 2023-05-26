@@ -1,4 +1,4 @@
-//# document.createElement()
+//# document.createElement() (Создает html-элемент)
 // Создает html-элемент.
 
 //# пример
