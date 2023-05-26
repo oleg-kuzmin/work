@@ -1,18 +1,18 @@
-Russian Language Pack for Visual Studio Code (Microsoft)               // языковой пакет
-Space Ocean Kit Refined                      (space-ocean-kit-refined) // цветовая тема
-Live Server                                  (Ritwick Dey)             // виртуальный сервер
-Better Comments                              (Aaron Bond)              // красивые комментарии
-eCSStractor for VSCode                       (diz)                     // копирование классов из html в css
-CSS Navigation                               (pucelle)                 // навигация по файлам css
-Prettier - Code formatter                    (Prettier)                // форматировщик кода
-W3C Web Validator                            (Celian Riboulet)         // проверка валидности W3C
-Quokka.js                                    (Wallaby.js)              // для запуска js в vscode
-HTMLHint                                     (HTMLHint)                // подсветка ошибок в html
-Markdown Preview Enhanced                    (Yiyi Wang)               // просмотр md в vscode
-Backticks                                    (FractalBrew)             // автоматическое исправление на шаблонные строки
-
-Path Intellisense                            (Christian Kohler)        // подсказка путей
-Svg Preview                                  (Simon Siefke)            // просмотр svg
++Russian Language Pack for Visual Studio Code (Microsoft)               // языковой пакет
++Space Ocean Kit Refined                      (space-ocean-kit-refined) // цветовая тема
++Live Server                                  (Ritwick Dey)             // виртуальный сервер
++Better Comments                              (Aaron Bond)              // красивые комментарии
++eCSStractor for VSCode                       (diz)                     // копирование классов из html в css
++CSS Navigation                               (pucelle)                 // навигация по файлам css
++Prettier - Code formatter                    (Prettier)                // форматировщик кода
++W3C Web Validator                            (Celian Riboulet)         // проверка валидности W3C
++Quokka.js                                    (Wallaby.js)              // для запуска js в vscode
++HTMLHint                                     (HTMLHint)                // подсветка ошибок в html
++Markdown Preview Enhanced                    (Yiyi Wang)               // просмотр md в vscode
++Backticks                                    (FractalBrew)             // автоматическое исправление на шаблонные строки
++SCSS IntelliSense                            (mrmlnc)                  // помощник синтаксиса для scss
++Path Intellisense                            (Christian Kohler)        // подсказка путей
++Svg Preview                                  (Simon Siefke)            // просмотр svg
 
 - установить все расширения
 - скопировать json
@@ -24,9 +24,7 @@ Svg Preview                                  (Simon Siefke)            // про
 -Tailwind CSS IntelliSense                   (Tailwind Labs)           // подсказки для css
 -Sass                                        (Syler)                   // sass
 -SCSS Everywhere                             (Gencer W. Genç)          // scss
--SCSS IntelliSense                           (mrmlnc)                  // помощник синтаксиса для scss
 -SCSS Formatter                              (Sibiraj)                 // форматирование scss
--Live Sass Compiler                          (Glenn Marks)             // компилятор scss
 -Prettier ESLint                             (Rebecca Vest)            // форматировщик
 -PostCSS Language Support                    (csstools)                // подсветка PostCSS
 -IntelliCode                                 (Microsoft)               // подсказки для написания кода

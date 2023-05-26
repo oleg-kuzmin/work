@@ -76,7 +76,7 @@
   "liveServer.settings.donotShowInfoMsg": true, // не показывать информационные сообщения
 
   //* prettier
-  "prettier.printWidth": 140, // размер страницы
+  "prettier.printWidth": 120, // размер страницы
   "prettier.singleQuote": true, // одиночные кавычки
   "prettier.arrowParens": "avoid",
 
@@ -138,6 +138,15 @@
     }
   ],
   "workbench.colorTheme": "Kimbie Dark", // цветовая тема
-  "workbench.iconTheme": "material-icon-theme", // иконки
-  "workbench.productIconTheme": "material-product-icons" // иконки
+  "workbench.iconTheme": "material-icon-theme", // иконки material-icon-theme
+  "workbench.productIconTheme": "material-product-icons", // иконки material-icon-theme
+  "material-icon-theme.activeIconPack": "react_redux", // режим material-icon-theme
+  "material-icon-theme.hidesExplorerArrows": false, // скрыть стрелки возле папок в проводнике
+  // настройка иконок в проводнике
+  "material-icon-theme.folders.associations": {
+    "node": "node",
+    "настройка vscode": "vscode",
+    "git": "github",
+    "00. work": "custom"
+  }
 }
