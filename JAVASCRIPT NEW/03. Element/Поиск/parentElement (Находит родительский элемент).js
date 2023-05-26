@@ -1,6 +1,6 @@
-//# .parentElement
+//# .parentElement (Находит родительский элемент)
 // Получить родительский элемент.
 
 //# пример
 const element = document.querySelector('p');
-console.log(element.parentElement); // body, так как это родитель p
+console.log(element.parentElement); // body
