@@ -3,8 +3,8 @@
 
 //# пример
 // принимает только один аргумент, аргумент будет приведён к строке
-alert("Message");
+alert('Message');
 
 // можно передать переменную
-const text = "Another message";
+const text = 'Another message';
 alert(text);
