@@ -45,3 +45,20 @@ ticktock.valueOf();
 
 // Замыкания удобны тем, что каждый новый вызов создаёт отдельную область, в которой значения абсолютно независимы друг от друга:
 // Состояния счётчиков друг от друга не зависят, хотя они создаются одной и той же функцией.
+
+function Counter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+const counter = Counter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+const anotherCounter = Counter();
+console.log(anotherCounter()); // 1
+console.log(anotherCounter()); // 2
+console.log(anotherCounter()); // 3

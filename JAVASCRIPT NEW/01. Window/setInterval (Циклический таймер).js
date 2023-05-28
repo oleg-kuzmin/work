@@ -1,4 +1,4 @@
-//# setInterval()
+//# setInterval() (Циклический таймер)
 // Метод setInterval устанавливает циклический таймер. Он позволяет вызывать колбэк много раз, через заданные промежутки времени. Например, сделать автоматическую проверку почты.
 
 function checkEmail() {
@@ -12,12 +12,12 @@ setInterval(checkEmail, 10000); // Ящик будет обновляться к
 
 const interval = setInterval(checkEmail, 10000);
 
-// Если пользователь переключил вкладку,
+// Если пользователь переключил вкладку
 window.addEventListener('blur', function () {
   clearInterval(interval); // удаляем таймер.
 });
 
-// Если пользователь вернулся на вкладку,
+// Если пользователь вернулся на вкладку
 window.addEventListener('focus', function () {
-  interval = setInterval(checkEmail, 10000); // снова запускаем таймер.
+  interval = setInterval(checkEmail, 10000); // снова запускаем таймер
 });
