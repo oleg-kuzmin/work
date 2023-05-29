@@ -36,6 +36,7 @@ element.addEventListener('click', evt => {
 element.addEventListener('click', showClick);
 
 //# однократное событие
+//* с опциями
 element.addEventListener(
   'click',
   evt => {
@@ -43,3 +44,26 @@ element.addEventListener(
   },
   { once: true }
 );
+
+//* без опций
+function handleClick() {
+  console.log('Клик!');
+  window.removeEventListener('click', handleClick);
+}
+window.addEventListener('click', handleClick);
+
+//# Передача аргументов
+//* Вариант 1. Привязываем контекст и первые по порядку параметры
+function someFunk(a, b, event) {
+  console.log(a, b, event);
+}
+element.addEventListener('click', someFunk.bind(null, 1, 2));
+
+//* Вариант 2. Используем интерфейс EventListener
+function someFunk(event) {
+  console.log(this.a, this.b, event);
+}
+element.addEventListener('click', { handleEvent: someFunk, a: 1, b: 2 });
+
+//* Вариант 3.
+element.addEventListener('click', () => someFunk(param));
