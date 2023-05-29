@@ -1,4 +1,5 @@
-//# деструктуризация массива
+//# Деструктуризация массива
+
 const catProfile = ['Maru', 'Scottish Fold', true, ''];
 const [name, breed] = catProfile;
 
