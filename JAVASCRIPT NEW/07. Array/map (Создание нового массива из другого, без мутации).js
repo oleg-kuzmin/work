@@ -18,6 +18,9 @@
 Исходный массив как аргумент пригодится, когда нужно обратиться к свойствам этого исходного массива.
 */
 
+//# Синтаксис
+array.map(function (item, index, array) {});
+
 //# пример
 const firstArr = [0, 1, 2, 3, 4];
 const secondArr = firstArr.map(function (item) {

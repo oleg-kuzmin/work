@@ -20,7 +20,7 @@
 */
 
 //# синтаксис
-element.indexOf(searchElement, fromIndex);
+array.indexOf(searchElement, fromIndex);
 
 //# пример
 //* массив

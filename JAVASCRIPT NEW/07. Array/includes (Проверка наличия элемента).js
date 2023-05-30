@@ -20,7 +20,7 @@
 */
 
 //# синтаксис
-element.includes(searchElement, fromIndex);
+array.includes(searchElement, fromIndex);
 
 //# пример
 //* для массива

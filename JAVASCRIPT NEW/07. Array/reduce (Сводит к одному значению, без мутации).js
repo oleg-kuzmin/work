@@ -23,6 +23,9 @@
 Исходный массив как аргумент пригодится, когда нужно обратиться к свойствам этого исходного массива.
 */
 
+//# Синтаксис
+array.reduce(function (previousValue, item, index, array) {});
+
 //# пример
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const sum = arr.reduce(function (previousValue, item) {
