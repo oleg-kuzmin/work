@@ -11,3 +11,8 @@
 const watched = ['Властелин Колец', 'Гарри Поттер'];
 watched.push('Зеленая Книга');
 console.log(watched); // ['Властелин Колец', 'Гарри Поттер', 'Зеленая книга']
+
+//* несколько значений
+const emeraldCityHeroes = ['Лев', 'Дровосек', 'Страшила'];
+emeraldCityHeroes.push('Элли', 'Тотошка');
+console.log(emeraldCityHeroes); // ["Лев", "Дровосек", "Страшила", "Элли", "Тотошка"]

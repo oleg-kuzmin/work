@@ -38,8 +38,22 @@ console.log(sum);
 const winsAndLoses = [190, 117, -381, -394, -36, 137, -473, 372, -383];
 
 // Посчитаем, какая сумма денег останется у этого игрока к концу вечера, если вначале у него было с собой 1000.
+// Начальное значение передаём методу reduce как второй аргумент.
 const total = winsAndLoses.reduce(function (previousValue, item) {
   return previousValue + item;
-}, 1000); // Начальное значение передаём методу reduce как второй аргумент.
+}, 1000);
 
 console.log(total); // 149.
+
+//# второй аргумент (начальное значение) пустой объект
+const order = ['яблоко', 'банан', 'апельсин', 'банан', 'яблоко', 'банан'];
+const result = order.reduce(function (previousValue, item) {
+  if (!previousValue[item]) {
+    previousValue[item] = 1; // если ключа ещё нет в объекте, значит это первое повторение
+  } else {
+    previousValue[item] += 1; // иначе увеличим количество повторений на 1
+  }
+  return previousValue; // вернём изменённый объект
+}, {});
+
+console.log(result); // { яблоко: 2, банан: 3, апельсин: 1 }
