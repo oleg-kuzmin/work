@@ -1,35 +1,36 @@
+//# сookie (Запись, получение элемента)
 const todos = [
   {
-    name: "shop",
+    name: 'shop',
     isCompleted: true,
   },
   {
-    name: "clean",
+    name: 'clean',
     isCompleted: true,
   },
   {
-    name: "byu",
+    name: 'byu',
     isCompleted: false,
   },
 ];
 
-// Запись cookie
+//# Запись cookie
 document.cookie = `todos=${JSON.stringify(todos)}`;
 
-// Получение элемента cookie
+//# Получение элемента cookie
 function getCoockie(cname) {
-  const name = cname + "=";
+  const name = cname + '=';
   const decodedCookie = decodeURIComponent(document.cookie);
-  const ca = decodedCookie.split(";");
+  const ca = decodedCookie.split(';');
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
-    while (c.charAt(0) === "") {
+    while (c.charAt(0) === '') {
       c = c.substring(1);
     }
     if (c.indexOf(name) === 0) {
       return c.substring(name.length, c.length);
     }
   }
-  return "";
+  return '';
 }
-console.log(JSON.parse(getCoockie("todos")));
+console.log(JSON.parse(getCoockie('todos')));
