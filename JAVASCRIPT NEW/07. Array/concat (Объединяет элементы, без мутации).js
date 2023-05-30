@@ -5,9 +5,15 @@
 */
 
 //# пример
+//* все аргументы будут добавлены в новый массив в том же порядке
+const toDoList = ['Посадить дерево', 'Построить дом'];
+const toDoListUpdated = toDoList.concat('Вырастить сына');
+console.log(toDoListUpdated); // ["Посадить дерево", "Построить дом", "Вырастить сына"]
+
+//* несколько значений
 const moscowAttractions = ['Кремль', 'Третьяковская галерея'];
 const spbAttractions = ['Эрмитаж', 'Мариинский театр'];
 const volgogradAttractions = ['Мамаев Курган', 'Родина-мать'];
-
-// получим новый массив со значениями всех исходных массивов
 const russiaAttractions = moscowAttractions.concat(spbAttractions, volgogradAttractions);
+console.log(russiaAttractions);
+// ['Кремль', 'Третьяковская галерея', 'Эрмитаж', 'Мариинский театр', 'Мамаев Курган', 'Родина-мать'];
