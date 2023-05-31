@@ -1,0 +1,32 @@
+.popup {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+//# отключение прокрутки страницы
+/*
+- К примеру, на всех сайтах, где предусмотрены попапы, я подключаю скрипт, который проставляет класс ._popup-opened для тега <html>.
+- Таким образом я могу добавлять дополнительные стили только тогда, когда попап открыт.
+- К примеру, чтобы страница под попапом не прокручивалась, нужно добавить overflow: hidden для <body>.
+- Но во всё остальное время это свойство не нужно.
+- Попап открывается → скрипт добавляет класс _popup-opened для <html> → срабатывает стиль для <body> → попап закрывается → скрипт - убирает класс → страница снова проматывается.
+*/
+
+html._popup-opened body {
+  overflow: hidden;
+}
