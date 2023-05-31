@@ -12,4 +12,5 @@ https://fotorama.io/#f55e6755-198a-408d-8e82-a50370527aed
 https://lodash.com/docs/4.17.15#cloneDeep
 
 # swiper
+npm install swiper
 https://swiperjs.com/demos#freemode
