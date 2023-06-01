@@ -22,5 +22,5 @@ let timer = setTimeout(logOut, 300000);
 
 // Если пользователь переключил вкладку
 window.addEventListener('blur', function () {
-  setTimeout(timer); // удаляем таймер.
+  clearTimeout(timer); // удаляем таймер.
 });
