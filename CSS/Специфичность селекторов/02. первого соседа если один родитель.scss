@@ -1,0 +1,6 @@
+//# первого соседа
+
+//* первый тег <span> после тега <input> с type="checkbox" (если они оба имеют общего родителя)
+input[type='checkbox'] ~ span {
+  font-size: 14px;
+}

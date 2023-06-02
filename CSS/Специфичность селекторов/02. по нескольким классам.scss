@@ -1,10 +1,5 @@
 //# по нескольким классам
 
-//* тег <a> с классом "class-name" (будет приоритетнее чем по классу)
-a.element {
-  font-size: 14px;
-}
-
 //* элемент с классами "my-button" "my-button_large"
 .my-button.my-button_large {
   font-size: 14px;
