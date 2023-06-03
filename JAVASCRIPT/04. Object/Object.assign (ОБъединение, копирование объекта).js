@@ -61,7 +61,7 @@ console.log(copyObject); // { one: 1, two: 2, three: { message: "I love JS" } } 
 console.log(copyObject === original); // false
 console.log(copyObject.three === original.three); // false
 
-//* использование JSON
+//# использование JSON
 /*
 У этого метода есть ограничение — копируемые данные должны быть сериализуемы.
 Вот примеры несериализуемых данных: примитив undefined, функция, symbol - при вызове JSON.stringify получаем undefined.
