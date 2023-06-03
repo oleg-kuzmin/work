@@ -4,6 +4,6 @@ h3 {
 }
 
 //# Плавность при перемещении по якорной ссылке
-body {
-  scroll-behavior: smooth;
+html, body {
+  scroll-behavior: smooth
 }
