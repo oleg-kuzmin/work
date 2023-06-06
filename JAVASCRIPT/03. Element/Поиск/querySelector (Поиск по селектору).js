@@ -9,6 +9,7 @@
 //# пример
 const firstElement = document.querySelector('.class'); // поиск по классу
 const secondElement = document.querySelector('#id'); // поиск по id
+const checkbox = document.querySelector('input[type=checkbox]'); // поиск по тегу с атрибутом
 const ulElement = document.querySelector('ul')[0]; // ищем ul
 const lastLi = ulElement.querySelector('li:last-child'); // последний li
 const element = document.querySelector('[data-id="123"]'); // элемент с дата-атрибутом
