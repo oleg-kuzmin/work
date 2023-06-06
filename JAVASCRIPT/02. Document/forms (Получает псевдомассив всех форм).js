@@ -3,6 +3,6 @@
 
 //# пример
 const collection = document.forms; // псевдомассив форм
-const myForm = document.forms.formName; // поиск по имени
-const element = document.forms.formName.element; // элемент формы
-document.forms.formName.elements; // все элементы формы
+const myForm = document.forms.______; // поиск по имени
+const elements = document.forms.______.elements; // все элементы формы
+const element = document.forms.______.elements.______; // элемент формы
