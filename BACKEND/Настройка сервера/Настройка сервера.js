@@ -3,11 +3,14 @@
 //* npm install express
 //* npm install cors
 
-// 2. Импортировать модули в файл js
+// 2. Добавить в package.json
+//* "type": "module",
+
+// 3. Импортировать модули в файл js
 import express from 'express';
 import cors from 'cors';
 
-// 3. Настройка
+// 4. Настройка
 const PORT = 5000;
 const app = express();
 app.use(express.json());
