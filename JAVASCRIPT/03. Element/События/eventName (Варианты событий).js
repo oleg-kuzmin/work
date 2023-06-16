@@ -79,6 +79,18 @@ window.addEventListener('load', function () {
 - События mousedown и mouseup срабатывают на все кнопки мыши: левую, правую и нажатие на колёсико. Они полезны для создания Drag'n'Drop — интерфейса, в котором элемент можно схватить и перетащить на другое место.
 */
 
+//# orientationchange
+window.addEventListener('orientationchange', () => {
+  window.addEventListener('resize', function () {
+    window.location.reload();
+  });
+});
+
+//# resize
+window.addEventListener('resize', function () {
+  window.location.reload();
+});
+
 //# scroll
 /*
 - Пользователь прокручивает страницу или элемент в любой плоскости.
