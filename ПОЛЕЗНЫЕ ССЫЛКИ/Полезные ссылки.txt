@@ -55,6 +55,7 @@ https://www.theappguruz.com/tag-tools/web/CSSAnimations/
 https://tools.webdevpuneet.com/css-animation-generator/
 
 // БЭМ (BEM)
+http://tools.galsit.com/markup/bem.php
 https://ru.bem.info
 https://nglazov.github.io/bem-validator-page/
 
