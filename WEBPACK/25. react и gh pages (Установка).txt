@@ -1,0 +1,12 @@
+# установить пакеты, игнорировать ошибки при установке gh-pages
+
+npx create-next-app .
+npm install gh-pages --save-dev
+
+# Удалить git и все лишнее
+# Поправить gitignore
+
+добавить в package.json:
+"homepage": "https://oleg-kuzmin.github.io/next-template-react",
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
