@@ -1,16 +1,13 @@
 # установить пакеты, игнорировать ошибки при установке gh-pages
-
 npx create-next-app .
 npm install gh-pages --save-dev
 npm install --save-dev sass
 
-Next.js имеет встроенную поддержку Sass с использованием расширений .scssи .sass.
-Вы можете использовать Sass на уровне компонентов через модули CSS и расширение .module.scssor .module.sass.
-
 # Удалить git и все лишнее
+
 # Поправить gitignore
 
-добавить в package.json:
+# добавить в package.json:
 "homepage": "https://oleg-kuzmin.github.io/next-template-react",
 "predeploy": "npm run build",
 "deploy": "gh-pages -d build"
