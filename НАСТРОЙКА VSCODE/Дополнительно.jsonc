@@ -93,6 +93,17 @@
   "prettier.singleQuote": true, // одиночные кавычки
   "prettier.arrowParens": "avoid", // скобки вокруг единственного параметра стрелочной функции
 
+  //# liveSassCompile
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/DEMO"
+    }
+  ],
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+
   //# better-comments
   "better-comments.tags": [
     {
