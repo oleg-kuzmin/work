@@ -41,7 +41,8 @@
     "node": "node",
     "настройка vscode": "vscode",
     "git": "github",
-    "00. work": "custom"
+    "00. work": "custom",
+    "next": "next"
   },
   "prettier.printWidth": 120,
   "prettier.singleQuote": true,
