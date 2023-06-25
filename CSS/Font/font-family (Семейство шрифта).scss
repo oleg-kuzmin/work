@@ -3,7 +3,8 @@
 
 //# значения
 .element {
-  font-family: "Helvetica", "Arial", sans-serif; // Apple, Windows, default
+  font-family: 'Times New Roman'; // по умолчанию
+  font-family: 'Helvetica', 'Arial', sans-serif; // Apple, Windows, default
   font-family: inherit;    // семейство наследуется от родителя
   font-family: serif;      // шрифт с засечками, например, «Times»
   font-family: sans-serif; // шрифт без засечек, например, «Arial»
