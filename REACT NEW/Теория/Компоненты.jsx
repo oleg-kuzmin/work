@@ -17,6 +17,9 @@ const UserGreeting = props => <h1>Здравствуйте, {props.fullName}</h1
 class UserGreeting extends React.Component {
   constructor(props) {
     super(props);
+
+    // создавая метод класса, в котором планируется использовать setState()​, метод можно связать с​ this
+    this.handleClick = this.handleClick.bind(this);
   }
 
   render() {
