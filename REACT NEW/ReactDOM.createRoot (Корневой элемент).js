@@ -1,5 +1,4 @@
-//# root.render (Рендерит корневой элемент в DOM)
-
+//# ReactDOM.createRoot (Корневой элемент)
 const root = ReactDOM.createRoot(document.querySelector('#root'));
 
 root.render(
