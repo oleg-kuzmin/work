@@ -21,3 +21,6 @@ root.render(
 
 // Babel
 // https://unpkg.com/babel-standalone@6/babel.min.js
+
+// html
+// <script type="text/babel"></script>
