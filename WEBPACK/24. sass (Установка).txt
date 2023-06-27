@@ -1,4 +1,4 @@
-# установить пакеты
+# установить пакеты (sass-loader не нужен)
 
 npm install sass-loader sass --save-dev
 
