@@ -16,14 +16,20 @@ root.render(
 );
 
 //# 4. Использование внутри html
-// React
+//* React
 // https://unpkg.com/react@18/umd/react.development.js
 
-// React DOM
+//* React DOM
 // https://unpkg.com/react-dom@18/umd/react-dom.development.js
 
-// Babel
+//* Babel
 // https://unpkg.com/babel-standalone@6/babel.min.js
 
-// html
+//* html
 // <script type="text/babel"></script>
+
+//# 5. Запуск скриптов
+//* npm start (запуск сервера для разработки)
+//* npx serve -s build (запуск сервера для продакшна)
+//* npm run build (создает версию для продакшн в папке build, ее можно выгружать на сервер)
+
