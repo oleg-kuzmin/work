@@ -1,5 +1,6 @@
 //# 0. Установка пакета
 //* npx create-next-app .
+//* npx create-react-app .
 
 //# 1. Импорт библиотек
 import React from 'react';
