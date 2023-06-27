@@ -1,3 +1,6 @@
+//# 0. Установка пакета
+//* npx create-next-app .
+
 //# 1. Импорт библиотек
 import React from 'react';
 import ReactDOM from 'react-dom/client';
