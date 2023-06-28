@@ -22,7 +22,6 @@ function Login() {
         <input
           type="text"
           value={userName}
-          name="username"
           onChange={evt => {
             setUserName(evt.target.value);
           }}
@@ -32,7 +31,6 @@ function Login() {
         <input
           type="password"
           value={password}
-          name="password"
           onChange={evt => {
             setPassword(evt.target.value);
           }}
