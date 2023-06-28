@@ -10,6 +10,9 @@ let randomNumber = Math.random();
 //* случайное число между 0 и 9.999999999999
 randomNumber = Math.random() * 10;
 
+//* случайное число между 0 и 9
+randomNumber = Math.floor(Math.random() * 10);
+
 //* случайный элемент массива
 Math.floor(Math.random() * array.length);
 
