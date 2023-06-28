@@ -1,4 +1,4 @@
-//# для создания state раньше был нужен конструктор
+//# для создания state в конструкторе раньше был нужен конструктор
 class App extends Component() {
   constructor() {
     super();
