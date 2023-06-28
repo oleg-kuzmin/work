@@ -2,7 +2,7 @@ componentWillMount
 componentWillReceiveProps
 componentWillUpdate
 
-// TODO componentWillReceiveProps
+//# componentWillReceiveProps
 // Этот метод можно сравнить с тем, что происходит, когда кто-то получает от кого-то подарок.
 // Так, компонент может получать свойства от родительского компонента.
 // Каждый раз, когда компонент принимает свойства, вызывается этот метод.
