@@ -18,3 +18,13 @@ function PetInfo(props) {
     <h2>I don't have an animal</h2>
   );
 }
+
+//# оператор &&
+{
+  count > 0 && <Button></Button>;
+}
+
+//# оператор !!
+{
+  !!count && <Button></Button>;
+}
