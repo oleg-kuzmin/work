@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 //# для создания state в конструкторе раньше был нужен конструктор
 class App extends Component() {
   constructor() {
@@ -39,4 +41,15 @@ const App = () => {
 };
 
 //# дочерний компонент
-// Для изменения состояния дочернего компонента при взаимодействии с соседним компонентом нужно иметь одного родителя.
+// Для изменения состояния дочернего компонента при взаимодействии с соседним компонентом нужно иметь одного родителя (в примере ниже родитель это App)
+function App() {
+  const [count, setCount] = useState(0);
+  const incrementCount = () => {
+    setCount(count++);
+  };
+
+  return <div className="App">
+    <Counter count={count} />
+    <Button onClick={incrementCount}/>
+  </div>;
+}
