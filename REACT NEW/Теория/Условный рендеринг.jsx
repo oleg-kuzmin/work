@@ -1,4 +1,4 @@
-//# вариант 1 с переменной
+//# переменная
 function PetInfo(props) {
   const { animal, age, hasPet } = props;
   const text = hasPet ? `My ${animal} is ${age} years old` : "I don't have an animal";
@@ -6,7 +6,7 @@ function PetInfo(props) {
   return <h1>{text}</h1>;
 }
 
-//# вариант 2 с тернарным оператором
+//# тернарный оператор
 function PetInfo(props) {
   const { animal, age, hasPet } = props;
 
