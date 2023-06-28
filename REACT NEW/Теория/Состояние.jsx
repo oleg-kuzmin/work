@@ -48,8 +48,53 @@ function App() {
     setCount(count++);
   };
 
-  return <div className="App">
-    <Counter count={count} />
-    <Button onClick={incrementCount}/>
-  </div>;
+  return (
+    <div className="App">
+      <Counter count={count} />
+      <Button onClick={incrementCount} />
+    </div>
+  );
+}
+
+//# сохранение объекта в состоянии компонента
+function Login() {
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  //* или
+  const [data, setData] = useState({ username: '', password: '' });
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+
+    const userData = {
+      username: userName,
+      password: password,
+    };
+
+    console.log(userData);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        <input
+          type="text"
+          value={userName}
+          onChange={evt => {
+            setUserName(evt.target.value);
+          }}
+        />
+      </label>
+      <label>
+        <input
+          type="password"
+          value={password}
+          onChange={evt => {
+            setPassword(evt.target.value);
+          }}
+        />
+      </label>
+      <button type="submit"></button>
+    </form>
+  );
 }
