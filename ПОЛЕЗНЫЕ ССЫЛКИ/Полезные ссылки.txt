@@ -40,6 +40,9 @@ https://webgradients.com
 // Генератор фавиконок
 https://realfavicongenerator.net/
 
+// Генератор массивов (объектов)
+https://www.mockaroo.com/
+
 // Фотографии без авторского права
 https://unsplash.com
 
