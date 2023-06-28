@@ -24,3 +24,12 @@ const App = () => {
     </div>
   );
 };
+
+//# объект
+const [data, setData] = useState({ username: '', password: '' });
+
+//# массив объектов
+const [posts, setPosts] = useState([
+  { id: 1, title: 'First Cat' },
+  { id: 2, title: 'Second Cat' },
+]);
