@@ -22,6 +22,7 @@ Ctrl+Y                   // обратная операция
 Ctrl+/                   // закомментировать строку
 Ctrl+*                   // закомментировать блок
 Ctrl+Shift+K             // удаляет строчку
+Ctrl+P                   // недавно открытые файлы
 
 ctrl+numpad1             // eCSStractor Run (With BEM Nesting)
 ctrl+numpad2             // Live Server: Open with Live Server
