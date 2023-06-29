@@ -1,6 +1,7 @@
 //# События
 /*
 onClick
+onDoubleClick
 onSubmit
 onChange
 onMouseOver
