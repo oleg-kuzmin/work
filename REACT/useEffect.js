@@ -53,6 +53,7 @@ function App() {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
+  //* IIFE
   useEffect(() => {
     (async function () {
       try {
@@ -64,6 +65,21 @@ function App() {
       }
       setIsLoading(false);
     })();
+  }, []);
+
+  //* или именованная функция
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(API_URL);
+        const posts = await res.json();
+        setPosts(posts);
+      } catch (error) {
+        setError(error.message);
+      }
+      setIsLoading(false);
+    }
+    fetchData();
   }, []);
 
   if (isLoading) {
