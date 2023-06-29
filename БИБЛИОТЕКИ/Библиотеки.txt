@@ -14,3 +14,8 @@ https://lodash.com/docs/4.17.15#cloneDeep
 # swiper
 npm install swiper
 https://swiperjs.com/demos#freemode
+
+# uuid
+npm i uuid
+import { v4 as uuidv4 } from 'uuid'
+uuidv4()
