@@ -52,6 +52,7 @@ import { Link } from 'react-router-dom';
 
 //# Outlet (Использование вложенных маршрутов)
 /*
+Route вкладываются друг в друга, все пути дочерних Route строятся относительно родителя.
 Компонент MainLayout является родительским компонентов для Home, About, Contacts, NotFound.
 Содержимое Home, About, Contacts, NotFound при переходе на страницу отображается там, где находится Outlet у MainLayout.
 У Home не нужно указывать путь, но нужно указать index={true} или index.
@@ -83,6 +84,18 @@ function MainLayout() {
       <Menu />
       <Outlet />;
     </>
+  );
+}
+
+//* /src/components/Menu.jsx
+// Ссылки относительно родительского MainLayout.
+function Menu() {
+  return (
+    <nav>
+      <Link to=".">Home</Link>
+      <Link to="about">About</Link>
+      <Link to="contacts">Contacts</Link>
+    </nav>
   );
 }
 
