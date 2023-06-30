@@ -19,3 +19,8 @@ https://swiperjs.com/demos#freemode
 npm i uuid
 import { v4 as uuidv4 } from 'uuid'
 uuidv4()
+
+# query-string (превращает строку запроса в браузере в объект JS)
+npm i query-string
+import queryString from 'query-string'
+queryString.parse(string)

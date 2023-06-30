@@ -269,7 +269,6 @@ function SingleCourse() {
 
 //# хук useNavigate
 import { useNavigate } from 'react-router-dom';
-
 /*
 Нужно вызывать функцию useNavigate в useEffect. Возвращает функцию. В качестве параметров:
 1) указывается путь, куда мы хотим перенаправить пользователя.
@@ -283,7 +282,16 @@ function SingleCourse() {
     if (!course) {
       return navigate('..', { relative: 'path' });
     }
-  }, [course]);
+  }, [course, navigate]);
+
+  return <h1>Hello</h1>;
+}
+
+//# хук useLocation
+import { useLocation } from 'react-router-dom';
+
+function SingleCourse() {
+  const location = useLocation();
 
   return <h1>Hello</h1>;
 }
