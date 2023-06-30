@@ -1,11 +1,13 @@
+//# установка
 /*
-react router dom
-react router native
+npm i react-router-dom (для браузеров)
+npm i react-router-native (для мобильных)
 */
 
-//* npm i react-router-dom
+//# импорт в файл
 import { BrowserRouter } from 'react-router-dom';
 
+//# компонент
 function App() {
   return (
     <BrowserRouter>
@@ -13,3 +15,12 @@ function App() {
     </BrowserRouter>
   );
 }
+
+//# структура компонентов итого
+/*
+App
+  BrowserRouter
+    Router
+      Navigation.Provider
+        Location.Provider
+*/
