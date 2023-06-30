@@ -4,19 +4,23 @@ npm i react-router-dom (для браузеров)
 npm i react-router-native (для мобильных)
 */
 
-//# импорт в файл
-import { BrowserRouter } from 'react-router-dom';
+//# импорт BrowserRouter, Routes, Route
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//# компонент
+//* компонент
 function App() {
   return (
     <BrowserRouter>
-      <div className="App"></div>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<h1>Home</h1>} /> 
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
 
-//# структура компонентов итого
+//* структура компонентов итого
 /*
 App
   BrowserRouter
