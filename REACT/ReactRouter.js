@@ -49,5 +49,3 @@ import { Link } from 'react-router-dom';
   <a href="/">Go to home</a>
   <Link to="/">Go to home</Link>
 </>;
-
-
