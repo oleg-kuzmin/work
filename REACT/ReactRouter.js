@@ -22,6 +22,21 @@ function App() {
   );
 }
 
+/*
+App
+  BrowserRouter
+    Router
+      Navigation.provider
+        Location.provider
+          Routes
+            RenderedRoute
+              Route.Provider
+                NotFound
+*/
+
 //# Свойства
 //* <Route path="*"/>
 // для всех остальных страниц
+
+//* location
+// Все компоненты имеют доступ к объекту location, полученной из ссылки, введенной в строке браузера.
