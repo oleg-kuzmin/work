@@ -52,19 +52,19 @@ import { Link } from 'react-router-dom';
 
 //# Outlet (Использование вложенных маршрутов)
 /*
-Компонент Home является родительским компонентов для About, Contacts, NotFound.
-Содержимое About при переходе на страницу отображается там, где находится Outlet.
-
+Компонент MainLayout является родительским компонентов для Home, About, Contacts, NotFound.
+Содержимое Home, About, Contacts, NotFound при переходе на страницу отображается там, где находится Outlet у MainLayout.
+У Home не нужно указывать путь, но нужно указать index={true} или index.
 */
 
-import { Outlet } from 'react-router-dom';
-
+//* /src/App.jsx
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />}>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contacts" element={<Contacts />} />
             <Route path="*" element={<NotFound />} />
@@ -75,12 +75,18 @@ function App() {
   );
 }
 
-function Home() {
+//* /src/layouts/MainLayout.jsx
+import { Outlet } from 'react-router-dom';
+function MainLayout() {
   return (
     <>
       <Menu />
-      <h1>Home</h1>
-      <Outlet />
+      <Outlet />;
     </>
   );
+}
+
+//* /src/components/Home.jsx
+function Home() {
+  return <h1>Home</h1>;
 }
