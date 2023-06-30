@@ -21,6 +21,7 @@
 - настроить сочетания клавиш
 
 Возможно будет полезно:
+-ES7+ React/Redux/React-Native snippets      (dsznajder)               // снипеты для React
 -Tailwind CSS IntelliSense                   (Tailwind Labs)           // подсказки для css
 -Sass                                        (Syler)                   // sass
 -SCSS Everywhere                             (Gencer W. Genç)          // scss
