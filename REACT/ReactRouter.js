@@ -292,6 +292,5 @@ import { useLocation } from 'react-router-dom';
 
 function SingleCourse() {
   const location = useLocation();
-
   return <h1>Hello</h1>;
 }
