@@ -5,6 +5,7 @@ npm i react-router-native (для мобильных)
 */
 
 //# пример
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -256,11 +257,33 @@ function App() {
 }
 
 //# хук useParams
+import { useParams } from 'react-router-dom';
+
 <Route path="courses/:slug" element={<Contacts />} />;
 
-import { useParams } from 'react-router-dom';
 function SingleCourse() {
   const params = useParams();
   console.log(params); // {slug: ""}
+  return <h1>Hello</h1>;
+}
+
+//# хук useNavigate
+import { useNavigate } from 'react-router-dom';
+
+/*
+Нужно вызывать функцию useNavigate в useEffect. Возвращает функцию. В качестве параметров:
+1) указывается путь, куда мы хотим перенаправить пользователя.
+2) опции
+*/
+
+function SingleCourse() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!course) {
+      return navigate('..', { relative: 'path' });
+    }
+  }, [course]);
+
   return <h1>Hello</h1>;
 }
