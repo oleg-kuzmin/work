@@ -45,6 +45,9 @@ App
 /*
 Отмена новых запросов на сервер при переходе по страницам.
 Вместо внутренних ссылок нужно использовать компонент link, который создает тег <a> с логикой react-router-dom.
+to="/"  // абсолютный путь
+to="."  // относительный путь
+to=".." // относительный путь
 */
 
 import { Link } from 'react-router-dom';
@@ -215,4 +218,48 @@ function Menu() {
       <NavLink to="contacts">Contacts</NavLink>
     </nav>
   );
+}
+
+//# динамический путь с параметрами
+{
+  /* <Route path="courses/:slug" element={<Contacts />} /> */
+}
+
+//* /src/components/Menu.jsx
+import { NavLink } from 'react-router-dom';
+function Menu() {
+  return (
+    <nav>
+      <NavLink to="courses">Курсы</NavLink>
+    </nav>
+  );
+}
+
+//* /src/App.jsx
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="contacts" element={<Contacts />} />
+            <Route path="courses/:slug" element={<Contacts />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+//# хук useParams
+<Route path="courses/:slug" element={<Contacts />} />;
+
+import { useParams } from 'react-router-dom';
+function SingleCourse() {
+  const params = useParams();
+  console.log(params); // {slug: ""}
+  return <h1>Hello</h1>;
 }
