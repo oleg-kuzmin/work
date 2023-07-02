@@ -1,25 +1,25 @@
 //# typeof (Определяет тип данных)
-//* проверка на функцию: работает
+//* проверка выражения: нужны скобки
+console.log(typeof (10 + 5)); // "number"
+
+//* function
 function multiply(a, b) {
   return a * b;
 }
 console.log(typeof multiply); // function
 
-//* проверка на undefined: работает
+//* undefined
 console.log(typeof undefined); // undefined
 
-//* проверка на массив не получится: делается через Array.isArray()
-const arr = [1, 2, 3];
-console.log(typeof arr); // object
+//# Не работает
+//* null
+console.log(typeof null); // object (официально признанная ошибка)
 
-//* проверка на null: официально признанная ошибка
-console.log(typeof null); // object
+//* array
+console.log(typeof [1, 2, 3]); // object (нужно делать через Array.isArray())
 
-//* проверка на NaN: делается через Number.isNaN()
-console.log(typeof NaN); // number
+//* NaN
+console.log(typeof NaN); // number (нужно делать через Number.isNaN())
 
-//* проверка на Infinity: делается через Number.isFinite()
-console.log(typeof Infinity); // number
-
-//* проверка выражения: нужны скобки
-console.log(typeof (10 + 5)); // "number"
+//* Infinity
+console.log(typeof Infinity); // number (нужно делать через Number.isFinite())
