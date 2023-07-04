@@ -1,0 +1,35 @@
+body {
+  margin: 0; // margin: 8px (Nicolas-Gallagher сбрасывает до 0)
+}
+
+button {
+  padding: 0; // padding: 1px 6px
+  border: 0; // border: 2px
+  &:focus-visible {
+    outline: none; // outline: -webkit-focus-ring-color auto 1px;
+  }
+}
+
+input {
+  border: 0; // border: 2px
+  font-family: inherit; // font-family: "";  (Nicolas-Gallagher сбрасывает)
+  &:focus-visible {
+    outline: none; // outline: -webkit-focus-ring-color auto 1px;
+  }
+}
+
+input[type='text'] {
+  padding: 0; // padding: 1px 2px
+}
+
+a {
+  color: inherit; // color: -webkit-link;
+  text-decoration: none; // text-decoration: underline
+  &:focus-visible {
+    outline: none; // outline: -webkit-focus-ring-color auto 1px;
+  }
+}
+
+h1 {
+  margin: 0; // margin: ~20px;
+}
