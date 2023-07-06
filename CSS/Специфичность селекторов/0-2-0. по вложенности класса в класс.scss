@@ -1,0 +1,5 @@
+//# по вложенности класса в класс
+//* класс "first-element", вложенный в класс "second-element"
+.first-element .second-element {
+  font-size: 14px;
+}
