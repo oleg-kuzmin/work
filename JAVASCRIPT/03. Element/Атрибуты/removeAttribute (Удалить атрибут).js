@@ -1,4 +1,4 @@
-//# .removeAttribute() (Удаляет атрибут)
+//# .removeAttribute() (Удалить атрибут)
 // Метод removeAttribute удаляет атрибут у элемента.
 
 //# пример
