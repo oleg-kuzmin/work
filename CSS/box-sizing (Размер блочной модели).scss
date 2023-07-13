@@ -9,5 +9,5 @@
 //# значения
 .element {
   box-sizing: content-box; // border, padding расширяют элемент (по умолчанию)
-  box-sizing: border-box; // border, padding отрисуются внутрь
+  box-sizing: border-box;  // border, padding отрисуются внутрь
 }
