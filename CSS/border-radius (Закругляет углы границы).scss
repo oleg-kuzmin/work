@@ -6,7 +6,7 @@
 
 //# пример
 .element {
-  border-radius: 0; // (по умолчанию)
+  border-radius: 0;   // (по умолчанию)
   border-radius: 5px; // радиус в пикселях
   border-radius: 50%; // радиус в процентах
 
@@ -17,8 +17,8 @@
   border-radius: 5em / 50%;
 
   //* для каждого угла в отдельности
-  border-top-left-radius: 5em 50%; // радиус закругления для левого верхнего угла
-  border-top-right-radius: 5em 50%; // радиус закругления для правого верхнего угла
+  border-top-left-radius: 5em 50%;     // радиус закругления для левого верхнего угла
+  border-top-right-radius: 5em 50%;    // радиус закругления для правого верхнего угла
   border-bottom-right-radius: 5em 50%; // радиус закругления для правого нижнего угла
-  border-bottom-left-radius: 5em 50%; // радиус закругления для левого нижнего угла
+  border-bottom-left-radius: 5em 50%;  // радиус закругления для левого нижнего угла
 }
