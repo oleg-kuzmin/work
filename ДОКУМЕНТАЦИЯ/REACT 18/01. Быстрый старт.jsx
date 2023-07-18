@@ -61,7 +61,7 @@ function AboutPage() {
 
 // Затем вы пишете правила CSS для него в отдельном файле CSS:
 
-//* css
+/* css */
 // .avatar {
 //   border-radius: 50%;
 // }
