@@ -25,3 +25,26 @@ function Avatar() {
 
 // Обратите внимание на разницу между className="avatar", указывающим "avatar"имя класса CSS, которое делает изображение круглым, и src={avatar}считывающим значение переменной JavaScript с именем avatar. Это потому, что фигурные скобки позволяют вам работать с JavaScript прямо в вашей разметке!
 
+//# Использование фигурных скобок: окно в мир JavaScript
+// JSX — это особый способ написания JavaScript. Это означает, что внутри него можно использовать JavaScript — с фигурными скобками { }. В приведенном ниже примере сначала объявляется имя ученого, nameа затем встраивается фигурными скобками внутрь <h1>:
+
+function TodoList() {
+  const name = 'Gregorio Y. Zara';
+  return <h1>{name}'s To Do List</h1>;
+}
+
+// Попробуйте изменить nameзначение с 'Gregorio Y. Zara'на 'Hedy Lamarr'. Видите, как меняется заголовок списка?
+
+// Любое выражение JavaScript будет работать между фигурными скобками, включая такие вызовы функций, как formatDate():
+
+const today = new Date();
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
+}
+
+export default function TodoList() {
+  return <h1>To Do List for {formatDate(today)}</h1>;
+}
+
+//# Где использовать фигурные скобки
