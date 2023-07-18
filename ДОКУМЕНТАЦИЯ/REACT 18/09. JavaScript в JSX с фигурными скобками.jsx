@@ -89,4 +89,40 @@ function TodoList() {
 //* Важно
 // Инлайн style свойства записываются в camelCase. Например, HTML <ul style="background-color: black">будет написан как <ul style={{ backgroundColor: 'black' }}> в вашем компоненте.
 
+//# Больше удовольствия от объектов JavaScript и фигурных скобок
+// Вы можете переместить несколько выражений в один объект и ссылаться на них в JSX внутри фигурных скобок:
 
+// person - объект JavaScript содержит name строку и theme объект:
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink',
+  },
+};
+
+// Компонент может использовать эти значения person следующим образом:
+function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <img className="avatar" src="https://i.imgur.com/7vQD0fPs.jpg" alt="Gregorio Y. Zara" />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+
+// JSX очень минимален как язык шаблонов, потому что он позволяет вам организовывать данные и логику с помощью JavaScript.
+
+//# Резюме
+/*
+Теперь вы знаете почти все о JSX:
+- Атрибуты JSX внутри кавычек передаются как строки.
+- Фигурные скобки позволяют добавить в разметку логику и переменные JavaScript.
+- Они работают внутри содержимого тега JSX или сразу после него =в атрибутах.
+- {{}} не является специальным синтаксисом: это объект JavaScript, спрятанный внутри фигурных скобок JSX.
+*/
