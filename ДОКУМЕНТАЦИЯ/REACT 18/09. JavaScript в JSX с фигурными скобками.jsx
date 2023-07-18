@@ -48,3 +48,45 @@ export default function TodoList() {
 }
 
 //# Где использовать фигурные скобки
+// Вы можете использовать фигурные скобки только двумя способами внутри JSX:
+
+//* 1. Как текст внутри тега JSX: <h1>{name}'s To Do List</h1>работает, но <{tag}>Gregorio Y. Zara's To Do List</{tag}> не будет.
+//* 2. Как атрибут после знака =: src={avatar} будет читать avatar переменную, но src="{avatar}" передавать строку "{avatar}".
+
+//# Использование двойных скобок: CSS и другие объекты в JSX
+// Помимо строк, чисел и других выражений JavaScript, вы даже можете передавать объекты в JSX. Объекты также обозначаются фигурными скобками, например { name: "Hedy Lamarr", inventions: 5 }. Поэтому, чтобы передать объект JS в JSX, вы должны заключить объект в другую пару фигурных скобок: person={{ name: "Hedy Lamarr", inventions: 5 }}.
+
+// Вы можете увидеть это со встроенными стилями CSS в JSX. React не требует от вас использования встроенных стилей (классы CSS отлично подходят для большинства случаев). Но когда вам нужен встроенный стиль, вы передаете объект атрибуту style:
+
+function TodoList() {
+  return (
+    <ul
+      style={{
+        backgroundColor: 'black',
+        color: 'pink',
+      }}
+    >
+      <li>Improve the videophone</li>
+      <li>Prepare aeronautics lectures</li>
+      <li>Work on the alcohol-fuelled engine</li>
+    </ul>
+  );
+}
+
+// Попробуйте изменить значения backgroundColorи color.
+
+// Вы действительно можете увидеть объект JavaScript внутри фигурных скобок, когда пишете его так:
+
+<ul
+  style={{
+    backgroundColor: 'black',
+    color: 'pink',
+  }}
+></ul>;
+
+// В следующий раз, когда вы увидите {{JSX }}, знайте, что это не что иное, как объект внутри JSX!
+
+//* Важно
+// Инлайн style свойства записываются в camelCase. Например, HTML <ul style="background-color: black">будет написан как <ul style={{ backgroundColor: 'black' }}> в вашем компоненте.
+
+
