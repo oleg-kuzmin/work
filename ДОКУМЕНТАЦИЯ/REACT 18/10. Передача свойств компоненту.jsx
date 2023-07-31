@@ -129,3 +129,23 @@ function Profile(props) {
 </Card>;
 
 // Когда вы вкладываете контент в тег JSX, родительский компонент получит этот контент в реквизите с именем children. Например, Card компонент ниже получит children набор свойств <Avatar /> и отобразит его в div-оболочке:
+
+function Card({ children }) {
+  return <div className="card">{children}</div>;
+}
+
+function Profile() {
+  return (
+    <Card>
+      <Avatar
+        size={100}
+        person={{
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2',
+        }}
+      />
+    </Card>
+  );
+}
+
+
