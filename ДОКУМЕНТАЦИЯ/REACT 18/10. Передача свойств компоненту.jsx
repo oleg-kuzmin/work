@@ -156,9 +156,5 @@ function Profile() {
 // Компонент Clock ниже получает два props от своего родительского компонента: color и time. (Код родительского компонента опущен, поскольку он использует состояние, в которое мы пока не будем углубляться.)
 
 function Clock({ color, time }) {
-  return (
-    <h1 style={{ color: color }}>
-      {time}
-    </h1>
-  );
+  return <h1 style={{ color: color }}>{time}</h1>;
 }
