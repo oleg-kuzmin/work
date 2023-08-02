@@ -28,3 +28,12 @@ function PackingList() {
 }
 
 // Обратите внимание, что для некоторых Item компонентов свойство isPacked установлено в значение true вместо false. Вы хотите добавить галочку (✔) к упакованным предметам, если isPacked={true}.
+
+// Вы можете написать это как оператор if else следующим образом:
+
+if (isPacked) {
+  return <li className="item">{name} ✔</li>;
+}
+return <li className="item">{name}</li>;
+
+
