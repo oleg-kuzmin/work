@@ -69,3 +69,29 @@ function Item({ name, isPacked }) {
   }
   return <li className="item">{name}</li>;
 }
+
+// Если isPacked true, компонент ничего не вернет, т.к. мы написали null. В противном случае он вернет JSX для рендеринга.
+
+function Item({ name, isPacked }) {
+  if (isPacked) {
+    return null;
+  }
+  return <li className="item">{name}</li>;
+}
+
+function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true} name="Space suit" />
+        <Item isPacked={true} name="Helmet with a golden leaf" />
+        <Item isPacked={false} name="Photo of Tam" />
+      </ul>
+    </section>
+  );
+}
+
+// На практике возврат null из компонента не является обычным явлением, потому что это может удивить разработчика, пытающегося отобразить его. Чаще вы условно включаете или исключаете компонент в JSX родительского компонента. Вот как это сделать!
+
+//# Условно включаемый JSX
