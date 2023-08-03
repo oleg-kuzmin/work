@@ -31,10 +31,12 @@ function PackingList() {
 
 // Вы можете написать это как оператор if else следующим образом:
 
-if (isPacked) {
-  return <li className="item">{name} ✔</li>;
+function Item({ name, isPacked }) {
+  if (isPacked) {
+    return <li className="item">{name} ✔</li>;
+  }
+  return <li className="item">{name}</li>;
 }
-return <li className="item">{name}</li>;
 
 // Если isPacked равен true, этот код возвращает другое дерево JSX. С этим изменением некоторые элементы получают галочку в конце:
 
@@ -95,3 +97,21 @@ function PackingList() {
 // На практике возврат null из компонента не является обычным явлением, потому что это может удивить разработчика, пытающегося отобразить его. Чаще вы условно включаете или исключаете компонент в JSX родительского компонента. Вот как это сделать!
 
 //# Условно включаемый JSX
+// В предыдущем примере вы контролировали, какое дерево JSX (если оно есть!) будет возвращено компонентом. Возможно, вы уже заметили некоторое дублирование в выводе рендеринга:
+
+<li className="item">{name} ✔</li>;
+
+// очень похоже на
+
+<li className="item">{name}</li>;
+
+// Обе условные ветви возвращают <li className="item">...</li>:
+
+function Item({ name, isPacked }) {
+  if (isPacked) {
+    return <li className="item">{name} ✔</li>;
+  }
+  return <li className="item">{name}</li>;
+}
+
+
