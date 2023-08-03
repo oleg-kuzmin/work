@@ -204,3 +204,74 @@ function PackingList() {
 // Чтобы это исправить, сделайте левую часть булевой: messageCount > 0 && <p>New messages</p>.
 
 //# Условное присвоение JSX переменной
+// Когда ярлыки мешают писать простой код, попробуйте использовать оператор if и переменную. Вы можете переназначить переменные, определенные с помощью let, поэтому начните с предоставления содержимого по умолчанию, которое вы хотите отобразить, имени:
+
+function Item({ name, isPacked }) {
+  let itemContent = name;
+}
+
+// Используйте оператор if, чтобы переназначить выражение JSX для itemContent если isPacked is true:
+
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = name + ' ✔';
+  }
+}
+
+// Фигурные скобки открывают «окно в JavaScript». Вставьте переменную с фигурными скобками в возвращенное дерево JSX, вложив ранее вычисленное выражение внутрь JSX:
+
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = name + ' ✔';
+  }
+  return <li className="item">{itemContent}</li>;
+}
+
+// Этот стиль самый подробный, но и самый гибкий. Вот он в действии:
+
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = name + ' ✔';
+  }
+  return <li className="item">{itemContent}</li>;
+}
+
+function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true} name="Space suit" />
+        <Item isPacked={true} name="Helmet with a golden leaf" />
+        <Item isPacked={false} name="Photo of Tam" />
+      </ul>
+    </section>
+  );
+}
+
+// Как и раньше, это работает не только для текста, но и для произвольного JSX
+
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = <del>{name + ' ✔'}</del>;
+  }
+  return <li className="item">{itemContent}</li>;
+}
+
+function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true} name="Space suit" />
+        <Item isPacked={true} name="Helmet with a golden leaf" />
+        <Item isPacked={false} name="Photo of Tam" />
+      </ul>
+    </section>
+  );
+}
+
