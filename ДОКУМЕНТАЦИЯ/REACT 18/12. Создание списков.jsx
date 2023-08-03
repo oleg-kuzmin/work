@@ -123,3 +123,72 @@ const listItems2 = chemists.map(person => {
 });
 
 // Стрелочные функции, содержащие, => { как говорят, имеют «блочное тело». Они позволяют вам написать больше, чем одну строку кода, но вы должны написать return самостоятельно. Если вы его забудете, ничего не вернется!
+
+//# Сохранение элементов списка с key
+// Обратите внимание на ошибку в консоли:
+// Warning: Each child in a list should have a unique “key” prop.
+
+// Вам нужно дать каждому элементу массива key строку или число, которое однозначно идентифицирует его среди других элементов этого массива:
+
+<li key={person.id}>...</li>;
+
+//* Элементам JSX непосредственно внутри map()вызова всегда нужны ключи!
+
+// Ключи сообщают React, какому элементу массива соответствует каждый компонент, чтобы он мог сопоставить их позже. Это становится важным, если элементы вашего массива могут перемещаться (например, из-за сортировки), вставляться или удаляться. Правильно выбранный элемент keyпомогает React сделать вывод о том, что именно произошло, и внести правильные обновления в дерево DOM.
+
+// Вместо того, чтобы генерировать ключи на лету, вы должны включить их в свои данные:
+
+const people3 = [
+  {
+    id: 0, // Used in JSX as a key
+    name: 'Creola Katherine Johnson',
+    profession: 'mathematician',
+    accomplishment: 'spaceflight calculations',
+    imageId: 'MK3eW3A',
+  },
+  {
+    id: 1, // Used in JSX as a key
+    name: 'Mario José Molina-Pasquel Henríquez',
+    profession: 'chemist',
+    accomplishment: 'discovery of Arctic ozone hole',
+    imageId: 'mynHUSa',
+  },
+  {
+    id: 2, // Used in JSX as a key
+    name: 'Mohammad Abdus Salam',
+    profession: 'physicist',
+    accomplishment: 'electromagnetism theory',
+    imageId: 'bE7W1ji',
+  },
+  {
+    id: 3, // Used in JSX as a key
+    name: 'Percy Lavon Julian',
+    profession: 'chemist',
+    accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+    imageId: 'IOjWm71',
+  },
+  {
+    id: 4, // Used in JSX as a key
+    name: 'Subrahmanyan Chandrasekhar',
+    profession: 'astrophysicist',
+    accomplishment: 'white dwarf star mass calculations',
+    imageId: 'lrWQx8l',
+  },
+];
+
+//* Отображение нескольких узлов DOM для каждого элемента списка
+// Что вы делаете, когда каждый элемент должен отображать не один, а несколько узлов DOM?
+
+// Короткий синтаксис <>...</> не позволит вам передать ключ, поэтому вам нужно либо сгруппировать их в один <div>, либо использовать немного более длинный и явный <Fragment> синтаксис:
+
+import { Fragment } from 'react';
+const listItems3 = people.map(person => (
+  <Fragment key={person.id}>
+    <h1>{person.name}</h1>
+    <p>{person.bio}</p>
+  </Fragment>
+));
+
+// Фрагменты исчезают из DOM, поэтому будет создан плоский список <h1>, <p>, <h1>, <p> и так далее.
+
+//# Где получитьkey
