@@ -107,4 +107,54 @@ function Profile() {
   );
 }
 
+//# Условный рендеринг
+// Ваши компоненты часто должны отображать разные вещи в зависимости от различных условий. В React вы можете условно визуализировать JSX, используя синтаксис JavaScript if, такой как операторы &&, и ?: операторы.
 
+// В этом примере оператор JavaScript && используется для условного отображения галочки:
+
+function Item({ name, isPacked }) {
+  return (
+    <li className="item">
+      {name} {isPacked && '✔'}
+    </li>
+  );
+}
+
+function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true} name="Space suit" />
+        <Item isPacked={true} name="Helmet with a golden leaf" />
+        <Item isPacked={false} name="Photo of Tam" />
+      </ul>
+    </section>
+  );
+}
+
+//# Списки рендеринга
+// Часто вам потребуется отобразить несколько похожих компонентов из набора данных. Вы можете использовать JavaScript filter() и map() в React для фильтрации и преобразования массива данных в массив компонентов.
+
+// Для каждого элемента массива вам нужно указать файл key. Обычно вы хотите использовать идентификатор из базы данных в качестве файла key. Ключи позволяют React отслеживать место каждого элемента в списке, даже если список изменяется.
+
+function List() {
+  const listItems = people.map(person => (
+    <li key={person.id}>
+      <img src={getImageUrl(person)} alt={person.name} />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  ));
+  return (
+    <article>
+      <h1>Scientists</h1>
+      <ul>{listItems}</ul>
+    </article>
+  );
+}
+
+//# Сохранение компонентов в чистоте
