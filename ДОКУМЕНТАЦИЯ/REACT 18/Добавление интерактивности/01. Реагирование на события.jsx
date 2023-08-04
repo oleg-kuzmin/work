@@ -97,4 +97,56 @@ function Button() {
 // или
 // <button onClick={() => alert('...')} />
 
-//# Чтение свойств в обработчиках событий
+//# Чтение props в обработчиках событий
+// Поскольку обработчики событий объявляются внутри компонента, они имеют доступ к свойствам компонента. Вот кнопка, которая при нажатии показывает предупреждение со своим свойством message. Это позволяет этим двум кнопкам отображать разные сообщения.
+
+function AlertButton({ message, children }) {
+  return <button onClick={() => alert(message)}>{children}</button>;
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <AlertButton message="Playing!">Play Movie</AlertButton>
+      <AlertButton message="Uploading!">Upload Image</AlertButton>
+    </div>
+  );
+}
+
+//# Передача обработчиков событий в качестве props
+// Часто требуется, чтобы родительский компонент указывал обработчик событий дочернего элемента. Подумайте о кнопках: в зависимости от того, где вы используете компонент Button, вы можете выполнять разные функции — например, одна воспроизводит фильм, а другая загружает изображение.
+
+// Для этого передайте свойство, которое компонент получает от своего родителя, в качестве обработчика событий, например:
+
+function Button({ onClick, children }) {
+  return <button onClick={onClick}>{children}</button>;
+}
+
+function PlayButton({ movieName }) {
+  function handlePlayClick() {
+    alert(`Playing ${movieName}!`);
+  }
+
+  return <Button onClick={handlePlayClick}>Play "{movieName}"</Button>;
+}
+
+function UploadButton() {
+  return <Button onClick={() => alert('Uploading!')}>Upload Image</Button>;
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <PlayButton movieName="Kiki's Delivery Service" />
+      <UploadButton />
+    </div>
+  );
+}
+
+/* Здесь происходит рендер компонента Toolbar, который отображает PlayButton и UploadButton:
+- PlayButton содержит обработчик handlePlayClick и передает его как props onClick далее внутрь Button.
+- UploadButton содержит обработчик () => alert('Uploading!') и передает его как props onClick далее внутрь Button.
+- Наконец, ваш компонент Button принимает свойство с именем onClick. Он передает этот props непосредственно во встроенный браузер для <button>. Это говорит React вызывать переданную функцию по клику.
+*/
+
+// Если вы используете дизайн-систему, такие компоненты, как кнопки, обычно содержат стили, но не определяют поведение. Вместо этого такие компоненты, как PlayButton и UploadButton, будут передавать обработчики событий вниз.
