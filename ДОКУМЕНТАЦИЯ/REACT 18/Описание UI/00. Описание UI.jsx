@@ -46,4 +46,23 @@ export default function Gallery() {
   );
 }
 
+//# Написание разметки с помощью JSX
+// Каждый компонент React — это функция JavaScript, которая может содержать некоторую разметку, которую React отображает в браузере. Компоненты React используют расширение синтаксиса под названием JSX для представления этой разметки. JSX очень похож на HTML, но немного строже и может отображать динамическую информацию.
+
+// Если мы вставим существующую HTML-разметку в компонент React, это не всегда будет работать. Если у вас есть такой HTML-код, вы можете исправить его с помощью конвертера.
+
+function TodoList() {
+  return (
+    <>
+      <h1>Hedy Lamarr's Todos</h1>
+      <img src="https://i.imgur.com/yXOvdOSs.jpg" alt="Hedy Lamarr" className="photo" />
+      <ul>
+        <li>Invent new traffic lights</li>
+        <li>Rehearse a movie scene</li>
+        <li>Improve spectrum technology</li>
+      </ul>
+    </>
+  );
+}
+
 //# 
