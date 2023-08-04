@@ -65,4 +65,46 @@ function TodoList() {
   );
 }
 
-//# 
+//# JavaScript в JSX с фигурными скобками
+// JSX позволяет вам писать HTML-подобную разметку внутри файла JavaScript, сохраняя логику рендеринга и содержимое в одном месте. Иногда вам может понадобиться добавить немного логики JavaScript или сослаться на динамическое свойство внутри этой разметки. В этой ситуации вы можете использовать фигурные скобки в JSX, чтобы «открыть окно» для JavaScript:
+
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink',
+  },
+};
+
+function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <img className="avatar" src="https://i.imgur.com/7vQD0fPs.jpg" alt="Gregorio Y. Zara" />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+
+//# Передача свойств компоненту
+// Компоненты React используют props для связи друг с другом. Каждый родительский компонент может передавать некоторую информацию своим дочерним компонентам, предоставляя им свойства. Свойства могут напоминать вам атрибуты HTML, но вы можете передавать через них любое значение JavaScript, включая объекты, массивы, функции и даже JSX!
+
+function Profile() {
+  return (
+    <Card>
+      <Avatar
+        size={100}
+        person={{
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2',
+        }}
+      />
+    </Card>
+  );
+}
+
+
