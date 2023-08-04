@@ -12,3 +12,23 @@
 */
 
 //# Реагирование на события
+// React позволяет добавлять обработчики событий в ваш JSX. Обработчики событий — это ваши собственные функции, которые будут запускаться в ответ на действия пользователя, такие как щелчок, наведение курсора, фокусировка на вводе формы и т. д.
+
+// Встроенные компоненты, например, <button> поддерживают только встроенные события браузера, такие как onClick. Однако вы также можете создавать свои собственные компоненты и давать свойствам их обработчиков событий любые имена, характерные для приложения, которые вам нравятся.
+
+function App() {
+  return <Toolbar onPlayMovie={() => alert('Playing!')} onUploadImage={() => alert('Uploading!')} />;
+}
+
+function Toolbar({ onPlayMovie, onUploadImage }) {
+  return (
+    <div>
+      <Button onClick={onPlayMovie}>Play Movie</Button>
+      <Button onClick={onUploadImage}>Upload Image</Button>
+    </div>
+  );
+}
+
+function Button({ onClick, children }) {
+  return <button onClick={onClick}>{children}</button>;
+}
