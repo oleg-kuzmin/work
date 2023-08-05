@@ -5,6 +5,7 @@
 // :last-of-type — последний;
 // :nth-of-type(n-число) — каждый n-й элемент;
 // :nth-last-of-type(n-число) — каждый n-й элемент с отсчётом «с конца».
+// :nth-of-type(2 of .class) — выберет второй элемент с классом class
 
 //# ПРИМЕР
 .element:first-of-type {
