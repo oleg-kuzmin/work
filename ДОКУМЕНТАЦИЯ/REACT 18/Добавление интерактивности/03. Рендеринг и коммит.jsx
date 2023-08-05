@@ -29,4 +29,6 @@ import { createRoot } from 'react-dom/client';
 const root = createRoot(document.getElementById('root'));
 root.render(<Image />);
 
+// Попробуйте закомментировать вызов root.render() и вы увидите, как компонент исчез!
+
 
