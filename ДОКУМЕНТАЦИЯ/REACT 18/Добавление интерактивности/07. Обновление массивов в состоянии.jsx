@@ -211,3 +211,46 @@ function ShapeEditor() {
 }
 
 //# Замена элементов в массиве
+// Особенно часто требуется заменить один или несколько элементов в массиве. Такие присваивания arr[0] = 'bird' изменяют исходный массив, поэтому вместо этого вы также захотите использовать map для этого.
+
+// Чтобы заменить элемент, создайте новый массив с расширением map. Внутри вашего map вызова вы получите индекс элемента в качестве второго аргумента. Используйте его, чтобы решить, следует ли вернуть исходный элемент (первый аргумент) или что-то еще:
+
+import { useState } from 'react';
+
+let initialCounters = [0, 0, 0];
+
+function CounterList() {
+  const [counters, setCounters] = useState(initialCounters);
+
+  function handleIncrementClick(index) {
+    const nextCounters = counters.map((c, i) => {
+      if (i === index) {
+        // Increment the clicked counter
+        return c + 1;
+      } else {
+        // The rest haven't changed
+        return c;
+      }
+    });
+    setCounters(nextCounters);
+  }
+
+  return (
+    <ul>
+      {counters.map((counter, i) => (
+        <li key={i}>
+          {counter}
+          <button
+            onClick={() => {
+              handleIncrementClick(i);
+            }}
+          >
+            +1
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+//# Вставка в массив
