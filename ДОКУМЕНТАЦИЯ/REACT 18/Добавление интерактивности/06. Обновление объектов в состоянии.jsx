@@ -433,3 +433,48 @@ function Form() {
 }
 
 //* Объекты на самом деле не вложены
+// Такой объект выглядит «вложенным» в код:
+
+let obj = {
+  name: 'Niki de Saint Phalle',
+  artwork: {
+    title: 'Blue Nana',
+    city: 'Hamburg',
+    image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+  },
+};
+
+// Однако «вложенность» — это неточный способ представления о том, как ведут себя объекты. Когда код выполняется, нет такого понятия, как «вложенный» объект. Вы действительно смотрите на два разных объекта:
+
+let obj1 = {
+  title: 'Blue Nana',
+  city: 'Hamburg',
+  image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+};
+
+let obj2 = {
+  name: 'Niki de Saint Phalle',
+  artwork: obj1,
+};
+
+// Объект obj1 не находится «внутри» obj2. Например, obj3 может также «указывать» на obj1:
+
+let obj11 = {
+  title: 'Blue Nana',
+  city: 'Hamburg',
+  image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+};
+
+let obj22 = {
+  name: 'Niki de Saint Phalle',
+  artwork: obj1,
+};
+
+let obj33 = {
+  name: 'Copycat',
+  artwork: obj11,
+};
+
+// Если бы вы мутировали obj3.artwork.city, это затронуло бы и , obj2.artwork.city и obj1.city. Это потому obj3.artwork, что obj2.artwork, и obj1 являются одним и тем же объектом. Это трудно увидеть, когда вы думаете об объектах как о «вложенных». Вместо этого они представляют собой отдельные объекты, «указывающие» друг на друга со свойствами.
+
+//# Напишите краткую логику обновления с помощью Immer
