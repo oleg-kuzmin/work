@@ -347,5 +347,256 @@ setList(nextList);
 // Хотя nextList и list являются двумя разными массивами nextList[0] и list[0] указывают на один и тот же объект. Таким образом, изменяя nextList[0].seen, вы также меняете list[0].seen. Это мутация состояния, которой следует избегать! Вы можете решить эту проблему аналогично обновлению вложенных объектов JavaScript — копируя отдельные элементы, которые вы хотите изменить, вместо их изменения. Вот как.
 
 //# Обновление объектов внутри массивов
+// Объекты на самом деле не расположены «внутри» массивов. В коде они могут казаться «внутри», но каждый объект в массиве — это отдельное значение, на которое «указывает» массив. Вот почему вам нужно быть осторожным при изменении вложенных полей, таких как list[0]. Список произведений искусства другого человека может указывать на тот же элемент массива!
 
+// При обновлении вложенного состояния вам необходимо создавать копии от точки, где вы хотите обновить, и вплоть до верхнего уровня. Давайте посмотрим, как это работает.
 
+// В этом примере два отдельных списка иллюстраций имеют одинаковое начальное состояние. Предполагается, что они изолированы, но из-за мутации их состояние случайно становится общим, и установка флажка в одном списке влияет на другой список:
+
+import { useState } from 'react';
+
+let nextId4 = 3;
+const initialList4 = [
+  { id: 0, title: 'Big Bellies', seen: false },
+  { id: 1, title: 'Lunar Landscape', seen: false },
+  { id: 2, title: 'Terracotta Army', seen: true },
+];
+
+function BucketList() {
+  const [myList, setMyList] = useState(initialList);
+  const [yourList, setYourList] = useState(initialList);
+
+  function handleToggleMyList(artworkId, nextSeen) {
+    const myNextList = [...myList];
+    const artwork = myNextList.find(a => a.id === artworkId);
+    artwork.seen = nextSeen;
+    setMyList(myNextList);
+  }
+
+  function handleToggleYourList(artworkId, nextSeen) {
+    const yourNextList = [...yourList];
+    const artwork = yourNextList.find(a => a.id === artworkId);
+    artwork.seen = nextSeen;
+    setYourList(yourNextList);
+  }
+
+  return (
+    <>
+      <h1>Art Bucket List</h1>
+      <h2>My list of art to see:</h2>
+      <ItemList artworks={myList} onToggle={handleToggleMyList} />
+      <h2>Your list of art to see:</h2>
+      <ItemList artworks={yourList} onToggle={handleToggleYourList} />
+    </>
+  );
+}
+
+function ItemList({ artworks, onToggle }) {
+  return (
+    <ul>
+      {artworks.map(artwork => (
+        <li key={artwork.id}>
+          <label>
+            <input
+              type="checkbox"
+              checked={artwork.seen}
+              onChange={e => {
+                onToggle(artwork.id, e.target.checked);
+              }}
+            />
+            {artwork.title}
+          </label>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// Проблема в таком коде:
+const myNextList = [...myList];
+const artwork = myNextList.find(a => a.id === artworkId);
+artwork.seen = nextSeen; // Problem: mutates an existing item
+setMyList(myNextList);
+
+// Хотя myNextList сам массив новый, сами элементы такие же, как и в исходном myList массиве. Таким образом, изменение artwork.seenи зменяет исходный элемент изображения. Этот элемент изображения также находится в yourList, что вызывает ошибку. О таких ошибках может быть трудно думать, но, к счастью, они исчезают, если вы избегаете мутирующего состояния.
+
+// Вы можете использовать map для замены старого элемента его обновленной версией без изменения.
+
+setMyList(
+  myList.map(artwork => {
+    if (artwork.id === artworkId) {
+      // Create a *new* object with changes
+      return { ...artwork, seen: nextSeen };
+    } else {
+      // No changes
+      return artwork;
+    }
+  })
+);
+
+// Используйте ... синтаксис распространения объекта для создания копии объекта.
+
+// При таком подходе ни один из существующих элементов состояния не мутируется, а ошибка исправлена:
+
+import { useState } from 'react';
+
+let nextId5 = 3;
+const initialList5 = [
+  { id: 0, title: 'Big Bellies', seen: false },
+  { id: 1, title: 'Lunar Landscape', seen: false },
+  { id: 2, title: 'Terracotta Army', seen: true },
+];
+
+export default function BucketList() {
+  const [myList, setMyList] = useState(initialList);
+  const [yourList, setYourList] = useState(initialList);
+
+  function handleToggleMyList(artworkId, nextSeen) {
+    setMyList(
+      myList.map(artwork => {
+        if (artwork.id === artworkId) {
+          // Create a *new* object with changes
+          return { ...artwork, seen: nextSeen };
+        } else {
+          // No changes
+          return artwork;
+        }
+      })
+    );
+  }
+
+  function handleToggleYourList(artworkId, nextSeen) {
+    setYourList(
+      yourList.map(artwork => {
+        if (artwork.id === artworkId) {
+          // Create a *new* object with changes
+          return { ...artwork, seen: nextSeen };
+        } else {
+          // No changes
+          return artwork;
+        }
+      })
+    );
+  }
+
+  return (
+    <>
+      <h1>Art Bucket List</h1>
+      <h2>My list of art to see:</h2>
+      <ItemList artworks={myList} onToggle={handleToggleMyList} />
+      <h2>Your list of art to see:</h2>
+      <ItemList artworks={yourList} onToggle={handleToggleYourList} />
+    </>
+  );
+}
+
+function ItemList({ artworks, onToggle }) {
+  return (
+    <ul>
+      {artworks.map(artwork => (
+        <li key={artwork.id}>
+          <label>
+            <input
+              type="checkbox"
+              checked={artwork.seen}
+              onChange={e => {
+                onToggle(artwork.id, e.target.checked);
+              }}
+            />
+            {artwork.title}
+          </label>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// Как правило, вам следует изменять только те объекты, которые вы только что создали. Если бы вы вставляли новое изображение, вы могли бы изменить его, но если вы имеете дело с чем-то, что уже находится в состоянии, вам нужно сделать копию.
+
+//# Краткая логика обновления с помощью Immer
+/* Обновление вложенных массивов без изменения может стать немного повторяющимся. Так же, как с объектами:
+- Как правило, вам не нужно обновлять состояние глубже, чем на пару уровней. Если ваши объекты состояния очень глубокие, вы можете захотеть реструктурировать их по-другому, чтобы они были плоскими.
+- Если вы не хотите менять свою структуру состояний, вы можете предпочесть использовать Immer, который позволяет вам писать с использованием удобного, но видоизменяющегося синтаксиса и заботится о создании копий для вас.
+*/
+
+// Вот пример Art Bucket List, переписанный с помощью Immer:
+
+import { useState } from 'react';
+import { useImmer } from 'use-immer';
+
+let nextId6 = 3;
+const initialList6 = [
+  { id: 0, title: 'Big Bellies', seen: false },
+  { id: 1, title: 'Lunar Landscape', seen: false },
+  { id: 2, title: 'Terracotta Army', seen: true },
+];
+
+function BucketList() {
+  const [myList, updateMyList] = useImmer(initialList);
+  const [yourList, updateYourList] = useImmer(initialList);
+
+  function handleToggleMyList(id, nextSeen) {
+    updateMyList(draft => {
+      const artwork = draft.find(a => a.id === id);
+      artwork.seen = nextSeen;
+    });
+  }
+
+  function handleToggleYourList(artworkId, nextSeen) {
+    updateYourList(draft => {
+      const artwork = draft.find(a => a.id === artworkId);
+      artwork.seen = nextSeen;
+    });
+  }
+
+  return (
+    <>
+      <h1>Art Bucket List</h1>
+      <h2>My list of art to see:</h2>
+      <ItemList artworks={myList} onToggle={handleToggleMyList} />
+      <h2>Your list of art to see:</h2>
+      <ItemList artworks={yourList} onToggle={handleToggleYourList} />
+    </>
+  );
+}
+
+function ItemList({ artworks, onToggle }) {
+  return (
+    <ul>
+      {artworks.map(artwork => (
+        <li key={artwork.id}>
+          <label>
+            <input
+              type="checkbox"
+              checked={artwork.seen}
+              onChange={e => {
+                onToggle(artwork.id, e.target.checked);
+              }}
+            />
+            {artwork.title}
+          </label>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// Обратите внимание, как с Immer мутация вроде artwork.seen = nextSeen теперь в порядке:
+
+updateMyTodos(draft => {
+  const artwork = draft.find(a => a.id === artworkId);
+  artwork.seen = nextSeen;
+});
+
+// Это потому, что вы изменяете не исходное состояние, а изменяете специальный draft объект, предоставленный Immer. Точно так же вы можете применять такие методы мутации, как push() и pop() к содержимому файла draft.
+
+// В фоновом режиме Immer всегда создает следующее состояние с нуля в соответствии с изменениями, которые вы внесли в файл draft. Это позволяет вашим обработчикам событий быть очень краткими без изменения состояния.
+
+//# Резюме
+/*
+- Вы можете поместить массивы в состояние, но вы не можете их изменить.
+- Вместо того, чтобы изменять массив, создайте его новую версию и обновите для нее состояние.
+- Вы можете использовать [...arr, newItem] синтаксис распространения массива для создания массивов с новыми элементами.
+- Вы можете использовать filter() и map() для создания новых массивов с отфильтрованными или преобразованными элементами.
+- Вы можете использовать Immer, чтобы ваш код был кратким.
+*/
