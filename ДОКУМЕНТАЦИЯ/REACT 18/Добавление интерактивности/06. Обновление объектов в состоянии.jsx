@@ -319,4 +319,117 @@ function Form() {
 // Здесь e.target.name относится к name свойству, данному <input> элементу DOM.
 
 //# Обновление вложенного объекта
+// Рассмотрим структуру вложенных объектов, подобную этой:
 
+const [person, setPerson] = useState({
+  name: 'Niki de Saint Phalle',
+  artwork: {
+    title: 'Blue Nana',
+    city: 'Hamburg',
+    image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+  },
+});
+
+// Если вы хотели обновить person.artwork.city, понятно, как это сделать с помощью мутации:
+
+person.artwork.city = 'New Delhi';
+
+// Но в React вы считаете состояние неизменным! Чтобы изменить city, вам сначала нужно создать новый artwork объект (предварительно заполненный данными из предыдущего), а затем создать новый person объект, который указывает на новый artwork:
+
+const nextArtwork = { ...person.artwork, city: 'New Delhi' };
+const nextPerson = { ...person, artwork: nextArtwork };
+setPerson(nextPerson);
+
+// Или, записанный как вызов одной функции:
+
+setPerson({
+  ...person, // Copy other fields
+  artwork: {
+    // but replace the artwork
+    ...person.artwork, // with the same one
+    city: 'New Delhi', // but in New Delhi!
+  },
+});
+
+// Это немного многословно, но во многих случаях работает нормально:
+
+import { useState } from 'react';
+
+function Form() {
+  const [person, setPerson] = useState({
+    name: 'Niki de Saint Phalle',
+    artwork: {
+      title: 'Blue Nana',
+      city: 'Hamburg',
+      image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+    },
+  });
+
+  function handleNameChange(e) {
+    setPerson({
+      ...person,
+      name: e.target.value,
+    });
+  }
+
+  function handleTitleChange(e) {
+    setPerson({
+      ...person,
+      artwork: {
+        ...person.artwork,
+        title: e.target.value,
+      },
+    });
+  }
+
+  function handleCityChange(e) {
+    setPerson({
+      ...person,
+      artwork: {
+        ...person.artwork,
+        city: e.target.value,
+      },
+    });
+  }
+
+  function handleImageChange(e) {
+    setPerson({
+      ...person,
+      artwork: {
+        ...person.artwork,
+        image: e.target.value,
+      },
+    });
+  }
+
+  return (
+    <>
+      <label>
+        Name:
+        <input value={person.name} onChange={handleNameChange} />
+      </label>
+      <label>
+        Title:
+        <input value={person.artwork.title} onChange={handleTitleChange} />
+      </label>
+      <label>
+        City:
+        <input value={person.artwork.city} onChange={handleCityChange} />
+      </label>
+      <label>
+        Image:
+        <input value={person.artwork.image} onChange={handleImageChange} />
+      </label>
+      <p>
+        <i>{person.artwork.title}</i>
+        {' by '}
+        {person.name}
+        <br />
+        (located in {person.artwork.city})
+      </p>
+      <img src={person.artwork.image} alt={person.artwork.title} />
+    </>
+  );
+}
+
+//* Объекты на самом деле не вложены
