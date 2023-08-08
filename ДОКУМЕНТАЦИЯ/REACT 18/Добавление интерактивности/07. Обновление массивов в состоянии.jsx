@@ -254,3 +254,49 @@ function CounterList() {
 }
 
 //# Вставка в массив
+// Иногда вам может понадобиться вставить элемент в определенную позицию, которая не находится ни в начале, ни в конце. Для этого вы можете использовать ... синтаксис распространения массива вместе с slice() методом. Метод slice() позволяет вырезать «кусочек» массива. Чтобы вставить элемент, вы создадите массив, который распределяет фрагмент перед точкой вставки, затем новый элемент, а затем остальную часть исходного массива.
+
+// В этом примере кнопка «Вставить» всегда вставляет по индексу 1:
+
+import { useState } from 'react';
+
+let nextId2 = 3;
+const initialArtists2 = [
+  { id: 0, name: 'Marta Colvin Andrade' },
+  { id: 1, name: 'Lamidi Olonade Fakeye' },
+  { id: 2, name: 'Louise Nevelson' },
+];
+
+function List() {
+  const [name, setName] = useState('');
+  const [artists, setArtists] = useState(initialArtists);
+
+  function handleClick() {
+    const insertAt = 1; // Could be any index
+    const nextArtists = [
+      // Items before the insertion point:
+      ...artists.slice(0, insertAt),
+      // New item:
+      { id: nextId++, name: name },
+      // Items after the insertion point:
+      ...artists.slice(insertAt),
+    ];
+    setArtists(nextArtists);
+    setName('');
+  }
+
+  return (
+    <>
+      <h1>Inspiring sculptors:</h1>
+      <input value={name} onChange={e => setName(e.target.value)} />
+      <button onClick={handleClick}>Insert</button>
+      <ul>
+        {artists.map(artist => (
+          <li key={artist.id}>{artist.name}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+//# Внесение других изменений в массив
