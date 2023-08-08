@@ -157,3 +157,57 @@ setArtists(artists.filter(a => a.id !== artist.id));
 // Здесь artists.filter(a => a.id !== artist.id) означает «создать массив, состоящий из тех artists, чьи идентификаторы отличаются от artist.id». Другими словами, кнопка «Удалить» каждого исполнителя отфильтрует этого исполнителя из массива, а затем запросит повторный рендеринг с результирующим массивом. Обратите внимание, что filter не изменяет исходный массив.
 
 //# Преобразование массива
+// Если вы хотите изменить некоторые или все элементы массива, вы можете использовать map() для создания нового массива. Функция map, к которой вы перейдете, может решить, что делать с каждым элементом, на основе его данных или его индекса (или того и другого).
+
+// В этом примере массив содержит координаты двух кругов и квадрата. Когда вы нажимаете кнопку, она перемещает только круги вниз на 50 пикселей. Он делает это, создавая новый массив данных, используя map():
+
+import { useState } from 'react';
+
+let initialShapes = [
+  { id: 0, type: 'circle', x: 50, y: 100 },
+  { id: 1, type: 'square', x: 150, y: 100 },
+  { id: 2, type: 'circle', x: 250, y: 100 },
+];
+
+function ShapeEditor() {
+  const [shapes, setShapes] = useState(initialShapes);
+
+  function handleClick() {
+    const nextShapes = shapes.map(shape => {
+      if (shape.type === 'square') {
+        // No change
+        return shape;
+      } else {
+        // Return a new circle 50px below
+        return {
+          ...shape,
+          y: shape.y + 50,
+        };
+      }
+    });
+    // Re-render with the new array
+    setShapes(nextShapes);
+  }
+
+  return (
+    <>
+      <button onClick={handleClick}>Move circles down!</button>
+      {shapes.map(shape => (
+        <div
+          key={shape.id}
+          style={{
+            background: 'purple',
+            position: 'absolute',
+            left: shape.x,
+            top: shape.y,
+            borderRadius: shape.type === 'circle' ? '50%' : '',
+            width: 20,
+            height: 20,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+//# Замена элементов в массиве
