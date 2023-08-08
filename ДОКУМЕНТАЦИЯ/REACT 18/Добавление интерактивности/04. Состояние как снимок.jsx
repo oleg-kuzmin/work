@@ -9,3 +9,43 @@
 */
 
 //# Настройка триггеров состояния рендеринга
+// Вы можете думать о своем пользовательском интерфейсе как об изменении непосредственно в ответ на пользовательское событие, такое как щелчок. В React это работает немного иначе, чем эта ментальная модель. На предыдущей странице вы видели, что состояние настройки запрашивает повторный рендеринг из React. Это означает, что для того, чтобы интерфейс отреагировал на событие, вам необходимо обновить состояние.
+
+// В этом примере, когда вы нажимаете "send", setIsSent(true) указывает React повторно отобразить пользовательский интерфейс:
+
+import { useState } from 'react';
+
+function Form() {
+  const [isSent, setIsSent] = useState(false);
+  const [message, setMessage] = useState('Hi!');
+  if (isSent) {
+    return <h1>Your message is on its way!</h1>;
+  }
+  return (
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        setIsSent(true);
+        sendMessage(message);
+      }}
+    >
+      <textarea placeholder="Message" value={message} onChange={e => setMessage(e.target.value)} />
+      <button type="submit">Send</button>
+    </form>
+  );
+}
+
+function sendMessage(message) {
+  // ...
+}
+
+/*
+Вот что происходит, когда вы нажимаете кнопку:
+1. Выполняется обработчик события onSubmit.
+2. setIsSent(true) устанавливает для isSent значение true и ставит в очередь новый рендеринг.
+3. React повторно отображает компонент в соответствии с новым значением isSent.
+*/
+
+// Давайте подробнее рассмотрим взаимосвязь между состоянием и рендерингом.
+
+

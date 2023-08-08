@@ -31,3 +31,15 @@ function App() {
     </div>
   );
 }
+
+function Form() {
+  return (
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        setIsSent(true);
+        sendMessage(message);
+      }}
+    ></form>
+  );
+}
