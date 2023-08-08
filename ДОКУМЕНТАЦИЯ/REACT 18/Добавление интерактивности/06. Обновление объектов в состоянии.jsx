@@ -276,3 +276,47 @@ function Form() {
 
 // Обратите внимание, что ...синтаксис расширения «поверхностный» — он копирует элементы только на один уровень вглубь. Это делает его быстрым, но это также означает, что если вы хотите обновить вложенное свойство, вам придется использовать его более одного раза.
 
+//# Использование одного обработчика событий для нескольких полей
+// Вы также можете использовать фигурные скобки [и] внутри определения объекта, чтобы указать свойство с динамическим именем. Вот тот же пример, но с одним обработчиком событий вместо трех разных:
+
+import { useState } from 'react';
+
+function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com',
+  });
+
+  function handleChange(e) {
+    setPerson({
+      ...person,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input name="firstName" value={person.firstName} onChange={handleChange} />
+      </label>
+      <label>
+        Last name:
+        <input name="lastName" value={person.lastName} onChange={handleChange} />
+      </label>
+      <label>
+        Email:
+        <input name="email" value={person.email} onChange={handleChange} />
+      </label>
+      <p>
+        {person.firstName} {person.lastName} ({person.email})
+      </p>
+    </>
+  );
+}
+
+// Здесь e.target.name относится к name свойству, данному <input> элементу DOM.
+
+//# Обновление вложенного объекта
+
