@@ -5,6 +5,7 @@ onDoubleClick
 onSubmit
 onChange
 onMouseOver
+onPointerMove
 */
 
 //# пример
