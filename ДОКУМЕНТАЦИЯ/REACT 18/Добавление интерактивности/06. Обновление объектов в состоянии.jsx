@@ -156,4 +156,123 @@ setPosition({
 // Мутация представляет собой проблему только тогда, когда вы изменяете существующие объекты, которые уже находятся в состоянии. Модифицировать только что созданный объект можно, потому что никакой другой код еще не ссылается на него. Его изменение не повлияет случайно на что-то, что от него зависит. Это называется «локальной мутацией». Вы даже можете выполнять локальную мутацию во время рендеринга. Очень удобно и совершенно нормально!
 
 //# Копирование объектов с использованием спред-синтаксиса
+// В предыдущем примере positionобъект всегда создается заново из текущей позиции курсора. Но часто вы захотите включить существующие данные как часть нового объекта, который вы создаете. Например, вы можете обновить только одно поле в форме, но сохранить предыдущие значения для всех остальных полей.
+
+// Эти поля ввода не работают, потому что onChange обработчики изменяют состояние:
+
+import { useState } from 'react';
+
+function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com',
+  });
+
+  function handleFirstNameChange(e) {
+    person.firstName = e.target.value;
+  }
+
+  function handleLastNameChange(e) {
+    person.lastName = e.target.value;
+  }
+
+  function handleEmailChange(e) {
+    person.email = e.target.value;
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input value={person.firstName} onChange={handleFirstNameChange} />
+      </label>
+      <label>
+        Last name:
+        <input value={person.lastName} onChange={handleLastNameChange} />
+      </label>
+      <label>
+        Email:
+        <input value={person.email} onChange={handleEmailChange} />
+      </label>
+      <p>
+        {person.firstName} {person.lastName} ({person.email})
+      </p>
+    </>
+  );
+}
+
+// Например, эта строка изменяет состояние из прошлого рендера:
+person.firstName = e.target.value;
+
+// Надежный способ получить желаемое поведение — создать новый объект и передать его в setPerson. Но здесь вы хотите также скопировать в него существующие данные, потому что изменилось только одно из полей:
+
+setPerson({
+  firstName: e.target.value, // New first name from the input
+  lastName: person.lastName,
+  email: person.email,
+});
+
+// Вы можете использовать синтаксис ... распространения объекта, чтобы вам не нужно было копировать каждое свойство отдельно.
+setPerson({
+  ...person, // Copy the old fields
+  firstName: e.target.value, // But override this one
+});
+
+// Теперь форма работает!
+
+// Обратите внимание, что вы не объявили отдельную переменную состояния для каждого поля ввода. Для больших форм очень удобно хранить все данные сгруппированными в объекте — при условии, что вы правильно его обновляете!
+
+import { useState } from 'react';
+
+function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com',
+  });
+
+  function handleFirstNameChange(e) {
+    setPerson({
+      ...person,
+      firstName: e.target.value,
+    });
+  }
+
+  function handleLastNameChange(e) {
+    setPerson({
+      ...person,
+      lastName: e.target.value,
+    });
+  }
+
+  function handleEmailChange(e) {
+    setPerson({
+      ...person,
+      email: e.target.value,
+    });
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input value={person.firstName} onChange={handleFirstNameChange} />
+      </label>
+      <label>
+        Last name:
+        <input value={person.lastName} onChange={handleLastNameChange} />
+      </label>
+      <label>
+        Email:
+        <input value={person.email} onChange={handleEmailChange} />
+      </label>
+      <p>
+        {person.firstName} {person.lastName} ({person.email})
+      </p>
+    </>
+  );
+}
+
+// Обратите внимание, что ...синтаксис расширения «поверхностный» — он копирует элементы только на один уровень вглубь. Это делает его быстрым, но это также означает, что если вы хотите обновить вложенное свойство, вам придется использовать его более одного раза.
 
