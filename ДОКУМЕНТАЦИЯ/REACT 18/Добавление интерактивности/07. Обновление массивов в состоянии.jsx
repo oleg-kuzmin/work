@@ -113,6 +113,47 @@ setArtists([
   ...artists, // Put old items at the end
 ]);
 
-// Таким образом, расширение может выполнять работу как push()путем добавления в конец массива, так и unshift()путем добавления в начало массива.
+// Таким образом, расширение может выполнять работу как push() путем добавления в конец массива, так и unshift() путем добавления в начало массива.
 
+//# Удаление из массива
+// Самый простой способ удалить элемент из массива — отфильтровать его . Другими словами, вы создадите новый массив, который не будет содержать этот элемент. Для этого используйте filter метод, например:
 
+import { useState } from 'react';
+
+let initialArtists = [
+  { id: 0, name: 'Marta Colvin Andrade' },
+  { id: 1, name: 'Lamidi Olonade Fakeye' },
+  { id: 2, name: 'Louise Nevelson' },
+];
+
+function List() {
+  const [artists, setArtists] = useState(initialArtists);
+
+  return (
+    <>
+      <h1>Inspiring sculptors:</h1>
+      <ul>
+        {artists.map(artist => (
+          <li key={artist.id}>
+            {artist.name}{' '}
+            <button
+              onClick={() => {
+                setArtists(artists.filter(a => a.id !== artist.id));
+              }}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+// Нажмите кнопку «Удалить» несколько раз и посмотрите на ее обработчик кликов.
+
+setArtists(artists.filter(a => a.id !== artist.id));
+
+// Здесь artists.filter(a => a.id !== artist.id) означает «создать массив, состоящий из тех artists, чьи идентификаторы отличаются от artist.id». Другими словами, кнопка «Удалить» каждого исполнителя отфильтрует этого исполнителя из массива, а затем запросит повторный рендеринг с результирующим массивом. Обратите внимание, что filter не изменяет исходный массив.
+
+//# Преобразование массива
