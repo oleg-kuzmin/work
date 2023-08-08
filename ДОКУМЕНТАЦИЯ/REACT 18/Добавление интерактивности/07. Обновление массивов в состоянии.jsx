@@ -32,5 +32,87 @@
 */
 
 //# Добавление в массив
+// push() изменит массив, который вам не нужен:
+
+import { useState } from 'react';
+
+let nextId = 0;
+
+function List() {
+  const [name, setName] = useState('');
+  const [artists, setArtists] = useState([]);
+
+  return (
+    <>
+      <h1>Inspiring sculptors:</h1>
+      <input value={name} onChange={e => setName(e.target.value)} />
+      <button
+        onClick={() => {
+          artists.push({
+            id: nextId++,
+            name: name,
+          });
+        }}
+      >
+        Add
+      </button>
+      <ul>
+        {artists.map(artist => (
+          <li key={artist.id}>{artist.name}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+// Вместо этого создайте новый массив, содержащий существующие элементы и новый элемент в конце. Есть несколько способов сделать это, но самый простой — использовать синтаксис ... расширения массива:
+
+setArtists(
+  // Replace the state
+  [
+    // with a new array
+    ...artists, // that contains all the old items
+    { id: nextId++, name: name }, // and one new item at the end
+  ]
+);
+
+// Теперь работает корректно:
+
+import { useState } from 'react';
+
+nextId = 0;
+
+function List() {
+  const [name, setName] = useState('');
+  const [artists, setArtists] = useState([]);
+
+  return (
+    <>
+      <h1>Inspiring sculptors:</h1>
+      <input value={name} onChange={e => setName(e.target.value)} />
+      <button
+        onClick={() => {
+          setArtists([...artists, { id: nextId++, name: name }]);
+        }}
+      >
+        Add
+      </button>
+      <ul>
+        {artists.map(artist => (
+          <li key={artist.id}>{artist.name}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+// Синтаксис расширения массива также позволяет вам добавлять элемент, помещая его перед оригиналом ...artists:
+
+setArtists([
+  { id: nextId++, name: name },
+  ...artists, // Put old items at the end
+]);
+
+// Таким образом, расширение может выполнять работу как push()путем добавления в конец массива, так и unshift()путем добавления в начало массива.
 
 
