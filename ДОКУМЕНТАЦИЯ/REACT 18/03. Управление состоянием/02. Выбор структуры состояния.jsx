@@ -448,4 +448,261 @@ selectedId = 0
 // Теперь, если вы отредактируете выбранный элемент, сообщение ниже будет немедленно обновлено. Это связано с тем , что setItems вызывает повторный рендеринг и items.find(...) находит элемент с обновленным заголовком. Вам не нужно больше удерживать выбранный элемент в состоянии, потому что важен только выбранный идентификатор. Остальное можно рассчитать во время рендера.
 
 //# Избегайте глубоко вложенных состояний
+// Представьте план путешествия, состоящий из планет, континентов и стран. У вас может возникнуть соблазн структурировать его состояние с помощью вложенных объектов и массивов, как в этом примере:
 
+const initialTravelPlan = {
+  id: 0,
+  title: '(Root)',
+  childPlaces: [
+    {
+      id: 1,
+      title: 'Earth',
+      childPlaces: [
+        {
+          id: 2,
+          title: 'Africa',
+        },
+      ],
+    },
+  ],
+};
+
+import { useState } from 'react';
+import { initialTravelPlan } from './places.js';
+
+function PlaceTree({ place }) {
+  const childPlaces = place.childPlaces;
+  return (
+    <li>
+      {place.title}
+      {childPlaces.length > 0 && (
+        <ol>
+          {childPlaces.map(place => (
+            <PlaceTree key={place.id} place={place} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+  const planets = plan.childPlaces;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planets.map(place => (
+          <PlaceTree key={place.id} place={place} />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+// Теперь предположим, что вы хотите добавить кнопку для удаления места, которое вы уже посетили. Как бы вы это сделали? Обновление вложенного состояния включает в себя создание копий объектов от той части, которая была изменена. Удаление глубоко вложенного места потребует копирования всей его родительской цепочки мест. Такой код может быть очень подробным.
+
+// Если состояние слишком вложенное, чтобы его можно было легко обновить, подумайте о том, чтобы сделать его «плоским». Вот один из способов реструктуризации этих данных. Вместо древовидной структуры, в которой у каждого place есть массив дочерних мест, вы можете сделать так, чтобы каждое место содержало массив идентификаторов своих дочерних мест. Затем сохраните сопоставление каждого идентификатора места с соответствующим местом.
+
+// Эта реструктуризация данных может напомнить вам таблицу базы данных:
+
+const initialTravelPlan2 = {
+  0: {
+    id: 0,
+    title: '(Root)',
+    childIds: [1, 43, 47],
+  },
+  1: {
+    id: 1,
+    title: 'Earth',
+    childIds: [2, 10, 19, 27, 35],
+  },
+  2: {
+    id: 2,
+    title: 'Africa',
+    childIds: [3, 4, 5, 6, 7, 8, 9],
+  },
+};
+
+import { useState } from 'react';
+
+function PlaceTree({ id, placesById }) {
+  const place = placesById[id];
+  const childIds = place.childIds;
+  return (
+    <li>
+      {place.title}
+      {childIds.length > 0 && (
+        <ol>
+          {childIds.map(childId => (
+            <PlaceTree key={childId} id={childId} placesById={placesById} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+  const root = plan[0];
+  const planetIds = root.childIds;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planetIds.map(id => (
+          <PlaceTree key={id} id={id} placesById={plan} />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+// Теперь, когда состояние «плоское» (также известное как «нормализованное»), обновление вложенных элементов становится проще.
+
+/* Чтобы удалить место сейчас, вам нужно всего лишь обновить два уровня состояния:
+- Обновленная версия родительского места должна исключить удаленный идентификатор из своего массива childIds.
+- Обновленная версия корневого объекта «таблица» должна включать обновленную версию родительского места.
+*/
+
+// Вот пример того, как вы можете это сделать:
+
+import { useState } from 'react';
+import { initialTravelPlan2 } from './places.js';
+
+function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+
+  function handleComplete(parentId, childId) {
+    const parent = plan[parentId];
+    // Create a new version of the parent place
+    // that doesn't include this child ID.
+    const nextParent = {
+      ...parent,
+      childIds: parent.childIds.filter(id => id !== childId),
+    };
+    // Update the root state object...
+    setPlan({
+      ...plan,
+      // ...so that it has the updated parent.
+      [parentId]: nextParent,
+    });
+  }
+
+  const root = plan[0];
+  const planetIds = root.childIds;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planetIds.map(id => (
+          <PlaceTree key={id} id={id} parentId={0} placesById={plan} onComplete={handleComplete} />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+function PlaceTree({ id, parentId, placesById, onComplete }) {
+  const place = placesById[id];
+  const childIds = place.childIds;
+  return (
+    <li>
+      {place.title}
+      <button
+        onClick={() => {
+          onComplete(parentId, id);
+        }}
+      >
+        Complete
+      </button>
+      {childIds.length > 0 && (
+        <ol>
+          {childIds.map(childId => (
+            <PlaceTree key={childId} id={childId} parentId={id} placesById={placesById} onComplete={onComplete} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+// Вы можете сколько угодно вкладывать состояния, но если сделать их «плоскими», это может решить множество проблем. Это упрощает обновление состояния и помогает избежать дублирования в разных частях вложенного объекта.
+
+//* Улучшение использования памяти
+// В идеале вы также должны удалить удаленные элементы (и их дочерние элементы!) из объекта «таблица», чтобы улучшить использование памяти. Эта версия делает это. Он также использует Immer , чтобы сделать логику обновления более лаконичной.
+
+import { useImmer } from 'use-immer';
+import { initialTravelPlan3 } from './places.js';
+
+function TravelPlan() {
+  const [plan, updatePlan] = useImmer(initialTravelPlan);
+
+  function handleComplete(parentId, childId) {
+    updatePlan(draft => {
+      // Remove from the parent place's child IDs.
+      const parent = draft[parentId];
+      parent.childIds = parent.childIds.filter(id => id !== childId);
+
+      // Forget this place and all its subtree.
+      deleteAllChildren(childId);
+      function deleteAllChildren(id) {
+        const place = draft[id];
+        place.childIds.forEach(deleteAllChildren);
+        delete draft[id];
+      }
+    });
+  }
+
+  const root = plan[0];
+  const planetIds = root.childIds;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planetIds.map(id => (
+          <PlaceTree key={id} id={id} parentId={0} placesById={plan} onComplete={handleComplete} />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+function PlaceTree({ id, parentId, placesById, onComplete }) {
+  const place = placesById[id];
+  const childIds = place.childIds;
+  return (
+    <li>
+      {place.title}
+      <button
+        onClick={() => {
+          onComplete(parentId, id);
+        }}
+      >
+        Complete
+      </button>
+      {childIds.length > 0 && (
+        <ol>
+          {childIds.map(childId => (
+            <PlaceTree key={childId} id={childId} parentId={id} placesById={placesById} onComplete={onComplete} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+// Иногда вы также можете уменьшить вложенность состояний, переместив часть вложенных состояний в дочерние компоненты. Это хорошо работает для эфемерного состояния пользовательского интерфейса, которое не нужно сохранять, например, наведен ли элемент.
+
+//# Резюме
+/*
+- Если две переменные состояния всегда обновляются вместе, рассмотрите возможность их объединения в одну.
+- Тщательно выбирайте переменные состояния, чтобы избежать создания «невозможных» состояний.
+- Структурируйте свое состояние таким образом, чтобы уменьшить вероятность того, что вы совершите ошибку при его обновлении.
+- Избегайте избыточного и дублирующего состояния, чтобы вам не нужно было синхронизировать его.
+- Не помещайте свойства в состояние, если вы специально не хотите предотвратить обновления.
+- Для шаблонов пользовательского интерфейса, таких как выбор, сохраняйте идентификатор или индекс в состоянии, а не сам объект.
+- Если обновление глубоко вложенного состояния затруднено, попробуйте сгладить его.
+*/
