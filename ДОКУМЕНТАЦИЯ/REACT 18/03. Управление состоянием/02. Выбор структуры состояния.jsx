@@ -172,3 +172,108 @@ const isSent = status === 'sent';
 // Но они не являются переменными состояния, поэтому вам не нужно беспокоиться об их рассинхронизации друг с другом.
 
 //# Избегайте избыточного состояния
+// Если вы можете вычислить некоторую информацию из свойств компонента или его существующих переменных состояния во время рендеринга, вы не должны помещать эту информацию в состояние этого компонента.
+
+// Например, возьмите эту форму. Она работает, но можете ли вы найти в ней какое-либо избыточное состояние?
+
+import { useState } from 'react';
+
+function Form() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [fullName, setFullName] = useState('');
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+    setFullName(e.target.value + ' ' + lastName);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+    setFullName(firstName + ' ' + e.target.value);
+  }
+
+  return (
+    <>
+      <h2>Let’s check you in</h2>
+      <label>
+        First name: <input value={firstName} onChange={handleFirstNameChange} />
+      </label>
+      <label>
+        Last name: <input value={lastName} onChange={handleLastNameChange} />
+      </label>
+      <p>
+        Your ticket will be issued to: <b>{fullName}</b>
+      </p>
+    </>
+  );
+}
+
+// Эта форма имеет три переменные состояния: firstName, lastName и fullName. Однако fullName избыточен. Вы всегда можете рассчитать fullName из firstName и lastName во время рендеринга, поэтому удалите его из состояния.
+
+// Вот как вы можете это сделать:
+
+import { useState } from 'react';
+
+function Form() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  const fullName = firstName + ' ' + lastName;
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+  }
+
+  return (
+    <>
+      <h2>Let’s check you in</h2>
+      <label>
+        First name: <input value={firstName} onChange={handleFirstNameChange} />
+      </label>
+      <label>
+        Last name: <input value={lastName} onChange={handleLastNameChange} />
+      </label>
+      <p>
+        Your ticket will be issued to: <b>{fullName}</b>
+      </p>
+    </>
+  );
+}
+
+// Здесь fullName не является переменной состояния. Вместо этого он вычисляется во время рендеринга:
+
+const fullName = firstName + ' ' + lastName;
+
+// В результате обработчикам изменений не нужно делать ничего особенного для его обновления. Когда вы вызываете setFirstName или setLastName, вы запускаете повторный рендеринг, а затем следующий fullName будет рассчитываться на основе свежих данных.
+
+//* Не отображать props в состоянии
+// Типичным примером избыточного состояния является такой код:
+
+function Message({ messageColor }) {
+  const [color, setColor] = useState(messageColor);
+}
+
+// Здесь color переменная состояния инициализируется свойством messageColor. Проблема в том, что если родительский компонент передаст другое значение messageColor позже (например, 'red'вместо 'blue'), переменная состояния color не будет обновлена! Состояние инициализируется только во время первого рендеринга.
+
+// Вот почему «отзеркаливание» некоторых реквизитов в переменной состояния может привести к путанице. Вместо этого используйте props messageColor прямо в коде. Если вы хотите дать ему более короткое имя, используйте константу:
+
+function Message({ messageColor }) {
+  const color = messageColor;
+}
+
+// Таким образом, он не будет рассинхронизирован с props, переданным из родительского компонента.
+
+// «Отражение» свойств в состояние имеет смысл только в том случае, если вы хотите игнорировать все обновления для определенного свойства. По соглашению начинайте имя реквизита с initial или default, чтобы уточнить, что его новые значения игнорируются:
+
+function Message({ initialColor }) {
+  // The `color` state variable holds the *first* value of `initialColor`.
+  // Further changes to the `initialColor` prop are ignored.
+  const [color, setColor] = useState(initialColor);
+}
+
+//# Избегайте дублирования состояния
