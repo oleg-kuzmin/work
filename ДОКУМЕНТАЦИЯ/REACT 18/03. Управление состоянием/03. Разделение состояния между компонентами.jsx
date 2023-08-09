@@ -73,3 +73,94 @@ function Panel({ title, children, isActive }) {}
 // Теперь родительский компонент может управлять isActive в Panel, передавая его как свойство. И наоборот, компонент Panel теперь не имеет контроля над значением isActive, теперь это зависит от родительского компонента!
 
 //# Шаг 2. Передайте фиксированные данные от общего родителя
+// Чтобы поднять состояние, вы должны найти ближайший общий родительский компонент обоих дочерних компонентов, которые вы хотите скоординировать.
+
+// В данном примере это компонент Accordion. Поскольку он находится над обеими панелями и может управлять их props, он станет «источником правды» для той панели, которая в данный момент активна. Заставьте компонент Accordion передавать фиксированное значение isActive (например, true) на обе панели:
+
+import { useState } from 'react';
+
+function Accordion() {
+  return (
+    <>
+      <h2>Almaty, Kazakhstan</h2>
+      <Panel title="About" isActive={true}>
+        With a population of about 2 million, Almaty is Kazakhstan's largest city. From 1929 to 1997, it was its capital
+        city.
+      </Panel>
+      <Panel title="Etymology" isActive={true}>
+        The name comes from <span lang="kk-KZ">алма</span>, the Kazakh word for "apple" and is often translated as "full
+        of apples". In fact, the region surrounding Almaty is thought to be the ancestral home of the apple, and the
+        wild <i lang="la">Malus sieversii</i> is considered a likely candidate for the ancestor of the modern domestic
+        apple.
+      </Panel>
+    </>
+  );
+}
+
+function Panel({ title, children, isActive }) {
+  return (
+    <section className="panel">
+      <h3>{title}</h3>
+      {isActive ? <p>{children}</p> : <button onClick={() => setIsActive(true)}>Show</button>}
+    </section>
+  );
+}
+
+// Попробуйте отредактировать жестко заданные значения isActive в компоненте Accordion и посмотрите результат на экране.
+
+//# Шаг 3: Добавьте состояние к общему родителю
+// Поднятие состояния часто меняет характер того, что вы храните как состояние.
+
+// При этом одновременно должна быть активна только одна панель. Это означает, что общий родительский компонент Accordion должен отслеживать, какая панель является активной. Вместо значения boolean он может использовать число в качестве индекса активности Panel для переменной состояния:
+
+const [activeIndex, setActiveIndex] = useState(0);
+
+// При activeIndex === 0 активна первая панель, при значении — 1 вторая.
+
+// Нажатие кнопки «Показать» в любом из Panel должно изменить активный индекс в Accordion. A Panel не может установить activeIndex состояние напрямую, потому что оно определено внутри файла Accordion. Компонент Accordion должен явно разрешить компоненту Panel изменять свое состояние, передав обработчик событий в качестве реквизита:
+
+<>
+  <Panel isActive={activeIndex === 0} onShow={() => setActiveIndex(0)}>
+    ...
+  </Panel>
+  <Panel isActive={activeIndex === 1} onShow={() => setActiveIndex(1)}>
+    ...
+  </Panel>
+</>;
+
+// Теперь внутри <button> будет использоваться props onShow в качестве обработчика события клика:
+
+import { useState } from 'react';
+
+function Accordion() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  return (
+    <>
+      <h2>Almaty, Kazakhstan</h2>
+      <Panel title="About" isActive={activeIndex === 0} onShow={() => setActiveIndex(0)}>
+        With a population of about 2 million, Almaty is Kazakhstan's largest city. From 1929 to 1997, it was its capital
+        city.
+      </Panel>
+      <Panel title="Etymology" isActive={activeIndex === 1} onShow={() => setActiveIndex(1)}>
+        The name comes from <span lang="kk-KZ">алма</span>, the Kazakh word for "apple" and is often translated as "full
+        of apples". In fact, the region surrounding Almaty is thought to be the ancestral home of the apple, and the
+        wild <i lang="la">Malus sieversii</i> is considered a likely candidate for the ancestor of the modern domestic
+        apple.
+      </Panel>
+    </>
+  );
+}
+
+function Panel({ title, children, isActive, onShow }) {
+  return (
+    <section className="panel">
+      <h3>{title}</h3>
+      {isActive ? <p>{children}</p> : <button onClick={onShow}>Show</button>}
+    </section>
+  );
+}
+
+// Это завершает подъем состояния вверх! Перемещение состояния в общий родительский компонент позволило согласовать две панели. Использование активного индекса вместо двух флажков «показано» гарантировало, что в данный момент активна только одна панель. А передача обработчика событий дочернему элементу позволяла дочернему элементу изменять состояние родителя.
+
+//* Контролируемые и неконтролируемые компоненты
+
