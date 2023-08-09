@@ -6,6 +6,8 @@ onSubmit
 onChange
 onMouseOver
 onPointerMove
+onPointerEnter
+onPointerLeave
 */
 
 //# пример
