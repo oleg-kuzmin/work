@@ -32,3 +32,53 @@ function Toolbar({ onPlayMovie, onUploadImage }) {
 function Button({ onClick, children }) {
   return <button onClick={onClick}>{children}</button>;
 }
+
+//# Состояние: память компонента
+// Компонентам часто необходимо изменить то, что отображается на экране в результате взаимодействия. Ввод в форму должен обновить поле ввода, нажатие «Далее» на карусели изображений должно изменить отображаемое изображение, нажатие «Купить» помещает продукт в корзину. Компоненты должны «запоминать» вещи: текущее входное значение, текущее изображение, корзину. В React такой тип памяти для конкретного компонента называется состоянием.
+
+// Вы можете добавить состояние к компоненту с помощью useStateхука. Хуки — это специальные функции, которые позволяют вашим компонентам использовать функции React (состояние — одна из таких функций). Хук useStateпозволяет объявить переменную состояния. Он принимает начальное состояние и возвращает пару значений: текущее состояние и функцию установки состояния, которая позволяет вам обновить его.
+
+const [index, setIndex] = useState(0);
+const [showMore, setShowMore] = useState(false);
+
+// Вот как галерея изображений использует и обновляет состояние по клику:
+
+import { useState } from 'react';
+import { sculptureList } from './data.js';
+
+function Gallery() {
+  const [index, setIndex] = useState(0);
+  const [showMore, setShowMore] = useState(false);
+  const hasNext = index < sculptureList.length - 1;
+
+  function handleNextClick() {
+    if (hasNext) {
+      setIndex(index + 1);
+    } else {
+      setIndex(0);
+    }
+  }
+
+  function handleMoreClick() {
+    setShowMore(!showMore);
+  }
+
+  let sculpture = sculptureList[index];
+  return (
+    <>
+      <button onClick={handleNextClick}>Next</button>
+      <h2>
+        <i>{sculpture.name} </i>
+        by {sculpture.artist}
+      </h2>
+      <h3>
+        ({index + 1} of {sculptureList.length})
+      </h3>
+      <button onClick={handleMoreClick}>{showMore ? 'Hide' : 'Show'} details</button>
+      {showMore && <p>{sculpture.description}</p>}
+      <img src={sculpture.url} alt={sculpture.alt} />
+    </>
+  );
+}
+
+//# Рендеринг и коммит
