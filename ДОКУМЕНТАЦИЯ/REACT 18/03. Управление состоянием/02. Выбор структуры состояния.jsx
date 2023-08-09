@@ -277,3 +277,175 @@ function Message({ initialColor }) {
 }
 
 //# Избегайте дублирования состояния
+// Этот компонент списка меню позволяет выбрать один перекус из нескольких:
+
+import { useState } from 'react';
+
+const initialItems = [
+  { title: 'pretzels', id: 0 },
+  { title: 'crispy seaweed', id: 1 },
+  { title: 'granola bar', id: 2 },
+];
+
+function Menu() {
+  const [items, setItems] = useState(initialItems);
+  const [selectedItem, setSelectedItem] = useState(items[0]);
+
+  return (
+    <>
+      <h2>What's your travel snack?</h2>
+      <ul>
+        {items.map(item => (
+          <li key={item.id}>
+            {item.title}{' '}
+            <button
+              onClick={() => {
+                setSelectedItem(item);
+              }}
+            >
+              Choose
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p>You picked {selectedItem.title}.</p>
+    </>
+  );
+}
+
+// В настоящее время он сохраняет выбранный элемент как объект в selectedItem переменной состояния. Однако это не очень хорошо: содержимое — selectedItem это тот же объект, что и один из элементов внутри itemsсписка. Это означает, что информация о самом предмете дублируется в двух местах.
+
+// Почему это проблема? Сделаем каждый элемент редактируемым:
+
+import { useState } from 'react';
+
+const initialItems2 = [
+  { title: 'pretzels', id: 0 },
+  { title: 'crispy seaweed', id: 1 },
+  { title: 'granola bar', id: 2 },
+];
+
+function Menu() {
+  const [items, setItems] = useState(initialItems);
+  const [selectedItem, setSelectedItem] = useState(items[0]);
+
+  function handleItemChange(id, e) {
+    setItems(
+      items.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            title: e.target.value,
+          };
+        } else {
+          return item;
+        }
+      })
+    );
+  }
+
+  return (
+    <>
+      <h2>What's your travel snack?</h2>
+      <ul>
+        {items.map((item, index) => (
+          <li key={item.id}>
+            <input
+              value={item.title}
+              onChange={e => {
+                handleItemChange(item.id, e);
+              }}
+            />{' '}
+            <button
+              onClick={() => {
+                setSelectedItem(item);
+              }}
+            >
+              Choose
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p>You picked {selectedItem.title}.</p>
+    </>
+  );
+}
+
+// Обратите внимание, что если вы сначала нажмете «Выбрать» на элементе, а затем отредактируете его, ввод обновится, но метка внизу не отразит изменения. Это потому, что вы дублировали состояние и забыли обновить selectedItem.
+
+// Хотя вы тоже можете обновить selectedItem, проще всего удалить дублирование. В этом примере вместо объекта selectedItem (который создает дублирование с объектами внутри items) вы сохраняете состояние selectedId, а затем получаете selectedItem путем поиска в массиве items элемента с этим идентификатором:
+
+import { useState } from 'react';
+
+const initialItems3 = [
+  { title: 'pretzels', id: 0 },
+  { title: 'crispy seaweed', id: 1 },
+  { title: 'granola bar', id: 2 },
+];
+
+function Menu() {
+  const [items, setItems] = useState(initialItems);
+  const [selectedId, setSelectedId] = useState(0);
+
+  const selectedItem = items.find(item => item.id === selectedId);
+
+  function handleItemChange(id, e) {
+    setItems(
+      items.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            title: e.target.value,
+          };
+        } else {
+          return item;
+        }
+      })
+    );
+  }
+
+  return (
+    <>
+      <h2>What's your travel snack?</h2>
+      <ul>
+        {items.map((item, index) => (
+          <li key={item.id}>
+            <input
+              value={item.title}
+              onChange={e => {
+                handleItemChange(item.id, e);
+              }}
+            />{' '}
+            <button
+              onClick={() => {
+                setSelectedId(item.id);
+              }}
+            >
+              Choose
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p>You picked {selectedItem.title}.</p>
+    </>
+  );
+}
+
+// (В качестве альтернативы вы можете удерживать выбранный индекс в состоянии.)
+
+/* Раньше состояние дублировалось так:
+items = [{ id: 0, title: 'pretzels'}, ...]
+selectedItem = {id: 0, title: 'pretzels'}
+*/
+
+/* Но после замены вот так:
+items = [{ id: 0, title: 'pretzels'}, ...]
+selectedId = 0
+*/
+
+// Дублирование исчезло, и вы сохранили только основное состояние!
+
+// Теперь, если вы отредактируете выбранный элемент, сообщение ниже будет немедленно обновлено. Это связано с тем , что setItems вызывает повторный рендеринг и items.find(...) находит элемент с обновленным заголовком. Вам не нужно больше удерживать выбранный элемент в состоянии, потому что важен только выбранный идентификатор. Остальное можно рассчитать во время рендера.
+
+//# Избегайте глубоко вложенных состояний
+
