@@ -194,7 +194,7 @@ function App() {
             type="checkbox"
             checked={isFancy}
             onChange={e => {
-              setIsFancy(e.target.checked)
+              setIsFancy(e.target.checked);
             }}
           />
           Use fancy styling
@@ -210,7 +210,7 @@ function App() {
           type="checkbox"
           checked={isFancy}
           onChange={e => {
-            setIsFancy(e.target.checked)
+            setIsFancy(e.target.checked);
           }}
         />
         Use fancy styling
@@ -232,15 +232,9 @@ function Counter({ isFancy }) {
   }
 
   return (
-    <div
-      className={className}
-      onPointerEnter={() => setHover(true)}
-      onPointerLeave={() => setHover(false)}
-    >
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
       <h1>{score}</h1>
-      <button onClick={() => setScore(score + 1)}>
-        Add one
-      </button>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
     </div>
   );
 }
