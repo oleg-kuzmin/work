@@ -131,3 +131,47 @@ function Counter() {
 // React сохраняет состояние компонента до тех пор, пока он отображается в своей позиции в дереве пользовательского интерфейса. Если он удаляется или другой компонент отображается в той же позиции, React отбрасывает его состояние.
 
 //# Тот же компонент в той же позиции сохраняет состояние
+// В этом примере есть два разных <Counter /> тега:
+
+import { useState } from 'react';
+
+function App() {
+  const [isFancy, setIsFancy] = useState(false);
+  return (
+    <div>
+      {isFancy ? <Counter isFancy={true} /> : <Counter isFancy={false} />}
+      <label>
+        <input
+          type="checkbox"
+          checked={isFancy}
+          onChange={e => {
+            setIsFancy(e.target.checked);
+          }}
+        />
+        Use fancy styling
+      </label>
+    </div>
+  );
+}
+
+function Counter({ isFancy }) {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+  if (isFancy) {
+    className += ' fancy';
+  }
+
+  return (
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+      <h1>{score}</h1>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
+    </div>
+  );
+}
+
+
