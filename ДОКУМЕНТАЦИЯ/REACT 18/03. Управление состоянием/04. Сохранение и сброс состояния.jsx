@@ -252,17 +252,13 @@ function App() {
   const [isPaused, setIsPaused] = useState(false);
   return (
     <div>
-      {isPaused ? (
-        <p>See you later!</p>
-      ) : (
-        <Counter />
-      )}
+      {isPaused ? <p>See you later!</p> : <Counter />}
       <label>
         <input
           type="checkbox"
           checked={isPaused}
           onChange={e => {
-            setIsPaused(e.target.checked)
+            setIsPaused(e.target.checked);
           }}
         />
         Take a break
@@ -281,15 +277,9 @@ function Counter() {
   }
 
   return (
-    <div
-      className={className}
-      onPointerEnter={() => setHover(true)}
-      onPointerLeave={() => setHover(false)}
-    >
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
       <h1>{score}</h1>
-      <button onClick={() => setScore(score + 1)}>
-        Add one
-      </button>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
     </div>
   );
 }
