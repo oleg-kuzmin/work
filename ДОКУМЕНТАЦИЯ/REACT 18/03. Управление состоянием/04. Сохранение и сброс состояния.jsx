@@ -345,3 +345,30 @@ function Counter({ isFancy }) {
 // Вот почему вы не должны вкладывать определения функций компонентов.
 
 // Здесь MyTextField функция компонента определена внутри MyComponent:
+
+import { useState } from 'react';
+
+function MyComponent() {
+  const [counter, setCounter] = useState(0);
+
+  function MyTextField() {
+    const [text, setText] = useState('');
+
+    return <input value={text} onChange={e => setText(e.target.value)} />;
+  }
+
+  return (
+    <>
+      <MyTextField />
+      <button
+        onClick={() => {
+          setCounter(counter + 1);
+        }}
+      >
+        Clicked {counter} times
+      </button>
+    </>
+  );
+}
+
+
