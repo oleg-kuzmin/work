@@ -20,6 +20,8 @@ basket    - страница basket
 звездочка - все остальные страницы
 */
 
+import { Routes, Route } from 'react-router-dom';
+
 function App() {
   return (
     <>
