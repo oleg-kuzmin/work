@@ -24,7 +24,6 @@ import Layout from '.components/Layout';
 function App() {
   return (
     <>
-      <Header />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -32,7 +31,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-      <Footer />
     </>
   );
 }
