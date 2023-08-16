@@ -33,3 +33,9 @@ function App() {
     </>
   );
 }
+
+//# компонент с ссылкой
+// Вместо тега <а></a> пишем компонент <Link></Link> с атрибутом to
+
+import { Link } from 'react-router-dom';
+<Link to="basket"></Link>;
