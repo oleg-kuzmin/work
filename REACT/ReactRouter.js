@@ -1,9 +1,3 @@
-//# установка
-/*
-npm i react-router-dom (для браузеров)
-npm i react-router-native (для мобильных)
-*/
-
 //# пример
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
