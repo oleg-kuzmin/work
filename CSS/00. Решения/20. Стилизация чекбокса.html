@@ -9,6 +9,24 @@
     opacity: 0;
   }
 
+  /* стили для ярлыка (чекбокс) */
+  .label::before {
+    transition: all 0.2s;
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.64);
+  }
+
   /* checkbox выбран */
   .checkbox:checked + label::before {
     box-shadow: none;
@@ -49,23 +67,5 @@
   .label:hover {
     cursor: pointer;
     color: #80bdff;
-  }
-
-  /* стили для ярлыка (чекбокс) */
-  .label::before {
-    transition: all 0.2s;
-    content: '';
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 0.25em;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.64);
   }
 </style>
