@@ -19,10 +19,17 @@
 - VSCODE (горячие клавиши, расширения, Prettier, настройка settings.json)
 - Моя основная база знаний (шпаргалка): https://github.com/oleg-kuzmin/work
 - Портфолио:
+
   - https://oleg-kuzmin.github.io/mesto-project/
+  (JS приложение на ООП, адаптив, классы, модули, bem, webpack, api )
+  - https://oleg-kuzmin.github.io/food-delivery/
+  (React приложение, адаптив, api)
   - https://oleg-kuzmin.github.io/film-camera-repair/
+  (Лендинг, адаптив, scss)
   - https://oleg-kuzmin.github.io/russian-travel/
+  (Лендинг, адаптив)
   - https://oleg-kuzmin.github.io/how-to-learn/
+  (Лендинг)
 
 ## Basic Professional Experience:
 
