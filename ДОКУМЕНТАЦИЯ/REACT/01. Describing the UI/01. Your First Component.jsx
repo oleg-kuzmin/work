@@ -81,4 +81,21 @@ function Profile() {
 //! ловушка
 
 //# Использование компонента
+// Теперь, когда вы определили свой Profile компонент, вы можете вложить его в другие компоненты. Например, вы можете экспортировать Gallery компонент, который использует несколько Profile компонентов:
 
+function Profile() {
+  return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
+}
+
+function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+
+//# Что видит браузер
