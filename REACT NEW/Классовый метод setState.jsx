@@ -1,5 +1,5 @@
 //# Классовый метод setState
-//* создавая метод класса, в котором планируется использовать setState()​, метод можно связать с​ this через bind
+//* Создавая метод класса, в котором планируется использовать setState()​, метод можно связать с​ this через bind
 class UserGreeting extends React.Component {
   constructor(props) {
     super(props);
