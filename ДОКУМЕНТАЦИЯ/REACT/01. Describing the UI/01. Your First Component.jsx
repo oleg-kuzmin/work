@@ -99,3 +99,18 @@ function Gallery() {
 }
 
 //# Что видит браузер
+/*
+Обратите внимание на разницу в регистре:
+- <section> имеет нижний регистр, поэтому React знает, что мы ссылаемся на HTML-тег.
+- <Profile /> начинается с заглавной буквы P, поэтому React знает, что мы хотим использовать наш компонент с именем Profile.
+*/
+
+// И Profile содержит еще больше HTML: <img />. В итоге вот что видит браузер:
+<section>
+  <h1>Amazing scientists</h1>
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+</section>;
+
+//# Вложение и организация компонентов
