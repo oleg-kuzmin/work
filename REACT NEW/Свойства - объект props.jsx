@@ -39,3 +39,12 @@ function Profile() {
     </div>
   );
 }
+
+//* Передача свойства компоненту через спред-оператор (когда все props передаются дочернему компоненты)
+function Profile(props) {
+  return (
+    <div>
+      <Avatar {...props} />
+    </div>
+  );
+}
