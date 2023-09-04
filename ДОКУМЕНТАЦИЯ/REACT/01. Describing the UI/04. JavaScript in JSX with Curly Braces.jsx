@@ -100,3 +100,48 @@ function TodoList() {
 //! ловушка
 
 //# Больше удовольствия от объектов JavaScript и фигурных скобок
+// Вы можете переместить несколько выражений в один объект и ссылаться на них в JSX внутри фигурных скобок:
+
+//* App.js
+let person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink',
+  },
+};
+
+function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <img className="avatar" src="https://i.imgur.com/7vQD0fPs.jpg" alt="Gregorio Y. Zara" />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+
+// В этом примере объект JavaScript person содержит строку name и объект theme:
+
+person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink',
+  },
+};
+
+// Компонент может использовать эти значения person следующим образом:
+
+<div style={person.theme}>
+  <h1>{person.name}'s Todos</h1>
+</div>;
+
+// JSX как язык шаблонов очень минималистичен, поскольку позволяет организовывать данные и логику с помощью JavaScript.
+
+//# Резюме
+
