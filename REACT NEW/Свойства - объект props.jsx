@@ -45,11 +45,31 @@ function Profile() {
   );
 }
 
-//* Передача свойства компоненту через спред-оператор (когда все props передаются дочернему компоненты)
+//* Передача всех свойств компоненту через спред-оператор
 function Profile(props) {
   return (
     <div>
       <Avatar {...props} />
+    </div>
+  );
+}
+
+//* Передача частично свойств компоненту через спред-оператор
+function Profile(props) {
+  return (
+    <div>
+      <Avatar {...props.avatar} />
+    </div>
+  );
+}
+
+//* Фильтрация свойств и безопасная передача оставшихся компоненту через спред-оператор
+function Profile(props) {
+  const { size, userId, ...otherProps } = props;
+
+  return (
+    <div>
+      <Avatar {...otherProps} />
     </div>
   );
 }
