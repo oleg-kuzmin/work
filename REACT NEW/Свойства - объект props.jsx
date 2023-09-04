@@ -6,6 +6,12 @@ function Avatar({ person, size }) {
   return <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size} />;
 }
 
+//* Чтение свойства внутри компонента (с деструктуризацией объекта и значением по умолчанию)
+// свойство size отсутствует или size={undefined}
+function Avatar({ person, size = 100 }) {
+  return <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size} />;
+}
+
 //* Чтение свойства внутри компонента (без деструктуризации)
 function Avatar(props) {
   return (
