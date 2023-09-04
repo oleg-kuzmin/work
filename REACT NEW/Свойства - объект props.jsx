@@ -12,6 +12,11 @@ function Avatar({ person, size = 100 }) {
   return <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size} />;
 }
 
+//* Чтение свойства внутри компонента (с деструктуризацией объекта и контентом children)
+function Card({ children }) {
+  return <div className="card">{children}</div>;
+}
+
 //* Чтение свойства внутри компонента (без деструктуризации)
 function Avatar(props) {
   return (
