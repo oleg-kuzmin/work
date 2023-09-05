@@ -1,4 +1,5 @@
 //# Навигация
+
 import Link from 'next/link';
 
 function Nav() {
@@ -12,15 +13,18 @@ function Nav() {
 }
 
 //# структура
-/* Вложенность может быть любой
+// Внутри app создаются папки - страницы. В каждой папке-странице будет файл page.js. Например src/app/about/page.js гарантирует наличие адреса localhost: 3000/about. Вложенность может быть любой.
+
+/*
 папка src
   папка app
-    файл page.js
+    файл page.jsx
     файл page.module.css
-    файл layout.js
+    файл layout.jsx - главный
     файл globals.css
     папка about
       файл page.jsx
+      файл layout.jsx - дополнительный
       папка contacts
         файл page.jsx
     папка [id] // динамический роутинг
@@ -34,3 +38,7 @@ function Nav() {
 function TestPageId({ params: { id } }) {
   return <h1>Это страница {id}</h1>;
 }
+
+//# Layout
+// Один layout.js в корне всегда должен лежать (т.к. next автоматически не добавляет всем страницам html и body).
+//* Дополнительный файл src/app/about/layout.jsx

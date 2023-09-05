@@ -35,27 +35,4 @@
 }
 */
 
-//# структура папок
-/*
-node_modules
-public
-src
-  app
-    page.js
-    page.module.css
-    layout.js
-    globals.css
-    about
-      page.jsx
-    [id] // динамический роутинг
-      page.jsx
-.eslintrc.json
-.gitignore
-jsconfig.json
-next.config.js
-package-lock.json
-package.json
-README.md
-*/
 
-// Внутри app создаются папки - страницы. В каждой папке-странице будет файл page.js. Например src/app/about/page.js гарантирует наличие адреса localhost: 3000/about. Один layout.js в корне всегда должен лежать (т.к. next автоматически не добавляет всем страницам html и body).
