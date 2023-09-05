@@ -7,6 +7,7 @@ function Nav() {
     <nav>
       <Link href="/">Home</Link>
       <Link href="/about">About</Link>
+      <Link href="/about/contacts">Contacts</Link>
       <Link href="/blog">Blog</Link>
     </nav>
   );
@@ -42,3 +43,21 @@ function TestPageId({ params: { id } }) {
 //# Layout
 // Один layout.js в корне всегда должен лежать (т.к. next автоматически не добавляет всем страницам html и body).
 //* Дополнительный файл src/app/about/layout.jsx
+
+export const metadata = {
+  title: 'Тестовая страница',
+  description: 'Тестовая страница',
+};
+
+export default function AboutLayout({ children }) {
+  return (
+    <div>
+      <h1>About us</h1>
+      <ul>
+        <li>Contacts</li>
+        <li>Home</li>
+      </ul>
+      {children}
+    </div>
+  );
+}
