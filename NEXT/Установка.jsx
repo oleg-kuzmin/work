@@ -47,6 +47,8 @@ src
     globals.css
     about
       page.jsx
+    [id] // динамический роутинг
+      page.jsx
 .eslintrc.json
 .gitignore
 jsconfig.json
