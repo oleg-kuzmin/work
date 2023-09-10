@@ -49,12 +49,12 @@ folder/folder	Nested route segment (Вложенный сегмент маршр
 
 //* Динамические маршруты
 /*
-[folder]	    Dynamic route segment (Динамический сегмент маршрута)
-[...folder]	  Catch-all route segment (Универсальный сегмент маршрута)
+[folder]	    Dynamic route segment (Динамический сегмент маршрута, строка)
+[...folder]	  Catch-all route segment (Универсальный сегмент маршрута, массив строк)
 [[...folder]]	Optional catch-all route segment (Дополнительный комплексный сегмент маршрута)
 */
 
-//* Группы маршрутов и личные папки
+//* Группы маршрутов и приватные папки
 /*
 (folder)	    Group routes without affecting routing (Группировка маршрутов без маршрутизации, игнорируются пути)
 _folder	      Opt folder and all child segments out of routing (Папка и все дочерние сегменты исключены из маршрутизации)
