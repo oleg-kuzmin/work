@@ -1,7 +1,7 @@
 //# <Image>
 // Этот справочник по API поможет вам понять, как использовать реквизиты и параметры конфигурации, доступные для компонента изображения.
 
-//* app/page.js (добавить export default)
+//* app/page.js (export default)
 import Image from 'next/image';
 
 function Page() {
@@ -30,7 +30,7 @@ blurDataURL	      blurDataURL="data:image/jpeg..."	  String	        -
 */
 
 //# Обязательные props (добавить export default)
-//* app/page.js (добавить export default)
+//* app/page.js (export default)
 import Image from 'next/image';
 
 function Page() {
@@ -78,7 +78,7 @@ function Page() {
 
 // Вот пример использования пользовательского loader:
 
-//* app/page.js (добавить export default)
+//* app/page.js (export default)
 ('use client');
 
 import Image from 'next/image';
@@ -164,7 +164,7 @@ function Page() {
 //# style (Расширенные props)
 // Позволяет передавать стили CSS базовому элементу изображения.
 
-//* components/ProfileImage.js (добавить export default)
+//* components/ProfileImage.js (export default)
 const imageStyle = {
   borderRadius: '50%',
   border: '1px solid #fff',
@@ -245,3 +245,85 @@ module.exports = {
 - srcSet. Вместо этого используйте размеры устройств.
 - decoding. Это всегда async.
 */
+
+//# Параметры конфигурации
+// Помимо props, вы можете настроить компонент изображения в next.config.js. Доступны следующие варианты:
+
+//# remotePatterns (Параметры конфигурации)
+// Чтобы защитить ваше приложение от злоумышленников, необходимо настроить использование внешних образов. Это гарантирует, что API оптимизации изображений Next.js может обслуживать только внешние изображения из вашей учетной записи. Эти внешние изображения можно настроить с помощью свойства RemotePatterns в файле next.config.js, как показано ниже:
+
+//* next.config.js
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+        port: '',
+        pathname: '/account123/**',
+      },
+    ],
+  },
+};
+
+// Полезно знать: в приведенном выше примере свойство src объекта next/image должно начинаться с https://example.com/account123/. Любой другой протокол, имя хоста, порт или несовпадающий путь ответит 400 Bad Request.
+
+// Ниже приведен еще один пример свойства remotePatterns в файле next.config.js:
+
+//* next.config.js
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.example.com',
+      },
+    ],
+  },
+};
+
+// Полезно знать: приведенный выше пример гарантирует, что src свойство next/image должно начинаться с https://img1.example.com любого https://me.avatar.example.com количества поддоменов. Любой другой протокол или несовпадающее имя хоста ответит 400 Bad Request.
+
+/* Шаблоны подстановочных знаков могут использоваться как для пути, так и для имени хоста и имеют следующий синтаксис:
+- * соответствовать одному сегменту пути или поддомену
+- ** соответствовать любому количеству сегментов пути в конце или поддоменов в начале
+*/
+
+// Синтаксис ** не работает в середине шаблона.
+
+//# domains
+// Предупреждение. Мы рекомендуем настроить remotePatterns вместо доменов, чтобы защитить ваше приложение от злоумышленников. Используйте домены только в том случае, если вы владеете всем контентом, предоставляемым из домена.
+
+// Как и в случае с remotePatterns, конфигурацию доменов можно использовать для предоставления списка разрешенных имен хостов для внешних образов.
+
+// Однако конфигурация доменов не поддерживает сопоставление с шаблоном подстановочных знаков и не может ограничивать протокол, порт или путь.
+
+// Ниже приведен пример свойства доменов в файле next.config.js:
+
+//* next.config.js
+module.exports = {
+  images: {
+    domains: ['assets.acme.com'],
+  },
+};
+
+//# loaderFile
+// Если вы хотите использовать облачный провайдер для оптимизации изображений вместо использования встроенного API оптимизации изображений Next.js, вы можете настроить файл loaderFile в файле next.config.js следующим образом:
+
+//* next.config.js
+module.exports = {
+  images: {
+    loader: 'custom',
+    loaderFile: './my/image/loader.js',
+  },
+};
+
+// Это должно указывать на файл относительно корня вашего приложения Next.js. Файл должен экспортировать функцию по умолчанию, которая возвращает строку, например:
+//* ./my/image/loader.js (export default)
+('use client');
+
+function myImageLoader({ src, width, quality }) {
+  return `https://example.com/${src}?w=${width}&q=${quality || 75}`;
+}
+
+// Альтернативно вы можете использовать свойство loader для настройки каждого экземпляра next/image.
