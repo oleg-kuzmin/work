@@ -56,8 +56,8 @@ folder/folder	Nested route segment (Вложенный сегмент маршр
 
 //* Группы маршрутов и личные папки
 /*
-(folder)	    Group routes without affecting routing (Группировка маршрутов, не затрагивая маршрутизацию)
-_folder	      Opt folder and all child segments out of routing (Папка opt и все дочерние сегменты исключены из маршрутизации)
+(folder)	    Group routes without affecting routing (Группировка маршрутов без маршрутизации, игнорируются пути)
+_folder	      Opt folder and all child segments out of routing (Папка и все дочерние сегменты исключены из маршрутизации)
 */
 
 //* Параллельные и перехватываемые маршруты
