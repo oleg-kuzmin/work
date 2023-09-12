@@ -1,20 +1,18 @@
 {
   //# общее
-  "security.workspace.trust.untrustedFiles": "open", // открытие недоверенных файлов в доверенной области
-  "files.autoSave": "afterDelay", // автосохранение
   "files.trimTrailingWhitespace": true, // удаляет лишние пробелы при сохранении
   "editor.cursorStyle": "line-thin", // тонкий стиль курсора
   "editor.fontSize": 18, // размер шрифта
   "window.zoomLevel": 0.2, // увеличение интерфейса
-  "editor.mouseWheelZoom": false, // изменение размера шрифта при скроле колесиком
-  "editor.formatOnSave": true, // форматирование при сохранении
-  "editor.insertSpaces": true, // пробелы при нажатии на tab
+  
+  
+
   "editor.linkedEditing": true, // одновременное редактирование совместных тэгов
   "editor.minimap.enabled": false, // выключение мини-карты
   "editor.overviewRulerBorder": false, // скрывает границу ползунка вертикального скролла
   "editor.renderLineHighlight": "none", // выключает выделение черной границей текущей строки
   "editor.scrollbar.vertical": "hidden", // скрывает ползунок полосы прокрутки
-  "editor.tabSize": 2, // размер табов
+
   "editor.wordWrap": "on", // включение переноса текста по словам
   "explorer.confirmDelete": false, // выключение подтверждения удаления файла в корзину
   "workbench.editor.closeEmptyGroups": false, // сохраняет разделение экрана при закрытии вкладки
@@ -25,8 +23,8 @@
   "terminal.integrated.fontSize": 16, // шрифт в терминале
   "terminal.integrated.defaultProfile.windows": "Git Bash", // использование Git Bash по умолчанию
   "git.autofetch": false, // переодически использует автоматический fetch
-  "git.confirmSync": false, // подтверждение синхронизации с Git
-  "git.enableSmartCommit": true, // добавление в stage всех файлов при коммите
+
+
   "explorer.autoReveal": false, // проводник не реагирует на открытие файла
   "editor.matchBrackets": "never", // выключает выделение скобок
   "editor.suggest.showWords": false, // отключает подсказки abc эммета
