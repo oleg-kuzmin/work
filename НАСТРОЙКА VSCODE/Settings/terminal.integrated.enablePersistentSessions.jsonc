@@ -1,0 +1,4 @@
+// выключает восстановление сеанса
+{
+  "terminal.integrated.enablePersistentSessions": false
+}

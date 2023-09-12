@@ -1,0 +1,4 @@
+// отключает запоминание положения редактора в файле
+{
+  "workbench.editor.restoreViewState": false
+}

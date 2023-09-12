@@ -1,0 +1,4 @@
+// не сжимает в одну строчку папки в проводнике
+{
+  "explorer.compactFolders": false
+}

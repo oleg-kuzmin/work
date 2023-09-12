@@ -1,0 +1,4 @@
+// размер вертикального скролбара
+{
+  "editor.scrollbar.verticalScrollbarSize": 0
+}

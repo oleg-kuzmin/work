@@ -1,0 +1,4 @@
+// скорость прокрутки мышки
+{
+  "editor.mouseWheelScrollSensitivity": 1.5
+}

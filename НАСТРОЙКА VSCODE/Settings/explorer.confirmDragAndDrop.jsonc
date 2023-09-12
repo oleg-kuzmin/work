@@ -1,0 +1,4 @@
+// убирает подтверждение переноса папки
+{
+  "explorer.confirmDragAndDrop": false
+}

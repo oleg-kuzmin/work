@@ -1,0 +1,4 @@
+// скрывает границу ползунка вертикального скролла
+{
+  "editor.overviewRulerBorder": false
+}

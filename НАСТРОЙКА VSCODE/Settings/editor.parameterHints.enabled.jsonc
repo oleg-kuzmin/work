@@ -1,0 +1,4 @@
+// убирает все подсказки
+{
+  "editor.parameterHints.enabled": false
+}

@@ -1,0 +1,4 @@
+// выключает подсветку пустых css
+{
+  "css.lint.emptyRules": "ignore"
+}

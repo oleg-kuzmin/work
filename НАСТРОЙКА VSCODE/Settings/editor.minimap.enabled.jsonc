@@ -1,0 +1,5 @@
+// выключение мини-карты
+
+{
+  "editor.minimap.enabled": false
+}

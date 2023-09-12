@@ -1,0 +1,4 @@
+// плавный скролл
+{
+  "editor.smoothScrolling": true
+}

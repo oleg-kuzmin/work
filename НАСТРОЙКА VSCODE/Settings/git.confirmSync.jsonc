@@ -1,4 +1,4 @@
 // Автоматическая синхронизация c github без подверждения
 {
-    "git.confirmSync": false
+  "git.confirmSync": false
 }

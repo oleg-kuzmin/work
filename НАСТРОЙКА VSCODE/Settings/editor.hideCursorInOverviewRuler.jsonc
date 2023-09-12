@@ -1,0 +1,4 @@
+// убирает курсор вертикального скролбара
+{
+  "editor.hideCursorInOverviewRuler": true
+}

@@ -1,0 +1,4 @@
+// скрывает ползунок полосы прокрутки
+{
+  "editor.scrollbar.vertical": "hidden"
+}

@@ -1,0 +1,4 @@
+// скрыть стрелки возле папок в проводнике
+{
+  "material-icon-theme.hidesExplorerArrows": false
+}

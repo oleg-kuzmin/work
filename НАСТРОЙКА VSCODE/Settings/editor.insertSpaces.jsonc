@@ -1,4 +1,4 @@
 // Пробелы при нажатии на tab
 {
-    "editor.insertSpaces": true
+  "editor.insertSpaces": true
 }

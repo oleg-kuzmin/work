@@ -1,0 +1,4 @@
+// одиночные кавычки
+{
+  "prettier.singleQuote": true
+}

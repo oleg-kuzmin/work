@@ -1,0 +1,4 @@
+// Удаляет лишние пробелы при сохранении
+{
+  "files.trimTrailingWhitespace": true
+}

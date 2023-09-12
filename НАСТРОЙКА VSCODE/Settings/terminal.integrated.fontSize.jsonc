@@ -1,0 +1,4 @@
+// шрифт в терминале
+{
+  "terminal.integrated.fontSize": 16
+}
