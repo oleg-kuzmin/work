@@ -1,4 +1,5 @@
-//# форматировщики
+//# Форматировщики
+
 {
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",

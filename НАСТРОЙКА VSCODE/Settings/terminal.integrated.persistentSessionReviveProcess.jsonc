@@ -1,4 +1,5 @@
-// выключает восстановление сеанса
+//# Выключает восстановление сеанса
+
 {
   "terminal.integrated.persistentSessionReviveProcess": "never"
 }

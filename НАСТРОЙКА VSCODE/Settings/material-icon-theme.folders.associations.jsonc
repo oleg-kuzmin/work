@@ -1,9 +1,11 @@
-//# настройка иконок
+//# Настройка иконок
+
 {
   "material-icon-theme.folders.associations": {
     "node": "node",
     "настройка vscode": "vscode",
     "git": "github",
-    "00. work": "custom"
+    "00. work": "custom",
+    "next": "next"
   }
 }

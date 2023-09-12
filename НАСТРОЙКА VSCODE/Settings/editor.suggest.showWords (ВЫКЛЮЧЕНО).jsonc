@@ -1,4 +1,5 @@
-// отключает подсказки abc эммета
+//# Отключает подсказки abc эммета
+
 {
   "editor.suggest.showWords": false
 }

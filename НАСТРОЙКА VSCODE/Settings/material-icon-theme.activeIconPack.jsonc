@@ -1,4 +1,5 @@
-// режим material-icon-theme
+//# Режим material-icon-theme
+
 {
   "material-icon-theme.activeIconPack": "react_redux"
 }
