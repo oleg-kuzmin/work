@@ -1,10 +1,15 @@
 +Russian Language Pack for Visual Studio Code (Microsoft)               // языковой пакет
-+Space Ocean Kit Refined                      (space-ocean-kit-refined) // цветовая тема
-+Live Server                                  (Ritwick Dey)             // виртуальный сервер
 +Better Comments                              (Aaron Bond)              // красивые комментарии
++Material Icon Theme                          (Philipp Kief)            // иконки папок в проводнике
++Material Product Icons                       (Philipp Kief)            // иконки значков в проводнике
++Prettier - Code formatter                    (Prettier)                // форматировщик кода
+
+
+
+
+
 +eCSStractor for VSCode                       (diz)                     // копирование классов из html в css
 +CSS Navigation                               (pucelle)                 // навигация по файлам css
-+Prettier - Code formatter                    (Prettier)                // форматировщик кода
 +W3C Web Validator                            (Celian Riboulet)         // проверка валидности W3C
 +Quokka.js                                    (Wallaby.js)              // для запуска js в vscode
 +HTMLHint                                     (HTMLHint)                // подсветка ошибок в html
@@ -21,6 +26,8 @@
 - настроить сочетания клавиш
 
 Возможно будет полезно:
+-Live Server                                 (Ritwick Dey)             // виртуальный сервер
+-Space Ocean Kit Refined                     (space-ocean-kit-refined) // цветовая тема
 -ES7+ React/Redux/React-Native snippets      (dsznajder)               // снипеты для React
 -Tailwind CSS IntelliSense                   (Tailwind Labs)           // подсказки для css
 -Sass                                        (Syler)                   // sass
