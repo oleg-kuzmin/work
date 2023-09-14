@@ -1,0 +1,3 @@
+// Убирает курсор - pointer при наведении
+
+Custom Pointer (Diego Curbelo)
