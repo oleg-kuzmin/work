@@ -3,27 +3,19 @@
 +Material Icon Theme                          (Philipp Kief)            // иконки папок в проводнике
 +Material Product Icons                       (Philipp Kief)            // иконки значков в проводнике
 +Prettier - Code formatter                    (Prettier)                // форматировщик кода
-
-
-
-
-
-+eCSStractor for VSCode                       (diz)                     // копирование классов из html в css
-+CSS Navigation                               (pucelle)                 // навигация по файлам css
-+W3C Web Validator                            (Celian Riboulet)         // проверка валидности W3C
-+Quokka.js                                    (Wallaby.js)              // для запуска js в vscode
-+HTMLHint                                     (HTMLHint)                // подсветка ошибок в html
 +Markdown Preview Enhanced                    (Yiyi Wang)               // просмотр md в vscode
-+Backticks                                    (FractalBrew)             // автоматическое исправление на шаблонные строки
-+SCSS IntelliSense                            (mrmlnc)                  // помощник синтаксиса для scss
++CSS Navigation                               (pucelle)                 // навигация по классам через ctrl
 +Path Intellisense                            (Christian Kohler)        // подсказка путей
-+Svg Preview                                  (Simon Siefke)            // просмотр svg
++Auto Complete Tag                            (Jun Han)                 // автоматическое закрытие тегов
 
-- установить все расширения
-- скопировать json
-- слева можно убрать лишнее: структура и прочее (нажать на 3 точки)
-- настроить строку состояния внизу
-- настроить сочетания клавиш
+Дополнительно:
+-eCSStractor for VSCode                       (diz)                     // копирование классов из html в css
+-W3C Web Validator                            (Celian Riboulet)         // проверка валидности W3C
+-Quokka.js                                    (Wallaby.js)              // для запуска js в vscode
+-HTMLHint                                     (HTMLHint)                // подсветка ошибок в html
+-Backticks                                    (FractalBrew)             // автоматическое исправление на шаблонные строки
+-SCSS IntelliSense                            (mrmlnc)                  // помощник синтаксиса для scss
+-Svg Preview                                  (Simon Siefke)            // просмотр svg
 
 Возможно будет полезно:
 -Live Server                                 (Ritwick Dey)             // виртуальный сервер
@@ -39,8 +31,6 @@
 -Import Cost                                 (Wix)                     // покажет вес импорта (полезно для библиотек)
 -Code Spell Checker                          (Street Side Software)    // проверка орфографии
 -Project Manager                             (Alessandro Fragnani)     // для нескольких проектов
--Auto Complete Tag                           (Jun Han)                 // автоматическое редактирование и закрытие тегов
--Auto Rename Tag                             (Jun Han)                 // переименование одновременно открывающих и закрывающих тегов
 -Vscode Google Translate                     (funkyremi)               // переводчик
 -html to JSX                                 (Riaz Laskar)             // преобразование html в jsx
 -EditorConfig for VS Code                    (EditorConfig)            // EditorConfig
