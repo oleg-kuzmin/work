@@ -1,13 +1,3 @@
-+Russian Language Pack for Visual Studio Code (Microsoft)               // языковой пакет
-+Better Comments                              (Aaron Bond)              // красивые комментарии
-+Material Icon Theme                          (Philipp Kief)            // иконки папок в проводнике
-+Material Product Icons                       (Philipp Kief)            // иконки значков в проводнике
-+Prettier - Code formatter                    (Prettier)                // форматировщик кода
-+Markdown Preview Enhanced                    (Yiyi Wang)               // просмотр md в vscode
-+CSS Navigation                               (pucelle)                 // навигация по классам через ctrl
-+Path Intellisense                            (Christian Kohler)        // подсказка путей
-+Auto Complete Tag                            (Jun Han)                 // автоматическое закрытие тегов
-
 Дополнительно:
 -eCSStractor for VSCode                       (diz)                     // копирование классов из html в css
 -W3C Web Validator                            (Celian Riboulet)         // проверка валидности W3C

@@ -1,0 +1,3 @@
+// Иконки папок в проводнике
+
+Material Icon Theme (Philipp Kief)
