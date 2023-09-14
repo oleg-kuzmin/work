@@ -1,0 +1,5 @@
+// Поиск ошибок в коде (нужна дополнительная установка библиотеки)
+npx eslint --init (локально)
+npm install -g eslint (глобально)
+
+ESLint (Microsoft)
