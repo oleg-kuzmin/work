@@ -1,0 +1,11 @@
+//# Кастомная настройка цвета highlight-matching-tag
+
+{
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "name": {
+        "highlight": "rgba(255, 0, 0, .2)"
+      }
+    }
+  }
+}

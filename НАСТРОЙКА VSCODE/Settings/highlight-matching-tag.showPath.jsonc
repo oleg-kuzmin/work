@@ -1,0 +1,5 @@
+//# Отключает путь для тегов внизу в строке состояния
+
+{
+  "highlight-matching-tag.showPath": false
+}
