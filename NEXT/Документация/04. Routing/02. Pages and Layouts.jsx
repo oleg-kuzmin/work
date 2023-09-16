@@ -13,12 +13,12 @@ app            ----> /
     page.js
 */
 
-//* app/page.js (export default)
+//* app/page.js
 function Page() {
   return <h1>Hello, Home page!</h1>;
 }
 
-//*app/dashboard/page.js (export default)
+//*app/dashboard/page.js
 function Page() {
   return <h1>Hello, Dashboard Page!</h1>;
 }
@@ -45,7 +45,7 @@ app
       page.js
 */
 
-//* app/dashboard/layout.js (export default)
+//* app/dashboard/layout.js
 function DashboardLayout({
   children, // это будет страница или вложенный макет
 }) {
@@ -74,7 +74,7 @@ function DashboardLayout({
 //# Root Layout (Обязательно)
 // Корневой макет определяется на верхнем уровне каталога приложения и применяется ко всем маршрутам. Этот макет позволяет вам изменять исходный HTML-код, возвращаемый с сервера.
 
-//* app/layout.js (export default)
+//* app/layout.js
 function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -92,3 +92,16 @@ function RootLayout({ children }) {
 */
 
 //# Вложение макетов
+// Макеты, определенные внутри папки (например, app/dashboard/layout.js), применяются к определенным сегментам маршрута (например, acme.com/dashboard) и отображаются, когда эти сегменты активны. По умолчанию макеты в иерархии файлов являются вложенными, что означает, что они оборачивают дочерние макеты через children prop.
+
+//* app/dashboard/layout.js
+function DashboardLayout({ children }) {
+  return <section>{children}</section>;
+}
+
+/* Хорошо знать:
+- Только корневой макет может содержать теги <html> и <body>.
+- Если бы вы объединили два приведенных выше макета, корневой макет (app/layout.js) обернул бы макет dashboard (app/dashboard/layout.js), который обернул бы сегменты маршрута внутри app/dashboard/*.
+*/
+
+// Вы можете использовать Route Groups, чтобы включать или исключать определенные сегменты маршрута из общих макетов.
