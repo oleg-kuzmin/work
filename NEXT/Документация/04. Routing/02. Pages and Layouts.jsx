@@ -134,3 +134,19 @@ function Template({ children }) {
   {/* Обратите внимание, что шаблону присвоен уникальный ключ. */}
   <Template key={routeParam}>{children}</Template>
 </Layout>;
+
+//# Изменение <head>
+// В каталоге app вы можете изменить HTML-элементы <head>, такие как title и meta, используя встроенную поддержку SEO.
+
+// Метаданные можно определить путем экспорта metadata object или generateMetadata function в файл layout.js или page.js.
+
+//* app/page.js
+export const metadata = {
+  title: 'Next.js',
+};
+
+function Page() {
+  return '...';
+}
+
+// Полезно знать: не следует вручную добавлять теги <head>, такие как <title> и <meta>, в корневые макеты. Вместо этого вам следует использовать API метаданных, который автоматически обрабатывает расширенные требования, такие как потоковая передача и дедупликация элементов <head>.
