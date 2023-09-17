@@ -1,0 +1,20 @@
+//# border-style (Cтиль границы)
+.element {
+  border-style: none;   // отключает рамку (по умолчанию)
+  border-style: solid;  // сплошная
+  border-style: dashed; // пунктирная
+  border-style: dotted; // точками
+  border-style: double; // двойная
+
+  //* редкие значения
+  border-style: groove; // рамка объёмная, с тенями от источника света, находящегося в верхнем левом наружном углу
+  border-style: ridge;  // рамка объёмная, с тенями от источника света, находящегося в нижнем правом внешнем углу
+  border-style: inset;  // рамка с тенями от источника света, находящегося в нижнем правом внутреннем углу
+  border-style: outset; // рамка с тенями от источника света, находящегося в левом верхнем внутреннем углу
+
+  //* каждой стороны по отдельности
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-top-style: solid;
+}

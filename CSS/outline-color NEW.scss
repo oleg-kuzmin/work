@@ -1,0 +1,13 @@
+//# outline-color (Цвет)
+.element {
+  //* специальные значения
+  outline-color: currentColor; // текущий цвет текста родителя (по умолчанию)
+  outline-color: transparent;  // прозрачная рамка
+  outline-color: invert;       // противоположный цвету фона элемента
+
+  //* названия цветов, форматы HEX, RGB, HSL
+  outline-color: tomato;                            // со всех сторон
+  outline-color: tomato skyblue;                  // сверху и снизу, по бокам
+  outline-color: tomato skyblue olive;          // сверху, по бокам, снизу
+  outline-color: tomato skyblue olive silver; // сверху, справа, снизу, слева
+}

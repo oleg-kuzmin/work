@@ -1,0 +1,13 @@
+//# border-color (Цвет границы)
+.element {
+  //* специальные значения
+  border-color: currentColor; // текущий цвет текста родителя (по умолчанию)
+  border-color: transparent;  // прозрачная рамка
+  border-color: invert;       // противоположный цвету фона элемента
+
+  //* названия цветов, форматы HEX, RGB, HSL
+  border-color: tomato;                            // со всех сторон
+  border-color: tomato skyblue;                  // сверху и снизу, по бокам
+  border-color: tomato skyblue olive;          // сверху, по бокам, снизу
+  border-color: tomato skyblue olive silver; // сверху, справа, снизу, слева
+}
