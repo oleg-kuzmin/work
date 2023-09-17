@@ -11,6 +11,17 @@ function App() {
   );
 }
 
+//* <Fragment></Fragment>
+import { Fragment } from 'react';
+function App() {
+  return (
+    <Fragment>
+      <h1>title</h1>
+      <p>paragraph</p>
+    </Fragment>
+  );
+}
+
 //* <></>
 // Babel оборачивает эту запись в <React.Fragment></React.Fragment>. Автоматически подключается import { React } from 'react'.
 function App() {
