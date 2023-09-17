@@ -8,3 +8,40 @@
 - Когда и зачем использовать ключи React
 */
 
+//# Рендеринг данных из массивов
+// Допустим, у вас есть список контента.
+
+<ul>
+  <li>Creola Katherine Johnson: mathematician</li>
+  <li>Mario José Molina-Pasquel Henríquez: chemist</li>
+  <li>Mohammad Abdus Salam: physicist</li>
+  <li>Percy Lavon Julian: chemist</li>
+  <li>Subrahmanyan Chandrasekhar: astrophysicist</li>
+</ul>;
+
+// Единственная разница между этими элементами списка — это их содержимое и данные. При построении интерфейсов вам часто придется показывать несколько экземпляров одного и того же компонента, используя разные данные: от списков комментариев до галерей изображений профиля. В таких ситуациях вы можете хранить эти данные в объектах и ​​массивах JavaScript и использовать такие методы, как map() и filter(), для визуализации списков компонентов из них.
+
+// Вот краткий пример того, как создать список элементов из массива:
+
+// 1. Переместите данные в массив:
+const people = [
+  'Creola Katherine Johnson: mathematician',
+  'Mario José Molina-Pasquel Henríquez: chemist',
+  'Mohammad Abdus Salam: physicist',
+  'Percy Lavon Julian: chemist',
+  'Subrahmanyan Chandrasekhar: astrophysicist',
+];
+
+function List() {
+  // 2. Создайте новый массив узлов JSX, состоящий из членов People, с помощью метода map
+  const listItems = people.map(person => <li>{person}</li>);
+  // 3. Верните listItems из вашего компонента, завернутого в <ul>:
+  return <ul>{listItems}</ul>;
+}
+
+// Обратите внимание, что в консоли отображается ошибка:
+//! Warning: Each child in a list should have a unique “key” prop.
+
+// Вы узнаете, как исправить эту ошибку позже на этой странице. Прежде чем мы перейдем к этому, давайте добавим некоторую структуру вашим данным.
+
+//# Фильтрация массивов элементов
