@@ -87,3 +87,30 @@ const router = useRouter();
 
 router.push('/dashboard', { scroll: false });
 
+//# Хук useRouter()
+// Хук useRouter позволяет программно изменять маршруты.
+
+// Этот хук можно использовать только внутри клиентских компонентов и импортировать из next/navigation.
+
+//* app/page.js
+('use client');
+
+import { useRouter } from 'next/navigation';
+
+export default function Page() {
+  const router = useRouter();
+
+  return (
+    <button type="button" onClick={() => router.push('/dashboard')}>
+      Dashboard
+    </button>
+  );
+}
+
+// Полный список методов useRouter см. в справочнике по API.
+
+// Рекомендация: используйте компонент <Link> для навигации между маршрутами, если у вас нет особых требований для использования useRouter.
+
+//# Как работает маршрутизация и навигация
+
+
