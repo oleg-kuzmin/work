@@ -1,5 +1,5 @@
 //# Направляющие от скобок тем же цветом, что и скобки
 
 {
-  "editor.guides.bracketPairs": true
+  "editor.guides.bracketPairs": false
 }

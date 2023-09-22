@@ -1,5 +1,5 @@
 //# Скрывает вертикальные линии отступов
 
 {
-  "editor.guides.indentation": false
+  "editor.guides.indentation": true
 }
