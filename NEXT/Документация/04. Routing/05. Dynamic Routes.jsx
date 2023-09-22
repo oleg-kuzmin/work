@@ -15,10 +15,10 @@ function Page({ params }) {
 }
 
 /*
-Route	                     Example URL	  params
-app/blog/[slug]/page.js	   /blog/a	      { slug: 'a' }
-app/blog/[slug]/page.js	   /blog/b	      { slug: 'b' }
-app/blog/[slug]/page.js	   /blog/c	      { slug: 'c' }
+Route	                      Example URL	   params
+app/blog/[slug]/page.js	    /blog/a	       { slug: 'a' }
+app/blog/[slug]/page.js	    /blog/b	       { slug: 'b' }
+app/blog/[slug]/page.js	    /blog/c	       { slug: 'c' }
 */
 
 // Полезно знать: динамические сегменты эквивалентны динамическим маршрутам в каталоге pages.
@@ -43,10 +43,39 @@ export async function generateStaticParams() {
 // Например, app/shop/[...slug]/page.jsбудет соответствовать /shop/clothes, но также /shop/clothes/tops, /shop/clothes/tops/t-shirtsи так далее.
 
 /*
-Route	                         Example URL	      params
-app/shop/[...slug]/page.js	   /shop/a	          { slug: ['a'] }
-app/shop/[...slug]/page.js	   /shop/a/b	        { slug: ['a', 'b'] }
-app/shop/[...slug]/page.js	   /shop/a/b/c	      { slug: ['a', 'b', 'c'] }
+Route	                          Example URL	      params
+app/shop/[...slug]/page.js	    /shop/a	          { slug: ['a'] }
+app/shop/[...slug]/page.js	    /shop/a/b	        { slug: ['a', 'b'] }
+app/shop/[...slug]/page.js	    /shop/a/b/c	      { slug: ['a', 'b', 'c'] }
 */
 
+//# Optional Catch-all Segments
+// Сегменты Catch-all можно сделать необязательными, включив параметр в двойные квадратные скобки: [[...folderName]].
 
+// Например, app/shop/[[...slug]]/page.js также будет соответствовать /shop в дополнение к /shop/clothes, /shop/clothes/tops, /shop/clothes/tops/t-shirts.
+
+/*
+Route	                          Example URL	      params
+app/shop/[[...slug]]/page.js	  /shop	            {}
+app/shop/[[...slug]]/page.js	  /shop/a	          { slug: ['a'] }
+app/shop/[[...slug]]/page.js	  /shop/a/b	        { slug: ['a', 'b'] }
+app/shop/[[...slug]]/page.js	  /shop/a/b/c	      { slug: ['a', 'b', 'c'] }
+*/
+
+//# TypeScript
+/*
+При использовании TypeScript вы можете добавлять типы параметров в зависимости от настроенного сегмента маршрута.
+
+export default function Page({ params }: { params: { slug: string } }) {
+  return <h1>My Page</h1>
+}
+*/
+
+/*
+Route	                              params Type Definition
+app/blog/[slug]/page.js	            { slug: string }
+app/shop/[...slug]/page.js	        { slug: string[] }
+app/[categoryId]/[itemId]/page.js	  { categoryId: string, itemId: string }
+*/
+
+// Полезно знать: в будущем это может быть сделано автоматически плагином TypeScript.
