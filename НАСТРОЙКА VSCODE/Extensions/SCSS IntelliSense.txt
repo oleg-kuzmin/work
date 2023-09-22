@@ -1,0 +1,3 @@
+// Помощник автозаполнения, импортов для scss
+
+SCSS IntelliSense (mrmlnc)
