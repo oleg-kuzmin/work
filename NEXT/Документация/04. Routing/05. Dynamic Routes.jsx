@@ -36,3 +36,17 @@ export async function generateStaticParams() {
 }
 
 // Основное преимущество функции generateStaticParams — интеллектуальное извлечение данных. Если содержимое извлекается с помощью функции generateStaticParams с помощью запроса на выборку, запросы автоматически запоминаются. Это означает, что запрос на выборку с одинаковыми аргументами для нескольких generateStaticParams, layouts и pages будет выполнен только один раз, что сокращает время сборки.
+
+//# Catch-all Segments
+// Динамические сегменты можно расширить, чтобы охватить все последующие сегменты, добавив многоточие внутри скобок [...folderName].
+
+// Например, app/shop/[...slug]/page.jsбудет соответствовать /shop/clothes, но также /shop/clothes/tops, /shop/clothes/tops/t-shirtsи так далее.
+
+/*
+Route	                         Example URL	      params
+app/shop/[...slug]/page.js	   /shop/a	          { slug: ['a'] }
+app/shop/[...slug]/page.js	   /shop/a/b	        { slug: ['a', 'b'] }
+app/shop/[...slug]/page.js	   /shop/a/b/c	      { slug: ['a', 'b', 'c'] }
+*/
+
+
