@@ -10,7 +10,6 @@
 // Например, блог может включать следующий маршрут app/blog/[slug]/page.js, где [slug] — это динамический сегмент для сообщений в блоге.
 
 //* app/blog/[slug]/page.js
-
 function Page({ params }) {
   return <div>My Post: {params.slug}</div>;
 }
@@ -23,3 +22,17 @@ app/blog/[slug]/page.js	   /blog/c	      { slug: 'c' }
 */
 
 // Полезно знать: динамические сегменты эквивалентны динамическим маршрутам в каталоге pages.
+
+//# Генерация статических параметров
+// Функцию generateStaticParams можно использовать в сочетании с динамическими сегментами маршрутов для статического создания маршрутов во время сборки, а не по требованию во время запроса.
+
+//* app/blog/[slug]/page.js
+export async function generateStaticParams() {
+  const posts = await fetch('https://.../posts').then(res => res.json());
+
+  return posts.map(post => ({
+    slug: post.slug,
+  }));
+}
+
+// Основное преимущество функции generateStaticParams — интеллектуальное извлечение данных. Если содержимое извлекается с помощью функции generateStaticParams с помощью запроса на выборку, запросы автоматически запоминаются. Это означает, что запрос на выборку с одинаковыми аргументами для нескольких generateStaticParams, layouts и pages будет выполнен только один раз, что сокращает время сборки.
