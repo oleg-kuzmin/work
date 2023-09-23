@@ -2,6 +2,5 @@
   "editor.cursorStyle": "line-thin", // Тонкий стиль курсора
   "editor.glyphMargin": false, // Скрывает точки остановки для отладки
   "editor.linkedEditing": true, // Одновременное редактирование совместных тэгов
-  "editor.mouseWheelScrollSensitivity": 1.5, // Скорость прокрутки мышки
   "window.zoomLevel": 0.2 // Увеличение интерфейса
 }
