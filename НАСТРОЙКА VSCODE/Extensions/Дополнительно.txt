@@ -13,7 +13,6 @@
 -Sass                                         (Syler)                    // sass
 -SCSS Everywhere                              (Gencer W. Genç)           // scss
 -SCSS Formatter                               (Sibiraj)                  // форматирование scss
--Prettier ESLint                              (Rebecca Vest)             // форматировщик
 -PostCSS Language Support                     (csstools)                 // подсветка PostCSS
 -IntelliCode                                  (Microsoft)                // подсказки для написания кода
 -Import Cost                                  (Wix)                      // покажет вес импорта (полезно для библиотек)
