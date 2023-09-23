@@ -1,6 +1,5 @@
-//# Кастомная настройка цвета highlight-matching-tag
-
 {
+  // Кастомная настройка цвета (Highlight Matching Tag)
   "highlight-matching-tag.styles": {
     "opening": {
       "name": {

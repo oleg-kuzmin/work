@@ -1,5 +1,4 @@
-//# Выключает восстановление сеанса
-
 {
+  // Восстановление сеанса терминала
   "terminal.integrated.enablePersistentSessions": false
 }

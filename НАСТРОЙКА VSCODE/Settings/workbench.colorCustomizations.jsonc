@@ -1,6 +1,5 @@
-//# Настройка темы Kimbie Dark
-
 {
+  // Настройка темы Kimbie Dark
   "workbench.colorCustomizations": {
     "[Kimbie Dark]": {
       "gitDecoration.ignoredResourceForeground": "#cccccc", // цвет игнорируемых файлов гита

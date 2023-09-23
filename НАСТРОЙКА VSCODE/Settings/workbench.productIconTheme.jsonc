@@ -1,5 +1,4 @@
-//# Иконки material-icon-theme
-
 {
+  // Иконки интерфейса проводника по умолчанию
   "workbench.productIconTheme": "material-product-icons"
 }

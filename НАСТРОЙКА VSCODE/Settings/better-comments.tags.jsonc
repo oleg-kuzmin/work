@@ -1,6 +1,5 @@
-//# Better Comments (Aaron Bond)
-
 {
+  // Кастомная настройка комментариев (Better Comments)
   "better-comments.tags": [
     {
       "tag": "#",

@@ -1,6 +1,0 @@
-{
-  "editor.cursorStyle": "line-thin", // Тонкий стиль курсора
-  "editor.glyphMargin": false, // Скрывает точки остановки для отладки
-  "editor.linkedEditing": true, // Одновременное редактирование совместных тэгов
-  "window.zoomLevel": 0.2 // Увеличение интерфейса
-}

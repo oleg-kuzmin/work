@@ -1,5 +1,4 @@
-//# Выключает лишнюю подсветку слов
-
 {
+  // Подсветка слов
   "editor.occurrencesHighlight": false
 }

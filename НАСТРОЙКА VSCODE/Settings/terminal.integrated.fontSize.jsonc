@@ -1,5 +1,4 @@
-//# Шрифт в терминале
-
 {
+  // Шрифт терминала
   "terminal.integrated.fontSize": 16
 }

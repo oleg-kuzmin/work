@@ -1,6 +1,5 @@
-//# Настройка иконок
-
 {
+  // Настройка иконок (Material Icon Theme)
   "material-icon-theme.folders.associations": {
     "node": "node",
     "настройка vscode": "vscode",

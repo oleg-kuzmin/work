@@ -1,6 +1,5 @@
-//# Исправление бага - не всегда работающий emmet
-
 {
+  // Исправление бага - не всегда работающий emmet
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"

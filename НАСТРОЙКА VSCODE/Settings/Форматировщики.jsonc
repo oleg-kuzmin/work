@@ -1,6 +1,5 @@
-//# Форматировщики
-
 {
+  // Форматировщики
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.singleQuote": false

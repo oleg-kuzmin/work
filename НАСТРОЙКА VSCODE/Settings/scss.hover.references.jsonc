@@ -1,5 +1,4 @@
-//# Ссылки на MDN при наведении
-
 {
+  // Ссылка на MDN при наведении
   "scss.hover.references": false
 }
