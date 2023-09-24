@@ -1,5 +1,4 @@
 Дополнительно:
--IntelliCode                                  (Microsoft)                // подсказки для написания кода
 -eCSStractor for VSCode                       (diz)                      // копирование классов из html в css
 -W3C Web Validator                            (Celian Riboulet)          // проверка валидности W3C
 -Quokka.js                                    (Wallaby.js)               // для запуска js в vscode
