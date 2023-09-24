@@ -9,8 +9,8 @@ Ctrl + F2                  // выделит все совпадения и мо
 Ctrl + Space               // подсказки
 Ctrl + Z                   // отмена последнего действия
 Ctrl + Y                   // обратная операция
-Ctrl + /                   // закомментировать или раскомментировать строку
-Ctrl + *                   // закомментировать или раскомментировать блок
+Ctrl + /                   // закомментировать или раскомментировать строку (нужно настроить)
+Ctrl + *                   // закомментировать или раскомментировать блок (нужно настроить)
 Ctrl + Shift + K           // удаляет строчку
 Ctrl + P                   // недавно открытые файлы
 
@@ -27,9 +27,9 @@ Ctrl + ЛКМ                 // перемещаемся на класс в scs
 Alt + f12                  // вызвать окно совпадений CSS
 
 **********Пользовательские настройки**********
-Ctrl + numpad1             // eCSStractor Run (With BEM Nesting)
-Ctrl + numpad2             // Live Server: Open with Live Server
-Ctrl + numpad3             // Emmet: Перенести с сокращением (обернуть в тег)
-Ctrl + numpad4             // Quokka.js: Start on Current File
-Ctrl + numpad5             // Quokka.js: Stop All
-Ctrl + numpad6             // запуск сервера в отдельном окне
+Ctrl + numpad1             // eCSStractor Run (With BEM Nesting) (нужно настроить)
+Ctrl + numpad2             // Live Server: Open with Live Server (нужно настроить)
+Ctrl + numpad3             // Emmet: Перенести с сокращением (обернуть в тег) (нужно настроить)
+Ctrl + numpad4             // Quokka.js: Start on Current File (нужно настроить)
+Ctrl + numpad5             // Quokka.js: Stop All (нужно настроить)
+Ctrl + numpad6             // запуск сервера в отдельном окне (нужно настроить)
