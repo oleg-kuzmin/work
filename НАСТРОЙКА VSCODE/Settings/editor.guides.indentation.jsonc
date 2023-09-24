@@ -1,4 +1,4 @@
 {
   // Вертикальные линии отступов
-  "editor.guides.indentation": true
+  "editor.guides.indentation": false
 }
