@@ -48,3 +48,35 @@ function layout({ dashboard, login }) {
   const isLoggedIn = getUser();
   return isLoggedIn ? dashboard : login;
 }
+
+//# Соглашение
+// Параллельные маршруты создаются с использованием именованных слотов. Слоты определяются с помощью соглашения @folder и передаются в макет того же уровня, что и реквизиты.
+
+// Слоты не являются сегментами маршрута и не влияют на структуру URL. Путь к файлу /@team/members будет доступен по адресу /members.
+
+// Например, следующая файловая структура определяет два явных слота: @analytics и @team.
+
+/*
+app
+  @analytics
+    page.js
+  @team
+    page.js
+  layout.js
+  page.js
+*/
+
+// Приведенная выше структура папок означает, что компонент в app/layout.js теперь принимает props слотов @analytics и @team и может отображать их параллельно вместе с реквизитом children:
+
+//* app/layout.js
+function Layout(props) {
+  return (
+    <>
+      {props.children}
+      {props.team}
+      {props.analytics}
+    </>
+  );
+}
+
+// Полезно знать: свойство children — это неявный слот, который не нужно сопоставлять с папкой. Это означает, что app/page.js эквивалентен app/@children/page.js.
