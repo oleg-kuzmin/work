@@ -171,4 +171,42 @@ function Default() {
   return null;
 }
 
+//# Закрытие модального окна
+// Если модальное окно было инициировано через клиентскую навигацию, например. используя <Link href="/login">, вы можете закрыть модальное окно, вызвав router.back() или используя компонент Link.
+
+//* app/@auth/login/page.js
+('use client');
+import { useRouter } from 'next/navigation';
+import { Modal } from 'components/modal';
+
+export default async function Login() {
+  const router = useRouter();
+  return (
+    <Modal>
+      <span onClick={() => router.back()}>Close modal</span>
+      <h1>Login</h1>
+      ...
+    </Modal>
+  );
+}
+
+// Если вы хотите перейти в другое место и закрыть модальное окно, вы также можете использовать catch-all маршрут.
+
+/*
+app
+  @authModal
+  [...catchAll]
+    page.js
+  login
+    page.js
+  page.js
+*/
+
+//* app/@auth/[...catchAll]/page.js
+function CatchAll() {
+  return null;
+}
+
+// catch-all маршруты имеют приоритет над default.js.
+
 
