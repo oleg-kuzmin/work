@@ -113,3 +113,62 @@ app
 // Ошибка 404 для несовпадающих маршрутов помогает гарантировать, что вы случайно не отрисуете маршрут, который не должен отображаться параллельно.
 
 //# useSelectedLayoutSegment(s)
+// И useSelectedLayoutSegment, и useSelectedLayoutSegments принимают parallelRoutesKey, который позволяет вам читать активный сегмент маршрута в этом слоте.
+
+//* app/layout.js
+('use client');
+
+import { useSelectedLayoutSegment } from 'next/navigation';
+
+async function Layout(props) {
+  const loginSegments = useSelectedLayoutSegment('auth');
+  // ...
+}
+
+// Когда пользователь переходит к @auth/login или /login в строке URL-адреса, loginSegments будет равен строке «login».
+
+//# Модальные окна
+// Параллельная маршрутизация может использоваться для рендеринга модальных окон.
+
+/*
+app
+  @auth
+    login
+    signup
+  ...
+  layout.js
+  page.js
+*/
+
+// Слот @auth отображает компонент <Modal>, который можно отобразить, перейдя к соответствующему маршруту, например /login.
+
+//* app/layout.js
+async function Layout(props) {
+  return (
+    <>
+      {/* ... */}
+      {props.auth}
+    </>
+  );
+}
+
+//* app/@auth/login/page.js
+import { Modal } from 'components/modal';
+
+function Login() {
+  return (
+    <Modal>
+      <h1>Login</h1>
+      {/* ... */}
+    </Modal>
+  );
+}
+
+// Чтобы гарантировать, что содержимое модального окна не будет отображаться, когда оно неактивно, вы можете создать файл default.js, который возвращает значение null.
+
+//* app/@auth/default.js
+function Default() {
+  return null;
+}
+
+
