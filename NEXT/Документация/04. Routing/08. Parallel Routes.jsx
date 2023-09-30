@@ -179,7 +179,7 @@ function Default() {
 import { useRouter } from 'next/navigation';
 import { Modal } from 'components/modal';
 
-export default async function Login() {
+async function Login() {
   const router = useRouter();
   return (
     <Modal>
@@ -209,4 +209,13 @@ function CatchAll() {
 
 // catch-all маршруты имеют приоритет над default.js.
 
+//# Условные маршруты
+// Параллельные маршруты можно использовать для реализации условной маршрутизации. Например, вы можете визуализировать маршрут @dashboard или @login в зависимости от состояния аутентификации.
 
+//* app/layout.js
+import { getUser } from '@/lib/auth';
+
+function Layout({ dashboard, login }) {
+  const isLoggedIn = getUser();
+  return isLoggedIn ? dashboard : login;
+}
