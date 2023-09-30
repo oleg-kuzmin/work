@@ -23,3 +23,28 @@ function layout(props) {
     </>
   );
 }
+
+// Параллельная маршрутизация позволяет определять независимые состояния ошибок и загрузки для каждого маршрута, поскольку они передаются независимо.
+
+/*
+app
+  @team
+    page.js
+    error.js
+    loading.js
+  @analytics
+    page.js
+    error.js
+    loading.js
+  layout.js
+*/
+
+// Параллельная маршрутизация также позволяет условно отображать слот на основе определенных условий, например состояния аутентификации. Это позволяет полностью отделить код для одного и того же URL-адреса.
+
+//* layout.js
+import { getUser } from '@/lib/auth';
+
+function layout({ dashboard, login }) {
+  const isLoggedIn = getUser();
+  return isLoggedIn ? dashboard : login;
+}
