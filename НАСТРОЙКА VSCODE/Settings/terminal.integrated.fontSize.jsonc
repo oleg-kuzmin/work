@@ -1,4 +1,4 @@
 {
-  // Шрифт терминала
-  "terminal.integrated.fontSize": 16
+  // Размер шрифта терминала
+  "terminal.integrated.fontSize": 18,
 }
