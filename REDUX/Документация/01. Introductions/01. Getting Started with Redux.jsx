@@ -34,7 +34,7 @@ https://github.com/rahsheen/expo-template-redux-typescript
 
 //* npm install redux
 
-// Он также доступен в виде предварительно скомпилированного пакета UMD, который определяет глобальную переменную window.Redux. Пакет UMD можно использовать напрямую как тег <script>.
+// Он также доступен в виде сборки UMD, которую можно загрузить из папки dist на unpkg (https://unpkg.com/@reduxjs/toolkit/dist/). Сборки UMD делают Redux Toolkit доступным как глобальную переменную window.RTK. Пакет UMD можно использовать напрямую как тег <script>.
 
 // Более подробную информацию смотрите на странице Installation.
 
