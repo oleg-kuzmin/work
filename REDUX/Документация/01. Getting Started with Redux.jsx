@@ -68,7 +68,7 @@ function counterReducer(state = { value: 0 }, action) {
 
 // Создайте хранилище Redux, хранящее состояние вашего приложения.
 // Его API { subscribe, dispatch, getState }. (подписка, отправка, получение)
-let store = createStore(counterReducer);
+let store1 = createStore(counterReducer);
 
 // Вы можете использовать subscribe() для обновления пользовательского интерфейса в ответ на изменения состояния.
 // Обычно вы используете библиотеку React Redux, а не напрямую subscribe().
@@ -89,3 +89,41 @@ store.dispatch({ type: 'counter/decremented' }); // {value: 1}
 // Эта архитектура может показаться слишком сложной для приложения-счетчика, но красота этого шаблона в том, насколько хорошо он масштабируется для больших и сложных приложений. Он также предоставляет очень мощные инструменты разработчика, поскольку можно отследить каждую мутацию до действия, которое ее вызвало. Вы можете записывать сеансы пользователей и воспроизводить их, просто воспроизводя каждое действие.
 
 //# Redux Toolkit Пример
+// Redux Toolkit упрощает процесс написания логики Redux и настройки хранилища. С Redux Toolkit та же логика выглядит так:
+
+import { createSlice, configureStore } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    value: 0,
+  },
+  reducers: {
+    incremented: state => {
+      // Redux Toolkit позволяет нам писать «мутирующую» логику в reducers. Это
+      // фактически не изменяет состояние, поскольку использует библиотеку Immer,
+      // которая обнаруживает изменения в «черновом состоянии» и создает совершенно новое
+      // неизменяемое состояние, основанное на этих изменениях
+      state.value += 1;
+    },
+    decremented: state => {
+      state.value -= 1;
+    },
+  },
+});
+
+export const { incremented, decremented } = counterSlice.actions;
+
+const store = configureStore({
+  reducer: counterSlice.reducer,
+});
+
+// Еще можно подписаться на store
+store.subscribe(() => console.log(store.getState()));
+
+// Объекты action по-прежнему передаются в dispatch, но они создаются за нас.
+store.dispatch(incremented()); // {value: 1}
+store.dispatch(incremented()); // {value: 2}
+store.dispatch(decremented()); // {value: 1}
+
+// Redux Toolkit позволяет нам писать более короткую логику, которую легче читать, сохраняя при этом то же поведение Redux и поток данных.
