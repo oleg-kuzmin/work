@@ -47,3 +47,48 @@ https://redux.js.org/usage/migrating-to-modern-redux
 */
 
 // Помимо этого, вся остальная логика, связанная с Redux, в вашем приложении должна быть полностью написана вами.
+
+// Хорошей новостью является то, что это означает, что Redux можно использовать по-разному. Плохая новость заключается в том, что нет помощников, которые могли бы облегчить написание вашего кода.
+
+// Например, функция редуктора — это просто функция. До Redux Toolkit вы обычно писали этот reducer с оператором переключения и обновлениями вручную. У вас также, вероятно, будут рукописные создатели действий и константы типов действий:
+
+const ADD_TODO = 'ADD_TODO';
+const TODO_TOGGLED = 'TODO_TOGGLED';
+
+export const addTodo = text => ({
+  type: ADD_TODO,
+  payload: { text, id: nanoid() },
+});
+
+export const todoToggled = id => ({
+  type: TODO_TOGGLED,
+  payload: { id },
+});
+
+export const todosReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD_TODO:
+      return state.concat({
+        id: action.payload.id,
+        text: action.payload.text,
+        completed: false,
+      });
+    case TODO_TOGGLED:
+      return state.map(todo => {
+        if (todo.id !== action.payload.id) return todo;
+
+        return {
+          ...todo,
+          completed: !todo.completed,
+        };
+      });
+    default:
+      return state;
+  }
+};
+
+// Ни один из этих кодов конкретно не зависит от какого-либо API из redux основной библиотеки. Но нужно написать много кода. Неизменяемые обновления требовали большого количества рукописных расширений объектов и операций с массивами, и было очень легко допустить ошибки и случайно изменить состояние в процессе (всегда причина №1 ошибок Redux!). Также было обычным, хотя и не строго обязательным, распределять код одной функции по нескольким файлам, таким как actions/todos.js, constants/todos.jsи reducers/todos.js.
+
+// Кроме того, настройка магазина обычно требовала ряда шагов для добавления часто используемого промежуточного программного обеспечения, такого как thunks, и включения поддержки расширения Redux DevTools Extension, хотя это стандартные инструменты, используемые почти в каждом приложении Redux.
+
+//# Что делает Redux Toolkit?
