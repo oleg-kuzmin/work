@@ -5,6 +5,7 @@
     "настройка vscode": "vscode",
     "git": "github",
     "00. work": "custom",
-    "next": "next"
+    "next": "next",
+    "redux": "Redux-actions"
   }
 }
