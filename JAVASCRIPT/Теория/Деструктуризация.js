@@ -7,25 +7,29 @@ const userProfile = {
 };
 
 const { name, commentsQty } = userProfile;
-//* аналогично записи
-const name2 = userProfile.name;
-const commentsQty2 = userProfile.commentsQty;
+// аналогично записи
+// const name = userProfile.name;
+// const commentsQty = userProfile.commentsQty;
 
 const { isLoggedIn } = userProfile;
-//* аналогично записи
-const isLoggedIn2 = userProfile.isLoggedIn;
+// аналогично записи
+// const isLoggedIn = userProfile.isLoggedIn;
 
 //# Деструктуризация массива
-//* Создание переменных и присваивание им значений из свойств массива по порядку
+// Создание переменных и присваивание им значений из свойств массива по порядку
 const fruits = ['Apple', 'Banana'];
 
 const [fruitOne, fruitTwo] = fruits;
-//* аналогично записи
-const fruitOne2 = fruits[0];
-const fruitTwo2 = fruits[1];
+// аналогично записи
+// const fruitOne = fruits[0];
+// const fruitTwo = fruits[1];
+
+// Для пропуска переменной можно использовать запятую
+const fruitsTest = ['Apple', 'Something', 'Banana'];
+const [fruitTestOne, , fruitTestTwo] = fruits;
 
 //# Деструктуризация параметров функции (объекта)
-//* Аккуратно! Объект передается по ссылке, можно мутировать изначальный объект
+// Аккуратно! Объект передается по ссылке, можно мутировать изначальный объект
 const userProfile2 = {
   name: 'Oleg',
   commentsQty: 23,
@@ -38,7 +42,7 @@ const userInfo = ({ name, commentsQty }) => {
 userInfo(userProfile2);
 
 //# Деструктуризация параметров конструктора класса
-//* также можно использовать в методах класса
+// также можно использовать в методах класса
 class Card {
   constructor({ text, image, description }) {
     this._text = text;

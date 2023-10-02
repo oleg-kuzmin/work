@@ -33,10 +33,17 @@ const myObject = new Object();
 const book = new Object({ title: 'Война и мир', author: 'Лев Толстой' });
 
 //# новый синтаксис (создадим свойство 'название переменной': 'содержимое переменной' )
-// Сокращенная запись свойств в объектах js.
 const firstName = 'Иван';
 const username = 'Killer3000';
+
+// Сокращенная запись свойств в объектах js.
 const user = {
   firstName,
   username,
+};
+
+// Полная запись
+const user2 = {
+  firstName: firstName,
+  username: username,
 };
