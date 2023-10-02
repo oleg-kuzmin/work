@@ -22,18 +22,34 @@
 array.map(function (item, index, array) {});
 
 //# пример
-const firstArr = [0, 1, 2, 3, 4];
-const secondArr = firstArr.map(function (item) {
-  return item * item;
+const firstArray = [0, 1, 2, 3, 4];
+const secondArray = firstArray.map(function (item) {
+  return item * 2; // [0, 2, 4, 6, 8]
 });
 
-console.log(secondArr); // [0, 1, 4, 9, 16]
+//# пример
+const cars = [
+  {
+    color: 'red',
+    type: 'sedan',
+    registration: new Date('2023-10-02'),
+  },
+  {
+    color: 'black',
+    type: 'sedan',
+    registration: new Date('2023-10-02'),
+  },
+  {
+    color: 'green',
+    type: 'minivan',
+    registration: new Date('2023-10-02'),
+  },
+];
 
-const counterIndexed = counter.map(function (item, index) {
-  return `${index + 1}. ${item}`;
+const resultType = cars.map(item => {
+  item.type;
 });
 
-const ivansIndexed = ivans.map(function (item, index, array) {
-  const currentIndex = `(${index + 1} из ${array.length})`;
-  return `${item} ${currentIndex}`;
+const result = cars.map((item, index) => {
+  return { type: item.type, index: index };
 });
