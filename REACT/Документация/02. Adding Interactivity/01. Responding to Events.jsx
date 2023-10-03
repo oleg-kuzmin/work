@@ -144,3 +144,47 @@ function Toolbar() {
 // Если вы используете design system, такие компоненты, как кнопки, обычно содержат стиль, но не определяют поведение. Вы можете создать такие компоненты, как PlayButton и UploadButton, которые будут передавать обработчики событий.
 
 //# Именование свойств обработчика событий
+// Встроенные компоненты, такие как <button> и <div>, поддерживают только имена событий браузера, например onClick. Однако, когда вы создаете свои собственные компоненты, вы можете назвать их свойства обработчика событий так, как вам нравится.
+
+// По соглашению реквизиты обработчика событий должны начинаться с on, за которым следует заглавная буква.
+
+// Например, свойство onClick компонента Button можно было бы назвать onSmash:
+
+//* App.js
+function Button({ onSmash, children }) {
+  return <button onClick={onSmash}>{children}</button>;
+}
+
+function App() {
+  return (
+    <div>
+      <Button onSmash={() => alert('Playing!')}>Play Movie</Button>
+      <Button onSmash={() => alert('Uploading!')}>Upload Image</Button>
+    </div>
+  );
+}
+
+// В этом примере <button onClick={onSmash}> показывает, что тегу браузера <button> по-прежнему требуется свойство onClick, но имя свойства, полученное вашим пользовательским компонентом Button, зависит от вас!
+
+// Если ваш компонент поддерживает несколько взаимодействий, вы можете назвать свойства обработчика событий для концепций, специфичных для приложения. Например, этот компонент Toolbar получает обработчики событий onPlayMovie и onUploadImage:
+
+//* App.js
+
+function App() {
+  return <Toolbar onPlayMovie={() => alert('Playing!')} onUploadImage={() => alert('Uploading!')} />;
+}
+
+function Toolbar({ onPlayMovie, onUploadImage }) {
+  return (
+    <div>
+      <Button onClick={onPlayMovie}>Play Movie</Button>
+      <Button onClick={onUploadImage}>Upload Image</Button>
+    </div>
+  );
+}
+
+function Button({ onClick, children }) {
+  return <button onClick={onClick}>{children}</button>;
+}
+
+
