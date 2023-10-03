@@ -169,7 +169,6 @@ function App() {
 // Если ваш компонент поддерживает несколько взаимодействий, вы можете назвать свойства обработчика событий для концепций, специфичных для приложения. Например, этот компонент Toolbar получает обработчики событий onPlayMovie и onUploadImage:
 
 //* App.js
-
 function App() {
   return <Toolbar onPlayMovie={() => alert('Playing!')} onUploadImage={() => alert('Uploading!')} />;
 }
@@ -187,4 +186,8 @@ function Button({ onClick, children }) {
   return <button onClick={onClick}>{children}</button>;
 }
 
+// Обратите внимание, что компоненту App не нужно знать, что Toolbar будет делать с onPlayMovie или onUploadImage. Это деталь реализации Toolbar.
 
+//* Примечание
+
+//* Примечание
