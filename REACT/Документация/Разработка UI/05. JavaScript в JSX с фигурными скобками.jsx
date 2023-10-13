@@ -51,7 +51,7 @@ function formatDate(date) {
   }).format(date);
 }
 
-export default function TodoList() {
+function TodoList() {
   return <h1>To Do List for {formatDate(today)}</h1>;
 }
 
@@ -62,3 +62,45 @@ export default function TodoList() {
 */
 
 //# Использование "двойных завитушек": CSS и другие объекты в JSX
+// Помимо строк, чисел и других выражений JavaScript, в JSX можно передавать даже объекты. Объекты также обозначаются фигурными скобками, например { name: "Hedy Lamarr", inventions: 5 }. Поэтому, чтобы передать объект JS в JSX, вы должны обернуть объект в другую пару фигурных скобок: person={{ name: "Hedy Lamarr", inventions: 5 }}.
+
+// Подобное можно увидеть при использовании встроенных стилей CSS в JSX. React не требует использования встроенных стилей (классы CSS отлично подходят для большинства случаев). Но когда вам нужен встроенный стиль, вы передаете объект в атрибут style:
+
+//* App.js
+function TodoList() {
+  return (
+    <ul
+      style={{
+        backgroundColor: 'black',
+        color: 'pink',
+      }}
+    >
+      <li>Improve the videophone</li>
+      <li>Prepare aeronautics lectures</li>
+      <li>Work on the alcohol-fuelled engine</li>
+    </ul>
+  );
+}
+
+// Попробуйте изменить значения backgroundColor и color.
+
+// Вы действительно можете увидеть объект JavaScript внутри фигурных скобок, если напишете его так:
+<ul
+  style={{
+    backgroundColor: 'black',
+    color: 'pink',
+  }}
+/>;
+
+// Когда в следующий раз вы увидите {{ и }} в JSX, знайте, что это не что иное, как объект внутри скобок JSX!
+
+//! Внимание
+// Инлайн-свойства style записываются в camelCase. Например, HTML <ul style="background-color: black"> будет записан как <ul style={{ backgroundColor: 'black' }}> в вашем компоненте.
+//! Внимание
+
+//# Больше веселья с объектами JavaScript и фигурными скобками
+// Вы можете поместить несколько выражений в один объект и ссылаться на них в JSX внутри фигурных скобок:
+
+
+
+
