@@ -21,3 +21,53 @@
 //* Примечание
 
 //# Преобразование HTML в JSX
+// Предположим, что у вас есть некоторый (совершенно правильный) HTML:
+
+/*
+<h1>Hedy Lamarr's Todos</h1>
+<img
+  src="https://i.imgur.com/yXOvdOSs.jpg"
+  alt="Hedy Lamarr"
+  class="photo"
+/>
+<ul>
+  <li>Invent new traffic lights</li>
+  <li>Rehearse a movie scene</li>
+  <li>Improve the spectrum technology</li>
+</ul>
+*/
+
+// И вы хотите поместить его в свой компонент:
+
+function TodoList() {
+  // ...
+}
+
+// Если вы скопируете и вставите его как есть, он не будет работать:
+
+//* App.js
+/*
+export default function TodoList() {
+return (
+    <h1>Hedy Lamarr's Todos</h1>
+    <img
+      src="https://i.imgur.com/yXOvdOSs.jpg"
+      alt="Hedy Lamarr"
+      class="photo"
+    >
+    <ul>
+      <li>Invent new traffic lights
+      <li>Rehearse a movie scene
+      <li>Improve the spectrum technology
+    </ul>
+  );
+}
+*/
+
+// Это связано с тем, что JSX более строгий и имеет несколько больше правил, чем HTML! Если вы прочитаете приведенные выше сообщения об ошибках, они подскажут вам, как исправить разметку, или вы можете следовать руководству, приведенному ниже.
+
+//* Примечание
+// В большинстве случаев экранные сообщения об ошибках React помогут вам найти причину проблемы. Прочитайте их, если вы застряли!
+//* Примечание
+
+//# Правила JSX
