@@ -9,3 +9,24 @@
 */
 
 //# Передача строк с кавычками
+// Когда вы хотите передать строковый атрибут в JSX, вы заключаете его в одинарные или двойные кавычки:
+
+//* App.js
+function Avatar() {
+  return <img className="avatar" src="https://i.imgur.com/7vQD0fPs.jpg" alt="Gregorio Y. Zara" />;
+}
+
+// Здесь "https://i.imgur.com/7vQD0fPs.jpg" и "Gregorio Y. Zara" передаются как строки.
+
+// Но что если вы хотите динамически указать текст src или alt? Вы можете использовать значение из JavaScript, указав его внутри скобок {}:
+
+//* App.js
+function Avatar() {
+  const avatar = 'https://i.imgur.com/7vQD0fPs.jpg';
+  const description = 'Gregorio Y. Zara';
+  return <img className="avatar" src={avatar} alt={description} />;
+}
+
+// Обратите внимание на разницу между className="avatar", которая определяет имя CSS-класса "avatar", который делает изображение круглым, и src={avatar}, которая читает значение переменной JavaScript под названием avatar. Это потому, что фигурные скобки позволяют вам работать с JavaScript прямо в вашей разметке!
+
+//# Использование фигурных скобок: Окно в мир JavaScript
