@@ -77,4 +77,37 @@ function Profile() {
 //! Внимание
 
 //# Использование компонента
+// Теперь, когда вы определили свой компонент Profile, вы можете вложить его в другие компоненты. Например, вы можете экспортировать компонент Gallery, который использует несколько компонентов Profile:
 
+//* App.js
+function Profile() {
+  return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
+}
+
+function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+
+//* Что видит браузер
+/* Обратите внимание на разницу в регистре:
+- <section> строчная, поэтому React знает, что мы ссылаемся на HTML-тег.
+- <Profile /> начинается с заглавной буквы P, поэтому React знает, что мы хотим использовать наш компонент под названием Profile.
+*/
+
+// А Profile содержит еще больше HTML: <img />. В итоге, вот что видит браузер:
+
+<section>
+  <h1>Amazing scientists</h1>
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+  <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
+</section>;
+
+//# Вложение и организация компонентов
