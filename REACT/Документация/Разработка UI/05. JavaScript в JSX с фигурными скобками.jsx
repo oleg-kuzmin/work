@@ -101,6 +101,49 @@ function TodoList() {
 //# Больше веселья с объектами JavaScript и фигурными скобками
 // Вы можете поместить несколько выражений в один объект и ссылаться на них в JSX внутри фигурных скобок:
 
+//* App.js
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink',
+  },
+};
 
+function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <img className="avatar" src="https://i.imgur.com/7vQD0fPs.jpg" alt="Gregorio Y. Zara" />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
 
+// В этом примере объект JavaScript person содержит строку name и объект theme:
+const objectPerson = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink',
+  },
+};
 
+// Компонент может использовать эти значения из person следующим образом:
+<div style={person.theme}>
+  <h1>{person.name}'s Todos</h1>
+</div>;
+
+// JSX очень минимален как язык шаблонов, потому что он позволяет организовать данные и логику с помощью JavaScript.
+
+//# Итого
+/* Теперь вы знаете почти все о JSX:
+- Атрибуты JSX, заключенные в кавычки, передаются как строки.
+- Фигурные скобки позволяют вам привнести логику и переменные JavaScript в вашу разметку.
+- Они работают внутри содержимого тега JSX или сразу после = в атрибутах.
+- {{ и }} - это не специальный синтаксис: это объект JavaScript, помещенный в фигурные скобки JSX.
+*/
