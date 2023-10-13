@@ -1,23 +1,23 @@
-//# Свойства - объект props
-//* Чтение свойства внутри компонента (с деструктуризацией объекта)
+//# Параметры - объект props
+//* Чтение параметра внутри компонента (с деструктуризацией объекта)
 function Avatar({ person, size }) {
   // аналогично записи let person = props.person;
   // аналогично записи let size = props.size;
   return <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size} />;
 }
 
-//* Чтение свойства внутри компонента (с деструктуризацией объекта и значением по умолчанию)
+//* Чтение параметра внутри компонента (с деструктуризацией объекта и значением по умолчанию)
 // свойство size отсутствует или size={undefined}
 function Avatar({ person, size = 100 }) {
   return <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size} />;
 }
 
-//* Чтение свойства внутри компонента (с деструктуризацией объекта и контентом children)
+//* Чтение параметра внутри компонента (с деструктуризацией объекта и контентом children)
 function Card({ children }) {
   return <div className="card">{children}</div>;
 }
 
-//* Чтение свойства внутри компонента (без деструктуризации)
+//* Чтение параметра внутри компонента (без деструктуризации)
 function Avatar(props) {
   return (
     <img
@@ -30,7 +30,7 @@ function Avatar(props) {
   );
 }
 
-//* Передача свойства компоненту
+//* Передача параметра компоненту
 function Profile() {
   return (
     <div>
@@ -45,7 +45,7 @@ function Profile() {
   );
 }
 
-//* Передача всех свойств компоненту через спред-оператор
+//* Передача всех параметров компоненту через спред-оператор
 function Profile(props) {
   return (
     <div>
@@ -54,7 +54,7 @@ function Profile(props) {
   );
 }
 
-//* Передача частично свойств компоненту через спред-оператор
+//* Передача частично параметра компоненту через спред-оператор
 function Profile(props) {
   return (
     <div>
@@ -63,7 +63,7 @@ function Profile(props) {
   );
 }
 
-//* Фильтрация свойств и безопасная передача оставшихся компоненту через спред-оператор
+//* Фильтрация параметров и безопасная передача оставшихся компоненту через спред-оператор
 function Profile(props) {
   const { size, userId, ...otherProps } = props;
 
