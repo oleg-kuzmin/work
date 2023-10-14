@@ -31,10 +31,12 @@ function PackingList() {
 // Обратите внимание, что у некоторых компонентов Item свойство isPacked установлено в true вместо false. Вы хотите добавить галочку (✔) к упакованным элементам, если isPacked={true}.
 
 // Вы можете написать это в виде if/else оператора, например, так:
-if (isPacked) {
-  return <li className="item">{name} ✔</li>;
+function Item({ name, isPacked }) {
+  if (isPacked) {
+    return <li className="item">{name} ✔</li>;
+  }
+  return <li className="item">{name}</li>;
 }
-return <li className="item">{name}</li>;
 
 // Если параметр isPacked имеет значение true, этот код возвращает другое JSX-дерево. С этим изменением некоторые элементы получают галочку в конце:
 
@@ -64,4 +66,57 @@ function PackingList() {
 // Обратите внимание, как вы создаете разветвленную логику с помощью операторов JavaScript if и return. В React поток управления (как и условия) обрабатывается JavaScript.
 
 //# Условное возвращение ничего с null
+// В некоторых ситуациях вы вообще не захотите ничего выводить. Например, вы не хотите показывать упакованные элементы вообще. Компонент должен что-то возвращать. В этом случае вы можете вернуть null:
+function Item({ name, isPacked }) {
+  if (isPacked) {
+    return null;
+  }
+  return <li className="item">{name}</li>;
+}
+
+// Если isPacked истинно, компонент не вернет ничего, null. В противном случае он вернет JSX для рендеринга.
+
+//* App.js
+function Item({ name, isPacked }) {
+  if (isPacked) {
+    return null;
+  }
+  return <li className="item">{name}</li>;
+}
+
+function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true} name="Space suit" />
+        <Item isPacked={true} name="Helmet with a golden leaf" />
+        <Item isPacked={false} name="Photo of Tam" />
+      </ul>
+    </section>
+  );
+}
+
+// На практике возврат null из компонента не является обычным делом, поскольку это может удивить разработчика, пытающегося его отобразить. Чаще всего вы условно включаете или исключаете компонент в JSX родительского компонента. Вот как это сделать!
+
+//# Условное включение JSX
+// В предыдущем примере вы контролировали, какое (если вообще!) дерево JSX будет возвращено компонентом. Возможно, вы уже заметили дублирование в выводе рендера:
+<li className="item">{name} ✔</li>;
+
+// очень похожа на
+<li className="item">{name}</li>;
+
+// Обе условные ветви возвращают <li className="item">...</li>:
+
+function Item({ name, isPacked }) {
+  if (isPacked) {
+    return <li className="item">{name} ✔</li>;
+  }
+  return <li className="item">{name}</li>;
+}
+
+// Хотя такое дублирование не вредно, оно может усложнить сопровождение вашего кода. Что если вы захотите изменить className? Вам придется делать это в двух местах в вашем коде! В такой ситуации вы можете условно включить немного JSX, чтобы сделать ваш код более DRY.
+
+//# Условный (тернарный) оператор (?:)
+
 
