@@ -211,3 +211,65 @@ function PackingList() {
 //! Внимание
 
 //# Условное присвоение JSX переменной
+// Когда ярлыки мешают писать простой код, попробуйте использовать оператор if и переменную. Вы можете переназначать переменные, определенные с помощью let, поэтому начните с указания содержимого по умолчанию, которое вы хотите отобразить, — имени:
+let itemContent = name;
+
+// Используйте оператор if для переназначения выражения JSX в itemContent, если isPacked равно true:
+if (isPacked) {
+  itemContent = name + ' ✔';
+}
+
+// фигурные скобки открывают "окно в JavaScript". Вставьте переменную с фигурными скобками в возвращаемое дерево JSX, вложив ранее вычисленное выражение внутрь JSX:
+<li className="item">{itemContent}</li>;
+
+// Этот стиль самый многословный, но и самый гибкий. Вот он в действии:
+
+//* App.js
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = name + ' ✔';
+  }
+  return <li className="item">{itemContent}</li>;
+}
+
+function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true} name="Space suit" />
+        <Item isPacked={true} name="Helmet with a golden leaf" />
+        <Item isPacked={false} name="Photo of Tam" />
+      </ul>
+    </section>
+  );
+}
+
+// Как и раньше, это работает не только для текста, но и для произвольного JSX:
+
+//* App.js
+function Item({ name, isPacked }) {
+  let itemContent = name;
+  if (isPacked) {
+    itemContent = <del>{name + ' ✔'}</del>;
+  }
+  return <li className="item">{itemContent}</li>;
+}
+
+function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true} name="Space suit" />
+        <Item isPacked={true} name="Helmet with a golden leaf" />
+        <Item isPacked={false} name="Photo of Tam" />
+      </ul>
+    </section>
+  );
+}
+
+// Если вы не знакомы с JavaScript, такое разнообразие стилей может поначалу показаться ошеломляющим. Однако их изучение поможет вам читать и писать любой код JavaScript — и не только компоненты React! Выберите для начала тот, который вам больше нравится, а затем снова обратитесь к этому справочнику, если вы забудете, как работают другие.
+
+//# Итоги
