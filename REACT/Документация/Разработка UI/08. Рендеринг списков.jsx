@@ -22,7 +22,7 @@
 // Вот краткий пример того, как сформировать список элементов из массива:
 
 //* 1. Переместите данные в массив:
-const people = [
+let people = [
   'Creola Katherine Johnson: mathematician',
   'Mario José Molina-Pasquel Henríquez: chemist',
   'Mohammad Abdus Salam: physicist',
@@ -31,17 +31,24 @@ const people = [
 ];
 
 //* 2. Используйте map для создания нового массива узлов jsx из членов people:
-const listItems = people.map(person => <li>{person}</li>);
+let listItems = people.map(person => <li>{person}</li>);
 
 //* 3. Верните listItems из вашего компонента, обернутого в <ul>:
 function List() {
-  const listItems = people.map(person => <li>{person}</li>);
   return <ul>{listItems}</ul>;
 }
 
 // Вот результат:
 
 //* App.js
+people = [
+  'Creola Katherine Johnson: mathematician',
+  'Mario José Molina-Pasquel Henríquez: chemist',
+  'Mohammad Abdus Salam: physicist',
+  'Percy Lavon Julian: chemist',
+  'Subrahmanyan Chandrasekhar: astrophysicist',
+];
+
 function List() {
   const listItems = people.map(person => <li>{person}</li>);
   return <ul>{listItems}</ul>;
@@ -52,3 +59,132 @@ function List() {
 // Как исправить эту ошибку, вы узнаете позже на этой странице. Прежде чем мы приступим к этому, давайте добавим немного структуры в ваши данные.
 
 //# Фильтрация массивов элементов
+// Эти данные можно структурировать еще больше.
+
+people = [
+  {
+    id: 0,
+    name: 'Creola Katherine Johnson',
+    profession: 'mathematician',
+  },
+  {
+    id: 1,
+    name: 'Mario José Molina-Pasquel Henríquez',
+    profession: 'chemist',
+  },
+  {
+    id: 2,
+    name: 'Mohammad Abdus Salam',
+    profession: 'physicist',
+  },
+  {
+    name: 'Percy Lavon Julian',
+    profession: 'chemist',
+  },
+  {
+    name: 'Subrahmanyan Chandrasekhar',
+    profession: 'astrophysicist',
+  },
+];
+
+// Допустим, вам нужно показать только людей, чья профессия — chemist(химик). Вы можете использовать метод JavaScript filter(), чтобы вернуть только таких людей. Этот метод принимает массив элементов, пропускает их через "тест" (функцию, которая возвращает true или false) и возвращает новый массив только тех элементов, которые прошли тест (вернули true).
+
+// Вам нужны только те элементы, где profession === 'chemist'. Функция "test" для этого выглядит как (person) => person.profession === 'chemist'. Вот как это можно сделать:
+
+//* 1. Создайте новый массив только "химиков" (chemists) вызывая filter() на people, фильтруя по person.profession === 'chemist':
+const chemists = people.filter(person => person.profession === 'chemist');
+
+//* 2. Теперь используйте map для химиков:
+listItems = chemists.map(person => (
+  <li>
+    <img src={getImageUrl(person)} alt={person.name} />
+    <p>
+      <b>{person.name}:</b>
+      {' ' + person.profession + ' '}
+      known for {person.accomplishment}
+    </p>
+  </li>
+));
+
+//* 3. И наконец, возвратите список listItems из вашего компонента:
+function List() {
+  return <ul>{listItems}</ul>;
+}
+
+// Вот итоговый результат.
+//* utils.js
+function getImageUrl(person) {
+  return 'https://i.imgur.com/' + person.imageId + 's.jpg';
+}
+
+//* data.js
+people = [
+  {
+    id: 0,
+    name: 'Creola Katherine Johnson',
+    profession: 'mathematician',
+    accomplishment: 'spaceflight calculations',
+    imageId: 'MK3eW3A',
+  },
+  {
+    id: 1,
+    name: 'Mario José Molina-Pasquel Henríquez',
+    profession: 'chemist',
+    accomplishment: 'discovery of Arctic ozone hole',
+    imageId: 'mynHUSa',
+  },
+  {
+    id: 2,
+    name: 'Mohammad Abdus Salam',
+    profession: 'physicist',
+    accomplishment: 'electromagnetism theory',
+    imageId: 'bE7W1ji',
+  },
+  {
+    id: 3,
+    name: 'Percy Lavon Julian',
+    profession: 'chemist',
+    accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+    imageId: 'IOjWm71',
+  },
+  {
+    id: 4,
+    name: 'Subrahmanyan Chandrasekhar',
+    profession: 'astrophysicist',
+    accomplishment: 'white dwarf star mass calculations',
+    imageId: 'lrWQx8l',
+  },
+];
+
+//* App.js
+import { people } from './data.js';
+import { getImageUrl } from './utils.js';
+
+function List() {
+  const chemists = people.filter(person => person.profession === 'chemist');
+  const listItems = chemists.map(person => (
+    <li>
+      <img src={getImageUrl(person)} alt={person.name} />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  ));
+  return <ul>{listItems}</ul>;
+}
+
+//! Внимание
+// Стрелочные функции неявно возвращают выражение сразу после =>, поэтому оператор возврата не нужен:
+listItems = chemists.map(person => <li>{person}</li>);
+
+// Однако вы должны явно написать return, если за вашим => следует { фигурная скобка!.
+listItems = chemists.map(person => {
+  return <li>...</li>;
+});
+
+// Стрелочные функции, содержащие => {, как говорят, имеют "тело блока". Они позволяют вам написать больше, чем одну строку кода, но вы должны сами написать оператор возврата. Если вы забудете об этом, ничего не будет возвращено!
+//! Внимание
+
+//# Упорядочивание элементов списка по ключу
