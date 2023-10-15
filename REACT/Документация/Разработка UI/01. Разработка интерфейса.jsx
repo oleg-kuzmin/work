@@ -117,4 +117,64 @@ function TodoList() {
   );
 }
 
+//# Передача пропсов компоненту
+// Компоненты React используют props для взаимодействия друг с другом. Каждый родительский компонент может передавать некоторую информацию своим дочерним компонентам, передавая им пропсы. пропсы могут напомнить вам атрибуты HTML, но вы можете передавать через них любые значения JavaScript, включая объекты, массивы, функции и даже JSX!
+
+//* utils.js
+function getImageUrl(person, size = 's') {
+  return 'https://i.imgur.com/' + person.imageId + size + '.jpg';
+}
+
+//* App.js
+import { getImageUrl } from './utils.js';
+
+function Profile() {
+  return (
+    <Card>
+      <Avatar
+        size={100}
+        person={{
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2',
+        }}
+      />
+    </Card>
+  );
+}
+
+function Avatar({ person, size }) {
+  return <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size} />;
+}
+
+function Card({ children }) {
+  return <div className="card">{children}</div>;
+}
+
+//# Условный рендеринг
+// Ваши компоненты часто должны отображать разные вещи в зависимости от различных условий. В React вы можете условно отображать JSX, используя синтаксис JavaScript, такой как операторы if, && и ?:
+
+// В этом примере оператор JavaScript && используется для условного отображения галочки:
+
+//* App.js
+function Item({ name, isPacked }) {
+  return (
+    <li className="item">
+      {name} {isPacked && '✔'}
+    </li>
+  );
+}
+
+function PackingList() {
+  return (
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item isPacked={true} name="Space suit" />
+        <Item isPacked={true} name="Helmet with a golden leaf" />
+        <Item isPacked={false} name="Photo of Tam" />
+      </ul>
+    </section>
+  );
+}
+
 
