@@ -11,3 +11,46 @@
 - Как отрисовывать несколько компонентов одновременно
 - Как избежать запутанных ошибок, сохраняя чистоту компонентов
 */
+
+//# Ваш первый компонент
+// Приложения React строятся из изолированных частей пользовательского интерфейса, называемых компонентами. Компонент React — это функция JavaScript, которую вы можете посыпать разметкой. Компоненты могут быть как маленькими, как кнопка, так и большими, как целая страница. Вот компонент Gallery, отображающий три компонента Profile:
+
+//* App.js
+function Profile() {
+  return <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />;
+}
+
+function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+
+//# Импорт и экспорт компонентов
+// Вы можете объявить много компонентов в одном файле, но в больших файлах может быть трудно ориентироваться. Чтобы решить эту проблему, вы можете экспортировать компонент в свой собственный файл, а затем импортировать этот компонент из другого файла:
+
+//* Gallery.js
+import Profile from './Profile.js';
+
+function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
+  );
+}
+
+//* Profile.js
+function Profile() {
+  return <img src="https://i.imgur.com/QIrZWGIs.jpg" alt="Alan L. Hart" />;
+}
+
+
