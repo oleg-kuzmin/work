@@ -53,4 +53,68 @@ function Profile() {
   return <img src="https://i.imgur.com/QIrZWGIs.jpg" alt="Alan L. Hart" />;
 }
 
+//# Написание разметки с помощью JSX
+// Каждый компонент React — это функция JavaScript, которая может содержать некоторую разметку, которую React отображает в браузере. Компоненты React используют расширение синтаксиса под названием JSX для представления этой разметки. JSX очень похож на HTML, но он немного строже и может отображать динамическую информацию.
+
+/* Если мы вставим существующую HTML-разметку в компонент React, она не будет работать:
+export default function TodoList() {
+  return (
+      <h1>Hedy Lamarr's Todos</h1>
+      <img
+      src="https://i.imgur.com/yXOvdOSs.jpg"
+      alt="Hedy Lamarr"
+      class="photo"
+      >
+      <ul>
+      <li>Invent new traffic lights
+      <li>Rehearse a movie scene
+      <li>Improve spectrum technology
+      </ul>
+  );
+  }
+*/
+
+// Если у вас есть HTML, подобный этому, вы можете исправить его с помощью конвертера (https://transform.tools/html-to-jsx):
+
+//* App.js
+function TodoList() {
+  return (
+    <>
+      <h1>Hedy Lamarr's Todos</h1>
+      <img src="https://i.imgur.com/yXOvdOSs.jpg" alt="Hedy Lamarr" className="photo" />
+      <ul>
+        <li>Invent new traffic lights</li>
+        <li>Rehearse a movie scene</li>
+        <li>Improve spectrum technology</li>
+      </ul>
+    </>
+  );
+}
+
+//# JavaScript в JSX с фигурными скобками
+// JSX позволяет вам писать HTML-подобную разметку внутри JavaScript-файла, сохраняя логику рендеринга и содержимое в одном месте. Иногда вы захотите добавить немного логики JavaScript или сослаться на динамическое свойство внутри этой разметки. В этой ситуации вы можете использовать фигурные скобки в JSX, чтобы "открыть окно" в JavaScript:
+
+//* App.js
+const person = {
+  name: 'Gregorio Y. Zara',
+  theme: {
+    backgroundColor: 'black',
+    color: 'pink',
+  },
+};
+
+function TodoList() {
+  return (
+    <div style={person.theme}>
+      <h1>{person.name}'s Todos</h1>
+      <img className="avatar" src="https://i.imgur.com/7vQD0fPs.jpg" alt="Gregorio Y. Zara" />
+      <ul>
+        <li>Improve the videophone</li>
+        <li>Prepare aeronautics lectures</li>
+        <li>Work on the alcohol-fuelled engine</li>
+      </ul>
+    </div>
+  );
+}
+
 
