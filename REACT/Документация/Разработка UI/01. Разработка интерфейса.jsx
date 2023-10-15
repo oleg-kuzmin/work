@@ -177,4 +177,118 @@ function PackingList() {
   );
 }
 
+//# Рендеринг списков
+// Часто требуется отобразить несколько одинаковых компонентов из коллекции данных. Вы можете использовать JavaScript filter() и map() в React для фильтрации и преобразования массива данных в массив компонентов.
 
+// Для каждого элемента массива необходимо указать key. Обычно в качестве key используется идентификатор из базы данных. Ключи позволяют React отслеживать место каждого элемента в списке, даже если список меняется.
+
+//* utils.js
+function getImageUrl(person) {
+  return 'https://i.imgur.com/' + person.imageId + 's.jpg';
+}
+
+//* data.js
+const people = [
+  {
+    id: 0,
+    name: 'Creola Katherine Johnson',
+    profession: 'mathematician',
+    accomplishment: 'spaceflight calculations',
+    imageId: 'MK3eW3A',
+  },
+  {
+    id: 1,
+    name: 'Mario José Molina-Pasquel Henríquez',
+    profession: 'chemist',
+    accomplishment: 'discovery of Arctic ozone hole',
+    imageId: 'mynHUSa',
+  },
+  {
+    id: 2,
+    name: 'Mohammad Abdus Salam',
+    profession: 'physicist',
+    accomplishment: 'electromagnetism theory',
+    imageId: 'bE7W1ji',
+  },
+  {
+    id: 3,
+    name: 'Percy Lavon Julian',
+    profession: 'chemist',
+    accomplishment: 'pioneering cortisone drugs, steroids and birth control pills',
+    imageId: 'IOjWm71',
+  },
+  {
+    id: 4,
+    name: 'Subrahmanyan Chandrasekhar',
+    profession: 'astrophysicist',
+    accomplishment: 'white dwarf star mass calculations',
+    imageId: 'lrWQx8l',
+  },
+];
+
+//* App.js
+import { people } from './data.js';
+import { getImageUrl } from './utils.js';
+
+function List() {
+  const listItems = people.map(person => (
+    <li key={person.id}>
+      <img src={getImageUrl(person)} alt={person.name} />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  ));
+  return (
+    <article>
+      <h1>Scientists</h1>
+      <ul>{listItems}</ul>
+    </article>
+  );
+}
+
+//# Соблюдение чистоты компонентов
+/* Некоторые функции JavaScript являются чистыми. Чистая функция:
+- занимается своими делами. Она не изменяет никаких объектов или переменных, которые существовали до ее вызова.
+- Одинаковые входные данные, одинаковый выход. При одинаковых входных данных чистая функция всегда должна возвращать один и тот же результат.
+*/
+
+// Если вы будете писать свои компоненты только как чистые функции, вы сможете избежать целого класса непонятных ошибок и непредсказуемого поведения по мере роста вашей кодовой базы. Вот пример нечистого компонента:
+
+//* App.js
+let guest = 0;
+
+function Cup() {
+  // Bad: changing a preexisting variable!
+  guest = guest + 1;
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+function TeaSet() {
+  return (
+    <>
+      <Cup />
+      <Cup />
+      <Cup />
+    </>
+  );
+}
+
+// Вы можете сделать этот компонент чистым, передав ему параметр вместо изменения предварительно существующей переменной:
+
+//* App.js
+function Cup({ guest }) {
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+function TeaSet() {
+  return (
+    <>
+      <Cup guest={1} />
+      <Cup guest={2} />
+      <Cup guest={3} />
+    </>
+  );
+}
