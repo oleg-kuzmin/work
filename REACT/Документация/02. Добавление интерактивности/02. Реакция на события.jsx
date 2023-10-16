@@ -103,3 +103,43 @@ function Toolbar() {
 // Это позволяет этим двум кнопкам показывать разные сообщения. Попробуйте изменить передаваемые им сообщения.
 
 //# Передача обработчиков событий как пропсов
+// Часто требуется, чтобы родительский компонент указывал обработчик событий дочернего компонента. Рассмотрим кнопки: в зависимости от того, где вы используете компонент Button, вы можете захотеть выполнить разные функции - возможно, одна воспроизводит фильм, а другая загружает изображение.
+
+// Для этого в качестве обработчика события передайте пропс, который компонент получает от своего родителя, следующим образом:
+
+//* App.js
+function Button({ onClick, children }) {
+  return <button onClick={onClick}>{children}</button>;
+}
+
+function PlayButton({ movieName }) {
+  function handlePlayClick() {
+    alert(`Playing ${movieName}!`);
+  }
+
+  return <Button onClick={handlePlayClick}>Play "{movieName}"</Button>;
+}
+
+function UploadButton() {
+  return <Button onClick={() => alert('Uploading!')}>Upload Image</Button>;
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <PlayButton movieName="Kiki's Delivery Service" />
+      <UploadButton />
+    </div>
+  );
+}
+
+/* Здесь компонент Toolbar отображает PlayButton и UploadButton:
+- PlayButton передает handlePlayClick как свойство onClick для Button внутри.
+- UploadButton передает () => alert('Uploading!') как свойство onClick внутренней кнопке.
+*/
+
+// Наконец, ваш компонент Button принимает свойство onClick. Он передает это свойство непосредственно встроенному браузеру <button> с onClick={onClick}. Это указывает React на вызов переданной функции по щелчку.
+
+// Если вы используете систему дизайна, то обычно такие компоненты, как кнопки, содержат стиль, но не определяют поведение. Вместо этого такие компоненты, как PlayButton и UploadButton, передают обработчики событий вниз.
+
+//# Именование параметров обработчика событий
