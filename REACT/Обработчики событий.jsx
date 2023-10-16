@@ -52,3 +52,17 @@ function Component() {
     </div>
   );
 }
+
+//# Остановка всплытия событий
+function Button({ onClick, children }) {
+  return (
+    <button
+      onClick={e => {
+        e.stopPropagation();
+        onClick();
+      }}
+    >
+      {children}
+    </button>
+  );
+}
