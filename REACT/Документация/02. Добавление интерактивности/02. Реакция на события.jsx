@@ -84,3 +84,22 @@ function Button() {
 //! Внимание
 
 //# Чтение пропсов в обработчиках событий
+// Поскольку обработчики событий объявлены внутри компонента, они имеют доступ к пропсам компонента. Вот кнопка, которая при нажатии показывает оповещение со своим пропсом message:
+
+//* App.js
+function AlertButton({ message, children }) {
+  return <button onClick={() => alert(message)}>{children}</button>;
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <AlertButton message="Playing!">Play Movie</AlertButton>
+      <AlertButton message="Uploading!">Upload Image</AlertButton>
+    </div>
+  );
+}
+
+// Это позволяет этим двум кнопкам показывать разные сообщения. Попробуйте изменить передаваемые им сообщения.
+
+//# Передача обработчиков событий как пропсов
