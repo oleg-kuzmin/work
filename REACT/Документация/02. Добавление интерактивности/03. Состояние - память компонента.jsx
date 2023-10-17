@@ -193,3 +193,52 @@ function Gallery() {
 //* Как React узнает, какое состояние нужно вернуть?
 
 //# Состояние изолированное и частное
+// Состояние является локальным для экземпляра компонента на экране. Другими словами, если вы дважды отобразите один и тот же компонент, каждая копия будет иметь полностью изолированное состояние! Изменение одного из них не повлияет на другой.
+
+// В этом примере компонент Gallery, использованный ранее, отображается дважды без изменений в логике. Попробуйте нажать на кнопки внутри каждой из галерей. Обратите внимание, что их состояние независимо:
+
+//* App.js
+import Gallery from './Gallery.js';
+
+function Page() {
+  return (
+    <div className="Page">
+      <Gallery />
+      <Gallery />
+    </div>
+  );
+}
+
+//* Gallery.js
+import { useState } from 'react';
+import { sculptureList } from './data.js';
+
+function Gallery() {
+  const [index, setIndex] = useState(0);
+  const [showMore, setShowMore] = useState(false);
+
+  function handleNextClick() {
+    setIndex(index + 1);
+  }
+
+  function handleMoreClick() {
+    setShowMore(!showMore);
+  }
+
+  let sculpture = sculptureList[index];
+  return (
+    <section>
+      <button onClick={handleNextClick}>Next</button>
+      <h2>
+        <i>{sculpture.name} </i>
+        by {sculpture.artist}
+      </h2>
+      <h3>
+        ({index + 1} of {sculptureList.length})
+      </h3>
+      <button onClick={handleMoreClick}>{showMore ? 'Hide' : 'Show'} details</button>
+      {showMore && <p>{sculpture.description}</p>}
+      <img src={sculpture.url} alt={sculpture.alt} />
+    </section>
+  );
+}
