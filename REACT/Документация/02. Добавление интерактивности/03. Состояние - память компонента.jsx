@@ -8,3 +8,59 @@
 - Почему состояние называется локальным
 */
 
+//# Когда обычной переменной недостаточно
+// Вот компонент, который отображает изображение скульптуры. Нажатие на кнопку "Next" должно показать следующую скульптуру, изменив index на 1, затем 2 и так далее. Однако, это не работает (вы можете попробовать!):
+
+//* data.js
+export const sculptureList = [
+  {
+    name: 'Homenaje a la Neurocirugía',
+    artist: 'Marta Colvin Andrade',
+    description:
+      'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
+    url: 'https://i.imgur.com/Mx7dA2Y.jpg',
+    alt: 'A bronze statue of two crossed hands delicately holding a human brain in their fingertips.',
+  },
+  // ...
+];
+
+//* App.js
+import { sculptureList } from './data.js';
+function Gallery() {
+  let index = 0;
+  let sculpture = sculptureList[index];
+  function handleClick() {
+    index = index + 1;
+  }
+  return (
+    <>
+      <button onClick={handleClick}>Next</button>
+      <h2>
+        <i>{sculpture.name} </i>
+        by {sculpture.artist}
+      </h2>
+      <h3>
+        ({index + 1} of {sculptureList.length})
+      </h3>
+      <img src={sculpture.url} alt={sculpture.alt} />
+      <p>{sculpture.description}</p>
+    </>
+  );
+}
+
+/* Обработчик события handleClick обновляет локальную переменную index. Но две вещи не позволяют увидеть это изменение:
+1. Локальные переменные не сохраняются между рендерами. Когда React рендерит этот компонент во второй раз, он рендерит его с нуля - он не учитывает никаких изменений в локальных переменных.
+2. Изменения локальных переменных не вызывают рендеринга. React не понимает, что ему нужно снова рендерить компонент с новыми данными.
+*/
+
+/* Чтобы обновить компонент новыми данными, должны произойти две вещи:
+1. Сохранить данные между рендерами.
+2. Триггер React для рендеринга компонента с новыми данными (повторный рендеринг).
+*/
+
+/* Хук useState обеспечивает эти две вещи:
+1. Переменная state для сохранения данных между рендерами.
+2. Функция state setter для обновления переменной и запуска React для повторного рендеринга компонента.
+*/
+
+//# Добавление переменной состояния
