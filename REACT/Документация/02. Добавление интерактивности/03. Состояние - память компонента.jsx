@@ -64,3 +64,49 @@ function Gallery() {
 */
 
 //# Добавление переменной состояния
+// Чтобы добавить переменную состояния, импортируйте useState из React в верхней части файла:
+import { useState } from 'react';
+
+// Затем замените let index = 0;
+// на const [index, setIndex] = useState(0);
+
+// index - это переменная состояния, а setIndex - функция-установщик.
+
+// Синтаксис [ и ] здесь называется деструктуризация массива и позволяет вам читать значения из массива. Массив, возвращаемый useState, всегда содержит ровно два элемента.
+
+// Вот как они работают вместе в handleClick:
+function handleClick() {
+  setIndex(index + 1);
+}
+
+// Теперь нажатием кнопки "Далее" переключите текущую скульптуру:
+
+//* App.js
+import { useState } from 'react';
+import { sculptureList } from './data.js';
+
+export default function Gallery() {
+  const [index, setIndex] = useState(0);
+
+  function handleClick() {
+    setIndex(index + 1);
+  }
+
+  let sculpture = sculptureList[index];
+  return (
+    <>
+      <button onClick={handleClick}>Next</button>
+      <h2>
+        <i>{sculpture.name} </i>
+        by {sculpture.artist}
+      </h2>
+      <h3>
+        ({index + 1} of {sculptureList.length})
+      </h3>
+      <img src={sculpture.url} alt={sculpture.alt} />
+      <p>{sculpture.description}</p>
+    </>
+  );
+}
+
+//# Встречайте свой первый хук
