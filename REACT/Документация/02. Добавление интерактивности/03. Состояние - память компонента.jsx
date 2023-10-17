@@ -85,7 +85,7 @@ function handleClick() {
 import { useState } from 'react';
 import { sculptureList } from './data.js';
 
-export default function Gallery() {
+function Gallery() {
   const [index, setIndex] = useState(0);
 
   function handleClick() {
@@ -146,3 +146,44 @@ const [index, setIndex] = useState(0);
 */
 
 //# Предоставление компоненту нескольких переменных состояния
+// В одном компоненте можно иметь столько переменных состояния, сколько угодно типов. Этот компонент имеет две переменные состояния, число index и булево значение showMore, которое переключается, когда вы нажимаете кнопку "Показать подробности":
+
+//* App.js
+import { useState } from 'react';
+import { sculptureList } from './data.js';
+
+function Gallery() {
+  const [index, setIndex] = useState(0);
+  const [showMore, setShowMore] = useState(false);
+
+  function handleNextClick() {
+    setIndex(index + 1);
+  }
+
+  function handleMoreClick() {
+    setShowMore(!showMore);
+  }
+
+  let sculpture = sculptureList[index];
+  return (
+    <>
+      <button onClick={handleNextClick}>Next</button>
+      <h2>
+        <i>{sculpture.name} </i>
+        by {sculpture.artist}
+      </h2>
+      <h3>
+        ({index + 1} of {sculptureList.length})
+      </h3>
+      <button onClick={handleMoreClick}>{showMore ? 'Hide' : 'Show'} details</button>
+      {showMore && <p>{sculpture.description}</p>}
+      <img src={sculpture.url} alt={sculpture.alt} />
+    </>
+  );
+}
+
+// Это хорошая идея иметь несколько переменных состояния, если их состояние не связано, как index и showMore в этом примере. Но если вы обнаружите, что часто изменяете две переменные состояния вместе, может быть проще объединить их в одну. Например, если у вас есть форма с большим количеством полей, удобнее иметь одну переменную состояния, которая хранит объект, чем переменную состояния для каждого поля. Прочитайте Выбор структуры состояния для получения дополнительных советов.
+
+//* Как React узнает, какое состояние нужно вернуть?
+
+//* Как React узнает, какое состояние нужно вернуть?
