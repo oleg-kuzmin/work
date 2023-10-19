@@ -4,7 +4,6 @@
 -Quokka.js                                    (Wallaby.js)               // для запуска js в vscode
 -HTMLHint                                     (HTMLHint)                 // подсветка ошибок в html
 -Backticks                                    (FractalBrew)              // автоматическое исправление на шаблонные строки
--Svg Preview                                  (Simon Siefke)             // просмотр svg
 -Code Spell Checker                           (Street Side Software)     // проверка орфографии англ. языка
 -Live Server                                  (Ritwick Dey)              // виртуальный сервер
 -Space Ocean Kit Refined                      (space-ocean-kit-refined)  // цветовая тема
