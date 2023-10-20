@@ -170,4 +170,33 @@ function Counter() {
   );
 }
 
+// Если использовать предыдущий метод подстановки, то можно догадаться, что оповещение показывает "0":
+setNumber(0 + 5);
+alert(0);
+
+// Но что если поставить таймер на оповещение, чтобы оно срабатывало только после того, как компонент перерендерится? Будет ли он говорить "0" или "5"? Угадайте!
+
+//* App.js
+import { useState } from 'react';
+
+function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button
+        onClick={() => {
+          setNumber(number + 5);
+          setTimeout(() => {
+            alert(number);
+          }, 3000);
+        }}
+      >
+        +5
+      </button>
+    </>
+  );
+}
+
 
