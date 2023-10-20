@@ -215,4 +215,37 @@ setTimeout(() => {
 2. До истечения пятисекундной задержки вы изменяете значение поля "Кому" на "Бобу".
 */
 
+// Что вы ожидаете увидеть в сообщении alert? Будет ли оно отображать: "Вы сказали "Привет" Алисе"? Или "Вы поздоровались с Бобом"? Сделайте предположение, основываясь на том, что вы знаете, а затем попробуйте:
 
+//* App.js
+import { useState } from 'react';
+
+function Form() {
+  const [to, setTo] = useState('Alice');
+  const [message, setMessage] = useState('Hello');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setTimeout(() => {
+      alert(`You said ${message} to ${to}`);
+    }, 5000);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        To:{' '}
+        <select value={to} onChange={e => setTo(e.target.value)}>
+          <option value="Alice">Alice</option>
+          <option value="Bob">Bob</option>
+        </select>
+      </label>
+      <textarea placeholder="Message" value={message} onChange={e => setMessage(e.target.value)} />
+      <button type="submit">Send</button>
+    </form>
+  );
+}
+
+// React сохраняет значения состояния "фиксированными" в обработчиках событий одного рендера. Вам не нужно беспокоиться о том, изменилось ли состояние во время выполнения кода.
+
+// Но что если вы хотите прочитать последнее состояние перед повторным рендерингом? Вам понадобится функция обновления состояния, о которой мы расскажем на следующей странице!
