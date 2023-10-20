@@ -145,3 +145,29 @@ function Counter() {
 </button>;
 
 // Вот почему повторное нажатие на кнопку установит счетчик на 2, затем на 3 при следующем нажатии и т. д.
+
+//# Состояние с течением времени
+// Что ж, это было забавно. Попробуйте угадать, о чем предупредит нажатие на эту кнопку:
+
+//* App.js
+import { useState } from 'react';
+
+function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button
+        onClick={() => {
+          setNumber(number + 5);
+          alert(number);
+        }}
+      >
+        +5
+      </button>
+    </>
+  );
+}
+
+
