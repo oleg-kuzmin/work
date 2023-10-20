@@ -107,4 +107,15 @@ function Counter() {
   +3
 </button>;
 
+/* Вот что обработчик нажатия этой кнопки говорит React сделать:
+1. setNumber(number + 1): number - это 0, поэтому setNumber(0 + 1)
+- React готовится изменить число на 1 при следующем рендере.
+
+2. setNumber(number + 1): number - 0, поэтому setNumber(0 + 1)
+- React готовится изменить number на 1 при следующем рендере.
+
+3. setNumber(number + 1): number - 0, поэтому setNumber(0 + 1)
+- React готовится изменить number на 1 при следующем рендере.
+*/
+
 
