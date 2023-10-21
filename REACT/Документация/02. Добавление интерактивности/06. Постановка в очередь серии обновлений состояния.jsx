@@ -147,3 +147,34 @@ n => n + 1        5                      5 + 1 = 6
 // Вы могли заметить, что setState(5) на самом деле работает как setState(n => 5), но n не используется!
 
 //# Что произойдет, если вы замените состояние после его обновления
+// Давайте попробуем еще один пример. Как вы думаете, каким будет number в следующем рендере?
+
+<button
+  onClick={() => {
+    setNumber(number + 5);
+    setNumber(n => n + 1);
+    setNumber(42);
+  }}
+/>;
+
+//* App.js
+import { useState } from 'react';
+
+function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button
+        onClick={() => {
+          setNumber(number + 5);
+          setNumber(n => n + 1);
+          setNumber(42);
+        }}
+      >
+        Increase the number
+      </button>
+    </>
+  );
+}
