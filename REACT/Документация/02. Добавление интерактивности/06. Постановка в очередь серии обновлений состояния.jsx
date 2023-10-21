@@ -100,3 +100,32 @@ n => n + 1      2     2 + 1 = 3
 // Вот почему нажатие на "+3" в примере выше правильно увеличивает значение на 3.
 
 //# Что произойдет, если вы обновите состояние после его замены
+// Как насчет этого обработчика событий? Как вы думаете, каким будет number в следующем рендере?
+
+<button
+  onClick={() => {
+    setNumber(number + 5);
+    setNumber(n => n + 1);
+  }}
+/>;
+
+//* App.js
+import { useState } from 'react';
+
+function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button
+        onClick={() => {
+          setNumber(number + 5);
+          setNumber(n => n + 1);
+        }}
+      >
+        Increase the number
+      </button>
+    </>
+  );
+}
