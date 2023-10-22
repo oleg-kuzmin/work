@@ -33,3 +33,11 @@ export default function Gallery() {
     </>
   );
 }
+
+//# Добавление в очередь setState функции обновления состояния
+<button
+  onClick={() => {
+    setNumber(number + 5);
+    setNumber(n => n + 1);
+  }}
+/>;
