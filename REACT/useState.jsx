@@ -41,3 +41,24 @@ export default function Gallery() {
     setNumber(n => n + 1);
   }}
 />;
+
+//# Обновление состояния - объекта
+// При изменении и неглубокого копирования объекта можно использовать спред-синтаксис для сохранения предыдущих значений и ключей
+function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com',
+  });
+
+  function handleFirstNameChange(e) {
+    setPerson({
+      ...person,
+      firstName: e.target.value,
+    });
+  }
+
+  return <input value={person.firstName} onChange={handleFirstNameChange} />;
+}
+
+
