@@ -431,3 +431,49 @@ function Form() {
   );
 }
 
+//* Объекты на самом деле не являются вложенными
+// Объект, подобный этому, появляется "вложенным" в код:
+let obj = {
+  name: 'Niki de Saint Phalle',
+  artwork: {
+    title: 'Blue Nana',
+    city: 'Hamburg',
+    image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+  },
+};
+
+// Однако "вложенность" - это неточный способ представления о том, как ведут себя объекты. Когда код выполняется, не существует такого понятия, как "вложенный" объект. На самом деле вы рассматриваете два разных объекта:
+
+let obj1 = {
+  title: 'Blue Nana',
+  city: 'Hamburg',
+  image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+};
+
+let obj2 = {
+  name: 'Niki de Saint Phalle',
+  artwork: obj1,
+};
+
+// Объект obj1 не находится "внутри" obj2. Например, obj3 может "указывать" и на obj1:
+
+obj1 = {
+  title: 'Blue Nana',
+  city: 'Hamburg',
+  image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+};
+
+obj2 = {
+  name: 'Niki de Saint Phalle',
+  artwork: obj1,
+};
+
+obj3 = {
+  name: 'Copycat',
+  artwork: obj1,
+};
+
+// Если бы вы изменили obj3.artwork.city, это повлияло бы и на obj2.artwork.city, и на obj1.city. Это происходит потому, что obj3.artwork, obj2.artwork и obj1 являются одним и тем же объектом. Это трудно заметить, когда вы думаете об объектах как о "вложенных". Вместо этого они представляют собой отдельные объекты, "указывающие" друг на друга с помощью свойств.
+//* Объекты на самом деле не являются вложенными
+
+
