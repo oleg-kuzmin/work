@@ -83,5 +83,46 @@ onPointerMove={e => {
 }}
 */
 
+/* С помощью setPosition вы говорите React:
+- Замените position на этот новый объект.
+- И снова отобразите этот компонент
+*/
 
+// Обратите внимание, что красная точка теперь следует за вашим указателем, когда вы касаетесь или наводите курсор на область предварительного просмотра:
 
+//* App.js
+import { useState } from 'react';
+function MovingDot() {
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0,
+  });
+  return (
+    <div
+      onPointerMove={e => {
+        setPosition({
+          x: e.clientX,
+          y: e.clientY,
+        });
+      }}
+      style={{
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          backgroundColor: 'red',
+          borderRadius: '50%',
+          transform: `translate(${position.x}px, ${position.y}px)`,
+          left: -10,
+          top: -10,
+          width: 20,
+          height: 20,
+        }}
+      />
+    </div>
+  );
+}

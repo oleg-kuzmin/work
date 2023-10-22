@@ -2,7 +2,9 @@
 
 <div
   onPointerMove={e => {
-    position.x = e.clientX;
-    position.y = e.clientY;
+    setPosition({
+      x: e.clientX,
+      y: e.clientY,
+    });
   }}
 ></div>;
