@@ -43,7 +43,7 @@ export default function Gallery() {
 />;
 
 //# Обновление состояния - объекта
-// При изменении и неглубокого копирования объекта можно использовать спред-синтаксис для сохранения предыдущих значений и ключей
+//* При изменении и неглубокого копирования объекта можно использовать спред-синтаксис для сохранения предыдущих значений и ключей
 function Form() {
   const [person, setPerson] = useState({
     firstName: 'Barbara',
@@ -59,6 +59,30 @@ function Form() {
   }
 
   return <input value={person.firstName} onChange={handleFirstNameChange} />;
+}
+
+//* Изменение свойства сложного объекта
+function Form() {
+  const [person, setPerson] = useState({
+    name: 'Niki de Saint Phalle',
+    artwork: {
+      title: 'Blue Nana',
+      city: 'Hamburg',
+      image: 'https://i.imgur.com/Sd1AgUOm.jpg',
+    },
+  });
+
+  function handleTitleChange(e) {
+    setPerson({
+      ...person,
+      artwork: {
+        ...person.artwork,
+        title: e.target.value,
+      },
+    });
+  }
+
+  return <input value={person.artwork.title} onChange={handleTitleChange} />;
 }
 
 
