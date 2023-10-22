@@ -147,4 +147,52 @@ setPosition({
 // Мутация является проблемой только тогда, когда вы изменяете существующие объекты, которые уже находятся в состоянии. Мутация только что созданного объекта - это нормально, потому что на него пока не ссылается никакой другой код. Изменение объекта не окажет случайного влияния на что-то, что от него зависит. Это называется "локальной мутацией". Вы даже можете делать локальную мутацию во время рендеринга Очень удобно и совершенно нормально!
 //* Локальная мутация — это нормально
 
+//# Копирование объектов с синтаксисом ...
+// В предыдущем примере объект position всегда создается свежим из текущей позиции курсора. Но часто возникает необходимость включить существующие данные как часть нового создаваемого объекта. Например, вы можете захотеть обновить только одно поле в форме, но сохранить прежние значения для всех остальных полей.
+
+// Такие поля ввода не работают, потому что обработчики onChange изменяют состояние:
+
+//* App.js
+import { useState } from 'react';
+
+function Form() {
+  const [person, setPerson] = useState({
+    firstName: 'Barbara',
+    lastName: 'Hepworth',
+    email: 'bhepworth@sculpture.com',
+  });
+
+  function handleFirstNameChange(e) {
+    person.firstName = e.target.value;
+  }
+
+  function handleLastNameChange(e) {
+    person.lastName = e.target.value;
+  }
+
+  function handleEmailChange(e) {
+    person.email = e.target.value;
+  }
+
+  return (
+    <>
+      <label>
+        First name:
+        <input value={person.firstName} onChange={handleFirstNameChange} />
+      </label>
+      <label>
+        Last name:
+        <input value={person.lastName} onChange={handleLastNameChange} />
+      </label>
+      <label>
+        Email:
+        <input value={person.email} onChange={handleEmailChange} />
+      </label>
+      <p>
+        {person.firstName} {person.lastName} ({person.email})
+      </p>
+    </>
+  );
+}
+
 
