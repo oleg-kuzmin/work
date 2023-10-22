@@ -195,4 +195,22 @@ function Form() {
   );
 }
 
+// Например, эта строка мутирует состояние из прошлого рендеринга:
+person.firstName = e.target.value;
 
+// Надежный способ добиться нужного вам поведения — создать новый объект и передать его в setPerson. Но здесь вы хотите также копировать в него существующие данные, поскольку изменилось только одно из полей:
+
+setPerson({
+  firstName: e.target.value, // New first name from the input
+  lastName: person.lastName,
+  email: person.email,
+});
+
+// Вы можете использовать синтаксис ... распространение объекта, чтобы не копировать каждое свойство отдельно.
+
+setPerson({
+  ...person, // Copy the old fields
+  firstName: e.target.value, // But override this one
+});
+
+// Теперь форма работает!
