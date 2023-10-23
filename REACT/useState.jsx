@@ -90,11 +90,13 @@ import { useState } from 'react';
 
 function List() {
   const [artists, setArtists] = useState([]);
+  const insertAt = 1;
   return (
     <button
       onClick={() => {
-        setArtists([...artists, { id: nextId++, name: name }]); // добавление в конец
-        setArtists([{ id: nextId++, name: name }, ...artists]); // добавление в начало
+        setArtists([...artists, { id: nextId++, name: name }]); //* добавление в конец
+        setArtists([{ id: nextId++, name: name }, ...artists]); //* добавление в начало
+        setArtists([...artists.slice(0, insertAt), { id: nextId++, name: name }, ...artists.slice(insertAt)]); //* Добавление в другое место
       }}
     ></button>
   );
@@ -192,5 +194,3 @@ function CounterList() {
     </ul>
   );
 }
-
-
