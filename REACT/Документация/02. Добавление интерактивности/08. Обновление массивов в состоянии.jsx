@@ -117,4 +117,43 @@ setArtists([
 // Таким образом, spread может выполнять работу как push(), добавляя в конец массива, так и unshift(), добавляя в начало массива. Попробуйте это в песочнице выше!
 
 //# Удаление из массива
+// Самый простой способ удалить элемент из массива - это отфильтровать его. Другими словами, вы создадите новый массив, который не будет содержать этот элемент. Для этого используйте метод filter, например:
 
+//* App.js
+import { useState } from 'react';
+
+let initialArtists = [
+  { id: 0, name: 'Marta Colvin Andrade' },
+  { id: 1, name: 'Lamidi Olonade Fakeye' },
+  { id: 2, name: 'Louise Nevelson' },
+];
+
+function List() {
+  const [artists, setArtists] = useState(initialArtists);
+
+  return (
+    <>
+      <h1>Inspiring sculptors:</h1>
+      <ul>
+        {artists.map(artist => (
+          <li key={artist.id}>
+            {artist.name}{' '}
+            <button
+              onClick={() => {
+                setArtists(artists.filter(a => a.id !== artist.id));
+              }}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+// Несколько раз нажмите кнопку "Удалить" и посмотрите на ее обработчик нажатия.
+
+setArtists(artists.filter(a => a.id !== artist.id));
+
+// Здесь artists.filter(a => a.id !== artist.id) означает "создать массив, состоящий из тех артистов, чьи ID отличаются от artist.id". Другими словами, при нажатии кнопки "Удалить" каждого артиста из массива будет отфильтровываться этот артист, а затем запрашиваться повторный рендеринг с полученным массивом. Обратите внимание, что filter не изменяет исходный массив.

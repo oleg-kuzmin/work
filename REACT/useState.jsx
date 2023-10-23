@@ -85,12 +85,11 @@ function Form() {
   return <input value={person.artwork.title} onChange={handleTitleChange} />;
 }
 
-//# Добавление в состояние - массив
+//# Добавление элемента в состояние - массив
 import { useState } from 'react';
 
 function List() {
   const [artists, setArtists] = useState([]);
-
   return (
     <button
       onClick={() => {
@@ -101,3 +100,22 @@ function List() {
   );
 }
 
+//# Удаление элемента из состояния - массива
+import { useState } from 'react';
+
+let initialArtists = [
+  { id: 0, name: 'Marta Colvin Andrade' },
+  { id: 1, name: 'Lamidi Olonade Fakeye' },
+  { id: 2, name: 'Louise Nevelson' },
+];
+
+function List() {
+  const [artists, setArtists] = useState(initialArtists);
+  return (
+    <button
+      onClick={() => {
+        setArtists(artists.filter(a => a.id !== artist.id));
+      }}
+    ></button>
+  );
+}
