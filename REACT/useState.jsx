@@ -42,7 +42,7 @@ function Gallery() {
   }}
 />;
 
-//# Изменение значения состояния - объекта
+//# Изменение значения (состояние - объект)
 //* При изменении и неглубоком копировании объекта можно использовать спред-синтаксис для сохранения предыдущих значений и ключей
 function Form() {
   const [person, setPerson] = useState({
@@ -85,7 +85,7 @@ function Form() {
   return <input value={person.artwork.title} onChange={handleTitleChange} />;
 }
 
-//# Добавление элемента в состояние - массив
+//# Добавление элемента (состояние - массив)
 import { useState } from 'react';
 
 function List() {
@@ -102,7 +102,7 @@ function List() {
   );
 }
 
-//# Удаление элемента из состояния - массива
+//# Удаление элемента (состояниe - массив)
 import { useState } from 'react';
 
 let initialArtists = [
@@ -122,7 +122,7 @@ function List() {
   );
 }
 
-//# Преобразование элементов состояния - массива
+//# Преобразование элемента (состояние - массив)
 import { useState } from 'react';
 
 let initialShapes = [
@@ -158,7 +158,7 @@ function ShapeEditor() {
   );
 }
 
-//# Замена элементов состояния - массива
+//# Замена элемента (состояние - массив)
 import { useState } from 'react';
 
 let initialCounters = [0, 0, 0];
@@ -194,3 +194,5 @@ function CounterList() {
     </ul>
   );
 }
+
+

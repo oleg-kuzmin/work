@@ -351,4 +351,169 @@ setList(nextList);
 // Хотя nextList и list являются двумя разными массивами, nextList[0] и list[0] указывают на один и тот же объект. Поэтому, изменяя nextList[0].seen, вы также изменяете list[0].seen. Это мутация состояния, которой следует избегать! Вы можете решить эту проблему аналогично обновлению вложенных объектов JavaScript, путем копирования отдельных элементов, которые вы хотите изменить, вместо их мутации. Вот как это делается.
 
 //# Обновление объектов внутри массивов
+// Объекты не на самом деле расположены "внутри" массивов. В коде они могут казаться "внутри", но каждый объект в массиве - это отдельное значение, на которое "указывает" массив. Вот почему нужно быть осторожным при изменении вложенных полей типа list[0]. Список произведений искусства другого человека может указывать на тот же элемент массива!
 
+// При обновлении вложенного состояния необходимо создавать копии от точки, где вы хотите обновить, и до самого верхнего уровня. Давайте посмотрим, как это работает.
+
+// В этом примере два отдельных списка произведений искусства имеют одинаковое начальное состояние. Они должны быть изолированы, но из-за мутации их состояние случайно стало общим, и установка флажка в одном списке влияет на другой список:
+
+//* App.js
+import { useState } from 'react';
+
+nextId = 3;
+initialList = [
+  { id: 0, title: 'Big Bellies', seen: false },
+  { id: 1, title: 'Lunar Landscape', seen: false },
+  { id: 2, title: 'Terracotta Army', seen: true },
+];
+
+function BucketList() {
+  const [myList, setMyList] = useState(initialList);
+  const [yourList, setYourList] = useState(initialList);
+
+  function handleToggleMyList(artworkId, nextSeen) {
+    const myNextList = [...myList];
+    const artwork = myNextList.find(a => a.id === artworkId);
+    artwork.seen = nextSeen;
+    setMyList(myNextList);
+  }
+
+  function handleToggleYourList(artworkId, nextSeen) {
+    const yourNextList = [...yourList];
+    const artwork = yourNextList.find(a => a.id === artworkId);
+    artwork.seen = nextSeen;
+    setYourList(yourNextList);
+  }
+
+  return (
+    <>
+      <h1>Art Bucket List</h1>
+      <h2>My list of art to see:</h2>
+      <ItemList artworks={myList} onToggle={handleToggleMyList} />
+      <h2>Your list of art to see:</h2>
+      <ItemList artworks={yourList} onToggle={handleToggleYourList} />
+    </>
+  );
+}
+
+function ItemList({ artworks, onToggle }) {
+  return (
+    <ul>
+      {artworks.map(artwork => (
+        <li key={artwork.id}>
+          <label>
+            <input
+              type="checkbox"
+              checked={artwork.seen}
+              onChange={e => {
+                onToggle(artwork.id, e.target.checked);
+              }}
+            />
+            {artwork.title}
+          </label>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// Проблема возникает в коде, подобном этому:
+
+const myNextList = [...myList];
+const artwork = myNextList.find(a => a.id === artworkId);
+artwork.seen = nextSeen; // Problem: mutates an existing item
+setMyList(myNextList);
+
+// Хотя сам массив myNextList является новым, сами элементы являются теми же, что и в исходном массиве myList. Таким образом, изменение artwork.seen изменяет оригинальный элемент произведения искусства. Этот элемент также находится в yourList, что и вызывает ошибку. О таких ошибках сложно думать, но, к счастью, они исчезают, если вы избегаете мутирования состояния.
+
+// Вы можете использовать map для замены старого элемента на его обновленную версию без мутации состояния.
+
+setMyList(
+  myList.map(artwork => {
+    if (artwork.id === artworkId) {
+      // Create a *new* object with changes
+      return { ...artwork, seen: nextSeen };
+    } else {
+      // No changes
+      return artwork;
+    }
+  })
+);
+
+// Здесь ... - это синтаксис распространения объекта, используемый для создания копии объекта.
+
+// При таком подходе ни один из существующих элементов состояния не изменяется, и ошибка исправлена:
+
+//* App.js
+import { useState } from 'react';
+
+nextId = 3;
+initialList = [
+  { id: 0, title: 'Big Bellies', seen: false },
+  { id: 1, title: 'Lunar Landscape', seen: false },
+  { id: 2, title: 'Terracotta Army', seen: true },
+];
+
+function BucketList() {
+  const [myList, setMyList] = useState(initialList);
+  const [yourList, setYourList] = useState(initialList);
+
+  function handleToggleMyList(artworkId, nextSeen) {
+    setMyList(
+      myList.map(artwork => {
+        if (artwork.id === artworkId) {
+          // Create a *new* object with changes
+          return { ...artwork, seen: nextSeen };
+        } else {
+          // No changes
+          return artwork;
+        }
+      })
+    );
+  }
+
+  function handleToggleYourList(artworkId, nextSeen) {
+    setYourList(
+      yourList.map(artwork => {
+        if (artwork.id === artworkId) {
+          // Create a *new* object with changes
+          return { ...artwork, seen: nextSeen };
+        } else {
+          // No changes
+          return artwork;
+        }
+      })
+    );
+  }
+
+  return (
+    <>
+      <h1>Art Bucket List</h1>
+      <h2>My list of art to see:</h2>
+      <ItemList artworks={myList} onToggle={handleToggleMyList} />
+      <h2>Your list of art to see:</h2>
+      <ItemList artworks={yourList} onToggle={handleToggleYourList} />
+    </>
+  );
+}
+
+function ItemList({ artworks, onToggle }) {
+  return (
+    <ul>
+      {artworks.map(artwork => (
+        <li key={artwork.id}>
+          <label>
+            <input
+              type="checkbox"
+              checked={artwork.seen}
+              onChange={e => {
+                onToggle(artwork.id, e.target.checked);
+              }}
+            />
+            {artwork.title}
+          </label>
+        </li>
+      ))}
+    </ul>
+  );
+}
