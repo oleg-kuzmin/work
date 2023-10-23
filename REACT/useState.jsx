@@ -18,7 +18,7 @@
 import { useState } from 'react';
 import { sculptureList } from './data.js';
 
-export default function Gallery() {
+function Gallery() {
   const [index, setIndex] = useState(0);
 
   function handleClick() {
@@ -117,5 +117,41 @@ function List() {
         setArtists(artists.filter(a => a.id !== artist.id));
       }}
     ></button>
+  );
+}
+
+//# Преобразование элементов массива
+import { useState } from 'react';
+
+let initialShapes = [
+  { id: 0, type: 'circle', x: 50, y: 100 },
+  { id: 1, type: 'square', x: 150, y: 100 },
+  { id: 2, type: 'circle', x: 250, y: 100 },
+];
+
+function ShapeEditor() {
+  const [shapes, setShapes] = useState(initialShapes);
+
+  function handleClick() {
+    const nextShapes = shapes.map(shape => {
+      if (shape.type === 'square') {
+        return shape;
+      } else {
+        return {
+          ...shape,
+          y: shape.y + 50,
+        };
+      }
+    });
+    setShapes(nextShapes);
+  }
+
+  return (
+    <>
+      <button onClick={handleClick}>Move circles down!</button>
+      {shapes.map(shape => (
+        <div key={shape.id} />
+      ))}
+    </>
   );
 }
