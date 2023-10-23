@@ -42,7 +42,7 @@ export default function Gallery() {
   }}
 />;
 
-//# Обновление состояния - объекта
+//# Изменение одного значения состояния - объекта
 //* При изменении и неглубокого копирования объекта можно использовать спред-синтаксис для сохранения предыдущих значений и ключей
 function Form() {
   const [person, setPerson] = useState({
@@ -85,4 +85,19 @@ function Form() {
   return <input value={person.artwork.title} onChange={handleTitleChange} />;
 }
 
+//# Добавление в состояние - массив
+import { useState } from 'react';
+
+function List() {
+  const [artists, setArtists] = useState([]);
+
+  return (
+    <button
+      onClick={() => {
+        setArtists([...artists, { id: nextId++, name: name }]); // добавление в конец
+        setArtists([{ id: nextId++, name: name }, ...artists]); // добавление в начало
+      }}
+    ></button>
+  );
+}
 
