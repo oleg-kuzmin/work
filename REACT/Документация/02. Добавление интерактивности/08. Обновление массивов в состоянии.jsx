@@ -517,3 +517,87 @@ function ItemList({ artworks, onToggle }) {
     </ul>
   );
 }
+
+// В общем, вы должны мутировать только те объекты, которые вы только что создали. Если вы вставляете новый объект, вы можете мутировать его, но если вы имеете дело с чем-то, что уже находится в состоянии, вам нужно сделать копию.
+
+//# Пишем лаконичную логику обновления с помощью Immer
+// Обновление вложенных массивов без мутации может стать немного повторяющимся. Как и в случае с объектами:
+
+// Как правило, вам не нужно обновлять состояние глубже, чем на пару уровней. Если ваши объекты состояния очень глубокие, возможно, вы захотите перестроить их по-другому, чтобы они были плоскими.
+
+// Если вы не хотите менять структуру состояний, лучше использовать Immer, который позволяет писать, используя удобный, но мутирующий синтаксис, и заботится о создании копий за вас.
+
+// Вот пример Art Bucket List, переписанный с помощью Immer:
+
+//* App.js
+import { useState } from 'react';
+import { useImmer } from 'use-immer';
+
+nextId = 3;
+initialList = [
+  { id: 0, title: 'Big Bellies', seen: false },
+  { id: 1, title: 'Lunar Landscape', seen: false },
+  { id: 2, title: 'Terracotta Army', seen: true },
+];
+
+function BucketList() {
+  const [myList, updateMyList] = useImmer(initialList);
+  const [yourList, updateYourList] = useImmer(initialList);
+
+  function handleToggleMyList(id, nextSeen) {
+    updateMyList(draft => {
+      const artwork = draft.find(a => a.id === id);
+      artwork.seen = nextSeen;
+    });
+  }
+
+  function handleToggleYourList(artworkId, nextSeen) {
+    updateYourList(draft => {
+      const artwork = draft.find(a => a.id === artworkId);
+      artwork.seen = nextSeen;
+    });
+  }
+
+  return (
+    <>
+      <h1>Art Bucket List</h1>
+      <h2>My list of art to see:</h2>
+      <ItemList artworks={myList} onToggle={handleToggleMyList} />
+      <h2>Your list of art to see:</h2>
+      <ItemList artworks={yourList} onToggle={handleToggleYourList} />
+    </>
+  );
+}
+
+function ItemList({ artworks, onToggle }) {
+  return (
+    <ul>
+      {artworks.map(artwork => (
+        <li key={artwork.id}>
+          <label>
+            <input
+              type="checkbox"
+              checked={artwork.seen}
+              onChange={e => {
+                onToggle(artwork.id, e.target.checked);
+              }}
+            />
+            {artwork.title}
+          </label>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// Обратите внимание, что с Immer, мутация типа artwork.seen = nextSeen теперь в порядке:
+updateMyTodos(draft => {
+  const artwork = draft.find(a => a.id === artworkId);
+  artwork.seen = nextSeen;
+});
+
+// Это происходит потому, что вы не изменяете оригинальное состояние, а изменяете специальный объект draft, предоставленный Immer. Аналогично, вы можете применять такие мутирующие методы, как push() и pop() к содержимому draft.
+
+// За кулисами Immer всегда строит следующее состояние с нуля в соответствии с изменениями, которые вы внесли в draft. Это позволяет сделать обработчики событий очень лаконичными, не изменяя состояние.
+
+//# Итоги
