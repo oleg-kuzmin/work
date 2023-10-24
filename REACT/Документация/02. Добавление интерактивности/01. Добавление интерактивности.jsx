@@ -173,4 +173,41 @@ function Counter() {
   );
 }
 
+// Состояние как моментальный снимок объясняет, почему это происходит. Установка состояния запрашивает новый рендеринг, но не изменяет его в уже запущенном коде. Поэтому score продолжает быть 0 сразу после вызова setScore(score + 1).
 
+console.log(score); // 0
+setScore(score + 1); // setScore(0 + 1);
+console.log(score); // 0
+setScore(score + 1); // setScore(0 + 1);
+console.log(score); // 0
+setScore(score + 1); // setScore(0 + 1);
+console.log(score); // 0
+
+// Это можно исправить, передав обновляющую функцию при установке состояния. Обратите внимание, как замена setScore(score + 1) на setScore(s => s + 1) исправляет кнопку "+3". Это позволяет поставить в очередь несколько обновлений состояния.
+
+//* App.js
+import { useState } from 'react';
+
+function Counter() {
+  const [score, setScore] = useState(0);
+
+  function increment() {
+    setScore(s => s + 1);
+  }
+
+  return (
+    <>
+      <button onClick={() => increment()}>+1</button>
+      <button
+        onClick={() => {
+          increment();
+          increment();
+          increment();
+        }}
+      >
+        +3
+      </button>
+      <h1>Score: {score}</h1>
+    </>
+  );
+}
