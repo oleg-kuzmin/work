@@ -112,4 +112,35 @@ console.log(count); // 0
 setCount(count + 1); // Request a re-render with 1
 console.log(count); // Still 0!
 
+// Такое поведение поможет вам избежать мелких ошибок. Вот небольшое приложение для чата. Попробуйте угадать, что произойдет, если вы сначала нажмете "Отправить", а затем потом измените получателя на Боба. Чье имя появится в оповещении пять секунд спустя?
+
+//* App.js
+import { useState } from 'react';
+
+function Form() {
+  const [to, setTo] = useState('Alice');
+  const [message, setMessage] = useState('Hello');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setTimeout(() => {
+      alert(`You said ${message} to ${to}`);
+    }, 5000);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        To:{' '}
+        <select value={to} onChange={e => setTo(e.target.value)}>
+          <option value="Alice">Alice</option>
+          <option value="Bob">Bob</option>
+        </select>
+      </label>
+      <textarea placeholder="Message" value={message} onChange={e => setMessage(e.target.value)} />
+      <button type="submit">Send</button>
+    </form>
+  );
+}
+
 
