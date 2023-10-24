@@ -10,3 +10,26 @@
 - Как обновить объект в состоянии
 - Как обновить массив в состоянии
 */
+
+//# Реагирование на события
+// React позволяет добавлять обработчики событий в JSX. Обработчики событий - это ваши собственные функции, которые будут запускаться в ответ на действия пользователя, такие как нажатие, наведение курсора, фокусировка на вводе формы и так далее.
+
+// Встроенные компоненты, такие как <button>, поддерживают только встроенные события браузера, такие как onClick. Однако вы также можете создавать собственные компоненты и давать их атрибутам обработчиков событий любые имена, специфичные для конкретного приложения.
+
+//* App.js
+function App() {
+  return <Toolbar onPlayMovie={() => alert('Playing!')} onUploadImage={() => alert('Uploading!')} />;
+}
+
+function Toolbar({ onPlayMovie, onUploadImage }) {
+  return (
+    <div>
+      <Button onClick={onPlayMovie}>Play Movie</Button>
+      <Button onClick={onUploadImage}>Upload Image</Button>
+    </div>
+  );
+}
+
+function Button({ onClick, children }) {
+  return <button onClick={onClick}>{children}</button>;
+}
