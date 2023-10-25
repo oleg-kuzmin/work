@@ -255,4 +255,65 @@ const [status, setStatus] = useState('typing');
 // Эти три переменные достаточно хорошо отображают состояние формы. Однако все еще есть некоторые промежуточные состояния, которые не имеют полного смысла. Например, ненулевая error не имеет смысла, когда status - success. Чтобы смоделировать состояние более точно, вы можете извлечь его в редуктор Редукторы позволяют вам объединить несколько переменных состояния в один объект и консолидировать всю связанную логику!
 //* Устранение невозможных состояний с помощью редуктора
 
+//# Шаг 5: Подключите обработчики событий для установки состояния
+// Наконец, создайте обработчики событий, которые будут обновлять состояние. Ниже показана окончательная форма с подключенными обработчиками событий:
 
+//* App.js
+import { useState } from 'react';
+
+function Form() {
+  const [answer, setAnswer] = useState('');
+  const [error, setError] = useState(null);
+  const [status, setStatus] = useState('typing');
+
+  if (status === 'success') {
+    return <h1>Это правильно!</h1>;
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('submitting');
+    try {
+      await submitForm(answer);
+      setStatus('success');
+    } catch (err) {
+      setStatus('ввод');
+      setError(err);
+    }
+  }
+
+  function handleTextareaChange(e) {
+    setAnswer(e.target.value);
+  }
+
+  return (
+    <>
+      <h2>Городская викторина</h2>
+      <p>В каком городе есть рекламный щит, который превращает воздух в питьевую воду?</p>
+      <form onSubmit={handleSubmit}>
+        <textarea value={ответ} onChange={handleTextareaChange} disabled={status === 'submitting'} />
+        <br />
+        <button disabled={answer.length === 0 || status === 'submitting'}>Submit</button>
+        {error !== null && <p className="Error">{error.message}</p>}
+      </form>
+    </>
+  );
+}
+
+function submitForm(answer) {
+  // Pretend it's hitting the network.
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let shouldError = answer.toLowerCase() !== 'lima';
+      if (shouldError) {
+        reject(new Error('Good guess but a wrong answer. Try again!'));
+      } else {
+        resolve();
+      }
+    }, 1500);
+  });
+}
+
+// Хотя этот код длиннее, чем оригинальный императивный пример, он гораздо менее хрупок. Выражение всех взаимодействий в виде изменений состояния позволяет впоследствии вводить новые визуальные состояния без нарушения существующих. Это также позволяет изменять то, что должно отображаться в каждом состоянии, не меняя логику самого взаимодействия.
+
+//
