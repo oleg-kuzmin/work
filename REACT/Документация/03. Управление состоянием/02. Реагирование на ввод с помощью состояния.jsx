@@ -16,3 +16,79 @@
 - Если сетевой запрос не удался, появляется сообщение об ошибке, и форма снова становится открытой.
 */
 
+// В императивном программировании вышесказанное прямо соответствует тому, как вы реализуете взаимодействие. Вы должны написать точные инструкции для манипулирования пользовательским интерфейсом в зависимости от того, что только что произошло. Вот еще один способ подумать об этом: представьте, что вы едете рядом с кем-то в машине и говорите ему пошагово, куда ехать.
+
+// Они не знают, куда вы хотите поехать, они просто следуют вашим командам. (И если вы ошибетесь в указаниях, вы окажетесь не в том месте!) Это называется императивным, потому что вы должны "командовать" каждым элементом, от спиннера до кнопки, указывая компьютеру как обновить пользовательский интерфейс.
+
+// В этом примере императивного программирования пользовательского интерфейса форма построена без React. Она использует только браузерный DOM:
+
+//* index.js
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  disable(textarea);
+  disable(button);
+  show(loadingMessage);
+  hide(errorMessage);
+  try {
+    await submitForm(textarea.value);
+    show(successMessage);
+    hide(form);
+  } catch (err) {
+    show(errorMessage);
+    errorMessage.textContent = err.message;
+  } finally {
+    hide(loadingMessage);
+    enable(textarea);
+    enable(button);
+  }
+}
+
+function handleTextareaChange() {
+  if (textarea.value.length === 0) {
+    disable(button);
+  } else {
+    enable(button);
+  }
+}
+
+function hide(el) {
+  el.style.display = 'none';
+}
+
+function show(el) {
+  el.style.display = '';
+}
+
+function enable(el) {
+  el.disabled = false;
+}
+
+function disable(el) {
+  el.disabled = true;
+}
+
+function submitForm(answer) {
+  // Pretend it's hitting the network.
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (answer.toLowerCase() == 'istanbul') {
+        resolve();
+      } else {
+        reject(new Error('Good guess but a wrong answer. Try again!'));
+      }
+    }, 1500);
+  });
+}
+
+let form = document.getElementById('form');
+let textarea = document.getElementById('textarea');
+let button = document.getElementById('button');
+let loadingMessage = document.getElementById('loading');
+let errorMessage = document.getElementById('error');
+let successMessage = document.getElementById('success');
+form.onsubmit = handleFormSubmit;
+textarea.oninput = handleTextareaChange;
+
+// Манипулирование пользовательским интерфейсом в императивном порядке достаточно хорошо работает для отдельных примеров, но в более сложных системах управлять им становится экспоненциально сложнее. Представьте себе обновление страницы, полной различных форм, как эта. Добавление нового элемента пользовательского интерфейса или нового взаимодействия потребует тщательной проверки всего существующего кода, чтобы убедиться, что вы не внесли ошибку (например, забыли показать или скрыть что-то).
+
+
