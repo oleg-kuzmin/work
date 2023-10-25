@@ -159,4 +159,40 @@ function Form({
   );
 }
 
+//* Отображение множества визуальных состояний одновременно
+// Если компонент имеет много визуальных состояний, может быть удобно показать их все на одной странице:
 
+//* App.js
+import Form from './Form.js';
+let statuses = ['empty', 'typing', 'submitting', 'success', 'error'];
+function App() {
+  return (
+    <>
+      {statuses.map(status => (
+        <section key={status}>
+          <h4>Форма ({status}):</h4>
+          <Form status={status} />
+        </section>
+      ))}
+    </>
+  );
+}
+
+//* Form.js
+function Form({ status }) {
+  if (status === 'success') {
+    return <h1>That's right!</h1>;
+  }
+  return (
+    <form>
+      <textarea disabled={status === 'submitting'} />
+      <br />
+      <button disabled={status === 'empty' || status === 'submitting'}>Submit</button>
+      {status === 'error' && <p className="Error">Good guess but a wrong answer. Try again!</p>}
+    </form>
+  );
+}
+// Подобные страницы часто называют “живыми styleguides” или “storybooks”.
+//* Отображение множества визуальных состояний одновременно
+
+//# Шаг 2: Определите, что вызывает эти изменения состояния
