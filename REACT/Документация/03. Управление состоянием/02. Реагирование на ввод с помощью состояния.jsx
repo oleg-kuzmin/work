@@ -220,4 +220,14 @@ function Form({ status }) {
 const [answer, setAnswer] = useState('');
 const [error, setError] = useState(null);
 
+// Затем вам понадобится переменная состояния, представляющая одно из визуальных состояний, которое вы хотите отобразить. Обычно существует более чем один способ представить это в памяти, поэтому вам придется поэкспериментировать с этим.
 
+// Если вам трудно сразу придумать лучший способ, начните с добавления достаточного количества состояний, чтобы вы были определенно уверены, что все возможные визуальные состояния охвачены:
+
+const [isEmpty, setIsEmpty] = useState(true);
+const [isTyping, setIsTyping] = useState(false);
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [isSuccess, setIsSuccess] = useState(false);
+const [isError, setIsError] = useState(false);
+
+// Ваша первая идея, скорее всего, не будет лучшей, но это нормально - рефакторинг состояния является частью процесса!
