@@ -135,4 +135,28 @@ function Form({ status = 'empty' }) {
   );
 }
 
+// Вы можете назвать этот пропс как угодно, именование не имеет значения. Попробуйте изменить status = 'empty' на status = 'success', чтобы увидеть появление сообщения об успехе. Мокинг позволяет вам быстро проработать пользовательский интерфейс, прежде чем вы подключите какую-либо логику. Вот более подробный прототип того же компонента, все еще "управляемый" пропсом status:
+
+//* App.js
+function Form({
+  // Try 'submitting', 'error', 'success':
+  status = 'empty',
+}) {
+  if (status === 'success') {
+    return <h1>That's right!</h1>;
+  }
+  return (
+    <>
+      <h2>City quiz</h2>
+      <p>In which city is there a billboard that turns air into drinkable water?</p>
+      <form>
+        <textarea disabled={status === 'submitting'} />
+        <br />
+        <button disabled={status === 'empty' || status === 'submitting'}>Submit</button>
+        {status === 'error' && <p className="Error">Good guess but a wrong answer. Try again!</p>}
+      </form>
+    </>
+  );
+}
+
 
