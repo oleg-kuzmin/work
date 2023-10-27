@@ -209,3 +209,42 @@ function Form() {
 
 // Эта форма имеет три переменные состояния: firstName, lastName и fullName. Однако fullName является избыточной. Вы всегда можете вычислить fullName из firstName и lastName во время рендеринга, поэтому удалите ее из state..
 
+// Вот как это можно сделать:
+
+//* App.js
+import { useState } from 'react';
+
+function Form() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  const fullName = firstName + ' ' + lastName;
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+  }
+
+  return (
+    <>
+      <h2>Lets check you in</h2>
+      <label>
+        First name: <input value={firstName} onChange={handleFirstNameChange} />
+      </label>
+      <label>
+        Last name: <input value={lastName} onChange={handleLastNameChange} />
+      </label>
+      <p>
+        Your ticket will be issued to: <b>{fullName}</b>
+      </p>
+    </>
+  );
+}
+
+// Здесь fullName не является не переменной состояния. Вместо этого она вычисляется во время рендеринга:
+const fullName = firstName + ' ' + lastName;
+
+// В результате обработчикам изменений не нужно делать ничего особенного, чтобы обновить его. Когда вы вызываете setFirstName или setLastName, вы вызываете повторный рендеринг, а затем следующее fullName будет вычислено на основе свежих данных.
