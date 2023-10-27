@@ -72,3 +72,100 @@ function MovingDot() {
 
 // Еще один случай, когда вы группируете данные в объект или массив, - это когда вы не знаете, сколько частей состояния вам понадобится. Например, это полезно, когда у вас есть форма, в которой пользователь может добавлять пользовательские поля.
 
+// Если ваша переменная состояния является объектом, помните, что вы не можете обновить только одно поле в нем без явного копирования других полей. Например, вы не можете сделать setPosition({ x: 100 }) в приведенном выше примере, потому что у него не будет свойства y вообще! Вместо этого, если бы вы хотели установить только x, вы бы либо сделали setPosition({ ...position, x: 100 }), либо разделили их на две переменные состояния и сделали setX(100).
+
+//# Избегайте противоречий в состоянии
+// Вот форма обратной связи с отелем с переменными состояния isSending и isSent:
+
+//* App.js
+import { useState } from 'react';
+
+function FeedbackForm() {
+  const [text, setText] = useState('');
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setIsSending(true);
+    await sendMessage(text);
+    setIsSending(false);
+    setIsSent(true);
+  }
+
+  if (isSent) {
+    return <h1>Thanks for feedback!</h1>;
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <p>How was your stay at The Prancing Pony?</p>
+      <textarea disabled={isSending} value={text} onChange={e => setText(e.target.value)} />
+      <br />
+      <button disabled={isSending} type="submit">
+        Send
+      </button>
+      {isSending && <p>Sending...</p>}
+    </form>
+  );
+}
+
+// Pretend to send a message.
+function sendMessage(text) {
+  return new Promise(resolve => {
+    setTimeout(resolve, 2000);
+  });
+}
+
+// Хотя этот код работает, он оставляет дверь открытой для "невозможных" состояний. Например, если вы забудете вызвать setIsSent и setIsSending вместе, вы можете оказаться в ситуации, когда одновременно isSending и isSent будут true. Чем сложнее ваш компонент, тем труднее понять, что произошло.
+
+// Поскольку isSending и isSent никогда не должны быть true одновременно, лучше заменить их одной переменной состояния status, которая может принимать одно из трех допустимых состояний: 'typing' (начальное), 'sending' и 'sent':
+
+//* App.js
+import { useState } from 'react';
+
+function FeedbackForm() {
+  const [text, setText] = useState('');
+  const [status, setStatus] = useState('typing');
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('sending');
+    await sendMessage(text);
+    setStatus('sent');
+  }
+
+  const isSending = status === 'sending';
+  const isSent = status === 'sent';
+
+  if (isSent) {
+    return <h1>Thanks for feedback!</h1>;
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <p>How was your stay at The Prancing Pony?</p>
+      <textarea disabled={isSending} value={text} onChange={e => setText(e.target.value)} />
+      <br />
+      <button disabled={isSending} type="submit">
+        Send
+      </button>
+      {isSending && <p>Sending...</p>}
+    </form>
+  );
+}
+
+// Pretend to send a message.
+function sendMessage(text) {
+  return new Promise(resolve => {
+    setTimeout(resolve, 2000);
+  });
+}
+
+// Вы все еще можете объявить некоторые константы для удобства чтения:
+const isSending = status === 'sending';
+const isSent = status === 'sent';
+
+// Но они не являются переменными состояния, поэтому вам не нужно беспокоиться о том, что они будут рассинхронизированы друг с другом.
+
+//# Избегайте избыточного состояния
