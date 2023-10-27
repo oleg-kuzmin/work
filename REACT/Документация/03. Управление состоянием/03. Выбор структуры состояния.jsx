@@ -21,3 +21,51 @@
 // Теперь давайте посмотрим, как эти принципы применяются на практике.
 
 //# Состояние, связанное с группой
+// Иногда вы можете сомневаться, использовать ли одну или несколько переменных состояния.
+
+// Стоит ли вам это делать?
+const [x, setX] = useState(0);
+const [y, setY] = useState(0);
+
+// Или это?
+const [position, setPosition] = useState({ x: 0, y: 0 });
+
+// Технически, вы можете использовать любой из этих подходов. Но если некоторые две переменные состояния всегда изменяются вместе, хорошей идеей будет объединить их в одну переменную состояния. Тогда вы не забудете всегда синхронизировать их, как в этом примере, где перемещение курсора обновляет обе координаты красной точки:
+
+//* App.js
+import { useState } from 'react';
+
+function MovingDot() {
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0,
+  });
+  return (
+    <div
+      onPointerMove={e => {
+        setPosition({
+          x: e.clientX,
+          y: e.clientY,
+        });
+      }}
+      style={{
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          backgroundColor: 'red',
+          borderRadius: '50%',
+          transform: `translate(${position.x}px, ${position.y}px)`,
+          left: -10,
+          top: -10,
+          width: 20,
+          height: 20,
+        }}
+      />
+    </div>
+  );
+}
