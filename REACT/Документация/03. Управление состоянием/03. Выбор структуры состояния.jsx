@@ -449,3 +449,201 @@ function Menu() {
 // Теперь, если вы отредактируете выбранный элемент, сообщение ниже будет немедленно обновлено. Это происходит потому, что setItems вызывает повторный рендеринг, и items.find(...) найдет элемент с обновленным заголовком. Вам не нужно было хранить выбранный элемент в состоянии, потому что только выбранный ID является существенным. Остальное можно вычислить во время рендеринга.
 
 //# Избегайте глубоко вложенного состояния
+// Представьте себе план путешествия, состоящий из планет, континентов и стран. У вас может возникнуть соблазн структурировать его состояние с помощью вложенных объектов и массивов, как в этом примере:
+
+//* places.js
+export const initialTravelPlan = {
+  id: 0,
+  title: '(Root)',
+  childPlaces: [
+    {
+      id: 1,
+      title: 'Earth',
+      childPlaces: [
+        {
+          id: 2,
+          title: 'Africa',
+          childPlaces: [
+            {
+              id: 3,
+              title: 'Botswana',
+              childPlaces: [],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+//* App.js
+import { useState } from 'react';
+import { initialTravelPlan } from './places.js';
+
+function PlaceTree({ place }) {
+  const childPlaces = place.childPlaces;
+  return (
+    <li>
+      {place.title}
+      {childPlaces.length > 0 && (
+        <ol>
+          {childPlaces.map(place => (
+            <PlaceTree key={place.id} place={place} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+  const planets = plan.childPlaces;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planets.map(place => (
+          <PlaceTree key={place.id} place={place} />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+// Теперь предположим, что вы хотите добавить кнопку для удаления места, которое вы уже посетили. Как бы вы это сделали? Обновление состояния вложенных объектов включает создание копий объектов по всей цепочке вверх от той части, которая изменилась. Удаление глубоко вложенного места потребует копирования всей цепочки родительских мест. Такой код может быть очень многословным.
+
+// Если состояние слишком вложенное, чтобы его можно было легко обновить, подумайте о том, чтобы сделать его "плоским". Вот один из способов реструктуризации этих данных. Вместо древовидной структуры, где каждое место имеет массив его дочерних мест, вы можете сделать так, чтобы каждое место содержало массив идентификаторов дочерних мест. Затем хранить отображение от каждого идентификатора места к соответствующему месту.
+
+// Такая реструктуризация данных может напомнить вам таблицу базы данных:
+
+//* places.js
+initialTravelPlan = {
+  0: {
+    id: 0,
+    title: '(Root)',
+    childIds: [1, 43, 47],
+  },
+  1: {
+    id: 1,
+    title: 'Earth',
+    childIds: [2, 10, 19, 27, 35],
+  },
+  2: {
+    id: 2,
+    title: 'Africa',
+    childIds: [3, 4, 5, 6, 7, 8, 9],
+  },
+  3: {
+    id: 3,
+    title: 'Botswana',
+    childIds: [],
+  },
+};
+
+//* App.js
+import { useState } from 'react';
+import { initialTravelPlan } from './places.js';
+
+function PlaceTree({ id, placesById }) {
+  const place = placesById[id];
+  const childIds = place.childIds;
+  return (
+    <li>
+      {place.title}
+      {childIds.length > 0 && (
+        <ol>
+          {childIds.map(childId => (
+            <PlaceTree key={childId} id={childId} placesById={placesById} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
+
+function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+  const root = plan[0];
+  const planetIds = root.childIds;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planetIds.map(id => (
+          <PlaceTree key={id} id={id} placesById={plan} />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+// Теперь, когда состояние "плоское" (также известное как "нормализованное"), обновлять вложенные элементы стало проще..
+
+/* Чтобы удалить место, теперь вам нужно обновить только два уровня состояния:
+- Обновленная версия родительского места должна исключить удаленный ID из своего массива childIds.
+- Обновленная версия корневого объекта "table" должна включать обновленную версию родительского места.
+*/
+
+// Вот пример того, как это можно сделать:
+
+//* App.js
+import { useState } from 'react';
+import { initialTravelPlan } from './places.js';
+
+function TravelPlan() {
+  const [plan, setPlan] = useState(initialTravelPlan);
+
+  function handleComplete(parentId, childId) {
+    const parent = plan[parentId];
+    // Create a new version of the parent place
+    // that doesn't include this child ID.
+    const nextParent = {
+      ...parent,
+      childIds: parent.childIds.filter(id => id !== childId),
+    };
+    // Update the root state object...
+    setPlan({
+      ...plan,
+      // ...so that it has the updated parent.
+      [parentId]: nextParent,
+    });
+  }
+
+  const root = plan[0];
+  const planetIds = root.childIds;
+  return (
+    <>
+      <h2>Places to visit</h2>
+      <ol>
+        {planetIds.map(id => (
+          <PlaceTree key={id} id={id} parentId={0} placesById={plan} onComplete={handleComplete} />
+        ))}
+      </ol>
+    </>
+  );
+}
+
+function PlaceTree({ id, parentId, placesById, onComplete }) {
+  const place = placesById[id];
+  const childIds = place.childIds;
+  return (
+    <li>
+      {place.title}
+      <button
+        onClick={() => {
+          onComplete(parentId, id);
+        }}
+      >
+        Complete
+      </button>
+      {childIds.length > 0 && (
+        <ol>
+          {childIds.map(childId => (
+            <PlaceTree key={childId} id={childId} parentId={id} placesById={placesById} onComplete={onComplete} />
+          ))}
+        </ol>
+      )}
+    </li>
+  );
+}
