@@ -373,4 +373,79 @@ function Menu() {
 
 // Обратите внимание, что если вы сначала нажмете "Выбрать" на элементе, а затем отредактируете его, ввод обновляется, но метка внизу не отражает правки.Это потому, что у вас дублируется состояние, и вы забыли обновить selectedItem.
 
+// Хотя вы могли бы обновить selectedItem тоже, проще устранить дублирование. В этом примере вместо объекта selectedItem (который создает дублирование с объектами внутри items), вы храните selectedId в состоянии, а потом получаете selectedItem путем поиска элемента с этим ID в массиве items:
 
+//* App.js
+import { useState } from 'react';
+
+initialItems = [
+  { title: 'pretzels', id: 0 },
+  { title: 'crispy seaweed', id: 1 },
+  { title: 'granola bar', id: 2 },
+];
+
+function Menu() {
+  const [items, setItems] = useState(initialItems);
+  const [selectedId, setSelectedId] = useState(0);
+
+  const selectedItem = items.find(item => item.id === selectedId);
+
+  function handleItemChange(id, e) {
+    setItems(
+      items.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            title: e.target.value,
+          };
+        } else {
+          return item;
+        }
+      })
+    );
+  }
+
+  return (
+    <>
+      <h2>What's your travel snack?</h2>
+      <ul>
+        {items.map((item, index) => (
+          <li key={item.id}>
+            <input
+              value={item.title}
+              onChange={e => {
+                handleItemChange(item.id, e);
+              }}
+            />{' '}
+            <button
+              onClick={() => {
+                setSelectedId(item.id);
+              }}
+            >
+              Choose
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p>You picked {selectedItem.title}.</p>
+    </>
+  );
+}
+
+// (В качестве альтернативы можно удерживать выбранный индекс в состоянии).
+
+/* Раньше состояние дублировалось следующим образом:
+- items = [{ id: 0, title: 'pretzels'}, ...].
+- selectedItem = { id: 0, title: 'pretzels'}.
+*/
+
+/* Но после изменения это выглядит следующим образом:
+- items = [{ id: 0, title: 'pretzels'}, ...]
+- selectedId = 0.
+*/
+
+// Дублирование исчезло, и вы сохранили только основное состояние!
+
+// Теперь, если вы отредактируете выбранный элемент, сообщение ниже будет немедленно обновлено. Это происходит потому, что setItems вызывает повторный рендеринг, и items.find(...) найдет элемент с обновленным заголовком. Вам не нужно было хранить выбранный элемент в состоянии, потому что только выбранный ID является существенным. Остальное можно вычислить во время рендеринга.
+
+//# Избегайте глубоко вложенного состояния
