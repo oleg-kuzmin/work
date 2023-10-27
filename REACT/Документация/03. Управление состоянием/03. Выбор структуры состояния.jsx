@@ -169,3 +169,43 @@ const isSent = status === 'sent';
 // Но они не являются переменными состояния, поэтому вам не нужно беспокоиться о том, что они будут рассинхронизированы друг с другом.
 
 //# Избегайте избыточного состояния
+// Если вы можете вычислить некоторую информацию из пропсов компонента или его существующих переменных состояния во время рендеринга, вам не следует помещать эту информацию в состояние компонента.
+
+// Например, возьмем эту форму. Она работает, но можете ли вы найти в ней избыточное состояние?
+
+//* App.js
+import { useState } from 'react';
+
+function Form() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [fullName, setFullName] = useState('');
+
+  function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+    setFullName(e.target.value + ' ' + lastName);
+  }
+
+  function handleLastNameChange(e) {
+    setLastName(e.target.value);
+    setFullName(firstName + ' ' + e.target.value);
+  }
+
+  return (
+    <>
+      <h2>Lets check you in</h2>
+      <label>
+        First name: <input value={firstName} onChange={handleFirstNameChange} />
+      </label>
+      <label>
+        Last name: <input value={lastName} onChange={handleLastNameChange} />
+      </label>
+      <p>
+        Your ticket will be issued to: <b>{fullName}</b>
+      </p>
+    </>
+  );
+}
+
+// Эта форма имеет три переменные состояния: firstName, lastName и fullName. Однако fullName является избыточной. Вы всегда можете вычислить fullName из firstName и lastName во время рендеринга, поэтому удалите ее из state..
+
