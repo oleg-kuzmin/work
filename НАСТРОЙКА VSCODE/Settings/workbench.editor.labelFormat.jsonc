@@ -1,0 +1,4 @@
+{
+  // Что отображается на вкладке
+  "workbench.editor.labelFormat": "default"
+}

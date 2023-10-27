@@ -1,0 +1,4 @@
+{
+  // Размер вкладок
+  "workbench.editor.tabSizing": "fixed"
+}
