@@ -135,4 +135,41 @@ const [activeIndex, setActiveIndex] = useState(0);
   </Panel>
 </>;
 
+// Теперь <button> внутри Panel будет использовать пропс onShow в качестве обработчика события щелчка:
 
+//* App.js
+import { useState } from 'react';
+
+function Accordion() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  return (
+    <>
+      <h2>Almaty, Kazakhstan</h2>
+      <Panel title="About" isActive={activeIndex === 0} onShow={() => setActiveIndex(0)}>
+        With a population of about 2 million, Almaty is Kazakhstan's largest city. From 1929 to 1997, it was its capital
+        city.
+      </Panel>
+      <Panel title="Etymology" isActive={activeIndex === 1} onShow={() => setActiveIndex(1)}>
+        The name comes from <span lang="kk-KZ">алма</span>, the Kazakh word for "apple" and is often translated as "full
+        of apples". In fact, the region surrounding Almaty is thought to be the ancestral home of the apple, and the
+        wild <i lang="la">Malus sieversii</i> is considered a likely candidate for the ancestor of the modern domestic
+        apple.
+      </Panel>
+    </>
+  );
+}
+
+function Panel({ title, children, isActive, onShow }) {
+  return (
+    <section className="panel">
+      <h3>{title}</h3>
+      {isActive ? <p>{children}</p> : <button onClick={onShow}>Show</button>}
+    </section>
+  );
+}
+
+// Это завершает подъем состояния вверх! Перемещение состояния в общий родительский компонент позволило скоординировать две панели. Использование активного индекса вместо двух флагов "показано" обеспечило, что только одна панель активна в данный момент времени. А передача обработчика события дочернему компоненту позволила ему изменять состояние родительского компонента.
+
+// Изначально activeIndex Accordion равен 0, поэтому первая Panel получает isActive = true.
+
+// Когда состояние Accordion activeIndex меняется на 1, вторая Panel получает isActive = true вместо этого
