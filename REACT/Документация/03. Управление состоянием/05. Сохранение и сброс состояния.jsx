@@ -254,3 +254,111 @@ function Counter({ isFancy }) {
 //! Внимание
 
 //# Разные компоненты в одной и той же позиции сбрасывают состояние
+// В этом примере установка флажка заменит <Counter> на <p>:
+
+//* App.js
+import { useState } from 'react';
+
+function App() {
+  const [isPaused, setIsPaused] = useState(false);
+  return (
+    <div>
+      {isPaused ? <p>See you later!</p> : <Counter />}
+      <label>
+        <input
+          type="checkbox"
+          checked={isPaused}
+          onChange={e => {
+            setIsPaused(e.target.checked);
+          }}
+        />
+        Take a break
+      </label>
+    </div>
+  );
+}
+
+function Counter() {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+
+  return (
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+      <h1>{score}</h1>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
+    </div>
+  );
+}
+
+// Здесь вы переключаетесь между различными типами компонентов в одной и той же позиции. Изначально первый дочерний компонент <div> содержал Counter. Но когда вы поменяли местами p, React удалил Counter из дерева пользовательского интерфейса и уничтожил его состояние.
+
+// Когда Counter меняется на p, Counter удаляется, а p добавляется
+
+// При обратном переключении p удаляется, а Counter добавляется
+
+// Также, когда вы отображаете другой компонент в той же позиции, он сбрасывает состояние всего своего поддерева. Чтобы увидеть, как это работает, увеличьте счетчик, а затем установите флажок:
+
+//* App.js
+import { useState } from 'react';
+
+function App() {
+  const [isFancy, setIsFancy] = useState(false);
+  return (
+    <div>
+      {isFancy ? (
+        <div>
+          <Counter isFancy={true} />
+        </div>
+      ) : (
+        <section>
+          <Counter isFancy={false} />
+        </section>
+      )}
+      <label>
+        <input
+          type="checkbox"
+          checked={isFancy}
+          onChange={e => {
+            setIsFancy(e.target.checked);
+          }}
+        />
+        Use fancy styling
+      </label>
+    </div>
+  );
+}
+
+function Counter({ isFancy }) {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+  if (isFancy) {
+    className += ' fancy';
+  }
+
+  return (
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+      <h1>{score}</h1>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
+    </div>
+  );
+}
+
+// Состояние счетчика сбрасывается, когда вы нажимаете на флажок. Хотя вы отображаете Counter, первый ребенок div меняется с div на секцию. Когда дочерний div был удален из DOM, все дерево под ним (включая Counter и его состояние) также было уничтожено.
+
+// Когда section меняется на div, section удаляется и добавляется новый div.
+
+// При обратном переключении, div удаляется, а новый section добавляется
+
+// Как правило, если вы хотите сохранить состояние между повторными рендерами, структура дерева должна "совпадать" от одного рендера к другому. Если структура отличается, состояние будет уничтожено, потому что React уничтожает состояние, когда удаляет компонент из дерева.
+
+
