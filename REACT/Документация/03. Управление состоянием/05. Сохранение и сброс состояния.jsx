@@ -86,4 +86,48 @@ function Counter() {
   );
 }
 
+// Как вы можете видеть, при обновлении одного счетчика обновляется только состояние этого компонента:
+
+// React будет сохранять состояние до тех пор, пока вы рендерите один и тот же компонент в одной и той же позиции. Чтобы увидеть это, увеличьте оба счетчика, затем удалите второй компонент, сняв флажок "Render the second counter", а затем добавьте его обратно, снова установив флажок:
+
+//* App.js
+import { useState } from 'react';
+
+function App() {
+  const [showB, setShowB] = useState(true);
+  return (
+    <div>
+      <Counter />
+      {showB && <Counter />}
+      <label>
+        <input
+          type="checkbox"
+          checked={showB}
+          onChange={e => {
+            setShowB(e.target.checked);
+          }}
+        />
+        Render the second counter
+      </label>
+    </div>
+  );
+}
+
+function Counter() {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+
+  return (
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+      <h1>{score}</h1>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
+    </div>
+  );
+}
+
 
