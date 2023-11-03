@@ -15,3 +15,40 @@
 // React также использует древовидные структуры для управления и моделирования пользовательского интерфейса. React создает деревья пользовательского интерфейса из вашего JSX. Затем React DOM обновляет элементы DOM браузера в соответствии с этим деревом пользовательского интерфейса. (React Native переводит эти деревья в элементы, специфичные для мобильных платформ).
 
 // Из компонентов React создает дерево UI, которое React DOM использует для рендеринга DOM
+
+//# Состояние привязано к позиции в дереве
+// Когда вы передаете компоненту состояние, вы можете подумать, что это состояние "живет" внутри компонента. Но на самом деле состояние хранится внутри React. React связывает каждую часть состояния, которую он хранит, с нужным компонентом по тому, где этот компонент находится в дереве пользовательского интерфейса.
+
+// Здесь есть только один JSX-тег <Counter />, но он отображается в двух разных позициях:
+
+//* App.js
+import { useState } from 'react';
+
+function App() {
+  const counter = <Counter />;
+  return (
+    <div>
+      {counter}
+      {counter}
+    </div>
+  );
+}
+
+function Counter() {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+
+  return (
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+      <h1>{score}</h1>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
+    </div>
+  );
+}
+
+
