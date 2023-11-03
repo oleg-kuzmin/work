@@ -1,0 +1,3 @@
+// Переводчик
+
+Vscode Google Translate (funkyremi)

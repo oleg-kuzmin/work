@@ -15,7 +15,6 @@
 -PostCSS Language Support                     (csstools)                 // подсветка PostCSS
 -Import Cost                                  (Wix)                      // покажет вес импорта (полезно для библиотек)
 -Project Manager                              (Alessandro Fragnani)      // для нескольких проектов
--Vscode Google Translate                      (funkyremi)                // переводчик
 -html to JSX                                  (Riaz Laskar)              // преобразование html в jsx
 -EditorConfig for VS Code                     (EditorConfig)             // EditorConfig
 -GitLens — Git supercharged                   (GitKraken)                // Git
