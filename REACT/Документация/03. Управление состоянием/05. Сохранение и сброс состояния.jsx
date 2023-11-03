@@ -551,3 +551,133 @@ function Counter({ person }) {
 // Помните, что ключи не являются глобально уникальными. Они определяют только позицию в пределах родителя.
 
 //# Сброс формы с помощью ключа
+// Сброс состояния с помощью ключа особенно полезен при работе с формами.
+
+// В этом приложении для чата компонент <Chat> содержит состояние ввода текста:
+
+//* Chat.js
+import { useState } from 'react';
+
+function Chat({ contact }) {
+  const [text, setText] = useState('');
+  return (
+    <section className="chat">
+      <textarea value={text} placeholder={'Chat to ' + contact.name} onChange={e => setText(e.target.value)} />
+      <br />
+      <button>Send to {contact.email}</button>
+    </section>
+  );
+}
+
+//* ContactList.js
+function ContactList({ selectedContact, contacts, onSelect }) {
+  return (
+    <section className="contact-list">
+      <ul>
+        {contacts.map(contact => (
+          <li key={contact.id}>
+            <button
+              onClick={() => {
+                onSelect(contact);
+              }}
+            >
+              {contact.name}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+//* App.js
+import { useState } from 'react';
+import Chat from './Chat.js';
+import ContactList from './ContactList.js';
+
+function Messenger() {
+  const [to, setTo] = useState(contacts[0]);
+  return (
+    <div>
+      <ContactList contacts={contacts} selectedContact={to} onSelect={contact => setTo(contact)} />
+      <Chat contact={to} />
+    </div>
+  );
+}
+
+const contacts = [
+  { id: 0, name: 'Taylor', email: 'taylor@mail.com' },
+  { id: 1, name: 'Alice', email: 'alice@mail.com' },
+  { id: 2, name: 'Bob', email: 'bob@mail.com' },
+];
+
+// Попробуйте ввести что-нибудь в поле ввода, а затем нажмите "Алиса" или "Боб", чтобы выбрать другого адресата. Вы заметите, что состояние ввода сохраняется, потому что <Chat> отображается в той же позиции в дереве.
+
+// В многих приложениях это может быть желаемым поведением, но не в приложении чата! Вы же не хотите, чтобы пользователь отправил сообщение, которое он уже набрал, не тому человеку из-за случайного нажатия. Чтобы исправить это, добавьте key:
+
+<Chat key={to.id} contact={to} />;
+
+// Это гарантирует, что при выборе другого получателя компонент Chat будет воссоздан с нуля, включая все состояния в дереве под ним. React также создаст элементы DOM заново, вместо того чтобы использовать их повторно.
+
+// Теперь переключение получателя всегда очищает текстовое поле:
+
+//* Chat.js
+import { useState } from 'react';
+
+function Chat({ contact }) {
+  const [text, setText] = useState('');
+  return (
+    <section className="chat">
+      <textarea value={text} placeholder={'Chat to ' + contact.name} onChange={e => setText(e.target.value)} />
+      <br />
+      <button>Send to {contact.email}</button>
+    </section>
+  );
+}
+
+//* ContactList.js
+function ContactList({ selectedContact, contacts, onSelect }) {
+  return (
+    <section className="contact-list">
+      <ul>
+        {contacts.map(contact => (
+          <li key={contact.id}>
+            <button
+              onClick={() => {
+                onSelect(contact);
+              }}
+            >
+              {contact.name}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+//* App.js
+import { useState } from 'react';
+import Chat from './Chat.js';
+import ContactList from './ContactList.js';
+
+function Messenger() {
+  const [to, setTo] = useState(contacts[0]);
+  return (
+    <div>
+      <ContactList contacts={contacts} selectedContact={to} onSelect={contact => setTo(contact)} />
+      <Chat key={to.id} contact={to} />
+    </div>
+  );
+}
+
+contacts = [
+  { id: 0, name: 'Taylor', email: 'taylor@mail.com' },
+  { id: 1, name: 'Alice', email: 'alice@mail.com' },
+  { id: 2, name: 'Bob', email: 'bob@mail.com' },
+];
+
+//* Сохранение состояния для удаленных компонентов
+
+
+//* Сохранение состояния для удаленных компонентов
