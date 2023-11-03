@@ -1,11 +1,11 @@
 //! Warning findDOMNode is deprecated in StrictMode (CSSTransition)
 
-//# Пример
-// 1. Нужно добавить хук useRef
+//# Решение
+//* 1. Нужно добавить хук useRef
 import { useRef } from 'react';
 
-// 2. Родителю CSSTransition nodeRef={nodeRef}
-// 3. Дочернему элементу ref={nodeRef}
+//* 2. Родителю CSSTransition nodeRef={nodeRef}
+//* 3. Дочернему элементу ref={nodeRef}
 function Card() {
   const nodeRef = useRef(null);
 
