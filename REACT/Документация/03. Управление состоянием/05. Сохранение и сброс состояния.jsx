@@ -51,4 +51,39 @@ function Counter() {
   );
 }
 
+// Это два отдельных счетчика, потому что каждый из них отображается в своей позиции в дереве. Обычно вам не нужно думать об этих позициях, чтобы использовать React, но может быть полезно понять, как это работает.
+
+// В React каждый компонент на экране имеет полностью изолированное состояние. Например, если вы отобразите два компонента Counter рядом друг с другом, каждый из них получит свои собственные, независимые состояния score и hover.
+
+// Попробуйте нажать на оба счетчика и заметите, что они не влияют друг на друга:
+
+//* App.js
+import { useState } from 'react';
+
+function App() {
+  return (
+    <div>
+      <Counter />
+      <Counter />
+    </div>
+  );
+}
+
+function Counter() {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+
+  return (
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+      <h1>{score}</h1>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
+    </div>
+  );
+}
+
 
