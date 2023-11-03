@@ -444,3 +444,53 @@ function Counter({ person }) {
 1. Рендерить компоненты в разных позициях
 2. Придать каждому компоненту явную идентичность с помощью key.
 */
+
+//# Вариант 1: Рендеринг компонента в разных позициях
+// Если вы хотите, чтобы эти два Counter были независимыми, вы можете отобразить их в двух разных позициях:
+
+//* App.js
+import { useState } from 'react';
+
+function Scoreboard() {
+  const [isPlayerA, setIsPlayerA] = useState(true);
+  return (
+    <div>
+      {isPlayerA && <Counter person="Taylor" />}
+      {!isPlayerA && <Counter person="Sarah" />}
+      <button
+        onClick={() => {
+          setIsPlayerA(!isPlayerA);
+        }}
+      >
+        Next player!
+      </button>
+    </div>
+  );
+}
+
+function Counter({ person }) {
+  const [score, setScore] = useState(0);
+  const [hover, setHover] = useState(false);
+
+  let className = 'counter';
+  if (hover) {
+    className += ' hover';
+  }
+
+  return (
+    <div className={className} onPointerEnter={() => setHover(true)} onPointerLeave={() => setHover(false)}>
+      <h1>
+        {person}'s score: {score}
+      </h1>
+      <button onClick={() => setScore(score + 1)}>Add one</button>
+    </div>
+  );
+}
+
+// Изначально isPlayerA имеет значение true. Поэтому первая позиция содержит состояние Counter, а вторая пуста.
+
+// Когда вы нажимаете кнопку "Следующий игрок", первая позиция очищается, но вторая теперь содержит Counter.
+
+// Состояние каждого Counter уничтожается каждый раз, когда он удаляется из DOM. Вот почему они обнуляются каждый раз, когда вы нажимаете на кнопку.
+
+// Это решение удобно, когда у вас есть только несколько независимых компонентов, отображаемых в одном месте. В этом примере их всего два, поэтому нет необходимости рендерить оба отдельно в JSX.
