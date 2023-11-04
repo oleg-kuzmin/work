@@ -196,4 +196,108 @@ function tasksReducer(tasks, action) {
 
 // Поскольку функция reducer принимает состояние (tasks) в качестве аргумента, вы можете объявить его вне вашего компонента. Это уменьшает уровень отступов и может сделать ваш код более легким для чтения.
 
-// 
+// В приведенном выше коде используются операторы if/else, но принято использовать операторы switch внутри редукторов. Результат тот же, но читать операторы switch с первого взгляда может быть проще.
+
+// Мы будем использовать их в остальной части этой документации следующим образом:
+
+function tasksReducer(tasks, action) {
+  switch (action.type) {
+    case 'added': {
+      return [
+        ...tasks,
+        {
+          id: action.id,
+          text: action.text,
+          done: false,
+        },
+      ];
+    }
+    case 'changed': {
+      return tasks.map(t => {
+        if (t.id === action.task.id) {
+          return action.task;
+        } else {
+          return t;
+        }
+      });
+    }
+    case 'deleted': {
+      return tasks.filter(t => t.id !== action.id);
+    }
+    default: {
+      throw Error('Unknown action: ' + action.type);
+    }
+  }
+}
+
+// Мы рекомендуем заключать каждый блок case в фигурные скобки { и }, чтобы переменные, объявленные внутри разных case, не конфликтовали друг с другом. Кроме того, блок case обычно должен заканчиваться return. Если вы забудете return, код "провалится" в следующий case, что может привести к ошибкам!
+
+// Если вы еще не освоились с операторами switch, то вполне можно использовать if/else.
+
+//* Почему редукторы называются именно так?
+// Хотя редукторы могут "уменьшить" количество кода в вашем компоненте, на самом деле они названы в честь операции reduce(), которую вы можете выполнять над массивами.
+
+// Операция reduce() позволяет вам взять массив и "накопить" одно значение из многих:
+const arr = [1, 2, 3, 4, 5];
+const sum = arr.reduce((result, number) => result + number); // 1 + 2 + 3 + 4 + 5
+
+// Функция, которую вы передаете в reduce, известна как "reducer". Она принимает результат на данный момент и текущий элемент, а затем возвращает следующий результат. React reducers - пример той же идеи: они принимают состояние на данный момент и действие, а возвращают следующее состояние. Таким образом, они накапливают действия со временем в состояние.
+
+// Вы даже можете использовать метод reduce() с initialState и массивом actions для вычисления конечного состояния, передав ему свою функцию reducer:
+
+//* taskReducer.js
+function tasksReducer(tasks, action) {
+  switch (action.type) {
+    case 'added': {
+      return [
+        ...tasks,
+        {
+          id: action.id,
+          text: action.text,
+          done: false,
+        },
+      ];
+    }
+    case 'changed': {
+      return tasks.map(t => {
+        if (t.id === action.task.id) {
+          return action.task;
+        } else {
+          return t;
+        }
+      });
+    }
+    case 'deleted': {
+      return tasks.filter(t => t.id !== action.id);
+    }
+    default: {
+      throw Error('Unknown action: ' + action.type);
+    }
+  }
+}
+
+//* index.js
+import tasksReducer from './tasksReducer.js';
+
+let initialState = [];
+let actions = [
+  { type: 'added', id: 1, text: 'Visit Kafka Museum' },
+  { type: 'added', id: 2, text: 'Watch a puppet show' },
+  { type: 'deleted', id: 1 },
+  { type: 'added', id: 3, text: 'Lennon Wall pic' },
+];
+
+let finalState = actions.reduce(tasksReducer, initialState);
+
+const output = document.getElementById('output');
+output.textContent = JSON.stringify(finalState, null, 2);
+
+// Скорее всего, вам не понадобится делать это самостоятельно, но это похоже на то, что делает React!
+//* Почему редукторы называются именно так?
+
+//# Шаг 3: Используйте редуктор из вашего компонента
+// Наконец, вам нужно подключить tasksReducer к вашему компоненту. Импортируйте хук useReducer из React:
+
+import { useReducer } from 'react';
+
+
