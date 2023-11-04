@@ -1,14 +1,23 @@
 //# useRef
-// useRef - это хук React, позволяющий ссылаться на значение, которое не нужно для рендеринга.
 const ref = useRef(initialValue);
+// useRef - это хук React, который возвращает объект (позволяющий ссылаться на значение, которое не нужно для рендеринга), который одинаков между всеми ререндерами. В нем есть поле current, в которое передается дефолтное значение из первого аргумента. Этот объект МОЖНО мутировать. Если в поле current вы будете хранить DOM-элемент, по соглашению initialValue принято называть null. Далее нужно добавить DOM-элемент в ref путем записи значения в атрибут html-элемента 'ref={inputRef}'. useEffect всегда имеет доступ к ref.
+
+//# Пример DOM-использования
+import { useRef } from 'react';
+function InputRef() {
+  const inputRef = useRef(null);
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+    </div>
+  );
+}
 
 //# Описание
 useRef(initialValue);
 
 // Вызовите useRef на верхнем уровне вашего компонента, чтобы объявить ссылку
-
 import { useRef } from 'react';
-
 function MyComponent() {
   const intervalRef = useRef(0);
   const inputRef = useRef(null);
