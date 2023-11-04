@@ -305,4 +305,9 @@ const [tasksState, setTasksState] = useState(initialTasks);
 // с useReducer следующим образом:
 const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 
+// Хук useReducer похож на useState - вы должны передать ему начальное состояние, а он возвращает значение состояния и способ установки состояния (в данном случае функцию диспетчеризации). Но он немного отличается.
 
+/* Хук useReducer принимает два аргумента:
+1. Функция редуктора
+2. Начальное состояние
+*/
