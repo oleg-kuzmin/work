@@ -161,4 +161,39 @@ function yourReducer(state, action) {
 
 // React установит состояние на то, что вы вернете из редуктора.
 
+/* Чтобы перенести логику установки состояния из обработчиков событий в функцию редуктора в этом примере, необходимо:
+1. Объявите текущее состояние (tasks) в качестве первого аргумента.
+2. Объявить объект action в качестве второго аргумента.
+3. Вернуть следующее состояние из редуктора (в которое React установит состояние).
+*/
 
+// Вот вся логика установки состояния, перенесенная в функцию reducer:
+
+function tasksReducer(tasks, action) {
+  if (action.type === 'added') {
+    return [
+      ...tasks,
+      {
+        id: action.id,
+        text: action.text,
+        done: false,
+      },
+    ];
+  } else if (action.type === 'changed') {
+    return tasks.map(t => {
+      if (t.id === action.task.id) {
+        return action.task;
+      } else {
+        return t;
+      }
+    });
+  } else if (action.type === 'deleted') {
+    return tasks.filter(t => t.id !== action.id);
+  } else {
+    throw Error('Unknown action: ' + action.type);
+  }
+}
+
+// Поскольку функция reducer принимает состояние (tasks) в качестве аргумента, вы можете объявить его вне вашего компонента. Это уменьшает уровень отступов и может сделать ваш код более легким для чтения.
+
+// 
