@@ -297,7 +297,12 @@ output.textContent = JSON.stringify(finalState, null, 2);
 
 //# Шаг 3: Используйте редуктор из вашего компонента
 // Наконец, вам нужно подключить tasksReducer к вашему компоненту. Импортируйте хук useReducer из React:
-
 import { useReducer } from 'react';
+
+// Тогда вы можете заменить useState:
+const [tasksState, setTasksState] = useState(initialTasks);
+
+// с useReducer следующим образом:
+const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
 
 
