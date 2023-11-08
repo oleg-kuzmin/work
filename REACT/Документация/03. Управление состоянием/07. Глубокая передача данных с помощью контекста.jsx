@@ -199,4 +199,13 @@ function Heading({ children }) {
   <Heading level={4}>Sub-sub-heading</Heading>
 </Section>;
 
+// Обновите JSX так, чтобы вместо Heading свойство level получал Section:
+<Section level={4}>
+  <Heading>Sub-sub-heading</Heading>
+  <Heading>Sub-sub-heading</Heading>
+  <Heading>Sub-sub-heading</Heading>
+</Section>;
+
+// Напомним, что это разметка, которую вы пытались заставить работать:
+
 
