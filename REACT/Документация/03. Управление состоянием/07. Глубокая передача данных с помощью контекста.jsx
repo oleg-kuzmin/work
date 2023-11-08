@@ -367,4 +367,19 @@ export const LevelContext = createContext(1);
 3. Heading запрашивает ближайшее значение LevelContext выше с помощью useContext(LevelContext).
 */
 
+//# Использование и предоставление контекста из одного и того же компонента
+// В настоящее время вы все еще должны указывать level каждой секции вручную:
 
+function Page() {
+  return (
+    <Section level={1}>
+      <Section level={2}>
+        <Section level={3}>
+          <Section level={4}></Section>
+        </Section>
+      </Section>
+    </Section>
+  );
+}
+
+// Поскольку контекст позволяет вам читать информацию из компонента выше, каждый Section мог бы читать level из Section выше, и передавать level + 1 вниз автоматически. Вот как это можно сделать:
