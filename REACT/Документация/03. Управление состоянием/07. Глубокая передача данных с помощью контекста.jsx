@@ -383,3 +383,93 @@ function Page() {
 }
 
 // Поскольку контекст позволяет вам читать информацию из компонента выше, каждый Section мог бы читать level из Section выше, и передавать level + 1 вниз автоматически. Вот как это можно сделать:
+
+import { useContext } from 'react';
+import { LevelContext } from './LevelContext.js';
+
+function Section({ children }) {
+  const level = useContext(LevelContext);
+  return (
+    <section className="section">
+      <LevelContext.Provider value={level + 1}>{children}</LevelContext.Provider>
+    </section>
+  );
+}
+
+// С этим изменением вам не нужно передавать параметр level либо в <Section>, либо в <Heading>:
+
+//* App.js
+import Heading from './Heading.js';
+import Section from './Section.js';
+
+function Page() {
+  return (
+    <Section>
+      <Heading>Title</Heading>
+      <Section>
+        <Heading>Heading</Heading>
+        <Heading>Heading</Heading>
+        <Heading>Heading</Heading>
+        <Section>
+          <Heading>Sub-heading</Heading>
+          <Heading>Sub-heading</Heading>
+          <Heading>Sub-heading</Heading>
+          <Section>
+            <Heading>Sub-sub-heading</Heading>
+            <Heading>Sub-sub-heading</Heading>
+            <Heading>Sub-sub-heading</Heading>
+          </Section>
+        </Section>
+      </Section>
+    </Section>
+  );
+}
+
+//* Section.js
+import { useContext } from 'react';
+import { LevelContext } from './LevelContext.js';
+
+function Section({ children }) {
+  const level = useContext(LevelContext);
+  return (
+    <section className="section">
+      <LevelContext.Provider value={level + 1}>{children}</LevelContext.Provider>
+    </section>
+  );
+}
+
+//* Heading.js
+import { useContext } from 'react';
+import { LevelContext } from './LevelContext.js';
+
+function Heading({ children }) {
+  const level = useContext(LevelContext);
+  switch (level) {
+    case 0:
+      throw Error('Heading must be inside a Section!');
+    case 1:
+      return <h1>{children}</h1>;
+    case 2:
+      return <h2>{children}</h2>;
+    case 3:
+      return <h3>{children}</h3>;
+    case 4:
+      return <h4>{children}</h4>;
+    case 5:
+      return <h5>{children}</h5>;
+    case 6:
+      return <h6>{children}</h6>;
+    default:
+      throw Error('Unknown level: ' + level);
+  }
+}
+
+//* LevelContext.js
+/*
+import { createContext } from 'react';
+export const LevelContext = createContext(0);
+*/
+
+// Теперь и Heading, и Section читают LevelContext, чтобы определить, насколько "глубоко" они находятся. А Section оборачивает свои дочерние компоненты в LevelContext, чтобы указать, что все, что находится внутри него, находится на более "глубоком" уровне.
+
+// В этом примере используются уровни заголовков, потому что они наглядно показывают, как вложенные компоненты могут переопределять контекст. Но контекст полезен и во многих других случаях. Вы можете передать любую информацию, необходимую всему поддереву: текущую цветовую тему, пользователя, вошедшего в систему, и так далее.
