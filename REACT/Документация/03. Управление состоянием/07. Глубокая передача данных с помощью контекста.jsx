@@ -61,5 +61,48 @@ function Heading({ level, children }) {
 
 // Допустим, вы хотите, чтобы несколько заголовков в одном разделе всегда имели одинаковый размер:
 
+//* App.js
+import Heading from './Heading.js';
+import Section from './Section.js';
+
+function Page() {
+  return (
+    <Section>
+      <Heading level={1}>Title</Heading>
+      <Section>
+        <Heading level={2}>Heading</Heading>
+        <Heading level={2}>Heading</Heading>
+        <Heading level={2}>Heading</Heading>
+        <Section>
+          <Heading level={3}>Sub-heading</Heading>
+          <Heading level={3}>Sub-heading</Heading>
+          <Heading level={3}>Sub-heading</Heading>
+          <Section>
+            <Heading level={4}>Sub-sub-heading</Heading>
+            <Heading level={4}>Sub-sub-heading</Heading>
+            <Heading level={4}>Sub-sub-heading</Heading>
+          </Section>
+        </Section>
+      </Section>
+    </Section>
+  );
+}
+
+// В настоящее время вы передаете параметр level каждому <Heading> отдельно:
+<Section>
+  <Heading level={3}>About</Heading>
+  <Heading level={3}>Photos</Heading>
+  <Heading level={3}>Videos</Heading>
+</Section>;
+
+// Было бы неплохо, если бы вы могли передавать параметр level компоненту <Section> и удалять его из <Heading>. Таким образом можно было бы добиться того, чтобы все заголовки в одном разделе имели одинаковый размер:
+
+<Section level={3}>
+  <Heading>About</Heading>
+  <Heading>Photos</Heading>
+  <Heading>Videos</Heading>
+</Section>;
+
+// Но как компонент <Heading> может узнать level ближайшего к нему <Section>? Для этого нужно, чтобы дочерний компонент мог "запрашивать" данные откуда-то сверху в дереве.
 
 
