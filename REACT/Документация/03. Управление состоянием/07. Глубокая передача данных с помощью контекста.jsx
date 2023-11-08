@@ -275,3 +275,22 @@ export const LevelContext = createContext(1);
 // Если вы не предоставите контекст, React будет использовать значение по умолчанию, которое вы указали в предыдущем шаге. В этом примере вы указали 1 в качестве аргумента для createContext, поэтому useContext(LevelContext) возвращает 1, устанавливая все эти заголовки в <h1>. Давайте решим эту проблему, предоставив каждой Section свой собственный контекст.
 
 //# Шаг 3: Предоставление контекста
+// Компонент Section в настоящее время отображает свои дочерние элементы:
+function Section({ children }) {
+  return <section className="section">{children}</section>;
+}
+
+// Оберните их провайдером контекста, чтобы предоставить им LevelContext:
+import { LevelContext } from './LevelContext.js';
+
+function Section({ level, children }) {
+  return (
+    <section className="section">
+      <LevelContext.Provider value={level}>{children}</LevelContext.Provider>
+    </section>
+  );
+}
+
+// Это говорит React: "если какой-либо компонент внутри этой <Section> запрашивает LevelContext, дайте ему этот level". Компонент будет использовать значение ближайшего <LevelContext.Provider> в дереве пользовательского интерфейса над ним.
+
+
