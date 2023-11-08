@@ -479,4 +479,99 @@ export const LevelContext = createContext(0);
 
 // В этом примере один и тот же компонент Post (с пунктирной границей) отображается на двух разных уровнях вложенности. Обратите внимание, что <Heading> внутри него получает свой уровень автоматически от ближайшего <Section>:
 
-//*
+//* App.js
+import Heading from './Heading.js';
+import Section from './Section.js';
+
+function ProfilePage() {
+  return (
+    <Section>
+      <Heading>My Profile</Heading>
+      <Post title="Hello traveller!" body="Read about my adventures." />
+      <AllPosts />
+    </Section>
+  );
+}
+
+function AllPosts() {
+  return (
+    <Section>
+      <Heading>Posts</Heading>
+      <RecentPosts />
+    </Section>
+  );
+}
+
+function RecentPosts() {
+  return (
+    <Section>
+      <Heading>Recent Posts</Heading>
+      <Post title="Flavors of Lisbon" body="...those pastéis de nata!" />
+      <Post title="Buenos Aires in the rhythm of tango" body="I loved it!" />
+    </Section>
+  );
+}
+
+function Post({ title, body }) {
+  return (
+    <Section isFancy={true}>
+      <Heading>{title}</Heading>
+      <p>
+        <i>{body}</i>
+      </p>
+    </Section>
+  );
+}
+
+//* Section.js
+import { useContext } from 'react';
+import { LevelContext } from './LevelContext.js';
+
+function Section({ children, isFancy }) {
+  const level = useContext(LevelContext);
+  return (
+    <section className={'section ' + (isFancy ? 'fancy' : '')}>
+      <LevelContext.Provider value={level + 1}>{children}</LevelContext.Provider>
+    </section>
+  );
+}
+
+//* Heading.js
+import { useContext } from 'react';
+import { LevelContext } from './LevelContext.js';
+
+function Heading({ children }) {
+  const level = useContext(LevelContext);
+  switch (level) {
+    case 0:
+      throw Error('Heading must be inside a Section!');
+    case 1:
+      return <h1>{children}</h1>;
+    case 2:
+      return <h2>{children}</h2>;
+    case 3:
+      return <h3>{children}</h3>;
+    case 4:
+      return <h4>{children}</h4>;
+    case 5:
+      return <h5>{children}</h5>;
+    case 6:
+      return <h6>{children}</h6>;
+    default:
+      throw Error('Unknown level: ' + level);
+  }
+}
+
+//* LevelContext.js
+/*
+import { createContext } from 'react';
+export const LevelContext = createContext(0);
+*/
+
+// Вы не сделали ничего особенного, чтобы это сработало. Секция Section определяет контекст для дерева внутри нее, поэтому вы можете вставить <Heading> куда угодно, и он будет иметь правильный размер. Попробуйте это в песочнице выше!
+
+// Контекст позволяет вам писать компоненты, которые "адаптируются к окружению" и отображаются по-разному в зависимости от того, где (или, другими словами, в каком контексте) они отображаются.
+
+// Работа контекста может напомнить вам CSS property inheritance. В CSS вы можете указать color: blue для div, и любой DOM-узел внутри него, независимо от глубины, унаследует этот цвет, если только какой-либо другой DOM-узел в середине не переопределит его с color: green. Аналогично, в React единственный способ переопределить какой-то контекст, идущий сверху, - это обернуть дочерние элементы в провайдер контекста с другим значением.
+
+// В CSS различные свойства, такие как color и background-color, не отменяют друг друга. Вы можете установить color всех div в красный цвет, не влияя на background-color. Аналогично, различные контексты React не отменяют друг друга. Каждый контекст, который вы создаете с помощью createContext(), полностью отделен от других, и связывает вместе компоненты, использующие и предоставляющие этот конкретный контекст. Один компонент может использовать или предоставлять множество различных контекстов без проблем.
