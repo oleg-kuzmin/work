@@ -184,4 +184,10 @@ function Heading({ level, children }) {
   // ...
 }
 
+// Вместо этого удалите параметр level и считайте значение из только что импортированного контекста LevelContext:
+function Heading({ children }) {
+  const level = useContext(LevelContext);
+  // ...
+}
 
+// useContext - это хук. Как и useState и useReducer, хук можно вызывать только непосредственно внутри компонента React (не внутри циклов или условий). useContext сообщает React, что компонент Heading хочет прочитать LevelContext.
