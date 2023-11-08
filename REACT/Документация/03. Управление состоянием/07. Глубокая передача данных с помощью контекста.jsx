@@ -191,3 +191,12 @@ function Heading({ children }) {
 }
 
 // useContext - это хук. Как и useState и useReducer, хук можно вызывать только непосредственно внутри компонента React (не внутри циклов или условий). useContext сообщает React, что компонент Heading хочет прочитать LevelContext.
+
+// Теперь, когда у компонента Heading нет свойства level, вам больше не нужно передавать свойство level компоненту Heading в вашем JSX таким образом:
+<Section>
+  <Heading level={4}>Sub-sub-heading</Heading>
+  <Heading level={4}>Sub-sub-heading</Heading>
+  <Heading level={4}>Sub-sub-heading</Heading>
+</Section>;
+
+
