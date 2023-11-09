@@ -16,13 +16,6 @@
   //* несколько анимаций одному элементу через запятую
   animation: circle-to-square 10s infinite alternate ease-out 1s, color-change 5s alternate linear infinite;
 
-  //* имя keyframes
-  animation-name: none;
-  // отсутствие анимации (по умолчанию)
-
-  animation-name: circle-to-square;
-  // обозначаем имя keyframes
-
   //* хронометраж анимации (время, за которое анимация проигрывается целиком)
   animation-duration: 2s; // 2 секунды
   animation-duration: 5ms; // 5 милисекунд
