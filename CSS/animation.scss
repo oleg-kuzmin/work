@@ -11,10 +11,7 @@
   //* несколько анимаций одному элементу через запятую
   animation: circle-to-square 10s infinite alternate ease-out 1s, color-change 5s alternate linear infinite;
 
-  //* хронометраж анимации (время, за которое анимация проигрывается целиком)
-  animation-duration: 2s; // 2 секунды
-  animation-duration: 5ms; // 5 милисекунд
-  animation-duration: 0s; // ключевые кадры будут пропущены, анимация применится мгновенно.
+
 
   //* количество итераций
   animation-iteration-count: 2; // анимация используется 2 раза
