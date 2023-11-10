@@ -9,17 +9,6 @@
 - Если нужна простая анимация от исходного значения к конечному, то внутри директивы можно указать только финальный кадр.
 */
 
-@keyframes circle-to-square {
-  from {
-    border-radius: 50%;
-    background-color: red;
-  }
-  to {
-    border-radius: 0;
-    background-color: blue;
-  }
-}
-
 //# Примеры
 //* Простая анимация
 @keyframes circle-to-square {
@@ -41,42 +30,16 @@
   }
 }
 
-//*
-
-
-
-
-//# ПРИМЕР
-//* keyframes простой из 2-х кадров (Браузер расшифровывает ключевое слово from как 0%, а ключевое слово to как 100%.)
+//* Три кадра
 @keyframes circle-to-square {
   from {
     border-radius: 50%;
     background-color: red;
   }
-  to {
-    border-radius: 0;
-    background-color: blue;
-  }
-}
-
-//* keyframes из 3 кадров
-@keyframes move {
-  from {
-    left: 0;
-    top: 0;
-  }
   50% {
-    left: 60px;
-    top: 0;
+    border-radius: 25%;
+    background-color: green;
   }
-  to {
-    left: 120px;
-    top: 0;
-  }
-}
-
-//* простая анимация от исходного значения к конечному
-@keyframes circle-to-square {
   to {
     border-radius: 0;
     background-color: blue;
