@@ -11,7 +11,6 @@
   //* несколько анимаций одному элементу через запятую
   animation: circle-to-square 10s infinite alternate ease-out 1s, color-change 5s alternate linear infinite;
 
-
   //* свойство, позволяющее ставить анимацию на паузу и запускать снова
   animation-play-state: running; // анимация проигрывается (по умолчанию)
   animation-play-state: paused; // анимация ставится на паузу. При повторном запуске продолжается с того места, где была остановлена
