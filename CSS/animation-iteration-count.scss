@@ -5,6 +5,7 @@
 */
 
 .element {
+  animation-iteration-count: 1; // по умолчанию
   animation-iteration-count: infinite;
 }
 
