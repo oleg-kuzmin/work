@@ -3,6 +3,9 @@
 
 .element {
   animation-fill-mode: none; // по умолчанию
+  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
+  animation-fill-mode: both;
 }
 
 //# Значения
