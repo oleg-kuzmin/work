@@ -3,6 +3,9 @@
 
 .element {
   animation-direction: normal; // по умолчанию
+  animation-direction: reverse;
+  animation-direction: alternate;
+  animation-direction: alternate-reverse;
 }
 
 //# Значения
