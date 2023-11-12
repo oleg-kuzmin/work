@@ -1,0 +1,4 @@
+{
+  // Автоматическое закрытии редактора при удалении файла
+  "workbench.editor.closeOnFileDelete": true
+}
