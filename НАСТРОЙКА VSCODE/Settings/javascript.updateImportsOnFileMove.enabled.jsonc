@@ -1,0 +1,4 @@
+{
+  // Обновление импортов при переименовании/перемещении файла
+  "javascript.updateImportsOnFileMove.enabled": "never"
+}
