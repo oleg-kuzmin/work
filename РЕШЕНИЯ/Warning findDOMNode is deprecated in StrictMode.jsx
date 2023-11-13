@@ -1,6 +1,4 @@
 //! Warning findDOMNode is deprecated in StrictMode (CSSTransition)
-
-//# Решение
 //* 1. Нужно добавить хук useRef
 import { useRef } from 'react';
 
