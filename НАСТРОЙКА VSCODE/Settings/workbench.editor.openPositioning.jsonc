@@ -1,0 +1,4 @@
+{
+  // Место открытия вкладок редакторов
+  "workbench.editor.openPositioning": "right"
+}
