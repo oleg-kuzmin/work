@@ -5,12 +5,12 @@
 */
 
 .element {
-  animation-iteration-count: 1; // по умолчанию
+  animation-iteration-count: 1;
 }
 
 //# Значения
-//* число
+//* animation-iteration-count: 1 (по умолчанию)
 // В качестве значения указывается число, означающее количество повторений
 
-//* infinite
+//* animation-iteration-count: infinite
 // Если указано infinite, то анимация будет повторяться бесконечно.
