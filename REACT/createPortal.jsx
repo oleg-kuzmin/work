@@ -9,14 +9,20 @@
 
 //* 1. Импорт
 import { createPortal } from 'react-dom';
+import { useEffect, useState } from 'react';
 
 //* 2. Вызов в компоненте
 // Без портала параграф был бы помещен внутрь родительского div, но портал "телепортировал" его в document.body:
 function MyComponent() {
+  const [documentContainer, setDocumentContainer] = useState(null);
+  useEffect(() => {
+    setDocumentContainer(document.body);
+  }, [documentContainer]);
+
   return (
     <div>
       <h1>Text</h1>
-      {createPortal(<p>Add Portal Text</p>, document.body)}
+      {documentContainer !== null && createPortal(<p>Add Portal Text</p>, document.body)}
     </div>
   );
 }
