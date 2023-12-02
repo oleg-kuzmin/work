@@ -1,4 +1,15 @@
-//# outline-color (Цвет)
+//# outline-color
+/*
+- Свойство outline-color задаёт цвет обводки элемента. Аналог свойства border-color для цвета рамки.
+- 
+
+*/
+
+
+
+
+
+
 .element {
   //* специальные значения
   outline-color: currentColor; // текущий цвет текста родителя (по умолчанию)
