@@ -1,4 +1,4 @@
-//# Использование CSSTransition
+//# CSSTransition
 //* Установка npm-пакета
 // npm install react-transition-group --save
 
