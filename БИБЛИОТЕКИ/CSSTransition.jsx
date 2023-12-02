@@ -1,8 +1,7 @@
 //# CSSTransition
-//* Установка npm-пакета
-// npm install react-transition-group --save
+//* npm install react-transition-group --save
 
-//* Импорт в компонент
+//# Импорт в компонент
 import { CSSTransition } from 'react-transition-group';
 import styles from './MyComponent.module.scss';
 
