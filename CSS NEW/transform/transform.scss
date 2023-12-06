@@ -14,9 +14,8 @@
 }
 
 //# Значения
-//* transform: none
-
-//* transform: matrix(1, 2, 3, 4, 5, 6)
+//* transform: none (по умолчанию)
+// Элемент не изменяется.
 
 //* transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg)
-// Несколько значений.
+// Можно указать несколько значений.

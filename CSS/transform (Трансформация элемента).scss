@@ -11,18 +11,7 @@
 
 //# значения
 .element {
-  //* ключевые слова
-  transform: none; // не изменяется (по умолчанию)
 
-  //* translate (Перемещение)
-  // Сместит относительно места, где элемент находился (значения возможны в относительных величинах)
-  translate: 100px 100px; // по осям X, Y
-  transform: translate(10px, 20px); // по осям X, Y
-  transform: translate(10px); // по оси X
-  transform: translateX(10px); // по оси X
-  transform: translateY(10px); // по оси Y
-  transform: translateZ(10px); // по оси Z
-  transform: translate3d(10px, 20px, 30px); // по осям X, Y, Z
 
   //* scale (Масштабирование)
   // Изменит масштаб элемента (если в функцию передать 0, то элемент не будет виден, 1 - нормальный масштаб)
