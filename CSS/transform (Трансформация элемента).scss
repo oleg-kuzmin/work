@@ -13,15 +13,7 @@
 .element {
 
 
-  //* scale (Масштабирование)
-  // Изменит масштаб элемента (если в функцию передать 0, то элемент не будет виден, 1 - нормальный масштаб)
-  scale: 2; // по осям X, Y
-  transform: scale(1.5, 0.5); // по осям X, Y
-  transform: scale(2); // по осям X, Y
-  transform: scaleX(2); // по оси X
-  transform: scaleY(2); // по оси Y
-  transform: scaleZ(2); // по оси Z
-  transform: scale3d(2, 2, 2); // по осям X, Y, Z
+
 
   //* skew (Наклон)
   // Наклонит элемент
