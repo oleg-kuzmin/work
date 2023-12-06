@@ -13,19 +13,6 @@
 .element {
 
 
-
-
-
-
-  //* rotate (Поворот)
-  // Повернет элемент (в функцию передаём единицы измерения углов)
-  rotate: 180deg; // по оси Z
-  transform: rotate(30deg); // по оси Z
-  transform: rotateX(30deg); // по оси X
-  transform: rotateY(30deg); // по оси Y
-  transform: rotateZ(30deg); // по оси Z
-  transform: rotate3d(30deg); // по осям X, Y, Z
-
   //* несколько значений
   transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg);
 
