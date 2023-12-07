@@ -2,10 +2,8 @@
 // Если нужно плавно изменить какое-то CSS-свойство, но запустить изменение не сразу, а с задержкой, то используем transition-delay.
 
 .element {
-  .box {
-    transition-property: color, padding;
-    transition-delay: 0.5s, 0;
-  }
+  transition-property: color, padding;
+  transition-delay: 0.5s, 0;
 }
 
 //# Значения

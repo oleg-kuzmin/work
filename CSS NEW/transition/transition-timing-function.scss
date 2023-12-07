@@ -1,0 +1,6 @@
+//# transition-timing-function
+// transition-timing-function определяет функцию зависимости значения свойства от времени. Другими словами, эта функция определяет скорость течения анимации.
+
+.element {
+  transition-timing-function: linear;
+}
