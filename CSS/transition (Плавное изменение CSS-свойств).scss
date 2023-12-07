@@ -78,11 +78,4 @@
   transition-timing-function: cubic-bezier(1, 0.2, 0.52, 0.46); // кривая Безье: http://cubic-bezier.com
 }
 
-//# transition-delay
-// задержка перед началом изменения (одно или несколько значений времени в секундах или миллисекундах)
-.element {
-  transition-delay: 1s; // время в секундах
-  transition-delay: 120ms; // время в миллисекундах
-  transition-delay: 0.1s, 15s; // несколько времён в секундах
-  transition-delay: 10s, 30s, 230ms; // несколько времён в секундах и миллисекундах
-}
+
