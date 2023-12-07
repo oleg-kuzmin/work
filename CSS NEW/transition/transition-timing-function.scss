@@ -42,6 +42,7 @@
 
 //* transition-timing-function: step-start
 // Аналогично записи steps(1, jump-start). Переходит в конечное состояние сразу при старте анимации и дожидается конца анимации.
+
 //* transition-timing-function: step-end
 // Аналогично записи steps(1, jump-end). Дожидается конца анимации и потом переходит в конечное состояние.
 
