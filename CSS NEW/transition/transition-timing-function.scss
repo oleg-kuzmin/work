@@ -7,12 +7,19 @@
 
 //# Значения - ключевые слова
 //* transition-timing-function: ease (по умолчанию)
+// Анимация начинается медленно, затем ускоряется и к концу движения опять замедляется.
+
 //* transition-timing-function: ease-in
+// Анимация начинается медленно, к концу ускоряется.
+
 //* transition-timing-function: ease-out
-// Свойство меняется сначала быстро, а потом медленнее.
+// Анимация начинается быстро, к концу замедляется.
+
 //* transition-timing-function: ease-in-out
+// Анимация начинается и заканчивается медленно.
+
 //* transition-timing-function: linear
-// Cвойство меняется равномерно.
+// Одинаковая скорость анимации от начала и до конца
 
 //# Значения - функция steps
 /*
@@ -21,13 +28,18 @@
 - Второй параметр определяет логику, по которой будет разделён промежуток на отрезки.
 */
 
-//* transition-timing-function: steps(4, jump-end)
-//* transition-timing-function: steps(4, jump-start)
-//* transition-timing-function: steps(10, jump-end)
-//* transition-timing-function: steps(20, jump-none)
+//* transition-timing-function: steps(5, jump-start)
+// В момент старта анимации текущее значение сразу прыгнет на 20% и там задержится на 1/5 времени.
+
+//* transition-timing-function: steps(5, jump-end)
+// Текущее значение начинает задержку сразу на 0%.
+
 //* transition-timing-function: steps(5, jump-both)
-//* transition-timing-function: steps(6, start)
-//* transition-timing-function: steps(8, end)
+// Сделает 5 остановок в промежутке между 0% и 100% (16%, 33%, 50%, 66%, 84%) — jump-both
+
+//* transition-timing-function: steps(5, jump-none)
+// Сделает 5 остановок, включая 0% и 100% (0%, 25%, 50%, 75%, 100%)
+
 //* transition-timing-function: step-start
 // Аналогично записи steps(1, jump-start). Переходит в конечное состояние сразу при старте анимации и дожидается конца анимации.
 //* transition-timing-function: step-end
