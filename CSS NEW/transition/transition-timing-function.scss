@@ -5,23 +5,47 @@
   transition-timing-function: linear;
 }
 
-//# Значения
+//# Значения - ключевые слова
 //* transition-timing-function: ease (по умолчанию)
 //* transition-timing-function: ease-in
 //* transition-timing-function: ease-out
+// Свойство меняется сначала быстро, а потом медленнее.
 //* transition-timing-function: ease-in-out
 //* transition-timing-function: linear
-//* transition-timing-function: step-start
-//* transition-timing-function: step-end
+// Cвойство меняется равномерно.
+
+//# Значения - функция steps
+/*
+- Изменять свойство можно не плавно, а скачками. Функция steps описывает, за сколько шагов должно произойти изменение свойства.
+- Первый параметр указывает количество шагов, за которое будет изменено свойство. При этом каждый шаг будет отображаться равное количество времени.
+- Второй параметр определяет логику, по которой будет разделён промежуток на отрезки.
+*/
 
 //* transition-timing-function: steps(4, jump-end)
-//* transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1)
-
 //* transition-timing-function: steps(4, jump-start)
 //* transition-timing-function: steps(10, jump-end)
 //* transition-timing-function: steps(20, jump-none)
 //* transition-timing-function: steps(5, jump-both)
 //* transition-timing-function: steps(6, start)
 //* transition-timing-function: steps(8, end)
+//* transition-timing-function: step-start
+// Аналогично записи steps(1, jump-start). Переходит в конечное состояние сразу при старте анимации и дожидается конца анимации.
+//* transition-timing-function: step-end
+// Аналогично записи steps(1, jump-end). Дожидается конца анимации и потом переходит в конечное состояние.
 
+//# Значения - кривая Безье
+//* transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1)
+/*
+- кривая Безье: http://cubic-bezier.com
+- В общем случае график функции описывается значением cubic-bezier(p1, p2, p3, p4). В качестве параметров p1 и p3 обязательно должны быть числа от 0 до 1.
+- Каждому ключевому слову соответствует свой график функции с определёнными коэффициентами:
+linear — cubic-bezier(0.0, 0.0, 1.0, 1.0)
+ease — cubic-bezier(0.25, 0.1, 0.25, 1.0)
+ease-in — cubic-bezier(0.42, 0, 1.0, 1.0)
+ease-out — cubic-bezier(0, 0, 0.58, 1.0)
+ease-in-out — cubic-bezier(0.42, 0, 0.58, 1.0)
+*/
+
+//# Значения - несколько слов
 //* transition-timing-function: ease, step-start
+// Несколько значений.
