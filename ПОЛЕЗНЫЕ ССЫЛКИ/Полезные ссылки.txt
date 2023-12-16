@@ -3,6 +3,10 @@ https://developer.mozilla.org/ru/docs/Web/HTML
 https://developer.mozilla.org/ru/docs/Web/CSS
 https://developer.mozilla.org/ru/docs/Web/JavaScript
 
+// конверторы шрифтов
+https://www.font-converter.net
+https://transfonter.org
+
 // таблица совместимости
 https://caniuse.com/
 
@@ -120,17 +124,3 @@ https://262.ecma-international.org/13.0/
 
 // документация к Node.js
 https://nodejs.org/ru/docs/
-
-
-// Фигма макеты
-https://www.figma.com/file/DbFAkE2hcBXD0Dw1o9pVyx/Delivery?node-id=1%3A3
-https://www.figma.com/file/zpEryUaC1ranXzf9jAsK2c/Premium-Car-Blog-Template?node-id=0%3A1
-https://www.figma.com/file/y8dn0cO9eXYpi3SBPgcpuT/citymap
-https://www.figma.com/file/T2BXiIrkgyaZVZtf9n8nWy/Productivity
-https://www.figma.com/file/HAFL4Hx0i4zbTxYxk5WcDD/crypto
-https://www.figma.com/file/kuyjgL7zsxRIvi1Qy5bwYY/giftstore
-https://www.figma.com/file/5Kt5z1FZND9RHcrtWa26Ed/landing
-https://www.figma.com/file/nEc0Li2JMKopPgaCwzcRRt/Portfolio
-https://www.figma.com/file/jVPnlZGO0h3IFVaZZWs9x9/restaurant
-https://www.figma.com/file/w0BOLKmTYeOP1eJ55IX1np/Landie
-
