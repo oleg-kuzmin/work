@@ -1,0 +1,34 @@
+[
+  {
+    "key": "ctrl+numpad2",
+    "command": "extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+l alt+o",
+    "command": "-extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+numpad3",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "ctrl+numpad4",
+    "command": "quokka.makeQuokkaFromExistingFile",
+    "when": "!quokka.isLiveShareClient && !terminalFocus"
+  },
+  {
+    "key": "ctrl+k q",
+    "command": "-quokka.makeQuokkaFromExistingFile",
+    "when": "!quokka.isLiveShareClient && !terminalFocus"
+  },
+  {
+    "key": "ctrl+numpad5",
+    "command": "quokka.stopAll"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  }
+]

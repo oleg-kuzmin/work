@@ -37,9 +37,9 @@ Ctrl + ЛКМ                 // перемещаемся на класс в scs
 Alt + f12                  // вызвать окно совпадений CSS
 
 **********Пользовательские настройки**********
-Ctrl + numpad1             // eCSStractor Run (With BEM Nesting)
 Ctrl + numpad2             // Live Server: Open with Live Server
 Ctrl + numpad3             // Emmet: Перенести с сокращением (обернуть в тег)
 Ctrl + numpad4             // Quokka.js: Start on Current File
 Ctrl + numpad5             // Quokka.js: Stop All
-Ctrl + numpad7             // Google Translate
+Ctrl + Shift + N           // Файл: создать папку
+Ctrl + N                   // Файл: создать файл
