@@ -3,3 +3,8 @@
 img[src='logo.png'] {
   font-size: 14px;
 }
+
+//* <a> с атрибутом href заканчивается на '.pdf':
+a[href$='.pdf'] {
+  font-size: 14px;
+}
