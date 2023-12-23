@@ -1,0 +1,18 @@
+//# gap
+/*
+- Шорткат для записи значений свойств:
+1. row-gap
+2. column-gap
+*/
+
+.flex-container {
+  display: flex;
+  gap: 10px;
+}
+
+//# Значения
+//* gap: 20px
+// 1 значение: row-gap, column-gap
+
+//* gap: 20px 20px
+// 2 значения: row-gap, column-gap

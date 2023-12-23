@@ -1,12 +1,12 @@
 //# gap
 /*
-- Шорткат для записи значений свойств
+- Шорткат для записи значений свойств:
 1. row-gap
 2. column-gap
 */
 
 .flex-container {
-  display: flex;
+  display: grid;
   gap: 10px;
 }
 
