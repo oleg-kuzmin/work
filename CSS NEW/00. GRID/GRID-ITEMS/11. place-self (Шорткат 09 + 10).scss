@@ -1,0 +1,19 @@
+//# place-self
+/* Шорткат для свойств:
+1. align-self
+2. justify-self
+*/
+
+.grid-element {
+  place-self: stretch end;
+}
+
+//# Значения
+//* place-self: auto (по умолчанию)
+// Cтандартное значение, можно использовать для сброса ранее заданных значений.
+
+//* place-items: stretch end
+// 2 значения: align-self, justify-self
+
+//* place-items: center
+// 1 значениe: align-self, justify-self

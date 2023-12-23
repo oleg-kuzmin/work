@@ -1,0 +1,14 @@
+//# place-items
+/* Шорткат для свойств:
+1. align-items
+2. justify-items
+*/
+
+.grid-container {
+  display: grid;
+  place-items: stretch end;
+}
+
+//# Значения
+//* place-items: stretch end
+// 2 значения: align-items, justify-items
