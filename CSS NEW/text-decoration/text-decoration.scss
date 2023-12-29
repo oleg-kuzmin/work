@@ -1,0 +1,27 @@
+//# text-decoration
+/*
+- По факту свойство text-decoration является шорткатом и позволяет указать значения для свойств:
+1. text-decoration-line — положение декоративной линии
+2. text-decoration-style — стиль декоративной линии
+3. text-decoration-color — цвет декоративной линии
+
+- Свойство text-decoration позволяет добавить декоративные линии тексту. Текст можно подчеркнуть, перечеркнуть или добавить линию над текстом.
+- text-decoration: underline часто встречается при работе со ссылками.
+*/
+
+.element {
+  text-decoration: none;
+}
+
+//# Значения
+//* text-decoration: none (по умолчанию)
+// Ничего не меняется.
+
+//* text-decoration: underline
+// Нижнее подчёркивание.
+
+//* text-decoration: line-through
+// Перечёркнутый текст.
+
+//* text-decoration: overline
+// Линия над текстом.
