@@ -1,3 +1,6 @@
+**********Settings**********
+Ctrl + Shift + P           // Параметры: Открыть пользовательские настройки (JSON) - open user settings
+
 **********Редактор**********
 Alt + ЛКМ                  // мультикурсор
 Alt + ↑                    // переместит строчку вверх
@@ -38,6 +41,7 @@ Ctrl + ЛКМ                 // перемещаемся на класс в scs
 Alt + f12                  // вызвать окно совпадений CSS
 
 **********Пользовательские настройки**********
+Ctrl + Shift + P           // Параметры: Открыть сочетания клавиш (JSON) - open keyboard shorcat
 Ctrl + numpad2             // Live Server: Open with Live Server
 Ctrl + numpad3             // Emmet: Перенести с сокращением (обернуть в тег)
 Ctrl + numpad4             // Quokka.js: Start on Current File
