@@ -8,6 +8,9 @@
 <a rel="noopener noreferrer" target="_self"></a>;
 
 //# Значения
+//* rel="noopener"
+// Используйте rel="noopener", чтобы в момент открытия игнорировались скрипты сторонней страницы.
+
 //* rel="noopener noreferrer"
 // Используйте rel="noopener noreferrer", чтобы в момент открытия внешние сайты не узнали лишнего про текущую страницу.
 
