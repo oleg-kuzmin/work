@@ -1,9 +1,10 @@
 //# 0-1-0. Класс
-
+//* Выбирает элемент c классом
 .element {
-  font-size: 14px;
+  font-size: 14px; // 0-1-0
 }
 
+//* Выбирает элемент c двумя классам
 .element.element {
-  font-size: 14px;
+  font-size: 14px; // 0-2-0
 }
