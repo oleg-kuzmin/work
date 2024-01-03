@@ -1,0 +1,13 @@
+//# Анимация hover появляется быстро, пропадает медленно
+.link {
+  color: #ffffff;
+  text-decoration-color: #2e9aff;
+  /* Скорость исчезновения фонового цвета */
+  transition: background-color 0.5s linear;
+}
+
+.link:hover {
+  background-color: #2e9aff;
+  /* Скорость изменения фонового цвета на голубой */
+  transition: background-color 0.1s linear;
+}
