@@ -14,3 +14,7 @@ const checkbox = document.querySelector('input[type=checkbox]'); // поиск �
 const ulElement = document.querySelector('ul')[0]; // ищем li
 const lastLi = ulElement.querySelector('li:last-child'); // последний li
 const element = document.querySelector('[data-id="123"]'); // элемент с дата-атрибутом
+
+//# Дублирование
+//* JS DOCUMENT
+//* JS ELEMENT
