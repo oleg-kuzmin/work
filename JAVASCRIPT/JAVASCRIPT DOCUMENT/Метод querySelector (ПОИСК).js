@@ -16,5 +16,5 @@ const lastLi = ulElement.querySelector('li:last-child'); // последний l
 const element = document.querySelector('[data-id="123"]'); // элемент с дата-атрибутом
 
 //# Дублирование
-//* JS DOCUMENT
-//* JS ELEMENT
+//* JAVASCRIPT DOCUMENT
+//* JAVASCRIPT ELEMENT
