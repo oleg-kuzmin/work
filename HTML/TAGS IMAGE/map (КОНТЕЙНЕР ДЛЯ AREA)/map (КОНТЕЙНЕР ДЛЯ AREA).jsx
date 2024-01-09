@@ -7,9 +7,8 @@
 */
 
 //# Пример
-<>
-  <map name="doka-label">
-    <area shape="rect" coords="40,20,420,130" href="/html/" alt="Раздел HTML" />
-  </map>
-  <img src="/images/doka-map.svg" usemap="#doka-label" alt="Мордочка собаки" />;
-</>;
+
+<map name="doka-label">
+  <area shape="rect" coords="40,20,420,130" href="/html/" alt="Раздел HTML" />
+</map>;
+<img src="/images/doka-map.svg" usemap="#doka-label" alt="Мордочка собаки" />;

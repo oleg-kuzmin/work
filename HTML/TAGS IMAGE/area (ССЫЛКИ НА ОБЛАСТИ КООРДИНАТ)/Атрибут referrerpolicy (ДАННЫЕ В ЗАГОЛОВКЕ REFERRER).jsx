@@ -1,4 +1,4 @@
-//# Атрибут referrerpolicy
+//# Атрибут referrerpolicy (ДАННЫЕ В ЗАГОЛОВКЕ REFERRER)
 /*
 - Атрибут referrerpolicy определяет, какие реферальные данные следует отправлять при переходе по ссылке в заголовке Referer.
 - Заголовок Referer в HTTP-запросе содержит адрес страницы, с которой был выполнен переход на текущий адрес. Например, если пользователь перешел со страницы https://webref.ru на другой сайт, то в запросе будет следующий заголовок: https://webref.ru
@@ -15,14 +15,12 @@
 */
 
 //# Пример
-<>
   <map name="doka">
     <area shape="rect" coords="47,4,319,64" href="/html/" target="_blank" alt="HTML" referrerpolicy="strict-origin-when-cross-origin" />
     <area shape="rect" coords="46,69,318,129" href="/css/" target="_blank" alt="CSS" />
     <area shape="rect" coords="46,133,318,193" href="/js/" target="_blank" alt="JS" />
-  </map>
+  </map>;
   <img usemap="#doka" />
-</>;
 
 //# Значения
 //* referrerpolicy="strict-origin-when-cross-origin"
