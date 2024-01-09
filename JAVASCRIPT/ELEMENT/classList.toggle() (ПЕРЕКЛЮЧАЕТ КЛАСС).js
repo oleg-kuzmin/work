@@ -1,11 +1,23 @@
 //# element.classList.toggle() (ПЕРЕКЛЮЧАЕТ КЛАСС)
+// Метод можно использовать, чтобы включать или выключать класс. Если при вызове toggle() переданный класс уже есть на элементе, то он будет убран. Если класса не было — то добавлен.
+
+//# Синтаксис
+//* Метод toggle() принимает только один класс для переключения.
+element.classList.toggle('имя-класса');
+
+//* Опционально вторым аргументом можно передать boolean-значение.
+element.classList.toggle('имя-класса', true);
 /*
-- Переключение класса. Метод toggle работает как add, если у элемента класс отсутствует, и как remove — если присутствует.
-- Метод toggle() принимает только один класс для переключения. Опционально вторым аргументом можно передать boolean-значение: метод будет работать как add(), если передать true, и как remove(), если передать false.
+true - метод будет работать как add()
+false - метод будет работать как remove()
 */
 
-//# пример
-const button = document.querySelector('button.submit'); // На кнопке есть класс submit
-button.classList.toggle('submit', false); // Передаём вторым аргументом false и будет работать как remove()
-console.log(button.classList[0]); // undefined, потому что класса больше нет
-button.classList.toggle('submit', true); // Передаём true и теперь класс добавится
+//# Пример
+// На кнопке есть класс hidden
+const button = document.querySelector('button.hidden');
+
+// Так как класс есть, то он будет убран
+button.classList.toggle('hidden');
+
+// А при повторном вызове будет снова добавлен
+button.classList.toggle('hidden');
