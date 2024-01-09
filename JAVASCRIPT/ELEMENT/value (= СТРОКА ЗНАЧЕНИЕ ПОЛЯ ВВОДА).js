@@ -1,7 +1,8 @@
-//# element.value (ЗНАЧЕНИЕ ПОЛЯ ВВОДА)
+//# element.value (= СТРОКА ЗНАЧЕНИЕ ПОЛЯ ВВОДА)
 // Значение поля ввода. Оно есть у всех элементов input и textarea.
 
-//# input, textarea
+//# Пример
+//* input, textarea
 <form name="myForm">
   <input type="text" name="myInput" />
   <textarea name="myTextArea"></textarea>
@@ -20,7 +21,7 @@ button.addEventListener('click', function (evt) {
   console.log(textArea.value); // значение textArea
 });
 
-//# select
+//* select
 <form name="myForm">
   <select name="mySelect">
     <option value="right">Направо</option>
