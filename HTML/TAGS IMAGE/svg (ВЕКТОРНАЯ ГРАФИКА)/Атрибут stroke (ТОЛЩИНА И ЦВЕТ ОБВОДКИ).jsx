@@ -5,3 +5,10 @@
 <svg stroke="#123456" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
   <path d="..." />
 </svg>;
+
+//# Значения
+//* stroke="#123456"
+// Cтандартный формат цвета: именованный цвета (orange, rebeccapurple и др.), RGB(A), HEX и HSL(A).
+
+//* stroke="url(#pattern)"
+// Ссылка на SVG-элемент, который будет как паттерн заполнять площадь обводки.
