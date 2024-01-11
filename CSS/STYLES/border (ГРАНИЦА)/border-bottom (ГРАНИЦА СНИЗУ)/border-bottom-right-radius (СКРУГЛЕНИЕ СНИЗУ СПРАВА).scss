@@ -1,0 +1,8 @@
+//# border-bottom-right-radius (СКРУГЛЕНИЕ СНИЗУ СПРАВА)
+// Можно управлять радиусом закругления каждого угла в отдельности.
+
+.element {
+  border-bottom-right-radius: 5em 50%;
+}
+
+//* Подробнее - border-radius

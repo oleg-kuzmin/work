@@ -1,0 +1,8 @@
+//# border-inline-color (ЦВЕТ СТРОЧНАЯ ОСЬ)
+// Свойство border-inline-color управляет цветом рамки элемента по строчной оси.
+
+.element {
+  border-inline-color: currentColor;
+}
+
+//* Подробнее - border-color

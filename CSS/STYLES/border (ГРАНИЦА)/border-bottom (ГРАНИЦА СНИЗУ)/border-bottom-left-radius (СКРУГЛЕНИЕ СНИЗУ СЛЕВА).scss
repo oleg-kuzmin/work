@@ -1,0 +1,8 @@
+//# border-bottom-left-radius (СКРУГЛЕНИЕ СНИЗУ СЛЕВА)
+// Можно управлять радиусом закругления каждого угла в отдельности.
+
+.element {
+  border-bottom-left-radius: 5em 50%;
+}
+
+//* Подробнее - border-radius
