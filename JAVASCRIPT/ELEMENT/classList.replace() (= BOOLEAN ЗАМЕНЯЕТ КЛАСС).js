@@ -1,4 +1,4 @@
-//# element.classList.replace() (ЗАМЕНЯЕТ КЛАСС = BOOLEAN)
+//# element.classList.replace() (= BOOLEAN ЗАМЕНЯЕТ КЛАСС)
 // Метод позволяет заменить одно значение класса другим.
 
 //# Синтаксис
