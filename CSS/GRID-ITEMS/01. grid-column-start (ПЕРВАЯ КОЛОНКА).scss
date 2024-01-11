@@ -1,4 +1,4 @@
-//# grid-row-start
+//# grid-column-start (ПЕРВАЯ КОЛОНКА)
 /*
 - Определяют положение элемента внутри грид-сетки при помощи указания на конкретные направляющие линии.
 - Ключевое слово span работает только с положительными значениями.
@@ -7,22 +7,22 @@
 */
 
 .grid-element {
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 //# Значения
-//* grid-row-start: auto (по умолчанию)
+//* grid-column-start: auto (по умолчанию)
 // Означает автоматическое размещение, автоматический диапазон ячеек или дефолтное растягивание элемента, равное одному.
 
-//* grid-row-start: 2
+//* grid-column-start: 2
 // Порядковый номер конкретной линии.
 
-//* grid-row-start: row-start
+//* grid-column-start: column-start
 // Название конкретной линии.
 
-//* grid-row-start: span 2
+//* grid-column-start: span 2
 // Элемент растянется на указанное количество ячеек.
 
-//* grid-row-start: span row-start
+//* grid-column-start: span column-start
 // Элемент будет растягиваться до следующей указанной линии.
