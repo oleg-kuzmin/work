@@ -1,4 +1,4 @@
-//# :enabled (ЭЛЕМЕНТ НА КОТОРЫЙ МОЖНО НАЖАТЬ)
+//# :disabled :enabled (НА ЭЛЕМЕНТ НЕЛЬЗЯ НАЖАТЬ)
 /*
 - Псевдоклассы :disabled и :enabled помогают стилизовать интерактивные элементы — на которые можно и нельзя нажать.
 - Легко применяются к любым элементам, которым можно задать атрибут disabled: <button>, <command>, <fieldset>, <keygen>, <optgroup>, <option>, <select>, <textarea> и <input>.
@@ -10,6 +10,6 @@
 */
 
 //# Пример
-button:enabled {
-  opacity: 1;
+button:disabled {
+  opacity: 0.5;
 }
