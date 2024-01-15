@@ -1,4 +1,4 @@
-//# localStorage.setItem() (СОХРАНЕНИЕ ДАННЫХ)
+//# window.localStorage.setItem() (СОХРАНЕНИЕ ДАННЫХ)
 // Сохраняет данные в формате ключ-значение в объект window.localStorage.
 
 //# Синтаксис
