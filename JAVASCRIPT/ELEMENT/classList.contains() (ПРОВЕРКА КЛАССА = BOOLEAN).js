@@ -1,4 +1,4 @@
-//# element.classList.contains() (= BOOLEAN ПРОВЕРКА КЛАССА)
+//# element.classList.contains() (ПРОВЕРКА КЛАССА = BOOLEAN)
 // Метод позволяет проверить наличие класса у элемента.
 
 //# Синтаксис
