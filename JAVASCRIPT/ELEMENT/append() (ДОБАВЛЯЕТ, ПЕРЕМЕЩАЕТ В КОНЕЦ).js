@@ -1,4 +1,4 @@
-//# .append() (Добавляет элемент в конец node)
+//# append() (ДОБАВЛЯЕТ, ПЕРЕМЕЩАЕТ В КОНЕЦ)
 /*
 - Чтобы добавить элемент, нужна ссылка на узел, относительно которого вставляется элемент.
 - Для этого создайте элемент через createElement или используйте метод querySelector.
@@ -9,11 +9,16 @@
 - Добавить в DOM можно и элемент, который там уже есть. Тогда элемент удалится с прошлого места и встанет на новое.
 */
 
-//# пример
-node.append(newElement);
+//# Синтаксис
+//* newElement
+element.append(newElement);
 
-//# перемещение элементов
-// переместили первый элемент todo-листа в конец
+//# Пример
+//* Добавление
+const paragraph = document.querySelector('p');
+paragraph.append(' А разработчиком — ещё лучше!');
+
+//* Перемещение
 const list = document.querySelector('.todo-list');
 const listItems = list.children;
-list.append(listItems[0]);
+list.append(listItems[0]); // переместили первый элемент todo-листа в конец
