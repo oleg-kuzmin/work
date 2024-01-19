@@ -12,3 +12,16 @@
     <option>Пассифлора инкарнатная</option>
   </optgroup>
 </select>;
+
+<select name="variants">
+  <optgroup label="Группа вариантов 1">
+    <option value="1">Вариант 1</option>
+    <option value="2">Вариант 2</option>
+    <option value="3">Вариант 3</option>
+  </optgroup>
+  <optgroup label="Группа вариантов 2">
+    <option value="4">Вариант 4</option>
+    <option value="5">Вариант 5</option>
+    <option value="6">Вариант 6</option>
+  </optgroup>
+</select>;
