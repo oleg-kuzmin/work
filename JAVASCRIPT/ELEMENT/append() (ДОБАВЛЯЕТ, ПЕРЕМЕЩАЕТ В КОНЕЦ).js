@@ -10,8 +10,8 @@
 */
 
 //# Синтаксис
-//* newElement
-element.append(newElement);
+//* HTMLElement - созданный или найденный элемент
+element.append(element);
 
 //# Пример
 //* Добавление
