@@ -1,14 +1,30 @@
-//# navigator (Объект навигации)
-// Свойство Navigator.geolocation только для чтения, возвращающие объект Geolocation, который даёт веб контенту доступ к месторасположению устройства.
+//# navigator.geolocation (ДАННЫЕ О ГЕОЛОКАЦИИ)
+/*
+- Получить доступ к геолокации позволяет свойство navigator.geolocation объекта navigator.
+- Когда мы воспользуемся свойством navigator.geolocation, в ответе получим интерфейс Geolocation, — он позволяет работать с данными геопозиции.
+- Для Geolocation есть различные методы: getCurrentPosition, watchPosition и clearWatch. Если их вызвать, то пользователь получит уведомление.
+- Если человек одобрит запрос, мы получим возможность работать с интерфейсом GeolocationPosition.
+*/
 
-//# получение гео-локации
+//# Возвращает
+//* Объект Geolocation API
+/*
+clearWatch: ƒ clearWatch()
+getCurrentPosition: ƒ getCurrentPosition()
+watchPosition: ƒ watchPosition()
+constructor: ƒ Geolocation()
+Symbol(Symbol.toStringTag): "Geolocation"
+[[Prototype]]: Object
+*/
+
+//# Получение геолокации
 document.addEventListener('click', () => {
   navigator.geolocation.getCurrentPosition(position => {
     console.log(position);
   });
 });
 
-//# пример
+//# Пример использования
 const result = document.querySelector('#result');
 const button = document.querySelector('#button');
 
@@ -18,7 +34,6 @@ function getPosition(position) {
   link.target = '_blank';
   link.textContent = 'Моя позиция на карте';
   result.append(link);
-  console.log(position);
 }
 
 function error() {
@@ -32,7 +47,6 @@ const options = {
 };
 
 function handleClick() {
-  console.log(navigator);
   navigator.geolocation.getCurrentPosition(getPosition, error, options);
 }
 
