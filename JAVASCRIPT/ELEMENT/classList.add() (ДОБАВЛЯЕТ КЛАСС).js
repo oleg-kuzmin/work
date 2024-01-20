@@ -6,10 +6,13 @@
 
 //# Синтаксис
 //* Строка - имя класса
-element.classList.remove('имя-класса');
+element.classList.add('имя-класса');
 
 //* Несколько строк
-element.classList.remove('имя-класса', 'имя-класса');
+element.classList.add('имя-класса', 'имя-класса');
+
+//# Возвращает
+//* NONE (undefined).
 
 //# Пример
 const garage = document.querySelector('.garage');

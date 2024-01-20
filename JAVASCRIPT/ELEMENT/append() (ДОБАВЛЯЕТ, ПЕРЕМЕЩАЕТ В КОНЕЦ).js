@@ -13,6 +13,9 @@
 //* HTMLElement - созданный или найденный элемент
 element.append(element);
 
+//# Возвращает
+//* NONE (undefined).
+
 //# Пример
 //* Добавление
 const paragraph = document.querySelector('p');

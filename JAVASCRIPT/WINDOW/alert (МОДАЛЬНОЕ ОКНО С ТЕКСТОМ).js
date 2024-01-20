@@ -14,6 +14,9 @@ alert('Message');
 const text = 'Another message';
 alert(text);
 
+//# Возвращает
+//* NONE (undefined).
+
 //# Выведение объекта
 // Чтобы объяснить JavaScript, как нужно выводить объект с данными в alert(), необходимо описать функцию объекта toString, которая отвечает за приведение к строке.
 

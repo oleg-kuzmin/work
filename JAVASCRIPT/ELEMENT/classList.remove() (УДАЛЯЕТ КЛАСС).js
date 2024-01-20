@@ -8,6 +8,9 @@ element.classList.remove('имя-класса');
 //* Несколько строк
 element.classList.remove('имя-класса', 'имя-класса');
 
+//# Возвращает
+//* NONE (undefined).
+
 //# Пример
 const garage = document.querySelector('.garage');
 garage.classList.remove('jaguar');

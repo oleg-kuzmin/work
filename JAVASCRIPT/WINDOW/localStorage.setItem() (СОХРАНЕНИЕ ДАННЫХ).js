@@ -6,5 +6,8 @@
 //* 2. Строка - значение
 window.localStorage.setItem('ключ', 'значение');
 
+//# Возвращает
+//* NONE (undefined).
+
 //# Пример
 window.localStorage.setItem('name', 'Дока Дог');

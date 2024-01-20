@@ -5,5 +5,8 @@
 //* Строка - ключ
 window.localStorage.removeItem('ключ');
 
+//# Возвращает
+//* NONE (undefined).
+
 //# Пример
 window.localStorage.removeItem('name');
