@@ -5,6 +5,4 @@
 <input class="password" type="password" required />;
 
 let input = document.querySelector('input');
-
-// Сделаем input текстовым полем ввода
-input.type = 'text';
+input.type = 'text'; // Сделаем input текстовым полем ввода
