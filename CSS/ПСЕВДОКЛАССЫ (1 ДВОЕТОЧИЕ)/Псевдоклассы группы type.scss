@@ -1,10 +1,10 @@
 //# Псевдоклассы группы type
 /*
-- :only-of-type
-- :first-of-type
-- :last-of-type
-- :nth-of-type()
-- :nth-last-of-type()
+- :only-of-type (единственный элемент)
+- :first-of-type (первый элемент)
+- :last-of-type (последний элемент)
+- :nth-of-type() (конкретный элемент)
+- :nth-last-of-type() (последний элемент с конца)
 
 Псевдокласс li:first-child, означачает выбрать элемент, если:
 1. Этот элемент — li;
