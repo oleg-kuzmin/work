@@ -4,8 +4,10 @@
 //# Синтаксис
 //* 1. Строка - имя класса для переключения
 element.classList.toggle('имя-класса');
+
 //* 2. Boolean (опционально)
 element.classList.toggle('имя-класса', true);
+
 /*
 true - метод будет работать как add()
 false - метод будет работать как remove()
