@@ -11,3 +11,8 @@ input.onblur = function () {
 input.addEventListener('blur', function () {
   console.log('Фокус снят');
 });
+
+//* Если пользователь переключил вкладку
+window.addEventListener('blur', function () {
+  console.log('пользователь переключил вкладку');
+});
