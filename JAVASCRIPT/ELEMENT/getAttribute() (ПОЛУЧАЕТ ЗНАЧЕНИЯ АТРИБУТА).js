@@ -6,7 +6,7 @@
 
 //# Синтаксис
 //* Строка - имя атрибута
-imageOnPage.getAttribute('attribute');
+element.getAttribute('attribute');
 
 //# Возвращает
 //* Строка с значением атрибута || Пустая строка || null - если атрибута нет.
