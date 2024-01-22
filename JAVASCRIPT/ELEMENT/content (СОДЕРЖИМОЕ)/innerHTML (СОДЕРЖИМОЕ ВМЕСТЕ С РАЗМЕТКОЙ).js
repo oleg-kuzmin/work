@@ -1,4 +1,4 @@
-//# .innerHTML (Содержимое внутри элемента с разметкой)
+//# innerHTML (СОДЕРЖИМОЕ ВМЕСТЕ С РАЗМЕТКОЙ)
 /*
 - Свойство innerHTML содержит в себе строку со всем наполнением элемента (в том числе и разметкой).
 - Свойство innerHTML позволяет считать содержимое элемента в виде HTML-строки или установить новый HTML.
@@ -13,20 +13,22 @@
 Так же не рекомендуется использовать innerHTML, если нужно просто изменить текст в элементе. Для этой задачи есть свойство innerText или textContent.
 */
 
-//# пример
-//* до кода
+//# Возвращает
+//* Строка с html-содержимым элемента.
+
+//# Пример
+const form = document.querySelector('form');
+console.log(form.innerHTML); // '<label>Логин</label><input type="text" id="login" /><div class="error">Введите логин</div>'
+form.innerHTML = '<div class="success">Вход выполнен</div>';
+
+//* ДО
 <form>
   <label>Логин</label>
   <input type="text" id="login" />
   <div class="error">Введите логин</div>
 </form>;
 
-//* наш код
-const form = document.querySelector('form');
-console.log(form.innerHTML); // '<label>Логин</label><input type="text" id="login" /><div class="error">Введите логин</div>'
-form.innerHTML = '<div class="success">Вход выполнен</div>'; // Меняем содержимое новым html
-
-//* после кода
+//* ПОСЛЕ
 <form>
   <div class="success">Вход выполнен</div>
 </form>;
