@@ -11,7 +11,7 @@
 
 //# Синтаксис
 //* HTMLElement - созданный или найденный элемент
-element.prepend(element);
+element.prepend(newElement);
 
 //# Возвращает
 //* NONE (undefined).

@@ -11,7 +11,7 @@
 
 //# Синтаксис
 //* HTMLElement - созданный или найденный элемент
-element.before(element);
+element.before(newElement);
 
 //# Возвращает
 //* NONE (undefined).

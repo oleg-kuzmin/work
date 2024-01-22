@@ -11,7 +11,7 @@
 
 //# Синтаксис
 //* HTMLElement - созданный или найденный элемент
-element.after(element);
+element.after(newElement);
 
 //# Возвращает
 //* NONE (undefined).

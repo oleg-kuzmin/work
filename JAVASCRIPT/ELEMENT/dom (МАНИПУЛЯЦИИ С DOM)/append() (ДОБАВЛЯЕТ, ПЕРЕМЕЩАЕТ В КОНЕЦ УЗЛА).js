@@ -11,7 +11,7 @@
 
 //# Синтаксис
 //* HTMLElement - созданный или найденный элемент
-element.append(element);
+element.append(newElement);
 
 //# Возвращает
 //* NONE (undefined).
