@@ -5,6 +5,9 @@
 //* Строка - CSS-селектор
 element.closest('CSS-селектор');
 
+//# Возвращает
+//* DOM-элемент
+
 //# Пример
 <article class="container">
   <span class="element-one">Первый элемент</span>

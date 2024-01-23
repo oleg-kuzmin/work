@@ -1,8 +1,11 @@
-//# submit() (ОТПРАВКА ФОРМЫ)
+//# form.submit() (ОТПРАВКА ФОРМЫ)
 // Программная отправка формы с помощью метода.
 
 //# Синтаксис
 form.submit();
+
+//# Возвращает
+//* NONE (undefined).
 
 //# Пример
 input.addEventListener('input', function () {

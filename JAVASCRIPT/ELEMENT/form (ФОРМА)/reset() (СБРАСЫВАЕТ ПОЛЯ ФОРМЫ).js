@@ -4,6 +4,9 @@
 //# Синтаксис
 form.reset();
 
+//# Возвращает
+//* NONE (undefined).
+
 //# Пример
 const form = document.forms.myForm;
 form.addEventListener('submit', function (evt) {
