@@ -1,2 +1,0 @@
-//# Swiper
-//* npm install swiper

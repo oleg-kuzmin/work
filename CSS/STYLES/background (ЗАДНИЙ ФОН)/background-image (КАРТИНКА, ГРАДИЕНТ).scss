@@ -22,25 +22,48 @@
 
 //# linear-gradient (меняется вдоль линии, задающей направление)
 //* background-image: linear-gradient(#0078ff, #c2e3e3)
-// В самом простом случае указывают два цвета — начальный и конечный (браузер сделает между ними плавный переход, по умолчанию браузер отрисовывает линейный градиент сверху вниз).
+// В самом простом случае указывают два цвета — начальный и конечный (браузер сделает между ними плавный переход). Направление можно не указывать, тогда будет использовано значение по умолчанию — сверху вниз.
 
-//* background-image: linear-gradient(90deg, #0078ff, #c2e3e3)
-// Повернёт градиент на 90 градусов.
-
+//# Направление linear-gradient - ключевые слова
 //* background-image: linear-gradient(to top, #0078ff, #53f675)
-//* background-image: linear-gradient(to left, #0078ff, #53f675)
-//* background-image: linear-gradient(to right, #0078ff, #53f675)
-//* background-image: linear-gradient(to bottom, #0078ff, #53f675)
-// Для самых используемых направлений существуют специальные параметры, которыми можно заменять указатель в градусах.
+// Направление вверх.
 
+//* background-image: linear-gradient(to left, #0078ff, #53f675)
+// Направление налево.
+
+//* background-image: linear-gradient(to right, #0078ff, #53f675)
+// Направление направо.
+
+//* background-image: linear-gradient(to bottom, #0078ff, #53f675)
+// Направление вниз.
+
+//* background-image: linear-gradient(to right top, #0078ff, #53f675)
+// Направление по диагонали в правый верхний угол.
+
+//* background-image: linear-gradient(to right bottom, #0078ff, #53f675)
+// Направление по диагонали в правый нижний угол.
+
+//* background-image: linear-gradient(to left top, #0078ff, #53f675)
+// Направление по диагонали в левый верхний угол.
+
+//* background-image: linear-gradient(to left bottom, #0078ff, #53f675)
+// Направление по диагонали в левый нижний угол.
+
+//# Направление linear-gradient - градусы
+//* background-image: linear-gradient(90deg, #0078ff, #c2e3e3)
+// [0 +- 360]deg
+
+//# Несколько цветов
 //* background-image: linear-gradient(#0b2337, #126ddc, #76c2e0, #d1dc9d, #f09174)
 // Для построения более сложных градиентов можно использовать более одного цвета.
 
+//# Точки перелома
+//* background-image: linear-gradient(#0078ff 50%, #c2e3e3 50%)
+// Можно определять точки перелома в процентах или пикселях.
+
+//# Указание интервала для нескольких цветов
 //* background-image: linear-gradient(#0078ff 0px 100px, #b4deef 100px 200px, #ff5a0a 200px 300px)
 // После указания каждого цвета можно задать интервал, в котором нужно применить цвет (первое значение - начальная точка указанного направления, второе - финальная точка указанного направления).
-
-//* background-image: linear-gradient(#0078ff 20%, #c2e3e3 100%)
-// Можно определять точки перелома в процентах или пикселях.
 
 //# radial-gradient (изменения цвета расходятся от заданного центра, а сам градиент может принимать форму круга или эллипса)
 //* background-image: radial-gradient(#0078ff, #c2e3e3)
