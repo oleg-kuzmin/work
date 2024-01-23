@@ -6,7 +6,7 @@
 document.createElement('li');
 
 //# Возвращает
-//* Новый элемент.
+//* Новый DOM-элемент.
 
 //# Пример
 const listItem = document.createElement('li');
