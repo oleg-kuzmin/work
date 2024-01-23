@@ -2,8 +2,8 @@
 // Возникает при двойном щелчке левой кнопкой. Обработчик отслеживает два срабатывания click подряд на одном элементе.
 
 //# Пример
-//* onclick
-button.dblclick = function () {
+//* ondblclick
+button.ondblclick = function () {
   console.log('Клик!');
 };
 

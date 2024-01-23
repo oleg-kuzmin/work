@@ -5,7 +5,7 @@
 */
 
 //# Пример
-//* onscroll
+//* onwheel
 window.onwheel = function () {
   console.log('Колесико прокручено');
 };

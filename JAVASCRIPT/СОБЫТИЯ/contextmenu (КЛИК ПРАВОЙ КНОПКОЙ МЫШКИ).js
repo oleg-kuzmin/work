@@ -2,8 +2,8 @@
 // Возникает при щелчке правой кнопкой, когда она в нижнем положении. Как mousedown, но для одной правой кнопки.
 
 //# Пример
-//* onclick
-button.contextmenu = function () {
+//* oncontextmenu
+button.oncontextmenu = function () {
   console.log('Клик!');
 };
 

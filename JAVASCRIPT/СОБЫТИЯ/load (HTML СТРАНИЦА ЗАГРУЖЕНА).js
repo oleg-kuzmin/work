@@ -6,8 +6,8 @@
 */
 
 //# Пример
-//* onclick
-window.load = function () {
+//* onload
+window.onload = function () {
   console.log('Страница готова!');
 };
 

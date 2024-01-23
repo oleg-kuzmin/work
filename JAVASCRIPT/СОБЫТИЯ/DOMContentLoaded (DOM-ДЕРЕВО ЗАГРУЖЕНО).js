@@ -11,8 +11,8 @@
 */
 
 //# Пример
-//* onclick
-document.DOMContentLoaded = function () {
+//* onDOMContentLoaded
+document.onDOMContentLoaded = function () {
   console.log('DOM готов!');
 };
 
