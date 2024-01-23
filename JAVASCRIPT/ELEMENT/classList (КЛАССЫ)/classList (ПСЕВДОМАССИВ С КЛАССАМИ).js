@@ -5,7 +5,7 @@
 */
 
 //# Возвращает
-//* Псевдомассив строк c классами.
+//* DOMTokenList (Псевдомассив, динамическая коллекция).
 
 //# Пример
 const button = document.querySelector('button');
