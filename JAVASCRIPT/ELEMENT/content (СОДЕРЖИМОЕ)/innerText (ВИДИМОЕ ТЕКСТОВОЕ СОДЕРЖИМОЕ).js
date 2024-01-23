@@ -1,4 +1,4 @@
-//# .innerText (Видимое текстовое содержимое элемента)
+//# innerText (ВИДИМОЕ ТЕКСТОВОЕ СОДЕРЖИМОЕ)
 /*
 - Предназначено для получения текстового содержимого. Оно отличается от textContent тем, что innerText возвращает только видимое текстовое содержимое. То есть innerText проигнорирует всё, что скрыто свойством display: none, а textContent — нет.
 - При считывании текста с элемента будет возвращена строка с текстовым содержимым всех вложенных дочерних элементов.
@@ -14,8 +14,10 @@
 2) свойство innerText не стандартизировано. Его придумали в Microsoft ещё до появления textContent. Оно стало популярным, и другие производители начали внедрять его в свои браузеры. Но в стандарте innerText по-прежнему нет, а значит, его поведение в разных браузерах может отличаться. А ещё нет гарантий, что оно не изменится в будущем.
 */
 
-//# пример
-//* при считывании сработает конкатенация всех узлов (и label и button)
+//# Возвращает
+//* Строка с содержимым элемента (при считывании сработает конкатенация всех узлов)
+
+//# Пример
 <form>
   <label for="name">Имя</label>
   <input type="text" id="name" />
@@ -27,11 +29,3 @@
 const form = document.querySelector('form');
 const button = document.getElementById('submit');
 console.log(form.innerText); // "ИмяSubmit"
-
-//* изменим button с 'submit' на 'done'
-button.innerText = 'done';
-console.log(button); // <button type="submit" id="submit">done</button>
-
-//* найдем statusElement с 'Loading...' и изменим на 'Data loaded!'
-const statusElement = document.getElementById('loading-status');
-statusElement.innerText = 'Data loaded!';
