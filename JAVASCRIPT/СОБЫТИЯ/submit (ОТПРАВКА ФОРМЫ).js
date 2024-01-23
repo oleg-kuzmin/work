@@ -19,3 +19,10 @@ form.onsubmit = function () {
 document.addEventListener('submit', function () {
   console.log('Форма отправлена!');
 });
+
+//# Отправка формы не дожидаясь нажатия submit
+form.addEventListener('input', function () {
+  if (input.length === 4) {
+    form.submit();
+  }
+});
