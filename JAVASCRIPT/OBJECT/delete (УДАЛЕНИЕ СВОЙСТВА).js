@@ -10,6 +10,9 @@
 delete object.prop;
 delete book['prop'];
 
+//# Возвращает
+//* NONE (undefined).
+
 //# Пример
 const book = {
   title: 'Война и мир',
