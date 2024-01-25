@@ -12,4 +12,4 @@ const myNumber = new Number();
 const myNumber2 = new Number(100);
 
 //# Возвращает
-//* Созданное число.
+//* Созданный объект.
