@@ -1,4 +1,4 @@
-//# navigator.geolocation (ДАННЫЕ О ГЕОЛОКАЦИИ)
+//# window.navigator.geolocation (ДАННЫЕ О ГЕОЛОКАЦИИ)
 /*
 - Получить доступ к геолокации позволяет свойство navigator.geolocation объекта navigator.
 - Когда мы воспользуемся свойством navigator.geolocation, в ответе получим интерфейс Geolocation, — он позволяет работать с данными геопозиции.

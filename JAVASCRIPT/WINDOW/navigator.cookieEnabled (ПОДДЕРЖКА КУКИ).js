@@ -1,4 +1,4 @@
-//# navigator.cookieEnabled (ПОДДЕРЖКА КУКИ)
+//# window.navigator.cookieEnabled (ПОДДЕРЖКА КУКИ)
 // cookieEnabled возвращает true, если браузер пользователя поддерживает куки и они включены, false в противном случае.
 
 //# Возвращает
