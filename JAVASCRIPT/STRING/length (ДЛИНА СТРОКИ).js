@@ -10,4 +10,4 @@
 
 //# Пример
 const string = 'Строка текста неизвестной длины';
-console.log(string.length); // 31
+console.log(string.length); // "31"
