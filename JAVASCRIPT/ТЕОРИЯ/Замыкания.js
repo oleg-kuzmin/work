@@ -1,5 +1,4 @@
 //# Замыкания
-
 function Counter() {
   let count = 0;
   return function () {
@@ -7,6 +6,7 @@ function Counter() {
     return count;
   };
 }
+
 const counter = Counter();
 console.log(counter()); // 1
 console.log(counter()); // 2
