@@ -13,7 +13,9 @@
 
 //# Пример
 <video controls width="250">
-  <source src="flower.webm" type="video/webm" />
-  <source src="flower.mp4" type="video/mp4" />
+  <source src="kino.mp4" type="video/mp4" />
+  <source src="kino.webm" type="video/webm" />
+  <source src="kino.ogg" type="video/ogg" />
+  <source src="kino.mov" type="video/quicktime" />
   Ваш браузер не поддерживает встроенные видео
 </video>;

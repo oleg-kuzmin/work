@@ -8,8 +8,10 @@
 //# Пример
 //* <video> разные форматы
 <video controls width="250" height="200" muted>
-  <source src="birthday.webm" type="video/webm" />
-  <source src="birthday.mp4" type="video/mp4" />
+  <source src="kino.mp4" type="video/mp4" />
+  <source src="kino.webm" type="video/webm" />
+  <source src="kino.ogg" type="video/ogg" />
+  <source src="kino.mov" type="video/quicktime" />
 </video>;
 
 //* <audio> разные форматы
@@ -31,4 +33,3 @@
   <source srcset="big.jpg" media="(min-width: 600px)" />
   <img src="small.jpg" alt="Абстрактное изображение" />
 </picture>;
-
