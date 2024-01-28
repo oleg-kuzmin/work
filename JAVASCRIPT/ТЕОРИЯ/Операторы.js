@@ -1,6 +1,5 @@
 //# приоритет операторов
-/*
-https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
 //*19  (VALUE)  (скобки)
 //*16  VALUE++  (постфиксный инкремент) (увеличивает переменную на 1, аналогично value = value + 1, => старое значение)
@@ -23,7 +22,6 @@ https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operato
 //*2	 -=       (присваивание с вычитанием)
 //*2	 =        (присваивание)
 //*1   ,        (запятая) (предоставляет возможность вычислять несколько выражений, => результат только последнего)
-
 
 //# Aрифметические операторы
 //*  +    (сложение)
