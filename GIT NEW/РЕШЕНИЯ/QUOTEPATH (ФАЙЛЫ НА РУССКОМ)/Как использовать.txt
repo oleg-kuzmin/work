@@ -1,0 +1,5 @@
+- открыть файл C:\Program Files\Git\etc\gitconfig
+- добавить параметр quotepath в секции [core], установив его в false.
+
+[core]
+	quotepath = false

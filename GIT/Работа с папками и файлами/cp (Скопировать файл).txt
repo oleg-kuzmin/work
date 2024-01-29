@@ -1,4 +1,0 @@
-# синтаксис: cp ****** (что скопировать) /****** (куда сохранить)
-
-cp index.html /src
-cp index.html style.css script.js /src
