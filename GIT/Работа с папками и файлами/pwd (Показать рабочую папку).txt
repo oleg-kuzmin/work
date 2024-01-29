@@ -1,3 +1,0 @@
-# Показать рабочую папку (Print Working Directory)
-
-pwd
