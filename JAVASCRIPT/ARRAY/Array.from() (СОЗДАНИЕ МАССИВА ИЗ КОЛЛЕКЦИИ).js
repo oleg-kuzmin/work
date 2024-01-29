@@ -6,7 +6,7 @@ Array.from(collection);
 //* Коллекция: collection - псевдомассив
 
 //# Возвращает
-//* Созданный массив
+//* Созданный массив.
 
 //# Пример
 const posts = content.querySelectorAll('.post');
