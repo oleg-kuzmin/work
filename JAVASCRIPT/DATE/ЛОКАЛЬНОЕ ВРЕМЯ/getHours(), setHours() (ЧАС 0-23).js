@@ -29,3 +29,5 @@ setHours(hoursValue, minutesValue, secondsValue, msValue);
 
 //# Возвращает
 //* Число - количество миллисекунд от начала эпохи (1 января 1970 00:00:00 UTC) для полученного значения объекта.
+
+//# Также есть методы getUTCHours() и setUTCHours()

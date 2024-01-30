@@ -27,3 +27,5 @@ setFullYear(yearValue, monthValue, dayValue);
 //# Возвращает
 //* Число - текущее время в миллисекундах для нового значения даты.
 // Такое же значение как и у метода getTime() для текущего объекта после вызова setFullYear().
+
+//# Также есть методы getUTCFullYear() и setUTCFullYear()
