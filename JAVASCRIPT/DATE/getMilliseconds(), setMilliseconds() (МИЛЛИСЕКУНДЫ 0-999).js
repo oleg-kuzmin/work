@@ -13,7 +13,7 @@ currentDate.getMilliseconds();
 //* Число - миллисекунды.
 
 //# setMilliseconds() (МИЛЛИСЕКУНДЫ 0-999)
-// Устанавливает миллисекунды.
+// Устанавливает миллисекунды. Изменяет объект - экземпляр класса new Date().
 
 //# Синтаксис
 setMilliseconds(millisecondsValue);

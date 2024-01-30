@@ -13,7 +13,7 @@ currentDate.getFullYear();
 //* Число - год.
 
 //# setFullYear() (ГОД)
-// Устанавливает год.
+// Устанавливает год. Изменяет объект - экземпляр класса new Date().
 
 //# Cинтаксис
 setFullYear(yearValue, monthValue, dayValue);

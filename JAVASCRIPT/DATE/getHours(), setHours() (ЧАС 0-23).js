@@ -1,23 +1,27 @@
-//# getSeconds() (СЕКУНДЫ 0-59)
-// Возвращает секунды.
+//# getHours() (ЧАС 0-23)
+// Возвращает час.
 
 //# Синтаксис
 //* без переменной
-new Date().getSeconds();
+new Date().getHours();
 
 //* с переменной
 const currentDate = new Date();
-currentDate.getSeconds();
+currentDate.getHours();
 
 //# Возвращает
-//* Число - секунды.
+//* Число - час.
 
-//# setSeconds() (СЕКУНДЫ 0-59)
-// Устанавливает секунды.
+//# setHours() (ЧАС 0-23)
+// Устанавливает часы. Изменяет объект - экземпляр класса new Date().
 
 //# Синтаксис
-setSeconds(secondsValue, msValue);
-//* Число: secondsValue - целое число от 0 до 59, представляющее секунды
+setHours(hoursValue, minutesValue, secondsValue, msValue);
+//* Число: hoursValue - целое число от 0 до 23, представляющее часы
+
+//* Число: minutesValue - целое число от 0 до 59, представляющее минуты (опционально)
+
+//* Число: secondsValue - целое число от 0 до 59, представляющее секунды (опционально)
 // Если вы определите параметр secondsValue, вы также должны определить параметр minutesValue.
 
 //* Число: msValue - Целое число от 0 до 999, представляющее миллисекунды (опционально)
@@ -26,4 +30,4 @@ setSeconds(secondsValue, msValue);
 //# Возвращает
 //* Число - количество миллисекунд от начала эпохи (1 января 1970 00:00:00 UTC) для полученного значения объекта.
 
-//# Также есть методы getUTCSeconds() и setUTCSeconds()
+//# Также есть методы getUTCHours() и setUTCHours()

@@ -13,7 +13,7 @@ currentDate.getMinutes();
 //* Число - минуты.
 
 //# setMinutes() (МИНУТЫ 0-59)
-// Устанавливает минуты.
+// Устанавливает минуты. Изменяет объект - экземпляр класса new Date().
 
 //# Синтаксис
 setMinutes(minutesValue, secondsValue, msValue);
