@@ -1,18 +1,3 @@
-//* Тип данных boolean
-let isCompleted: boolean = false;
-
-//* Тип данных number
-const decimal: number = 6;
-
-//* Тип данных string
-const userName: string = 'string';
-
-//* Тип данных null
-const n: null = null;
-
-//* Тип данных undefined
-const u: undefined = undefined;
-
 //* Тип данных void (определение отсутствующих типов)
 // Например для функций, которые ничего не возвращают
 const greetUser = (): void => {
