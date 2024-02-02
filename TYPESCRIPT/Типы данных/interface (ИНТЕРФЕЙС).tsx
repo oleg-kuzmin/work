@@ -62,3 +62,13 @@ const john: Person = {
   name: 'John',
   age: 100,
 };
+
+//# Наследование
+interface IPerson {
+  name: string;
+}
+
+//* extends ****** - один или несколько через запятую
+interface IPersonDevelop extends IPerson {
+  email: string;
+}

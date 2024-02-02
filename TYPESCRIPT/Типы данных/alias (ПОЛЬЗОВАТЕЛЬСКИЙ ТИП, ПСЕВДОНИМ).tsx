@@ -9,11 +9,13 @@ type myType = {
   c: string;
 };
 
-//* Жестко заданный интерфейс
-interface myType1 {
+type myType11 = {
   a: number;
   b: number;
   c: string;
-}
+};
+
+//* Сложносоставной тип
+type myType111 = myType & myType11;
 
 const object: myType = { a: 123, b: 123, c: 'abc' };
