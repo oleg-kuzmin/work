@@ -5,7 +5,6 @@ const greetUser = (): void => {
 };
 
 //* Тип данных array для чисел
-const list: number[] = [1, 2, 3];
 const list2: Array<number> = [1, 2, 3];
 
 //* Тип данных array для разного
