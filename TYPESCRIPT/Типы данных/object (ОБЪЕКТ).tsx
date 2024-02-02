@@ -1,7 +1,4 @@
-//# alias (ПОЛЬЗОВАТЕЛЬСКИЙ ТИП, ПСЕВДОНИМ)
-type Name = string | number;
-let userName: Name;
-
+//# object (ОБЪЕКТ)
 //* Жестко заданный псевдоним
 type myType = {
   a: number;

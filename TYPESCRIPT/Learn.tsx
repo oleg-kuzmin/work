@@ -4,13 +4,6 @@ const greetUser = (): void => {
   console.log('hello');
 };
 
-//* Тип данных array для чисел
-const list2: Array<number> = [1, 2, 3];
-
-//* Тип данных array для разного
-let x: [string, number] = ['hello', 10];
-
-
 
 //* Тип данных Enum
 enum Directions {
