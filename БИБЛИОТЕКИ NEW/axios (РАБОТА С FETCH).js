@@ -1,2 +1,2 @@
 //# axios (РАБОТА С FETCH)
-//* npm i axios
+//* npm i axios 
