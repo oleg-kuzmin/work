@@ -11,9 +11,7 @@ const list2: Array<number> = [1, 2, 3];
 //* Тип данных array для разного
 let x: [string, number] = ['hello', 10];
 
-//* Тип данных any
-let x1: [any, any] = ['hello', 10];
-let x2: Array<any> = ['hello', 10];
+
 
 //* Тип данных Enum
 enum Directions {
@@ -49,7 +47,3 @@ const error = (msg: string): never => {
 
 //* Тип данных Object
 const create = (o: object | null): void => {};
-
-//# Создание пользовательского типа
-type Name = string;
-let id: Name;
