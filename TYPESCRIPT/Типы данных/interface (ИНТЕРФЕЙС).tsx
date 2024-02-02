@@ -1,5 +1,12 @@
 //# Создание интерфейса
 //* Жестко заданный интерфейс
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+//* Жестко заданный интерфейс
 interface myType1 {
   a: number;
   b: number;
@@ -29,8 +36,8 @@ interface myType4 {
   print1: () => number; // можно сделать опциональной
 }
 
-//* Дополнительные ключи
-interface myType1 {
+//* Еще могут быть дополнительные ключи
+interface myType5 {
   a: number;
   b: number;
   c: string;
@@ -43,3 +50,15 @@ function setTodo(res) {
 }
 
 //# Объединение интерфейсов
+interface Person {
+  name: string;
+}
+
+interface Person {
+  age: number;
+}
+
+const john: Person = {
+  name: 'John',
+  age: 100,
+};
