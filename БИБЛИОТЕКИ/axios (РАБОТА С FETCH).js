@@ -1,5 +1,6 @@
 //# axios (РАБОТА С FETCH)
 //* npm i axios
+// https://axios-http.com/
 
 //* Импорт в файл
 import axios from 'axios';
