@@ -7,7 +7,7 @@
 element.setAttribute('lang', 'ru');
 
 // Согласно спецификации у setAttribute есть два обязательных параметра, но в то же время disabled не предполагает никакого значения. Получается, чтобы метод сработал, второй аргумент необходим, но его значение неважно:
-element.setAttribute('disabled', false);
+element.setAttribute('disabled', true);
 
 //# Возвращает
 //* NONE (undefined).
