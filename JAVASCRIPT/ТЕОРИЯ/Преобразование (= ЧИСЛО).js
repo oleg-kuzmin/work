@@ -20,6 +20,7 @@ Number(null);                   // 0
 Number('счастье не за горами'); // NaN
 Number(undefined);              // NaN
 
+//# Примеры
 console.log('' + 1 + 0);        // "10"      (= СТРОКА) (= СТРОКА)
 console.log('' - 1 + 0);        // -1        (= ЧИСЛО)  (= ЧИСЛО)
 console.log(true + false);      // 1         (= ЧИСЛО)
