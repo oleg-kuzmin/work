@@ -19,3 +19,6 @@ document.querySelector('input');
 
 // Поиск первого элемента в DOM.
 document.querySelector('*');
+
+// Поиск по составному селектору
+document.querySelector('section.bag div.bag .item');
