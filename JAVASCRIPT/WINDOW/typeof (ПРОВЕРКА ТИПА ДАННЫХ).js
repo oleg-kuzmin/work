@@ -5,7 +5,6 @@
 //* Строку с значением типа.
 
 //# Number
-// Проверять тип number нужно через Number.isFinite()
 typeof 42 === 'number';
 typeof 4.2 === 'number';
 typeof -42 === 'number';
@@ -32,11 +31,8 @@ typeof undefined === 'undefined';
 
 //# Object
 typeof { key: 'value' } === 'object';
-typeof null === 'object'; // официально признанная ошибка
-
-//# Array
-// Проверять тип array нужно через Array.isArray()
 typeof [1, 2, 3] === 'object'; // нужно проверять через Array.isArray()
+typeof null === 'object'; // официально признанная ошибка
 
 //# Function
 const multiply = () => a * b;
