@@ -57,3 +57,13 @@ const result = order.reduce(function (previousValue, item) {
 }, {});
 
 console.log(result); // { яблоко: 2, банан: 3, апельсин: 1 }
+
+//* количество ключей
+function countKey(object, array) {
+  return array.reduce(function (res, item) {
+    if (obj[item]) {
+      res += 1;
+    }
+    return res;
+  }, 0);
+}
