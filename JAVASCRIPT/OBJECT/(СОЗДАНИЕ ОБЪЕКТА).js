@@ -31,6 +31,11 @@ const user = {
   username,
 };
 
+const user2 = {
+  firstName: firstName,
+  username: username,
+};
+
 //* через конструктор
 const myObject = new Object();
 const book = new Object({ title: 'Война и мир', author: 'Лев Толстой' });
