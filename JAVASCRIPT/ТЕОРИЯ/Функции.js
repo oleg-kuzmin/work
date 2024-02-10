@@ -15,14 +15,12 @@ function showMessage(user, message) {
 }
 
 //* использование параметра по умолчанию
+// Параметр по умолчанию может принимать любое значение: число, строку, объект, функцию. Это значение будет присвоено параметру, если аргумент не передан или равен undefined.
 function showMessage(from, text = 'текст не добавлен') {
   console.log(from + ': ' + text);
 }
-
-//* использование в качестве параметра по умолчанию вызов другой функции (text = anotherFunction())
 function showMessage(from, text = anotherFunction()) {
   console.log(from + ': ' + text);
-  // если параметр text не передан, то выполнится функция anotherFunction()
 }
 
 //* рекурсивные функции (внутри функции вызывает сама себя)
@@ -33,7 +31,7 @@ function fac(n) {
     return n * fac(n - 1);
   }
 }
-console.log(fac(3)); // 6
+console.log(fac(3));
 
 //# 2. function expression
 const hello = function (name) {
@@ -76,4 +74,4 @@ function consoleDog(dog) {
   console.log(arguments[0]);
 }
 
-consoleDog('Джек Рассел'); // "Джек Рассел"
+consoleDog('Джек Рассел');
