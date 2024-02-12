@@ -31,18 +31,29 @@
 // Свойства event.screenX и event.screenY хранят координаты относительно угла монитора, на котором открыт сайт. Они используются крайне редко.
 
 //* evt.stopPropagation()
-// Метод stopPropagation останавливает всплытие событий на элементе (дальше элемента всплытие не пойдет)
 function callback(evt) {
   evt.stopPropagation();
+  console.log(evt.currentTarget.getAttribute('id')); // cобытие сработало на элементе
 }
 
 //* evt.stopImmediatePropagation()
 /*
-- Отменяет не только всплытие событий, но и срабатывание всех других обработчиков того же события на этом элементе.
-- Остановит только те обработчики, которые описаны после него. Он попросту не знает о тех, которые стоят в коде раньше.
+-Метод stopImmediatePropagation ещё суровее: он отменяет не только всплытие событий, но и срабатывание всех других обработчиков того же события на этом элементе.
+- Но есть тонкость. Обработчики событий срабатывают в том же порядке, в каком они описаны в коде. Поэтому если на одном элементе висят два обработчика одного события, они сработают по очереди.
+- Поэтому stopImmediatePropagation остановит только те обработчики, которые описаны после него. Он попросту не знает о тех, которые стоят в коде раньше.
 */
-element.addEventListener('click', function (evt) {
+
+// При клике по блоку div в консоли появится: Одолжил 100 рублей Взял микрозайм
+const credit = document.querySelector('#credit');
+credit.addEventListener('click', function () {
+  console.log('Одолжил 100 рублей');
+});
+credit.addEventListener('click', function (evt) {
+  console.log('Взял микрозайм');
   evt.stopImmediatePropagation();
+});
+credit.addEventListener('click', function () {
+  console.log('Продал квартиру');
 });
 
 //* evt.target
