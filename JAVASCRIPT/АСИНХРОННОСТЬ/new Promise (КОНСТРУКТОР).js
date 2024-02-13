@@ -28,6 +28,16 @@ new Promise(function (resolve, reject) {});
 //* reject — колбэк для перевода промиса в состояние rejected, при его вызове аргументом передаётся информация об ошибке
 
 //# Пример
+const newPromise = new Promise(function (resolve, reject) {
+  // будем определять, обработан запрос или нет, случайным образом
+  const rand = Math.random() > 0.5 ? true : false;
+  if (rand) {
+    resolve('Запрос обработан успешно');
+  } else {
+    reject('Запрос отклонён');
+  }
+});
+
 const promise = new Promise(function (resolve, reject) {
   const data = getData(); // делаем асинхронную операцию: запрос в БД, API, etc.
   resolve(data); // переводим промис в состояние fulfilled. Результатом выполнения будет объект data
