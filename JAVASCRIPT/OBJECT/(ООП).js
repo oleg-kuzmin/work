@@ -27,7 +27,7 @@ class Song {
   }
 }
 
-//* наследование
+//* наследование полей
 /*
 - Важно запомнить, что если класс наследуется через extends и в нём нужно определить метод constructor, — в самом начале тела конструктора необходимо вызвать super и передать ему нужные свойства. В противном случае появится ошибка и скрипт перестанет выполняться.
 - Такой подход позволяет избежать дублирования кода в конструкторе наследника: логика заполнения полей name и cohort уже есть в родительском конструкторе и мы можем воспользоваться ей с помощью ключевого слова super.
@@ -37,6 +37,33 @@ class SongRock extends Song {
   constructor(name, artist) {
     super(name, artist, isLiked);
     this.genre = 'Rock';
+  }
+}
+
+//* переопределение метода (полиморфизм)
+class SongRock extends Song {
+  constructor(name, artist) {
+    super(name, artist, isLiked);
+    this.genre = 'Rock';
+  }
+
+  like() {
+    console.log('Новая логика');
+  }
+}
+
+//* расширение метода (полиморфизм)
+class DesignerStudent extends Student {
+  constructor(name, cohort) {
+    super(name, cohort);
+    this.profession = 'Designer';
+    this.trainingDuration = 6;
+  }
+
+  getInfo() {
+    const info = super.getInfo(); // наследуем метод родителя
+    delete info.language; // добавляем новый функционал
+    return info; // добавляем новый функционал
   }
 }
 
