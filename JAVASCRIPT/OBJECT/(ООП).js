@@ -40,6 +40,31 @@ class SongRock extends Song {
   }
 }
 
+//* приватные поля
+/*
+- Для объявления приватного свойства достаточно  поставить перед его названием символ #.
+- Все приватные поля необходимо объявить заранее, до конструктора.
+*/
+
+class Song {
+  #genre;
+
+  constructor(name, artist) {
+    this.name = name;
+    this.artist = artist;
+    this.isLiked = false;
+    this.#genre = 'Rock';
+  }
+
+  like() {
+    this.isLiked = !this.isLiked;
+  }
+
+  #getGenre() {
+    return this.#genre;
+  }
+}
+
 //# (СОЗДАНИЕ ЭКЗЕМПЛЯРА КЛАССА)
 //* экземпляр класса Song
 const song = new Song('Start Over', 'Any Given Day'); // constructor(name, artist)
