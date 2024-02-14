@@ -27,6 +27,16 @@ class Song {
   }
 }
 
+//* наследование
+// Важно запомнить, что если класс наследуется через extends и в нём нужно определить метод constructor, — в самом начале тела конструктора необходимо вызвать super и передать ему нужные свойства. В противном случае появится ошибка и скрипт перестанет выполняться.
+
+class SongRock extends Song {
+  constructor(name, artist) {
+    super(name, artist, isLiked);
+    this.type = 'Rock';
+  }
+}
+
 //# (СОЗДАНИЕ ЭКЗЕМПЛЯРА КЛАССА)
 //* экземпляр класса Song
 const song = new Song('Start Over', 'Any Given Day'); // constructor(name, artist)
