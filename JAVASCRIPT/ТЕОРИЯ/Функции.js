@@ -8,7 +8,7 @@
 - Но при показе кода функции в консоли выводится только код функции.
 */
 
-//# 1. function declaration
+//# 1. function declaration (декларация)
 //* может принимать аргументы
 function showMessage(user, message) {
   console.log(user + ': ' + message);
@@ -33,12 +33,12 @@ function fac(n) {
 }
 console.log(fac(3));
 
-//# 2. function expression
+//# 2. function expression (функциональное выражение)
 const hello = function (name) {
   console.log(`Привет ${name}`);
 };
 
-//# 3. Стрелочные функции
+//# 3. Стрелочные функции (функциональное выражение)
 // Стрелочными могут быть только функциональные выражения.
 
 //* несколько параметров
