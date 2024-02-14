@@ -1,4 +1,4 @@
-//# (СОЗДАНИЕ КЛАССА)
+//# (СОЗДАНИЕ ЭКЗЕМПЛЯРА КЛАССА)
 //* класс Song
 class Song {
   constructor(name, artist) {
