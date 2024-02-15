@@ -36,3 +36,8 @@ class Song {
     this.isLiked = !this.isLiked;
   }
 }
+
+//* Добавление метода
+Animal.prototype.say = function () {
+  console.log('rrr');
+};
