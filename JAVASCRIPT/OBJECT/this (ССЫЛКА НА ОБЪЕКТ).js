@@ -37,7 +37,24 @@ function globalFunction() {
 
 window.globalFunction(); // 'Important data'
 
-//*
+//*  3. Метод bind явная привязка - this.click.bind(this)
+// Метод bind не вызывает функцию. Он указывает значение this, с которым эта функция будет вызываться.
+class SendButton {
+  constructor() {
+    this.buttonName = 'Send Button';
+  }
+  click() {
+    console.log('I am ' + this.buttonName);
+  }
+  setEventListeners() {
+    document.querySelector('.btn').addEventListener('click', this.click.bind(this));
+    // жёстко привязываем контекст при передаче функции
+  }
+}
+const button1 = new SendButton();
+button1.setEventListeners();
+
+
 
 //# Потеря контекста
 // Наша задача была — выводить имя кнопки при каждом нажатии на неё. Но это не сработало, потому что this определяется в момент вызова функции, то есть в момент клика по элементу. Важно, что функция click не вызывается как метод класса — она передаётся методу addEventListener и вызывается из него. Механизм слушателя события такой, что this при этом ссылается на DOM-элемент, на котором событие сработало. У DOM-узла нет свойства buttonName, поэтому в консоли оказывается сообщение I am undefined.
@@ -58,5 +75,5 @@ class SendButton {
   }
 }
 
-const button = new SendButton();
+const button2 = new SendButton();
 button.setEventListeners();
