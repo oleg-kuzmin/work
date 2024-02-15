@@ -9,19 +9,19 @@ const greekGods = { love: 'Афродита', war: 'Арес', trade: 'Герм�
 
 //* Создание переменных и присваивание им значений из одноименных свойств объекта
 const { name, commentsQty } = userProfile;
-/* равнозначно записи
+/*
 const name = userProfile.name;
 const commentsQty = userProfile.commentsQty;
 */
 
 const { isLoggedIn } = userProfile;
-/* равнозначно записи
+/*
 const isLoggedIn = userProfile.isLoggedIn;
 */
 
 //* Создание переменных и присваивание им значений из свойств объекта под другими именами
 const { love: goddessOfLove, war: godOfWar, trade: godOfTrade } = greekGods;
-/* равнозначно записи
+/*
 const goddessOfLove = greekGods.love;
 const godOfWar = greekGods.war;
 const godOfTrade = greekGods.trade;
@@ -29,7 +29,7 @@ const godOfTrade = greekGods.trade;
 
 //* Создание переменных и присваивание им значений по умолчанию
 const { name1 = 'Олег', dateOfBirth1 = '8 января' } = userProfile;
-/* равнозначно записи
+/*
 const name = userProfile.name || 'Олег';
 const dateOfBirth = userProfile.dateOfBirth || '8 января';
 */
@@ -39,7 +39,7 @@ const fruits = ['Apple', 'Something', 'Banana'];
 
 //* Создание переменных и присваивание им значений из свойств массива по порядку
 const [fruitOne, fruitTwo, fruitThree] = fruits;
-/* равнозначно записи
+/*
 const fruitOne = fruits[0];
 const fruitTwo = fruits[1];
 const fruitThree = fruits[2];
@@ -47,7 +47,7 @@ const fruitThree = fruits[2];
 
 //* Для пропуска переменной можно использовать запятую
 const [fruitTestOne, , fruitTestTwo] = fruits;
-/* равнозначно записи
+/*
 const fruitTestOne = fruits[0];
 const fruitTestTwo = fruits[2];
 */
@@ -73,4 +73,5 @@ class Card {
     this._description = description;
   }
 }
+
 // Также можно использовать и в методах класса.
