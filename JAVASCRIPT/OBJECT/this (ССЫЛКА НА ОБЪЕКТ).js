@@ -27,7 +27,7 @@ function globalFunction() {
 globalFunction(); // Window — this ссылается на глобальный объект window
 
 //* 2. Вызов метода объекта или неявная привязка - object.globalFunction()
-// Обратите внимание, что мы изменили точку вызова функции. Раньше мы вызывали её из глобальной области видимости, а теперь — как метод объекта window. Так мы неявно указали контекст — window.
+// Обратите внимание, что мы изменили точку вызова функции. Раньше мы вызывали её из глобальной области видимости, а теперь — как метод объекта window. Так мы неявно указали контекст — window. При использовании неявной привязки определить контекст this очень просто: посмотрите, что находится слева от точки перед именем функции, — это и есть this.
 window.myData = 'Important data';
 
 function globalFunction() {
@@ -38,3 +38,25 @@ function globalFunction() {
 window.globalFunction(); // 'Important data'
 
 //*
+
+//# Потеря контекста
+// Наша задача была — выводить имя кнопки при каждом нажатии на неё. Но это не сработало, потому что this определяется в момент вызова функции, то есть в момент клика по элементу. Важно, что функция click не вызывается как метод класса — она передаётся методу addEventListener и вызывается из него. Механизм слушателя события такой, что this при этом ссылается на DOM-элемент, на котором событие сработало. У DOM-узла нет свойства buttonName, поэтому в консоли оказывается сообщение I am undefined.
+
+class SendButton {
+  constructor() {
+    this.buttonName = 'Send Button';
+  }
+
+  click() {
+    console.log('I am ' + this.buttonName);
+  }
+
+  setEventListeners() {
+    // Передадим слушателю события метод SendButton.click как колбэк:
+    document.querySelector('.btn').addEventListener('click', this.click);
+    // При клике мы надеемся увидеть сообщение "I am Send Button"
+  }
+}
+
+const button = new SendButton();
+button.setEventListeners();
