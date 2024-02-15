@@ -14,7 +14,7 @@ const object = {
 object.method(); // В консоль выводится object — объект, на котором вызван метод method
 
 //# Приоритет привязки
-//* 1. Привязка по умолчанию
+//* 1. Привязка по умолчанию - function()
 /*
 - Это тот случай, когда вы просто вызываете функцию по её имени, то есть пишете имя функции и круглые скобки. Тогда this принимает одно из двух значений:
 1. undefined — в строгом режиме,
@@ -26,4 +26,15 @@ function globalFunction() {
 }
 globalFunction(); // Window — this ссылается на глобальный объект window
 
-//* 2. 
+//* 2. Вызов метода объекта или неявная привязка - object.globalFunction()
+// Обратите внимание, что мы изменили точку вызова функции. Раньше мы вызывали её из глобальной области видимости, а теперь — как метод объекта window. Так мы неявно указали контекст — window.
+window.myData = 'Important data';
+
+function globalFunction() {
+  'use strict';
+  console.log(this.myData);
+}
+
+window.globalFunction(); // 'Important data'
+
+//*
