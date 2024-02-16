@@ -6,8 +6,23 @@
 - Вы обращаетесь к свойству объекта, которого у того нет.
 -	Движок, не найдя нужного свойства, не прекращает поиски, а заглядывает в свойство __proto__: если здесь хранится ссылка на другой объект, движок будет искать нужное свойство у него.
 
-- свойство __proto__ принадлежит объекту, свойство prototype — функции-конструктору;
+- свойство __proto__ принадлежит объекту, свойство prototype — функции-конструктору.
 */
+
+// * Свойство __proto__ каждого типа данных указывает на prototype соответствующей функции-конструктора:
+const obj = {};
+const num = 4;
+const str = 'Привет';
+const bool = true;
+const func = function () {
+  console.log('Hello world!');
+};
+
+console.log(obj.__proto__ === Object.prototype); // true
+console.log(num.__proto__ === Number.prototype); // true
+console.log(str.__proto__ === String.prototype); // true
+console.log(bool.__proto__ === Boolean.prototype); // true
+console.log(func.__proto__ === Function.prototype); // true
 
 //* Привязка прототипа через свойство
 obj2.__proto__ = obj1;
