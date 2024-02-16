@@ -37,7 +37,7 @@ class Song {
   }
 }
 
-//* Добавление метода
+//* Добавление прототипа
 Animal.prototype.say = function () {
   console.log('rrr');
 };
