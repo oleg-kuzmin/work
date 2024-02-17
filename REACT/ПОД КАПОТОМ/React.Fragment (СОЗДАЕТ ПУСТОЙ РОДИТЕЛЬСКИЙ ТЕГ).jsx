@@ -1,6 +1,7 @@
-//# React.Fragment
-//* <React.Fragment></React.Fragment>
+//# React.Fragment (СОЗДАЕТ ПУСТОЙ РОДИТЕЛЬСКИЙ ТЕГ)
 // Создает пустой родительский тег, который не видно в разметке html.
+
+//* <React.Fragment></React.Fragment>
 import { React } from 'react';
 function App() {
   return (
