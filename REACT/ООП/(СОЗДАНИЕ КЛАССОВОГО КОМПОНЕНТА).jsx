@@ -1,9 +1,6 @@
-//# Создание классового компонента
+//# (СОЗДАНИЕ КЛАССОВОГО КОМПОНЕНТА)
+//* Классовый компонент
 class UserGreeting extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return <h1>Здравствуйте, {this.props.fullName}</h1>;
   }

@@ -1,4 +1,4 @@
-//# Создание компонента
+//# (СОЗДАНИЕ КОМПОНЕНТА)
 //* Функциональный компонент (function declaration)
 function UserGreeting(props) {
   return <h1>Здравствуйте, {props.fullName}</h1>;
