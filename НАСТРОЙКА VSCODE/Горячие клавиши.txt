@@ -42,7 +42,8 @@ Alt + f12                  // вызвать окно совпадений CSS
 
 **********Пользовательские настройки**********
 Ctrl + Shift + P           // Параметры: Открыть сочетания клавиш (JSON) - open keyboard shorcat
-Ctrl + numpad2             // Live Server: Open with Live Server
+Ctrl + numpad1             // Live Server: Open with Live Server
+Ctrl + numpad2             // 
 Ctrl + numpad3             // Emmet: Перенести с сокращением (обернуть в тег)
 Ctrl + numpad4             // Quokka.js: Start on Current File
 Ctrl + numpad5             // Quokka.js: Stop All
