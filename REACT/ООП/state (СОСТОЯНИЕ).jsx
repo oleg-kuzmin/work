@@ -39,9 +39,14 @@ handleClick = () => {
 
 class UserGreeting extends React.Component {
   constructor(props) {
-    super(props);
+    super(props); // super();
     this.handleClick = this.handleClick.bind(this);
   }
+
+  handleClick() {
+    this.setState({});
+  }
+
   render() {
     return <h1>Здравствуйте, {this.props.fullName}</h1>;
   }
