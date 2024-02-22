@@ -9,8 +9,16 @@ multiply(0) == 0 # 0 * 5¹
 multiply(-3) == -15 # -3 * 5¹
 */
 
+//* мое решение
 function multiply(number) {
-  const lengthNumber = String
+  if (number > 0) {
+    return number * 5 ** number.toString().length;
+  } else {
+    return number * 5 ** (number.toString().length - 1);
+  }
 }
 
-console.log(multiply(3)); // 15 (3 * 5¹)
+//* лучшее на сайте
+function multiply(number) {
+  return number * Math.pow(5, Math.abs(number).toString().length);
+}
