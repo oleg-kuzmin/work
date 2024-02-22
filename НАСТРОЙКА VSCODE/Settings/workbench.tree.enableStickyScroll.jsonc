@@ -1,0 +1,4 @@
+{
+  // Прилипание верхней строчки проводника
+  "workbench.tree.enableStickyScroll": false
+}
