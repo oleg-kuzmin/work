@@ -35,7 +35,7 @@ handleClick = () => {
 // Может принимать второй параметр - функцию, которая произойдет после того, как изменится состояние.
 
 //# Привязка this
-// Создавая метод класса (например this.handleClick), в котором планируется использовать this.setState​, метод this.handleClick можно связать с​ this через bind.
+// Создавая метод класса (например this.handleClick) в котором будет обычная (не стрелочная функция), в котором планируется использовать this.setState​, метод this.handleClick нужно связать с​ this через bind. Второй способ - использовать стрелочную функцию this.handleClick, в которой this привязывается навсегда к классу.
 
 class UserGreeting extends React.Component {
   constructor(props) {
