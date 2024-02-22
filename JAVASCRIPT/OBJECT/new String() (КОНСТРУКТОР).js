@@ -10,10 +10,10 @@
 */
 
 //* создаёт пустой экземпляр класса Number
-const myNumber = new Number();
+const myString = new String();
 
 //* создаёт экземпляр класса Number с переданным параметром
-const myNumber2 = new Number(100);
+const myString2 = new String('text');
 
 //# Возвращает
 //* Созданный объект.
