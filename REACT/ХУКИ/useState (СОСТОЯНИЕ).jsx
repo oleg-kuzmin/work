@@ -4,8 +4,8 @@
 */
 
 //# Синтаксис
-//* Значение по умолчанию или функция обновления состояния
-const [name, setName] = useState(null);
+//* Значение по умолчанию или вызов функции
+const [value, setValue] = useState(null);
 
 //# Возвращает
 //* 1. Переменная state для сохранения данных между рендерами.
@@ -17,6 +17,12 @@ import { useState } from 'react';
 
 function App() {
   //* создание (деструктуризация массива)
-  const [name, setName] = useState(null);
+  const [value, setValue] = useState(null);
   return <div></div>;
 }
+
+//# Использование функции обновления состояния setValue()
+// Получаем доступ к предыдущему значению.
+setValue(prev => {
+  return prev + 1;
+});
