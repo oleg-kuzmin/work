@@ -2,15 +2,14 @@
 // Это функция, результатом вызова которой будет массив.
 
 //# Синтаксис
+//* Изначальное состояние
+const [name, setName] = useState(null);
 
-
-
-//* Импорт
+//# Импорт
 import { useState } from 'react';
 
-//* Создание (деструктуризация массива)
+//# Создание (деструктуризация массива)
 function App() {
-  const [] = useState(null);
-
+  const [name, setName] = useState(null);
   return <div></div>;
 }
