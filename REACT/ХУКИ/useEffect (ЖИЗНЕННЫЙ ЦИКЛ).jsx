@@ -10,10 +10,10 @@
 // При каких условиях мы должны продолжать вызывать функцию callback
 useEffect(() => {}, []);
 
-//# Импорт
+//# Пример
+//* импорт
 import { useEffect } from 'react';
 
-//# Создание
 function App() {
   useEffect(() => {
     //* componentDidMount
