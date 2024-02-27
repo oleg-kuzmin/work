@@ -94,3 +94,13 @@ setArtists(
 );
 
 //* замена
+const newArtist = { id: 3, name: 'newName' };
+setArtists(
+  artists.map(artist => {
+    if ((artist.id = 2)) {
+      return newArtist;
+    } else {
+      return artist;
+    }
+  })
+);
