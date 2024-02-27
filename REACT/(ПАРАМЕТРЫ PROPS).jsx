@@ -1,15 +1,31 @@
-//# Параметры - объект props
+//# (ПАРАМЕТРЫ PROPS)
 //* Чтение параметра внутри компонента (с деструктуризацией объекта)
 function Avatar({ person, size }) {
   // аналогично записи let person = props.person;
   // аналогично записи let size = props.size;
-  return <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size} />;
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
 }
 
 //* Чтение параметра внутри компонента (с деструктуризацией объекта и значением по умолчанию)
 // свойство size отсутствует или size={undefined}
 function Avatar({ person, size = 100 }) {
-  return <img className="avatar" src={getImageUrl(person)} alt={person.name} width={size} height={size} />;
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
 }
 
 //* Чтение параметра внутри компонента (с деструктуризацией объекта и контентом children)
