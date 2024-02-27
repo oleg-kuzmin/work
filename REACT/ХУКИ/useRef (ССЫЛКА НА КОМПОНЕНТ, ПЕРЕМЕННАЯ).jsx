@@ -8,14 +8,12 @@
 //* Изначальный объект
 const inputElement = useRef(null);
 
-
-
-//# Импорт
+//# Пример
+//* импорт
 import { useRef } from 'react';
 
-//# Создание (деструктуризация массива)
 function App() {
-  //* Создание
+  //* создание
   const inputElement = useRef(null);
 
   return (
