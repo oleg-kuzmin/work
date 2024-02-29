@@ -1,4 +1,4 @@
-//# (ПОЛЬЗОВАТЕЛЬСКИЕ ХУКИ)
+//# (КАСТОМНЫЕ ХУКИ)
 
 //* usePrevious
 import { useRef, useEffect } from 'react';
