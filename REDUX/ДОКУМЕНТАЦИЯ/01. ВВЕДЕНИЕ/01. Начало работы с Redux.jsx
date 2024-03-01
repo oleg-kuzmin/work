@@ -13,7 +13,11 @@
 
 //# Установка Redux Toolkit
 // Redux Toolkit доступен в виде пакета в NPM для использования с сборщиком модулей или в приложении Node:
+
+// NPM
 //* npm install @reduxjs/toolkit
+
+// Yarn
 //* yarn add @reduxjs/toolkit
 
 //# Установка Create a React Redux App
@@ -31,3 +35,16 @@
 // В настоящее время у нас нет официальных шаблонов React Native, но мы рекомендуем эти шаблоны для стандартного React Native и Expo:
 //* https://github.com/rahsheen/react-native-template-redux-typescript
 //* https://github.com/rahsheen/expo-template-redux-typescript
+
+//# Установка Redux Core
+// Основная библиотека Redux доступна в виде пакета в NPM для использования с сборщиком модулей или в приложении Node:
+
+// NPM
+//* npm install redux
+
+// Yarn
+//* yarn add redux
+
+// В пакет входит предварительно скомпилированная сборка ESM, которую можно использовать в качестве <script type="module"> прямо в браузере.
+
+// Более подробную информацию смотрите на странице "02. Установка".
