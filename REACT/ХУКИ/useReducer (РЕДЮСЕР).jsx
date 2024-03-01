@@ -15,7 +15,7 @@ const [value, dispatch] = useReducer(tasksReducer, initialValue);
 
 //# Создание reducer
 //* tasks - текущее состояние нашего приложения.
-//* action - некое действие, в зависимости от которого функция вернет нам новое состояние приложения.
+//* action - объект действий в зависимости от которых функция вернет нам новое состояние приложения.
 
 function tasksReducer(tasks, action) {
   switch (action.type) {
