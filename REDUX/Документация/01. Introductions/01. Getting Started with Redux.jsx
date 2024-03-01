@@ -1,14 +1,4 @@
-// Redux Toolkit доступен в виде пакета в NPM для использования с сборщиком модулей или в приложении Node:
 
-//* npm install @reduxjs/toolkit
-
-//# Создайте приложение React Redux
-// Рекомендуемый способ запуска новых приложений с помощью React и Redux — использовать наш официальный шаблон Redux+TS для Vite или создать новый проект Next.js с использованием шаблона Next with-redux.
-
-//* npx create-next-app --example with-redux my-app
-//* npx create-next-app --example with-redux my-app
-
-// Оба из них уже имеют Redux Toolkit и React-Redux, настроенные соответствующим образом для этого инструмента сборки, и поставляются с небольшим примером приложения, которое демонстрирует, как использовать некоторые функции Redux Toolkit.
 
 /* В настоящее время у нас нет официальных шаблонов React Native, но мы рекомендуем эти шаблоны для стандартного React Native и Expo:
 https://github.com/rahsheen/react-native-template-redux-typescript

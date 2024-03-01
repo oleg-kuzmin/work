@@ -14,5 +14,16 @@
 //# Установка Redux Toolkit
 // Redux Toolkit доступен в виде пакета в NPM для использования с сборщиком модулей или в приложении Node:
 //* npm install @reduxjs/toolkit
+//* yarn add @reduxjs/toolkit
 
-//# 
+//# Установка Create a React Redux App
+// Рекомендуемый способ запуска новых приложений с помощью React и Redux — использовать наш официальный шаблон Redux+TS для Vite или создать новый проект Next.js с использованием шаблона Next с Redux.
+
+// Оба из них уже имеют Redux Toolkit и React-Redux, настроенные соответствующим образом для этого инструмента сборки, и поставляются с небольшим примером приложения, которое демонстрирует, как использовать некоторые функции Redux Toolkit.
+
+// Next.js using the `with-redux` template
+//* npx create-next-app --example with-redux my-app
+
+// Vite with our Redux+TS template
+// (using the `degit` tool to clone and extract the template)
+//* npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
