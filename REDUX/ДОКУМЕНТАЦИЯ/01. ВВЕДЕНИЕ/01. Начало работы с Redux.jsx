@@ -27,3 +27,7 @@
 // Vite with our Redux+TS template
 // (using the `degit` tool to clone and extract the template)
 //* npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
+
+// В настоящее время у нас нет официальных шаблонов React Native, но мы рекомендуем эти шаблоны для стандартного React Native и Expo:
+//* https://github.com/rahsheen/react-native-template-redux-typescript
+//* https://github.com/rahsheen/expo-template-redux-typescript

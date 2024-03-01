@@ -1,10 +1,3 @@
-
-
-/* В настоящее время у нас нет официальных шаблонов React Native, но мы рекомендуем эти шаблоны для стандартного React Native и Expo:
-https://github.com/rahsheen/react-native-template-redux-typescript
-https://github.com/rahsheen/expo-template-redux-typescript
-*/
-
 //# Redux Core
 // Основная библиотека Redux доступна в виде пакета в NPM для использования с сборщиком модулей или в приложении Node:
 
