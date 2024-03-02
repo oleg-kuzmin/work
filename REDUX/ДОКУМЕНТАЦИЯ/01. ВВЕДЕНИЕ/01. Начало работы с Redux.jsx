@@ -48,3 +48,41 @@
 // В пакет входит предварительно скомпилированная сборка ESM, которую можно использовать в качестве <script type="module"> прямо в браузере.
 
 // Более подробную информацию смотрите на странице "02. Установка".
+
+//# Базовый пример
+// Все глобальное состояние вашего приложения хранится в дереве объектов внутри одного хранилища store. Единственный способ изменить дерево состояний — создать action (объект, описывающий произошедшее), и dispatch (отправить) его в хранилище store. Чтобы указать, как состояние state обновляется в ответ на действие action, вы пишете чистые функции-reducer, которые вычисляют новое состояние state на основе старого состояния и действия action. Redux Toolkit упрощает процесс написания логики Redux и настройки хранилища state. С Redux Toolkit базовая логика приложения выглядит так:
+
+import { createSlice, configureStore } from '@reduxjs/toolkit';
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    value: 0,
+  },
+  reducers: {
+    incremented: state => {
+      // Redux Toolkit позволяет нам писать «мутирующую» логику в редукторах.
+      // Это фактически не изменяет состояние, поскольку использует библиотеку Immer
+      // которая обнаруживает изменения в «черновом состоянии» и создает совершенно новое
+      // неизменяемое состояние, основанное на этих изменениях
+      state.value += 1;
+    },
+    decremented: state => {
+      state.value -= 1;
+    },
+  },
+});
+
+export const { incremented, decremented } = counterSlice.actions;
+
+const store = configureStore({
+  reducer: counterSlice.reducer,
+});
+
+// Еще можно подписаться на событие "изменение/обновление store".
+store.subscribe(() => console.log(store.getState()));
+
+// Объекты действий action по-прежнему передаются в диспетчерскую службу dispatch, но они создаются за нас функциями action-creator
+store.dispatch(incremented()); // {value: 1}
+store.dispatch(incremented()); // {value: 2}
+store.dispatch(decremented()); // {value: 1}
