@@ -10,6 +10,10 @@ const increment = {
 };
 store.dispatch(increment);
 
-//* Создание функции (которая возвращает объект-action) и передача ее в dispatch
-
-
+//* Создание функции action-creator (которая возвращает объект-action) и передача ее в dispatch
+// Испльзуется если нужно передать параметры.
+const addTodo = title => ({
+  type: 'ADD_TODO',
+  title,
+});
+store.dispatch(addTodo('clear car'));
