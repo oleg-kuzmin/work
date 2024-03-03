@@ -6,7 +6,7 @@
 import { Provider } from 'react-redux';
 import { store } from './store'; // export const store = createStore(counter);
 
-//* Обернуть приложение или нужную часть в provider и передать store
+//* Обернуть приложение или нужную часть в provider и передать обязательный параметр store
 function Home() {
   return (
     <Provider store={store}>
@@ -17,4 +17,3 @@ function Home() {
     </Provider>
   );
 }
-
