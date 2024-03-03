@@ -2,9 +2,16 @@
 // Создает хранилище данных. Как правило хранилище создается один раз.
 
 //# Синтаксис
-//* reducer - созданная функция reducer или несколько функций, объединенных в rootReducer (с помощью метода combineReducers)
 import { createStore } from '@reduxjs/toolkit';
-const store = createStore(reducer);
+const store = createStore(reducer, defaultValues);
+//* 1. reducer - созданная функция reducer или несколько функций, объединенных в rootReducer (с помощью метода combineReducers)
+//* 2. defaultValues - значение по умолчанию, которое может быть каким-либо образом получено (опционально)
+/*
+- Обычно в defaultValues передаются значения из localStorage.
+- Такие данные которые пересохраняются каждый раз называются persist (сохранение чего-то).
+- При передаче значения по умолчанию произойдет вызов функции-reducer и передача ей в качестве state указанных defaultValues.
+- Таким образом в функции const reducer = (state = [], action) блок "state = []" уже не сработает.
+*/
 
 //# Метод
 //* Получение всех данных
