@@ -2,9 +2,9 @@
 //* npm i react-redux
 // Установить пакет react-redux
 
-//* Импорт provider на уровне app и импорт store
+//* Импорт провайдера на уровне app и импорт store для передачи провайдеру
 import { Provider } from 'react-redux';
-import { store } from './store'; // export const store = createStore(counter);
+import { store } from './store'; // export const store = createStore(counter) из файла store.js
 
 //* Обернуть приложение или нужную часть в provider и передать обязательный параметр store
 function Home() {
