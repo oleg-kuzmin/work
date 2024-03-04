@@ -1,9 +1,8 @@
 //# (СТРУКТУРА ПАПОК)
+// Не нужно создавать одновременно и файл store и папку store.
+
+//# Вариант 1
 /*
-- Не нужно создавать одновременно и файл store и папку store
-
-В папке src:
-
 store/redux (отдельная папка)
   actions (очень часто встречается: отдельная папка под actions)
     tods-actions.js
@@ -17,5 +16,18 @@ store/redux (отдельная папка)
     tods-const.js
   selectors (иногда встречается: то что передается в useSelector - функция, которая возвращает нужные данные из state)
     allTodos.js
+  index.js (точка входа, вся логика с созданием store)
+*/
+
+//# Вариант 2
+/*
+store/redux (отдельная папка)
+  tods (отдельная папка под features)
+    tods-actions.js (отдельный файл под action)
+    tods-const.js (отдельный файл под под константы для action.type)
+    tods-reducer.js (отдельный файл под reducer)
+    tods-selector.js (отдельный файл под selector)
+  filters (отдельная папка под features)
+  root-reducer.js (будет объединять все reducers через combineReducers)
   index.js (точка входа, вся логика с созданием store)
 */
