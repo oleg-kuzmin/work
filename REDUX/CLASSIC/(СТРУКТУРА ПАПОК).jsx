@@ -31,3 +31,10 @@ store/redux (отдельная папка)
   root-reducer.js (будет объединять все reducers через combineReducers)
   index.js (точка входа, вся логика с созданием store)
 */
+
+//# Вариант 3
+/*
+store/redux (отдельная папка)
+  Root.js
+
+*/
