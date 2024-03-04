@@ -15,7 +15,7 @@ store/redux (отдельная папка)
   constants (часто встречается: отдельная папка под константы для action.type)
     tods-const.js
   selectors (иногда встречается: то что передается в useSelector - функция, которая возвращает нужные данные из state)
-    allTodos.js
+    selectAllTodos.js
   index.js (точка входа, вся логика с созданием store)
 */
 
