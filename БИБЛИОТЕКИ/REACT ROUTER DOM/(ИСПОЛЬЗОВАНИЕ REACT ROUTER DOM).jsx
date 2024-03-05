@@ -1,27 +1,19 @@
 //# (ИСПОЛЬЗОВАНИЕ REACT ROUTER)
 //* Импорт в компонент
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //* Оборачиваем контент
-function App() {
-  return (
-    <>
-      <Header />
-      <main className="containter content">
-        <Router>
-          <Route path="/" component={Home}></Route>
-          <Route path="/about" component={About}></Route>
-          <Route path="/contact" component={Contact}></Route>
-        </Router>
-      </main>
-      <Footer />
-    </>
-  );
+function Root() {
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+    </Routes>
+  </BrowserRouter>;
 }
 
 //# Route
 //* path="/"
-// Путь - корневая страница
+// Путь - корневая страница.
 
-//* component={Home}
-// Какой компонент соответствует пути
+//* element={<App />}
+// Какой компонент соответствует пути.
