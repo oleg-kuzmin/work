@@ -11,5 +11,5 @@
 //* npx create-next-app@latest .
 // Установка в текущей директории.
 
-//* npm install --save-dev sass
+//* npm i --save-dev sass
 // Установка препроцессора SASS.
