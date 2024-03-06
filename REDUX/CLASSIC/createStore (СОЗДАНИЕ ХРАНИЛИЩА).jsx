@@ -10,6 +10,7 @@ const store = createStore(reducer, defaultValues);
 - Обычно в defaultValues передаются значения из localStorage.
 - Такие данные которые пересохраняются каждый раз называются persist (сохранение чего-то).
 - При передаче значения по умолчанию произойдет вызов функции-reducer и передача ей в качестве state указанных defaultValues.
+- Т.е. никаких action не случилось, функция-reducer закончится кейсом default: return state.
 - Таким образом в функции const reducer = (state = [], action) блок "state = []" уже НЕ СРАБОТАЕТ.
 */
 
