@@ -20,10 +20,13 @@ class _Counter extends React.Component {
   }
 }
 
-//* Создаем функции
-// 1. Функция mapStateToProps - возвращает какие-то данные (если данные не нужны можно прописать null)
-// 2. Функция mapDispatchStateToProps - возвращает actions
-const mapStateToProps = () => {};
+//* Создаем функцию mapStateToProps - возвращает какие-то данные (если данные не нужны можно прописать null)
+// Принимает state и возвращает объект с данными, которые мы хотим добавить в props.
+const mapStateToProps = state => ({
+  count: state.count,
+});
+
+//* Создаем функцию mapDispatchStateToProps - возвращает actions
 const mapDispatchStateToProps = () => {};
 
 //* Делаем как бы обертку вокруг Counter и записываем в новую переменную
