@@ -41,9 +41,9 @@ const mapStateToProps = state => ({
 */
 
 const mapDispatchStateToProps = dispatch => ({
-  inc: () => dispatch(increment),
-  dec: () => dispatch(decrement),
-  res: () => dispatch(reset),
+  inc: () => dispatch(increment), // проверить dispatch(increment())
+  dec: () => dispatch(decrement), // проверить dispatch(decrement())
+  res: () => dispatch(reset), // проверить dispatch(reset())
 });
 
 //* Альтернативно - создаем объект mapDispatchStateToProps
