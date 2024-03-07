@@ -1,4 +1,4 @@
-//# (СВЯЗЬ С REACT)
+//# (ИСПОЛЬЗОВАНИЕ)
 //* npm i react-redux
 // Установить пакет react-redux
 
