@@ -1,3 +1,4 @@
+//# connect (ОБЕРТКА НАД КОМПОНЕНТОМ)
 import { connect } from 'react-redux';
 import React from 'react';
 
