@@ -1,4 +1,4 @@
-//# useDispatch (ПЕРЕДАТЬ ACTION)
+//# useDispatch (ВОЗВРАЩАЕТ DISPATCH)
 //* Импорт
 import { useDispatch } from 'react-redux';
 

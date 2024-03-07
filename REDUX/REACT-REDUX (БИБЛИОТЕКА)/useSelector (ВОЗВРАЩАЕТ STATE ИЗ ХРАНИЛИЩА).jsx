@@ -1,4 +1,4 @@
-//# useSelector (ПОЛУЧИТЬ ДАННЫЕ STORE)
+//# useSelector (ВОЗВРАЩАЕТ STATE ИЗ ХРАНИЛИЩА)
 //* Импорт
 import { useSelector } from 'react-redux';
 
