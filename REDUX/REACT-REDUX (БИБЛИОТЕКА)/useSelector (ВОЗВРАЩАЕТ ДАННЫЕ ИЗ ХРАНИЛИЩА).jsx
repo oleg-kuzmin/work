@@ -1,4 +1,4 @@
-//# useSelector (ВОЗВРАЩАЕТ STATE ИЗ ХРАНИЛИЩА)
+//# useSelector (ВОЗВРАЩАЕТ ДАННЫЕ ИЗ ХРАНИЛИЩА)
 //* Импорт
 import { useSelector } from 'react-redux';
 

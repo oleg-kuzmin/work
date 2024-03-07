@@ -1,4 +1,4 @@
-//# useDispatch (ВОЗВРАЩАЕТ DISPATCH)
+//# useDispatch (ВОЗВРАЩАЕТ МЕТОД DISPATCH)
 //* Импорт
 import { useDispatch } from 'react-redux';
 
