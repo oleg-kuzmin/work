@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
   count: state.count,
 });
 
-//* Создаем функцию mapDispatchStateToProps() - возвращает actions
+//* Создаем функцию mapDispatchToProps() - возвращает actions
 /*
 - 1 вариант (редко):
 Если функцию не передать как второй параметр, то по умолчанию у класса будет props.dispatch).
@@ -41,13 +41,13 @@ const mapStateToProps = state => ({
 Доступ можно получить так: onClick={this.props.dec}
 */
 
-const mapDispatchStateToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   inc: () => dispatch(increment), // проверить dispatch(increment())
   dec: () => dispatch(decrement), // проверить dispatch(decrement())
   res: () => dispatch(reset), // проверить dispatch(reset())
 });
 
-//* Альтернативно - создаем объект mapDispatchStateToProps
+//* Альтернативно - создаем объект mapDispatchToProps
 // increment - обязательно action creator
 const dispatchStateToProps = {
   inc: increment,
@@ -57,7 +57,7 @@ const dispatchStateToProps = {
 
 //* Делаем обертку вокруг Counter и записываем в новую переменную
 // Коннект берет компонент и добавляет к нему еще какие-либо props согласно функциям.
-export const Counter = connect(mapStateToProps, mapDispatchStateToProps)(_Counter);
+export const Counter = connect(mapStateToProps, mapDispatchToProps)(_Counter);
 
 //# Main.js
 //* Использование класса
