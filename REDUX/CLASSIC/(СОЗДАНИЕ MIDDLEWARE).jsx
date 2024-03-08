@@ -14,3 +14,15 @@ import { applyMiddleware } from '@reduxjs/toolkit';
 //* Передача middleware при создании store
 // Передаем вторым или третьим параметром. Соответственно он всегда идет последним.
 const store = createStore(counter, applyMiddleware(myLogger));
+
+//# Пример
+// Чаще всего middleWare выглядит следующим образом. Создается константа - массив
+const middleWare = [];
+
+// Если мы находимся в режиме разработки - добавим logger
+if (process.env.NODE_ENV === 'development') {
+  middleWare.push(myLogger);
+}
+
+// Передаем массив в applyMiddleware (спред оператор чтобы разбить массив на аргументы - функции)
+const store2 = createStore(counter, applyMiddleware(...middleWare));

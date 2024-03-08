@@ -1,2 +1,2 @@
 //# (УСТАНОВКА)
-//* npm i redux-logger
+//* npm i redux-logger --save-dev
