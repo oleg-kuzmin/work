@@ -1,5 +1,4 @@
 //# (СОЗДАНИЕ MIDDLEWARE)
-
 //* Создание функции middleware
 // Эту сигнатуру ожидает от нас redux чтобы использовать middleware. По сути это 3 функции. Нам обязательно нужно чтобы в теле был вызов функции next с аргументом action - next(action).
 const myLogger = store => next => action => {
