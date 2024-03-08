@@ -1,8 +1,24 @@
 //# (РАСШИРЕНИЕ ДЛЯ CHROME)
-// Передать вторым или третьим параметром.
-export const store1 = createStore(todos, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+// Показывает изменения состояния.
 
-export const store2 = createStore(
+//# Использование через npm с middleware
+//* npm install --save @redux-devtools/extension
+import { createStore, applyMiddleware } from '@reduxjs/toolkit';
+import { composeWithDevTools } from '@redux-devtools/extension';
+
+const middleWare = [];
+
+if (process.env.NODE_ENV === 'development') {
+  middleWare.push(logger);
+}
+
+export const store = createStore(counter, composeWithDevTools(applyMiddleware(...middleWare)));
+
+//# Использование без middleware
+// Передать вторым или третьим параметром.
+export const store2 = createStore(todos, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+export const store3 = createStore(
   todos,
   [],
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -12,10 +28,10 @@ export const store2 = createStore(
 import { createStore, applyMiddleware, compose } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 
-const middleWare = [];
+const middleWare2 = [];
 
 if (process.env.NODE_ENV === 'development') {
-  middleWare.push(logger);
+  middleWare2.push(logger);
 }
 
 const composeEnhancers =
@@ -23,4 +39,4 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 
-export const store = createStore(counter, composeEnhancers(applyMiddleware(...middleWare)));
+export const store4 = createStore(counter, composeEnhancers(applyMiddleware(...middleWare)));
