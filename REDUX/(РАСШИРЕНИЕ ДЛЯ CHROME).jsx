@@ -1,6 +1,12 @@
 //# (РАСШИРЕНИЕ ДЛЯ CHROME)
 // Показывает изменения состояния.
 
+//# devTools: true
+export const store = configureStore({
+  reducer: todoSlice.reducer,
+  devTools: true,
+});
+
 //# Использование через npm с middleware
 //* npm install --save @redux-devtools/extension
 import { createStore, applyMiddleware } from '@reduxjs/toolkit';
@@ -12,7 +18,7 @@ if (process.env.NODE_ENV === 'development') {
   middleWare.push(logger);
 }
 
-export const store = createStore(counter, composeWithDevTools(applyMiddleware(...middleWare)));
+export const store1 = createStore(counter, composeWithDevTools(applyMiddleware(...middleWare)));
 
 //# Использование без middleware
 // Передать вторым или третьим параметром.
