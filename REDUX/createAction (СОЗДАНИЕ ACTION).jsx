@@ -13,9 +13,9 @@ addTodo('value'); // вернет результат вызова функции
 
 //* 2. Функция подготовки объекта action
 // В качестве параметра принимает payload
-export const addTodo2 = createAction('ADD_TODO', (title) => ({
+export const addTodo2 = createAction('ADD_TODO', title => ({
   payload: {
     title,
-    id 
-  }
+    id,
+  },
 }));
