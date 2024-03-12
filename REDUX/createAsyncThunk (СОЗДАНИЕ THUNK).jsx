@@ -65,10 +65,36 @@ const todoSlice = createSlice({
   },
 });
 
+//* 3. Дополнительный объект опций - объект с ключем condition, в котором:
+
+//* a - первый передаваемый параметр из компонента (если мы вообще что-то передаем)
+//* b - объект с ключами getState и extra
+export const loadTodos2 = createAsyncThunk(
+  '@@todos/load-all',
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await fetch('http://localhost:3001/todos');
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      return rejectWithValue('Не получилось загрузить все todos');
+    }
+  },
+  {
+    condition: (_, { getState, extra }) => {
+      const { loading } = getState().todos; // записываем в переменную значение ключа loading
+      // отменяем запрос к серверу
+      if (loading === 'loading') {
+        return false;
+      }
+    },
+  }
+);
+
 //# Пример обработки в Ui
 // Допустим у нас есть такой thunk:
 export const loadTodos = createAsyncThunk('@@todos/load-all', async () => {
-  const res = await fetch('http://localhost:3002/todos');
+  const res = await fetch('http://localhost:3001/todos');
   const data = await res.json();
   return data;
 });
