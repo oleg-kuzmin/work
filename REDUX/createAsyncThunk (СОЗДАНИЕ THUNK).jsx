@@ -91,3 +91,58 @@ export const TodoList = () => {
 
   return <div></div>;
 };
+
+//# Пример функции predicat в extraReducers
+// Сначала функция builder отработает все addCase, потом addMatcher.
+const todoSlice2 = createSlice({
+  name: '@@todos',
+  initialState: {
+    entities: [],
+    loading: 'idle', // 'loading',
+    error: null,
+  },
+  reducers: {},
+  extraReducers: builder => {
+    builder
+      .addCase(resetToDefault, () => {
+        return [];
+      })
+      .addCase(loadTodos.pending, (state, action) => {
+        state.loading = 'loading';
+        state.error = null;
+      })
+      //* Чтобы не писать одно и тоже несколько раз:
+      // .addCase(createTodo.pending, (state, action) => {
+      //   state.loading = 'loading';
+      //   state.error = null;
+      // })
+      .addCase(loadTodos.rejected, state => {
+        state.loading = 'idle';
+        state.error = 'Something went wrong!';
+      })
+      .addCase(loadTodos.fulfilled, (state, action) => {
+        state.entities = action.payload;
+        state.loading = 'idle';
+      })
+      .addCase(createTodo.fulfilled, (state, action) => {
+        state.entities.push(action.payload);
+      })
+      .addCase(toggleTodo.fulfilled, (state, action) => {
+        const updatedTodo = action.payload;
+        const index = state.entities.findIndex(todo => todo.id === updatedTodo.id);
+        state.entities[index] = updatedTodo;
+      })
+      .addCase(removeTodo.fulfilled, (state, action) => {
+        state.entities = state.entities.filter(todo => todo.id !== action.payload);
+      })
+      //* 1. Функция: проверяет по action условие
+      //* 2. Функция: что-то делает с state
+      .addMatcher(
+        action => action.type.endsWith('/pending'),
+        (state, action) => {
+          state.loading = 'loading';
+          state.error = null;
+        }
+      );
+  },
+});
