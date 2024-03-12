@@ -142,6 +142,7 @@ const todoSlice2 = createSlice({
         (state, action) => {
           state.loading = 'loading';
           state.error = null;
+          console.log(action); // у action есть дополнительные свойства в том числе error
         }
       );
   },
