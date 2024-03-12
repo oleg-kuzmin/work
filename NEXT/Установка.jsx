@@ -12,4 +12,7 @@
 // Установка в текущей директории.
 
 //* npm i --save-dev sass
-// Установка препроцессора SASS.
+// Установка SASS.
+
+//* npm i @reduxjs/toolkit
+// Установка Redux Toolkit.
