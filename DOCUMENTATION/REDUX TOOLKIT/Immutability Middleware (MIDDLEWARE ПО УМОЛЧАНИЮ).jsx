@@ -34,15 +34,15 @@ configureStore({
 
 //# Параметры
 createImmutableStateInvariantMiddleware({
-  //# ignoredPaths
+  //# ignoredPaths (опционально)
   // Массив из строк путей, разделенных точками, или регулярные выражения, которые следует игнорировать при проверке. По умолчанию undefined.
   ignoredPaths: ['ignoredPath', 'ignoredNested.one', 'ignoredNested.two'],
 
-  //# warnAfter
+  //# warnAfter (опционально)
   // Выводит предупреждение, если проверка занимает больше времени, чем N ms. По умолчанию: 32 ms.
   warnAfter: 32,
 
-  //# isImmutable
+  //# isImmutable (опционально)
   /*
   - Функция callback для проверки того, считается ли значение проверки иммутабельным (неизменяемым). Эта функция применяется рекурсивно к каждому значению, содержащемуся в состоянии. Реализация по умолчанию вернет true для примитивных типов. (например для numbers, strings, booleans, null и undefined). 
   - На данный момент реализована как в примере.
