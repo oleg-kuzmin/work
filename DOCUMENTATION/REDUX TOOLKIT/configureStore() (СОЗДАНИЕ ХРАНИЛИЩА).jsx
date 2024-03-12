@@ -49,7 +49,7 @@ export const store = configureStore({
     posts: postsReducer,
   },
 
-  //# middleware
+  //# middleware (опционально)
   /* 
   - Массив Redux middleware для установки. Если свойство middleware не указано вообще, то по умолчанию используется некоторый дефолтный набор middleware, возвращаемый функцией getDefaultMiddleware().
   - В качестве значения указывается callback, который получит getDefaultMiddleware в качестве единственного аргумента и должен вернуть сформированный массив middleware.
