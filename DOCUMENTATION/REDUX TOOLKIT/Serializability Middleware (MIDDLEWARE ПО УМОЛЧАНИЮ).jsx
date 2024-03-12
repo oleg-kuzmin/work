@@ -34,7 +34,7 @@ configureStore({
   // Это заменяет исходное middleware по умолчанию на настроенные версии.
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-      immutableCheck: {
+      serializableCheck: {
         ignoredPaths: ['ignoredPath', 'ignoredNested.one', 'ignoredNested.two'],
       },
     }),
@@ -44,13 +44,13 @@ configureStore({
 createSerializableStateInvariantMiddleware({
   //# isSerializable (опционально)
   // Функция проверки того, считается ли значение сериализуемым. Эта функция применяется рекурсивно к каждому значению, содержащемуся в состоянии. По умолчанию используется isPlain().
-  isSerializable: value => {
+  isSerializable: (value: any) => {
     isPlain(value);
   },
 
   //# getEntries (опционально)
   // Функция, которая будет использоваться для получения записей из каждого значения. Если не указано будет использовано Object.entries. По умолчанию undefined.
-  getEntries: value => {
+  getEntries: (value: any) => {
     Object.entries(value);
   },
 
