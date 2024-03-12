@@ -64,3 +64,30 @@ const todoSlice = createSlice({
       });
   },
 });
+
+//# Пример обработки в Ui
+// Допустим у нас есть такой thunk:
+export const loadTodos = createAsyncThunk('@@todos/load-all', async () => {
+  const res = await fetch('http://localhost:3002/todos');
+  const data = await res.json();
+  return data;
+});
+
+// И такой компонент:
+export const TodoList = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadTodos()) // передаем наш thunk (thunk возвращает promise, но в состоянии fulfilled)
+      .unwrap() // метод доступен из коробки (вызвав его получаем доступ к catch)
+      // далее обычная обработка
+      .then(() => {
+        toast('All Todos were fetch');
+      })
+      .catch(() => {
+        toast('ERROR');
+      });
+  }, [dispatch]);
+
+  return <div></div>;
+};
