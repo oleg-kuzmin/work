@@ -1,4 +1,4 @@
-//# Immutability Middleware (MIDDLEWARE)
+//# Immutability Middleware (MIDDLEWARE ПО УМОЛЧАНИЮ)
 // Порт middleware от redux-immutable-state-invariant, настроенный для использования с Redux Toolkit. Любые обнаруженные мутации будут считаться ошибками.
 
 // Этот middleware добавляется в хранилище по умолчанию с помощью configureStore и getDefaultMiddleware.

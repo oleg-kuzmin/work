@@ -58,6 +58,17 @@ export const store = configureStore({
   - Пользователи Typescript должны использовать экземпляр Tuple (если не используется дефолтный результат getDefaultMiddleware, который уже является Tuple) для лучшего вывода.
   - Пользователи, использующие только Javascript, могут при желании использовать простой массив.
   */
-  //* пример 1
+  //* пример 1 (замена всех стандартных middleware)
   middleware: () => new Tuple(additionalMiddleware, logger),
+
+  //* пример 2 (дополнение к всем стандартным middleware)
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger),
+
+  //* пример 3 (все стандартные middleware + настройка immutableCheck)
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      immutableCheck: {
+        ignoredPaths: ['ignoredPath', 'ignoredNested.one', 'ignoredNested.two'],
+      },
+    }),
 });
