@@ -2,6 +2,9 @@
 //* Импорт
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+// Мы создаем thunk, делаем запрос и возвращаем результат.
+// А все что касается ошибок и обработки ошибок/запроса делаем в extraReducers. Туда добавляются новые кейсы для обработки асинхронной логики.
+
 //# Синтаксис
 //* 1. Строка для action ('@@todos/create-todo')
 
@@ -9,10 +12,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 //* a - первый передаваемый параметр из компонента (если мы вообще что-то передаем)
 //* b - объект thunkApi, предоставляемый redux с кучей всего
 // Внутри есть dispatch, getState, extra-параметры.
-//* тело - логика асинхронной обработки
+//* тело - асинхронный запрос
 
-export const createTodo = createAsyncThunk('@@todos/create-todo', async (title, { dispatch }) => {
-  dispatch({ type: 'SET_LOADING' });
+export const createTodo = createAsyncThunk('@@todos/create-todo', async title => {
   const res = await fetch('http://localhost:3001/todos', {
     method: 'POST',
     headers: {
@@ -20,6 +22,45 @@ export const createTodo = createAsyncThunk('@@todos/create-todo', async (title, 
     },
     body: JSON.stringify({ title, completed: false }),
   });
-  const data = res.json();
-  dispatch(addTodo(data));
+  const data = await res.json();
+  return data;
+});
+
+const todoSlice = createSlice({
+  name: '@@todos',
+  initialState: {
+    entities: [],
+    loading: 'idle', // loading
+    error: null,
+  },
+  reducers: {
+    removeTodo: (state, action) => {
+      const id = action.payload;
+      return state.filter(todo => todo.id !== id);
+    },
+    toggleTodo: (state, action) => {
+      const id = action.payload;
+      const todo = state.find(todo => todo.id === id);
+      todo.completed = !todo.completed;
+    },
+  },
+  //* Пример работы с asyncThunk в extraReducers
+  extraReducers: builder => {
+    builder
+      .addCase(resetToDefault, () => {
+        return [];
+      })
+      .addCase(createTodo.pending, state => {
+        state.loading = 'loading';
+        state.error = null;
+      })
+      .addCase(createTodo.rejected, state => {
+        state.loading = 'idle';
+        state.error = 'Что-то пошло не так';
+      })
+      .addCase(createTodo.fulfilled, (state, action) => {
+        state.entities.push(action.payload);
+        state.error = null;
+      });
+  },
 });
