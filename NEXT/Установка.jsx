@@ -16,3 +16,6 @@
 
 //* npm i @reduxjs/toolkit
 // Установка Redux Toolkit.
+
+//* npm i react-redux
+// Установка React Redux.
