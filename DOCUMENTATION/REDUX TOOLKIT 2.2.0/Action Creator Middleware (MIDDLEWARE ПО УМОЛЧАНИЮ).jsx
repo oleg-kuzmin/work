@@ -25,17 +25,3 @@ const store = configureStore({
   reducer,
   middleware: () => new Tuple(actionCreatorMiddleware),
 });
-
-//# Использование без удаления других middleware
-//* Делаем то же самое, не удаляя все остальные промежуточные программы, используя getDetfaultMiddleware
-configureStore({
-  reducer: exampleSliceReducer,
-  // Это заменяет исходное middleware по умолчанию на настроенные версии.
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      immutableCheck: {
-        ignoredPaths: ['ignoredPath', 'ignoredNested.one', 'ignoredNested.two'],
-      },
-    }),
-});
-

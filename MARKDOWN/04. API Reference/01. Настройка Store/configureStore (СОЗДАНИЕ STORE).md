@@ -1,0 +1,84 @@
+# `configureStore`
+
+Стандартный метод создания хранилища Redux. Он использует внутри низкоуровневый метод `createStore()` ядра Redux, но оборачивает его, чтобы обеспечить хорошие настройки хранилища по умолчанию для лучшего опыта разработки.
+
+## Цель и поведение
+
+Стандартная настройка хранилища Redux обычно требует нескольких частей конфигурации:
+
+- Объединение нескольких slice-reducers в корневой root-reducer.
+- Создание усилителей (middleware enhancers), обычно с thunk middleware или другими middleware с побочными эффектами, а также middleware, которые могут использоваться для проверки в режиме разработки.
+- Добавление усилителя Redux DevTools (нужно расширение браузера) и объединение усилителей вместе.
+- Вызов `createStore()`.
+
+Раньше для достижения этой цели в Legacy Redux шаблоны обычно требовали нескольких десятков строк кода.
+
+Инструмент `configureStore()` в Redux Toolkit упрощает этот процесс установки, делая всю работу за вас. Один вызов `configureStore()`:
+
+- Вызывает `combineReducers()`, чтобы объединить ваши reducers в функцию root-reducer.
+- Добавляет thunk middleware и вызов `applyMiddleware()`.
+- В режиме development добавляет больше middleware для проверки распространенных ошибок, например таких как мутация состояния.
+- Автоматически настраивает соединение с расширением Redux DevTools.
+- Вызывает `createStore()`, чтобы создать хранилище Redux, используя вышеуказанные root-reducer и параметры конфигурации.
+
+`configureStore()` также предлагает улучшенный API и шаблоны использования по сравнению с оригинальным `createStore`, принимая значения для `reducer`, `preloadedState`, `middleware`, `enhancers` и `devtools`, а также гораздо лучший вывод типов TS.
+
+## Параметры
+
+`configureStore` принимает один параметр - объект конфигурации со следующими свойствами:
+
+```ts
+interface ConfigureStoreOptions<
+  S = any,
+  A extends Action = UnknownAction,
+  M extends Tuple<Middlewares<S>> = Tuple<Middlewares<S>>
+  E extends Tuple<Enhancers> = Tuple<Enhancers>,
+  P = S
+> {
+  /**
+   * Одна функция - reducer, который будет использоваться в качестве root-reducer
+   * или объект c несколькими slice-reducers, который будет передан в combineReducers()
+   */
+  reducer: Reducer<S, A, P> | ReducersMapObject<S, A, P>
+
+  /**
+   * Массив Redux middleware для установки. Если не указано, по умолчанию используется
+   * набор middleware, возвращаемый функцией getDefaultMiddleware().
+   */
+  middleware?: ((getDefaultMiddleware: CurriedGetDefaultMiddleware<S>) => M) | M
+
+  /**
+   * Включить ли расширение Redux DevTools. По умолчанию установлено true.
+   * Дополнительную настройку можно выполнить, передав параметры Redux DevTools.
+   */
+  devTools?: boolean | DevToolsOptions
+
+  /**
+   * Изначальное состояние - такое же initial-state, как и у createStore в Redux.
+   * Вы можете опционально указать его для гидратации состояния
+   * с сервера в универсальных приложениях или для восстановления предыдущей сериализованной
+   * сессии пользователя. Если вы используете combineReducers() для создания root-reducer
+   * (прямо или косвенно путем передачи объекта как значения свойства reducer)
+   * это должен быть объект с точно такими же ключами как у reducer.
+   */
+  preloadedState?: P
+
+  /**
+   * Усилители store, которые нужно применить. См. функцию createStore() в Redux.
+   * Все усилители будут включены перед DevTools Extension.
+   * Если вам нужно настроить определенный порядок усилителей, используйте callback функцию,
+   * которая получит getDefaultEnhancers в качестве массива усилителей и должна вернуть
+   * новый массив (например getDefaultEnhancers().concat(offline)).
+   * Если вам нужно добавить только middleware, вы можете использовать свойство middleware.
+  */
+  enhancers?: (getDefaultEnhancers: GetDefaultEnhancers<M>) => E | E
+}
+
+function configureStore<
+  S = any,
+  A extends Action = UnknownAction,
+  M extends Tuple<Middlewares<S>> = Tuple<Middlewares<S>>
+  E extends Tuple<Enhancers> = Tuple<Enhancers>,
+  P = S
+>(options: ConfigureStoreOptions<S, A, M, E, P>): EnhancedStore<S, A, M, E>
+```
