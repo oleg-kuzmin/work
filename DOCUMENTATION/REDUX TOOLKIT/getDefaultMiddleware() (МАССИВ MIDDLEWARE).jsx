@@ -2,24 +2,20 @@
 // Возвращает массив, содержащий список middleware по умолчанию.
 
 //# Предполагаемое использование
-// По умолчанию configureStore автоматически добавляет некоторые middleware в настройку хранилища Redux.
-
+//* По умолчанию configureStore автоматически добавляет некоторые middleware в настройку хранилища Redux. В store добавлено middleware, поскольку список middleware не был настроен:
 const store = configureStore({
   reducer: rootReducer,
-  // В store добавлено middleware, поскольку список middleware не был настроен.
 });
 
-// Если вы хотите настроить список middleware, вы можете предоставить массив функций middleware для configureStore
-
+//* Если вы хотите настроить список middleware, вы можете предоставить массив функций middleware для configureStore. В store специально применяются middleware "thunk" и "logger":
 configureStore({
   reducer: rootReducer,
-  // В store специально применяются middleware "thunk" и "logger".
   middleware: () => new Tuple(thunk, logger),
 });
 
 // Однако, когда вы предоставляете опцию middleware, вы несете ответственность за определение всего middleware, которое вы хотите добавить в store. configureStore НЕ БУДЕТ добавлять никакого дополнительного промежуточного middleware, кроме того, что вы указали.
 
-// getDefaultMiddleware полезен, если вы хотите добавить какое-то собственное middleware, но при этом также хотите добавить стандартное middleware по умолчанию:
+//* getDefaultMiddleware полезен, если вы хотите добавить какое-то собственное middleware, но при этом также хотите добавить стандартное middleware по умолчанию:
 
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
@@ -27,7 +23,7 @@ import rootReducer from './reducer';
 
 configureStore({
   reducer: rootReducer,
-  // В store добавлено все middleware по умолчанию, плюс middleware "logger".
+  // В store добавлены все middleware по умолчанию, плюс middleware "logger".
   middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger),
 });
 
@@ -43,3 +39,11 @@ configureStore({
 
 //* Serializability check middleware
 // Кастомное middleware, созданное специально для использования в Redux Toolkit. По концепции похож на immutable-state-invariant, но тщательно проверяет ваше дерево состояний и ваши действия на предмет несериализуемых значений, таких как функции, Promises, символы и другие значения данных, не относящихся к простому JS. При обнаружении несериализуемого значения на консоли будет выведена ошибка с указанием пути к ключу, в котором было обнаружено несериализуемое значение.
+
+//* Action creator check middleware
+// Еще одно кастомное middleware, созданное специально для использования в Redux Toolkit. Определяет, когда action creator был по ошибке отправлен в dispatch без вызова, и выводит ошибку в консоль с указанием типа действия.
+
+//* В дополнение к этим middleware для разработки также добавляется redux-thunk по умолчанию, поскольку thunks являются основным рекомендуемым middleware с побочными эффектами для Redux.
+
+// В настоящее время возвращаемый массив middleware составляет:
+const middleware = [immutableStateInvariant, serializableStateInvariant, actionCreatorInvariant, thunk];

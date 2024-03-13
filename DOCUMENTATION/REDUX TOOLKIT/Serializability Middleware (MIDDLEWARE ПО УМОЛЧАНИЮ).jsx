@@ -1,18 +1,17 @@
-//# Serializability Middleware (MIDDLEWARE ПО УМОЛЧАНИЮ)
+//# Serializability Middleware (MIDDLEWARE ПО УМОЛЧАНИЮ) Last updated on Oct 1, 2023
 // Пользовательское middleware, которое определяет, были ли какие-либо несериализуемые значения включены в состояние или в actions, смоделированное на основе redux-immutable-state-invariant. Любые обнаруженные несериализуемые значения будут выводится в консоль.
 
-// Это middleware добавляется в хранилище по умолчанию с помощью configureStore и getDefaultMiddleware.
+// Этот middleware добавляется в хранилище по умолчанию с помощью configureStore и getDefaultMiddleware.
 
 // Вы можете настроить поведение этого промежуточного программного обеспечения, передав любой из поддерживаемых параметров в качестве значения serializableCheck для getDefaultMiddleware.
 
 //# Использование с удалением других middleware
-// createSerializableStateInvariantMiddleware - cоздает экземпляр промежуточного программного обеспечения проверки сериализуемости с заданными параметрами.
-
+//* createSerializableStateInvariantMiddleware - cоздает экземпляр промежуточного программного обеспечения проверки сериализуемости с заданными параметрами.
 import { Iterable } from 'immutable';
 import { configureStore, createSerializableStateInvariantMiddleware, isPlain, Tuple } from '@reduxjs/toolkit';
 import reducer from './reducer';
 
-// Дополнить middleware, чтобы считать итерации Immutable.JS сериализуемыми.
+//* Дополнить middleware, чтобы считать итерации Immutable.JS сериализуемыми.
 const isSerializable = (value: any) => Iterable.isIterable(value) || isPlain(value);
 
 const getEntries = (value: any) => (Iterable.isIterable(value) ? value.entries() : Object.entries(value));
@@ -28,7 +27,7 @@ const store = configureStore({
 });
 
 //# Использование без удаления других middleware
-// Делаем то же самое, не удаляя все остальные промежуточные программы, используя getDetfaultMiddleware
+//* Делаем то же самое, не удаляя все остальные промежуточные программы, используя getDetfaultMiddleware
 configureStore({
   reducer: exampleSliceReducer,
   // Это заменяет исходное middleware по умолчанию на настроенные версии.
@@ -80,7 +79,7 @@ createSerializableStateInvariantMiddleware({
 });
 
 //# isPlain()
-// Проверяет, считается ли данное значение «простым значением» или нет.
+//* Проверяет, считается ли данное значение «простым значением» или нет.
 
 // На данный момент реализовано так:
 import isPlainObject from './isPlainObject';

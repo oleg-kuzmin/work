@@ -1,4 +1,4 @@
-//# Immutability Middleware (MIDDLEWARE ПО УМОЛЧАНИЮ)
+//# Immutability Middleware (MIDDLEWARE ПО УМОЛЧАНИЮ) Last updated on Oct 1, 2023
 // Порт middleware от redux-immutable-state-invariant, настроенный для использования с Redux Toolkit. Любые обнаруженные мутации будут считаться ошибками.
 
 // Этот middleware добавляется в хранилище по умолчанию с помощью configureStore и getDefaultMiddleware.
@@ -6,7 +6,7 @@
 // Вы можете настроить поведение этого middleware, передав любой из поддерживаемых параметров в качестве значения immutableCheck для getDefaultMiddleware.
 
 //# Использование с удалением других middleware
-// createImmutableStateInvariantMiddleware - создает экземпляр middleware для проверки неизменяемости с заданными параметрами.
+//* createImmutableStateInvariantMiddleware - создает экземпляр middleware для проверки неизменяемости с заданными параметрами.
 import { configureStore, createImmutableStateInvariantMiddleware, Tuple } from '@reduxjs/toolkit';
 
 const immutableInvariantMiddleware = createImmutableStateInvariantMiddleware({
@@ -20,7 +20,7 @@ const store = configureStore({
 });
 
 //# Использование без удаления других middleware
-// Делаем то же самое, не удаляя все остальные промежуточные программы, используя getDetfaultMiddleware
+//* Делаем то же самое, не удаляя все остальные промежуточные программы, используя getDetfaultMiddleware
 configureStore({
   reducer: exampleSliceReducer,
   // Это заменяет исходное middleware по умолчанию на настроенные версии.
