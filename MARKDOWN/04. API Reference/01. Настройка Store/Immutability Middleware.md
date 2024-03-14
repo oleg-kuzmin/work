@@ -6,7 +6,7 @@
 
 Вы можете настроить поведение этого middleware, передав любой из поддерживаемых параметров в качестве значения immutableCheck для getDefaultMiddleware.
 
-## Параметры
+## Опции
 
 ```ts
 type IsImmutableFunc = (value: any) => boolean;
