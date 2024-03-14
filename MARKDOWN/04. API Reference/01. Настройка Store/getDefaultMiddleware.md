@@ -84,7 +84,7 @@ const middleware = [thunk];
 - Каждое middleware можно исключить из массива, передав `false` в соответствующее поле.
 - Для каждого middleware можно настроить параметры, передав объект параметров в соответствующее поле.
 
-В этом примере показаны передача определенного значения в поле "extraArgument" для middleware `thunk` и исключение middleware `serializableCheck`:
+В этом примере показаны передача определенного значения в поле "extraArgument" для middleware `thunk` и исключение middleware `Serializability Middleware` по ключу `serializableCheck`
 
 ```ts
 import { configureStore } from '@reduxjs/toolkit';
