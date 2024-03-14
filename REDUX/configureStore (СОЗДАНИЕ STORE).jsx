@@ -10,10 +10,13 @@ export const store = configureStore({
   //* reducer
   // один reducer
   reducer: todoSlice.reducer,
+
   // или несколько reducer
   reducer: {
     todos: todoSlice.reducer,
+    fllters: todoFilters.reducer,
   },
+
   // или combineReducers
   reducer: rootReducer,
 

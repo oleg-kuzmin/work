@@ -36,7 +36,7 @@ interface ConfigureStoreOptions<
   P = S
 > {
   /**
-   * Одна функция - reducer, который будет использоваться в качестве root-reducer
+   * Одна функция - reducer, которая будет использоваться в качестве root-reducer
    * или объект c несколькими slice-reducers, который будет передан в combineReducers()
    */
   reducer: Reducer<S, A, P> | ReducersMapObject<S, A, P>
@@ -82,3 +82,34 @@ function configureStore<
   P = S
 >(options: ConfigureStoreOptions<S, A, M, E, P>): EnhancedStore<S, A, M, E>
 ```
+
+### `reducer`
+
+Если это одна функция, она будет напрямую использоваться в качестве root-reducer для хранилища.
+
+Если это объект c несколькими slice-reducers, например `{ users: usersReducer, posts: postsReducer }`, `configureStore()` автоматически создаст корневой root-reducer, передав этот объект утилите Redux `combineReducers()`.
+
+### `middleware`
+
+В качестве значения указывается callback, который получает `getDefaultMiddleware` в качестве единственного аргумента и возвращает сформированный массив из middleware.
+
+Если эта опция указана, она должна возвращать все middleware, которые вы хотите добавить в хранилище. `configureStore` автоматически передаст их в `applyMiddleware`.
+
+Если эта опция не указана, `configureStore` вызовет `getDefaultMiddleware` и будет использовать возвращаемый массив middleware по умолчанию.
+
+Дополнительные сведения о том, как работает параметр middleware, а также список middleware, добавляемых по умолчанию, смотрите на странице документации [`getDefaultMiddleware()`](<../04. API Reference/01. Настройка Store/configureStore (СОЗДАНИЕ STORE).md>).
+
+Пользователи Typescript должны использовать экземпляр Tuple (если не используется дефолтный результат getDefaultMiddleware, который уже является Tuple) для лучшего вывода.
+
+```ts
+import { configureStore, Tuple } from '@reduxjs/toolkit';
+
+configureStore({
+  reducer: rootReducer,
+  middleware: () => new Tuple(additionalMiddleware, logger),
+});
+```
+
+Пользователи, использующие только Javascript, могут при желании использовать простой массив.
+
+### `devTools`
