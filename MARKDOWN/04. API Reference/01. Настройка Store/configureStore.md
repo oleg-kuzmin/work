@@ -97,7 +97,7 @@ function configureStore<
 
 Если эта опция не указана, `configureStore` вызовет `getDefaultMiddleware` и будет использовать возвращаемый массив middleware по умолчанию.
 
-Дополнительные сведения о том, как работает параметр middleware, а также список middleware, добавляемых по умолчанию, смотрите на странице документации [`getDefaultMiddleware()`](<../04. API Reference/01. Настройка Store/configureStore (СОЗДАНИЕ STORE).md>).
+Дополнительные сведения о том, как работает параметр middleware, а также список middleware, добавляемых по умолчанию, смотрите на странице документации [`getDefaultMiddleware()`](<./getDefaultMiddleware.md>).
 
 Пользователи Typescript должны использовать экземпляр Tuple (если не используется дефолтный результат getDefaultMiddleware, который уже является Tuple) для лучшего вывода.
 
