@@ -63,11 +63,7 @@ export const exampleSlice = createSlice({
 export default exampleSlice.reducer;
 
 // file: store.ts
-import {
-  configureStore,
-  createImmutableStateInvariantMiddleware,
-  Tuple,
-} from '@reduxjs/toolkit';
+import { configureStore, createImmutableStateInvariantMiddleware, Tuple } from '@reduxjs/toolkit';
 
 import exampleSliceReducer from './exampleSlice';
 
@@ -106,9 +102,7 @@ const store = configureStore({
 Реализация по умолчанию параметра проверки «является ли это значение иммутабельным?». На данный момент реализовано так:
 
 ```ts
-return (
-  typeof value !== 'object' || value === null || typeof value === 'undefined'
-);
+return typeof value !== 'object' || value === null || typeof value === 'undefined';
 ```
 
 Это вернет true для примитивных типов (таких как number, string, boolean, null и undefined).

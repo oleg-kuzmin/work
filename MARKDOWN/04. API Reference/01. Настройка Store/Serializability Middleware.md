@@ -86,8 +86,7 @@ import {
 import reducer from './reducer';
 
 // Дополнить middleware, чтобы считать итерации Immutable.JS сериализуемыми.
-const isSerializable = (value: any) =>
-  Iterable.isIterable(value) || isPlain(value);
+const isSerializable = (value: any) => Iterable.isIterable(value) || isPlain(value);
 
 const getEntries = (value: any) =>
   Iterable.isIterable(value) ? value.entries() : Object.entries(value);
