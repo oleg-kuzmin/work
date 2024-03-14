@@ -49,6 +49,7 @@ Ctrl + numpad2             //
 Ctrl + numpad3             // Emmet: Перенести с сокращением (обернуть в тег)
 Ctrl + numpad4             // Quokka.js: Start on Current File
 Ctrl + numpad5             // Quokka.js: Stop All
+Ctrl + numpad6             // extension.translateTextPreferred
 Ctrl + Shift + N           // Файл: создать папку
 Ctrl + N                   // Файл: создать файл
 Ctrl + /                   // закомментировать или раскомментировать строку
