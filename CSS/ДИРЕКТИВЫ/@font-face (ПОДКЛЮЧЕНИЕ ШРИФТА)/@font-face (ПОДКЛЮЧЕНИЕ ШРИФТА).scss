@@ -21,13 +21,10 @@
 
 @font-face {
   font-family: 'Lexend Peta';
-  src: local('Lexend Peta Regular'),
-    url('Lexend_Peta-webfont.woff2') format('woff2'),
-    url('Lexend_Peta-webfont.woff') format('woff'),
-    url('Lexend_Peta-webfont.svg') format('svg'),
-    url('Lexend_Peta-webfont.ttf') format('truetype'),
-    url('Lexend_Peta-webfont.eot') format('eot');
-  font-weight: normal;
+  src: local('Lexend Peta Regular'), url('Lexend_Peta-webfont.woff2') format('woff2'),
+    url('Lexend_Peta-webfont.woff') format('woff'), url('Lexend_Peta-webfont.svg') format('svg'),
+    url('Lexend_Peta-webfont.ttf') format('truetype'), url('Lexend_Peta-webfont.eot') format('eot');
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -35,7 +32,8 @@
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
-  src: url('Gilroy-Regular.woff2') format('woff2'), url('Gilroy-Regular.woff') format('woff');
+  src: local('Gilroy'), url('Gilroy-Regular.woff2') format('woff2'),
+    url('Gilroy-Regular.woff') format('woff');
 }
 
 body {
