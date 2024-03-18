@@ -123,3 +123,149 @@ configureStore({
 **trace**
 
 Расширение Redux DevTools недавно добавило [поддержку отображения трассировок стека action](https://github.com/reduxjs/redux-devtools/blob/main/extension/docs/Features/Trace.md), которые точно показывают, куда был отправлен каждый action. Захват трассировок может добавить дополнительную нагрузку, поэтому расширение DevTools позволяет пользователям настраивать, будут ли регистрироваться трассировки стека action, путем установки аргумента 'trace'. Если DevTools включается путем передачи true или объекта, то configureStore по умолчанию включает запись трассировок стека action только в режиме разработки.
+
+### `preloadedState`
+
+Необязательное значение начального состояния, которое должно быть передано в функцию Redux `createStore`.
+
+### `enhancers`
+
+Функция callback для настройки массива усилителей.
+
+Усилители, возвращаемые этим callback, будут переданы в функцию [compose Redux](https://redux.js.org/api/compose), а объединенный усилитель будет передан в `createStore`.
+
+> **DEV TOOLS**
+
+> Сюда не следует включать расширение Redux DevTools `composeWithDevTools`, поскольку оно уже обработано `configureStore`.
+
+> Например: `enhancers: () => new Tuple(offline)` приведет к такому набору усилителей - `[offline, devToolsExtension]`.
+
+Если `enhancers`не указан, `configureStore` вызовет `getDefaultEnhancers` и будет использовать возвращаемый им массив усилителей (включая applyMiddleware с указанным middleware) по умолчанию.
+
+Если вы хотите добавить или настроить усилители по умолчанию, вы можете передать функцию callback, которая получит `getDefaultEnhancers` в качестве аргумента и должна вернуть массив усилителей.
+
+Например: `enhancers: (defaultEnhancers) => defaultEnhancers.prepend(offline)` приведет к такому набору усилителей `[offline, applyMiddleware, devToolsExtension]`.
+
+Дополнительные сведения о том, как работает параметр `enhancer`, и список усилителей, добавляемых по умолчанию, см. на странице документации [`getDefaultEnhancers`](./getDefaultEnhancers.md).
+
+**! MIDDLEWARE**
+
+Если вы не используете `getDefaultEnhancers` и вместо этого возвращаете массив, усилитель `applyMiddleware` использоваться не будет.
+
+`configureStore` выдаст предупреждение в консоли, если какое-либо middleware предоставлено (или оставлено по умолчанию), но не включено в окончательный список усилителей.
+
+```ts
+// предупреждение - middleware настроено, но не включено в окончательные усилители
+configureStore({
+  reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+  enhancers: [offline(offlineConfig)],
+})
+
+// хорошо - включены усилители по умолчанию
+configureStore({
+  reducer,
+  enhancers: (getDefaultEnhancers) => getDefaultEnhancers().concat(offline(offlineConfig)),
+})
+
+// также разрешено
+configureStore({
+  reducer,
+  middleware: () => [],
+  enhancers: () => [offline(offlineConfig)],
+})
+```
+
+Обратите внимание: при использовании Typescript параметр `middleware` должен быть указан _перед_ параметром Enhancer, поскольку тип `getDefaultEnhancers` зависит от его результата.
+
+**TUPLE**
+
+Пользователи Typescript должны использовать экземпляр Tuple (если не используется `getDefaultEnhancer`, который уже является Tuple) для лучшего вывода.
+
+```ts
+import { configureStore, Tuple } from '@reduxjs/toolkit';
+
+configureStore({
+  reducer: rootReducer,
+  enhancers: () => new Tuple(offline),
+});
+```
+
+Пользователи, использующие только Javascript, могут при желании использовать простой массив.
+
+## Использование
+
+### Базовый пример
+
+```ts
+import { configureStore } from '@reduxjs/toolkit';
+
+import rootReducer from './reducers';
+
+const store = configureStore({ reducer: rootReducer });
+// В store теперь добавлен redux-thunk и включено расширение Redux DevTools.
+```
+
+### Полный пример
+
+```ts
+// file: todos/todosReducer.ts noEmit
+import type { Reducer } from '@reduxjs/toolkit';
+declare const reducer: Reducer<{}>;
+export default reducer;
+
+// file: visibility/visibilityReducer.ts noEmit
+import type { Reducer } from '@reduxjs/toolkit';
+declare const reducer: Reducer<{}>;
+export default reducer;
+
+// file: store.ts
+import { configureStore } from '@reduxjs/toolkit';
+
+// Мы будем использовать redux-logger как пример добавления еще одного middleware.
+import logger from 'redux-logger';
+
+// И использовать redux-batched-subscribe в качестве примера добавления усилителей.
+import { batchedSubscribe } from 'redux-batched-subscribe';
+
+import todosReducer from './todos/todosReducer';
+import visibilityReducer from './visibility/visibilityReducer';
+
+const reducer = {
+  todos: todosReducer,
+  visibility: visibilityReducer,
+};
+
+const preloadedState = {
+  todos: [
+    {
+      text: 'Eat food',
+      completed: true,
+    },
+    {
+      text: 'Exercise',
+      completed: false,
+    },
+  ],
+  visibilityFilter: 'SHOW_COMPLETED',
+};
+
+const debounceNotify = _.debounce(notify => notify());
+
+const store = configureStore({
+  reducer,
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(logger),
+  devTools: process.env.NODE_ENV !== 'production',
+  preloadedState,
+  enhancers: getDefaultEnhancers =>
+    getDefaultEnhancers({
+      autoBatch: false,
+    }).concat(batchedSubscribe(debounceNotify)),
+});
+
+// store был создан со следующими опциями::
+// - slice reducers были автоматически добавлены в combineReducers()
+// - redux-thunk and redux-logger были добавлены в качестве middleware
+// - Расширение Redux DevTools отключено для production.
+// - middleware, подписка batched и devtools были составлены вместе.
+```
