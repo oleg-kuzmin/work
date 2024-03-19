@@ -1,0 +1,4 @@
+{
+    // Снипеты наверху всех подсказок
+    "editor.snippetSuggestions": "top"
+}

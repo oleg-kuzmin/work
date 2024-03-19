@@ -1,4 +1,4 @@
 {
   // Максимальная ширина кода (Prettier)
-  "prettier.printWidth": 120
+  "prettier.printWidth": 100
 }

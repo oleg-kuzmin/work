@@ -1,4 +1,4 @@
 {
   // Ползунок вертикального скроллбара
-  "editor.scrollbar.vertical": "hidden"
+  "editor.scrollbar.vertical": "visible"
 }

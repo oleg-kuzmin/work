@@ -1,4 +1,4 @@
 {
   // Граница ползунка вертикального скроллбара
-  "editor.overviewRulerBorder": false
+  "editor.overviewRulerBorder": true
 }

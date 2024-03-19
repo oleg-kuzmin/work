@@ -1,4 +1,4 @@
 {
   // Подсветка слов
-  "editor.occurrencesHighlight": false
+  "editor.occurrencesHighlight": "off"
 }

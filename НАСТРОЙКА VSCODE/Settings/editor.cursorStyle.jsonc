@@ -1,4 +1,4 @@
 {
   // Cтиль курсора
-  "editor.cursorStyle": "line-thin"
+  "editor.cursorStyle": "line"
 }

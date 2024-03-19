@@ -1,4 +1,4 @@
 {
   // Отключает вкладки наверху
-  "workbench.editor.showTabs": "none"
+  "workbench.editor.showTabs": "multiple"
 }

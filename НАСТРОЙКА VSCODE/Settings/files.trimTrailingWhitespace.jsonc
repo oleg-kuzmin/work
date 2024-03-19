@@ -1,4 +1,4 @@
 {
   // Удаление лишних пробелов при сохранении
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": false
 }

@@ -1,3 +1,0 @@
-// Форматировщик кода
-
-Prettier - Code formatter (Prettier)

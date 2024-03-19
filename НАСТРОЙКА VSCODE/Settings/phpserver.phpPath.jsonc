@@ -1,4 +1,4 @@
 {
-  // Путь установки php на компьютере
+  // Путь установки php на компьютере (phpserver)
   "phpserver.phpPath": "c:/php/php.exe"
 }

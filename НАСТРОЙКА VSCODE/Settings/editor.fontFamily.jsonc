@@ -1,3 +1,4 @@
 {
-  "editor.fontFamily": "JetBrains Mono"
+  // Семейство шрифтов редактора "Consolas, 'Courier New', monospace"
+  "editor.fontFamily": "Consolas"
 }

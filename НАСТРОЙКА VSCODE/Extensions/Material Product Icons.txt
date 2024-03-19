@@ -1,3 +1,0 @@
-// Иконки значков в проводнике
-
-Material Product Icons (Philipp Kief)

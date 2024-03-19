@@ -1,3 +1,0 @@
-// Языковой пакет
-
-Russian Language Pack for Visual Studio Code (Microsoft)
