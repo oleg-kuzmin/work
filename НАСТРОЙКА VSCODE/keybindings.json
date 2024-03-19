@@ -10,6 +10,16 @@
     "when": "editorTextFocus"
   },
   {
+    "key": "ctrl+numpad2",
+    "command": "extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+l alt+c",
+    "command": "-extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+numpad3",
     "command": "editor.emmet.action.wrapWithAbbreviation"
   },
@@ -26,6 +36,16 @@
   {
     "key": "ctrl+numpad5",
     "command": "quokka.stopAll"
+  },
+  {
+    "key": "ctrl+numpad6",
+    "command": "extension.translateTextPreferred",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+t",
+    "command": "-extension.translateTextPreferred",
+    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+shift+w",
@@ -80,25 +100,5 @@
     "key": "shift+alt+f",
     "command": "-editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-  },
-  {
-    "key": "ctrl+numpad2",
-    "command": "extension.liveServer.goOffline",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+l alt+c",
-    "command": "-extension.liveServer.goOffline",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+numpad6",
-    "command": "extension.translateTextPreferred",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "shift+alt+t",
-    "command": "-extension.translateTextPreferred",
-    "when": "editorTextFocus"
   }
 ]
