@@ -1,3 +1,0 @@
-// Автоматическое закрытие тегов
-
-Auto Complete Tag (Jun Han)

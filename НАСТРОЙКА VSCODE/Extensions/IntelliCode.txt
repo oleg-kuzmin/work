@@ -1,3 +1,0 @@
-// подсказки для написания кода
-
-IntelliCode (Microsoft)

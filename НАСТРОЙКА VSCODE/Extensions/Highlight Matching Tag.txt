@@ -1,3 +1,0 @@
-// Подсветка закрывающего и открывающего тега
-
-Highlight Matching Tag (vincaslt)

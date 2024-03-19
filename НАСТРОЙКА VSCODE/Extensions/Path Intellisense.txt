@@ -1,3 +1,0 @@
-// Подсказка пути файла
-
-Path Intellisense (Christian Kohler)
