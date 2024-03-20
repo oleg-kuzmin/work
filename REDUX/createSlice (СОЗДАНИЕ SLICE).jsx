@@ -70,4 +70,5 @@ getInitialState - дефолтное значение
 */
 
 export const { addTodo, removeTodo, toggleTodo } = todoSlice.actions;
-export const store = createStore(todoSlice.reducer);
+// export const store = createStore(todoSlice.reducer);
+export const todoReducer = todoSlice.reducer;
