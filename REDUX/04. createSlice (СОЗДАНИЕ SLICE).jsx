@@ -26,6 +26,24 @@ const todoSlice = createSlice({
     removeTodo(state, action) {},
     toggleTodoCompleted(state, action) {},
   },
+
+  //# extraReducers
+  // Нужны для обработки асинхронных функций (по сути action), созданных через createAsyncThunk: fetchTodos
+  extraReducers: builder => {
+    builder
+      .addCase(fetchTodos.pending, state => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(fetchTodos.fulfilled, (state, action) => {
+        state.status = 'fulfilled';
+        state.todos = action.payload;
+      })
+      .addCase(fetchTodos.rejected, (state, action) => {
+        state.status = 'rejected';
+        state.error = action.payload;
+      });
+  },
 });
 
 // экспорт actions
