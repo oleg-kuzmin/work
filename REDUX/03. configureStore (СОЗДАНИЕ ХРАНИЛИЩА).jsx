@@ -11,7 +11,7 @@ export const store = configureStore({
   // несколько reducer
   reducer: {
     todos: todoReducer,
-    fllters: iltersReducer,
+    fllters: filtersReducer,
   },
 
   // rootReducer, созданный с помощью combineReducers
