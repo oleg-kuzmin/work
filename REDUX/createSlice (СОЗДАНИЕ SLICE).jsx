@@ -28,7 +28,7 @@ const todoSlice = createSlice({
   },
 
   //# extraReducers
-  // Нужны для обработки асинхронных функций (по сути action), созданных через createAsyncThunk: fetchTodos
+  // Нужны для обработки асинхронных функций (по сути action), созданных через createAsyncThunk
   extraReducers: builder => {
     builder
       .addCase(fetchTodos.pending, state => {
