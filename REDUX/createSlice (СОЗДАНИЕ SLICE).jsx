@@ -15,6 +15,8 @@ const todoSlice = createSlice({
 
   //# reducers (обязательно)
   // объект с функциями reducer
+  // для мутабельной логики не нужен return
+  // для иммутабельной логики нужен return (например для метода filter)
   reducers: {
     addTodo(state, action) {
       state.todos.push({
