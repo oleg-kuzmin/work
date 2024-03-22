@@ -6,7 +6,7 @@ export default function Component() {
   // создаем и сохраняем в переменную результат вызова useDispatch()
   const dispatch = useDispatch();
 
-  //* dispatch принимает в качестве аргумента событие action
+  //* dispatch принимает в качестве аргумента вызов action
   return (
     <button
       onClick={() => {
