@@ -21,9 +21,8 @@ export const store = configureStore({
   devTools: false,
 
   //# middleware
-  // middleware представляет собой массив дополнительных функций
-  // UI => Action => Middleware => Reducer => Store
-  // Значением свойства является функция callback, которая принимает параметр getDefaultMiddleWare и возвращает вызов getDefaultMiddleWare() c массивом стандартных по умолчанию middleware + можно добавить нашу дополнительную middleware(например logger)
+  // middleware представляет собой массив дополнительных функций, которые начинают работать после того, как случилось событие action, но до того, как action передан в reducer (UI => Action => Middleware => Reducer => Store)
+  // Значением свойства middleware является функция callback, которая принимает параметр getDefaultMiddleWare и возвращает вызов getDefaultMiddleWare() c массивом стандартных по умолчанию middleware + можно добавить нашу дополнительную middleware(например logger)
   middleware: getDefaultMiddleWare => getDefaultMiddleWare().concat(logger),
 
   //# добавление предзагруженных данных
