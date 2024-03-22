@@ -8,10 +8,8 @@ src
 */
 
 //# Порядок использования
-// Обернуть в Provider из библиотеки react-redux приложение или его часть.
-import { Provider } from 'react-redux'; // импорт компонента
-import store from './store'; // импорт хранилища
+//* 1. Обернуть в Provider (react-redux) приложение или его часть.
 
-<Provider store={store}>
-  <App />
-</Provider>;
+//* 2. Создать хранилище через configureStore (@reduxjs/toolkit)
+
+//* 3. Создать slice через createSlice (@reduxjs/toolkit)

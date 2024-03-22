@@ -2,7 +2,7 @@
 import { configureStore } from '@reduxjs/toolkit'; // импорт метода
 import todoReducer from './todoSlice'; // импорт reducer
 
-// Создание store
+// Создание и экспорт store
 export const store = configureStore({
   //# reducer (обязательно)
   // один reducer
