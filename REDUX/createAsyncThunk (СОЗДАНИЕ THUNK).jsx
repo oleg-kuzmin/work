@@ -7,7 +7,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 // Делаем запрос и возвращаем результат.
 export const fetchTodos = createAsyncThunk(
   'todos/fetchTodos',
-  async function (_, { rejectWithValue }) {
+  async function (_, { rejectWithValue, dispatch, getState }) {
     // Используется try-catch для того, чтобы пробросить ошибку далее
     try {
       const response = await fetch('https://jsonplaceholder.typicode.com/ttodos?_limit=10');
@@ -15,6 +15,8 @@ export const fetchTodos = createAsyncThunk(
         throw new Error('Ошибка загрузки todos');
       }
       const data = await response.json();
+      // dispatch() // можно вызвать dispatch при необходимости
+      // const state = getState(); // можно вызвать getState при необходимости
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
