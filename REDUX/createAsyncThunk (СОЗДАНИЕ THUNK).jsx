@@ -26,7 +26,7 @@ export const fetchTodos = createAsyncThunk(
 /*
 * 1. Строка 'todos/fetchTodos' - название для action.type
 * 2. Асинхронная функция, которая принимает параметры:
-- то, что мы положим при вызове dispatch(addTodo(параметр)) (если мы вообще что-то передаем)
+- то, что мы передаем при вызове dispatch(addTodo(параметр)) (если мы вообще что-то передаем)
 - объект thunkApi, предоставляемый redux (внутри есть dispatch, getState, extra-параметры). Например rejectWithValue() - функция, которая принимает в качестве аргумента значение и добавляет его в action.payload при кейсе *nameThunk*.rejected
 */
 
