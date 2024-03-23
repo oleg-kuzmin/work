@@ -1,5 +1,6 @@
 //# Приоритет операторов
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+// Все операторы возвращают значение.
 
 //*19  ()     (скобки)
 //*16  ++     (постфиксный инкремент) (увеличивает переменную на 1, возвращает старое значение)
