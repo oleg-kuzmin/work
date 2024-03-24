@@ -22,6 +22,7 @@ Boolean('Непустая строка'); // true
 Boolean(' ');               // true
 Boolean('');                // false
 Boolean(1);                 // true
+Boolean(-1);                // true
 Boolean(0);                 // false
 Boolean(-0);                // false
 Boolean(NaN);               // false
