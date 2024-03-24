@@ -1,6 +1,9 @@
 //# Приоритет операторов
-// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
-// Все операторы возвращают значение.
+/*
+- https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+- Все операторы возвращают значение.
+- Арифметические операторы (кроме бинарного плюса) работают только с числами и всегда преобразуют операнды в числа.
+*/
 
 //*18  ()     (скобки)
 //*16  ++     (постфиксный инкремент) (увеличивает переменную на 1, возвращает старое значение)
