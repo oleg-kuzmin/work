@@ -3,11 +3,11 @@
 
 //# Пример без переменной
 Promise.reject('Этот промис отклонён').catch(function (value) {
-  console.log(value); // "Этот промис отклонён"
+  console.log(value); // 'Этот промис отклонён'
 });
 
 //# Пример с переменной
 const promise = Promise.reject('Этот промис отклонён');
 promise.catch(function (value) {
-  console.log(value); // "Этот промис отклонён"
+  console.log(value); // 'Этот промис отклонён'
 });
