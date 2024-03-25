@@ -5,7 +5,7 @@
 promise.catch(function (error) {
   /**
    * обработает ошибку
-   * .catch(function) это то же самое, что promise.then(null, f)
+   * .catch(f) это то же самое, что promise.then(null, f)
    */
 });
 
