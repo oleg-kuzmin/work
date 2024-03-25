@@ -36,11 +36,59 @@ const options = {
 //# Возвращает
 //* Promise с объектом response
 /*
-- Результатом вызова fetch() будет Promise, в котором будет содержаться специальный объект ответа (response). У этого объекта есть важные свойства.
+- Результатом вызова fetch() будет Promise, в котором будет содержаться специальный объект ответа (response). У этого объекта есть следующие поля:
 */
 
-//# response.ok
-// Принимает состояние true или false и сообщает об успешности запроса.
+//# response.status
+// Код статуса ответа от сервера.
+fetch('http://jsonplaceholder.typicode.com/posts').then(response => response.status); // 200
 
-//# response.json
-// Асинхронный метод, вызов которого возвращает объект ответа (преобразованный из json-формата с сервера в привычный объект JavaScript).
+//# response.statusText
+// Сообщение статуса ответа от сервера - оно объясняет, что произошло.
+fetch('http://jsonplaceholder.typicode.com/posts').then(response => response.statusText); // OK
+
+//# response.ok
+/*
+- Свойство принимает состояние и сообщает об успешности запроса:
+1. true (если ответ успешный: начинается с 2)
+2. false (в любом другом случае)
+*/
+
+fetch('http://jsonplaceholder.typicode.com/posts')
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      return Promise.reject(`Что-то пошло не так: ${response.status}`);
+    }
+  })
+  .then(data => data);
+
+//# response.json()
+// Асинхронный метод, вызов которого возвращает Promise c объектом ответа от сервера (преобразованного из json-формата в привычный объект JavaScript).
+
+fetch('http://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json())
+  .then(data => data);
+
+//# response.text()
+// Разбирает ответ от сервера как текст.
+
+//# response.blob()
+// Разбирает ответ от сервера как бинарные данные (это нужно при получении файлов: изображений, видео, pdf-документов).
+
+//# response.headers.get()
+// Для работы с заголовками есть специальные методы. Чтобы получить значение заголовка, есть метод get. заголовки ответа можно только читать, но нельзя редактировать.
+
+fetch('http://jsonplaceholder.typicode.com/posts')
+  .then(response => {
+    if (res.headers.get('Content-Type').contains('application/json')) {
+      return res.json();
+    }
+  })
+  .then(data => data);
+
+//# Функция для проверки ответа
+function checkResponse(response) {
+  return response.ok ? response.json() : Promise.reject(`Ошибка: ${response.status}`);
+}
