@@ -16,3 +16,20 @@ promise.then(
 
 //* function (error)
 // Функция, которая выполняется, когда промис переходит в состояние «выполнен с ошибкой», и получает ошибку.
+
+//# Цепочка then
+// then возвращает новый Promise.
+
+fetch('https://www.anapioficeandfire.com/api/houses')
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (overlord) {
+    console.log(overlord.name);
+  })
+  .catch(function (error) {
+    console.log(`Ошибка: ${error.message}`);
+  })
+  .finally(function () {
+    console.log('Операция завершилась');
+  });
