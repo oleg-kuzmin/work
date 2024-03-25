@@ -18,7 +18,7 @@ promise.then(
 // Функция, которая выполняется, когда промис переходит в состояние «выполнен с ошибкой», и получает ошибку.
 
 //# Цепочка then
-// then возвращает новый Promise.
+// then возвращает новый Promise. Возвращаемое then значение передаётся дальше в следующий обработчик then.
 
 fetch('https://www.anapioficeandfire.com/api/houses')
   .then(function (response) {
