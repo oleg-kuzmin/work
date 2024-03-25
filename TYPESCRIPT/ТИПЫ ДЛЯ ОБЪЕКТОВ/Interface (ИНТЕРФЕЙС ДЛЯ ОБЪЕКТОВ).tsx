@@ -25,6 +25,9 @@ const car: Car = {
   brand: 'BMW',
   type: 'Sedan',
   isNew: false,
+  print: () => {
+    return 123;
+  },
 };
 
 //* Только для чтения
