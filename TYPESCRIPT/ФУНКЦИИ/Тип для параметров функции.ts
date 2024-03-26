@@ -10,7 +10,7 @@ function log2(name?: string) {
 }
 
 //* Объект
-// TS в параматрах-объектах проверяет наличие только основных ключей.
+// TS в параматрах-объектах проверяет наличие только минимума (основных ключей).
 function sum(pont: { x: string; y: string }): void {
   console.log(pont.x);
   console.log(pont.y);
