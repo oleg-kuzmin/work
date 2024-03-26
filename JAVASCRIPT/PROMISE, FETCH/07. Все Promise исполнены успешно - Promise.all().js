@@ -1,4 +1,4 @@
-//# Все Promise исполнены - Promise.all()
+//# Все Promise исполнены успешно - Promise.all()
 // Возвращает Promise с fulfilled, когда все промисы-аргументы вернулись со статусом fulfilled.
 
 //# Синтаксис
