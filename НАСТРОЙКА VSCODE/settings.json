@@ -48,7 +48,8 @@
     },
     {
       "tag": "*",
-      "color": "#98C379",
+      // "color": "#98C379",
+      "color": "#87d49d",
       "strikethrough": false,
       "underline": false,
       "backgroundColor": "transparent",
@@ -81,23 +82,23 @@
   // Семейство шрифтов редактора "Consolas, 'Courier New', monospace"
   "editor.fontFamily": "Consolas",
 
-  // Размер шрифта
+  // Размер шрифта (18)
   "editor.fontSize": 18,
 
   // Форматирование при сохранении
   "editor.formatOnSave": false,
 
   // Точки остановки для отладки
-  "editor.glyphMargin": false,
+  "editor.glyphMargin": true,
 
   // Переход к определению (F12)
   "editor.gotoLocation.multipleDefinitions": "goto",
 
   // Направляющие линии от скобок тем же цветом, что и скобки
-  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairs": false,
 
   // Вертикальные линии отступов
-  "editor.guides.indentation": false,
+  "editor.guides.indentation": true,
 
   // Метка местонахождения внутри вертикального скролбара
   "editor.hideCursorInOverviewRuler": true,
@@ -142,7 +143,7 @@
   "editor.smoothScrolling": true,
 
   // Снипеты наверху всех подсказок
-  "editor.snippetSuggestions": "top",
+  "editor.snippetSuggestions": "inline",
 
   // Прилипание верхней строчки объявления функции
   "editor.stickyScroll.enabled": false,
@@ -160,10 +161,10 @@
   "explorer.compactFolders": false,
 
   // Подтверждение удаления файла в корзину
-  "explorer.confirmDelete": true,
+  "explorer.confirmDelete": false,
 
   // Подтверждение переноса папки
-  "explorer.confirmDragAndDrop": true,
+  "explorer.confirmDragAndDrop": false,
 
   // Автоматическое сохранение редактора
   "files.autoSave": "afterDelay",
@@ -179,18 +180,6 @@
 
   // Добавление файлов в stage при коммите
   "git.enableSmartCommit": true,
-
-  // Отключает путь для тегов внизу в строке состояния (Highlight Matching Tag)
-  // "highlight-matching-tag.showPath": false,
-
-  // Кастомная настройка цвета (Highlight Matching Tag)
-  /*"highlight-matching-tag.styles": {
-    "opening": {
-      "name": {
-        "highlight": "rgba(255, 0, 0, .2)"
-      }
-    }
-  },*/
 
   // Обновление импортов при переименовании/перемещении файла
   "javascript.updateImportsOnFileMove.enabled": "never",
@@ -242,7 +231,7 @@
   "terminal.integrated.enablePersistentSessions": false,
 
   // Размер шрифта терминала
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 18,
 
   // Восстановление сеанса терминала
   "terminal.integrated.persistentSessionReviveProcess": "never",
@@ -256,8 +245,20 @@
   // Запрет открытия файлов в новом окне
   "window.openFilesInNewWindow": "off",
 
-  // Увеличение интерфейса в окне
+  // Увеличение интерфейса в окне (0.2)
   "window.zoomLevel": 0.2,
+
+  // Кастомная настройка цветов
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": ["support.type"],
+        "settings": {
+          // "foreground": "#7fc793"
+        }
+      }
+    ]
+  },
 
   // Настройка темы Kimbie Dark
   "workbench.colorCustomizations": {
@@ -274,7 +275,7 @@
   },
 
   // Цветовая тема по умолчанию
-  "workbench.colorTheme": "Kimbie Dark",
+  "workbench.colorTheme": "Default Dark Modern",
 
   // Сохранение разделения экрана при закрытии вкладки
   "workbench.editor.closeEmptyGroups": false,
@@ -316,5 +317,15 @@
   "workbench.tree.indent": 8,
 
   // Вертикальные линии в проводнике
-  "workbench.tree.renderIndentGuides": "none"
+  "workbench.tree.renderIndentGuides": "none",
+
+  //# Подсказки
+  // Всплывающее окно с документацией по параметрам и информация о типе по мере ввода
+  "editor.parameterHints.enabled": false,
+
+  // Подсказки в виде желтых лампочек
+  "editor.lightbulb.enabled": "off",
+
+  // Подсказки при наведении в редакторе
+  "editor.hover.enabled": false
 }
