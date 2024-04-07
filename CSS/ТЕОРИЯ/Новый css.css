@@ -5,16 +5,16 @@
   color: var(--color);
 }
 
-/* Вложенность 1 */
-h2 {
-  span {
-    color: var(--color);
-  }
-}
-
-/* Вложенность 2 */
+/* Вложенность */
 h2 {
   & span {
+    color: var(--color);
+  }
+  & + span {
+    color: var(--color);
+  }
+
+  & :has(h2) {
     color: var(--color);
   }
 }
