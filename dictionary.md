@@ -1,10 +1,5 @@
 # СЛОВАРЬ
 
-- **
- React Server Components
-
-
-
 - **CSR (Client Side Rendering)**
   Рендеринг на стороне клиента
 
