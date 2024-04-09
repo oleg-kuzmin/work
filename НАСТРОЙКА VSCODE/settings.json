@@ -134,7 +134,7 @@
   "editor.scrollbar.vertical": "visible",
 
   // Размер вертикального скроллбара
-  "editor.scrollbar.verticalScrollbarSize": 14,
+  "editor.scrollbar.verticalScrollbarSize": 12,
 
   // Перечеркивание устаревших переменных, в том числе name
   "editor.showDeprecated": true,
@@ -186,6 +186,15 @@
 
   // Не показывать всплывающее окно liveServer
   "liveServer.settings.donotShowInfoMsg": true,
+
+  // Цветовая тема Markdown Preview Github Styling
+  "markdown-preview-github-styles.colorTheme": "dark",
+
+  // Цветовая тема Markdown Preview Github Styling
+  "markdown-preview-github-styles.darkTheme": "dark",
+
+  // Отключает вертикальную полоску в редакторе при наведении мышки
+  "markdown.preview.markEditorSelection": false,
 
   // Режим иконок (Material Icon Theme)
   "material-icon-theme.activeIconPack": "react_redux",
@@ -278,7 +287,7 @@
   "workbench.colorTheme": "Default Dark Modern",
 
   // Сохранение разделения экрана при закрытии вкладки
-  "workbench.editor.closeEmptyGroups": false,
+  "workbench.editor.closeEmptyGroups": true,
 
   // Автоматическое закрытии редактора при удалении файла
   "workbench.editor.closeOnFileDelete": true,
@@ -300,6 +309,11 @@
 
   // Вкладки в несколько строк
   "workbench.editor.wrapTabs": true,
+
+  // Открыть файлы md с помощью
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  },
 
   // Иконки папок в проводнике по умолчанию
   "workbench.iconTheme": "material-icon-theme",

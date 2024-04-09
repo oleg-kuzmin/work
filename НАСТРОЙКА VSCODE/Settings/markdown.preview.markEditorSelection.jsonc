@@ -1,0 +1,4 @@
+{
+  // Отключает вертикальную полоску в редакторе при наведении мышки
+  "markdown.preview.markEditorSelection": false
+}
