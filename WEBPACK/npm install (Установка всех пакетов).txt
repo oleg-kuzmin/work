@@ -1,3 +1,0 @@
-# Установка всех пакетов в соответствии с package.json и package-lock.json
-
-npm install
