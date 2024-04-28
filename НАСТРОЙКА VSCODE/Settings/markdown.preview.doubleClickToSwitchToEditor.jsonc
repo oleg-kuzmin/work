@@ -1,0 +1,4 @@
+{
+  // Двойной клик мышкой для открытия редактора из режим просмотра
+  "markdown.preview.doubleClickToSwitchToEditor": false
+}

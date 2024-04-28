@@ -166,6 +166,7 @@
   // Подтверждение переноса папки
   "explorer.confirmDragAndDrop": false,
 
+  // Подтверждение вставки папки
   "explorer.confirmPasteNative": false,
 
   // Автоматическое сохранение редактора
@@ -186,6 +187,25 @@
   // Обновление импортов при переименовании/перемещении файла
   "javascript.updateImportsOnFileMove.enabled": "never",
 
+  // Базовая настройка (LiveSass)
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../css",
+      "savePathReplacementPairs": null
+    },
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "~/../css",
+      "savePathReplacementPairs": null
+    }
+  ],
+
+  // Отключает появление терминала при отслеживании (LiveSass)
+  "liveSassCompile.settings.showOutputWindowOn": "None",
+
   // Не показывать всплывающее окно liveServer
   "liveServer.settings.donotShowInfoMsg": true,
 
@@ -195,6 +215,9 @@
   // Цветовая тема Markdown Preview Github Styling
   "markdown-preview-github-styles.darkTheme": "dark_dimmed",
 
+  // Двойной клик мышкой для открытия редактора из режим просмотра
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+
   // Отключает вертикальную полоску в редакторе при наведении мышки
   "markdown.preview.markEditorSelection": false,
 
@@ -202,7 +225,6 @@
   "material-icon-theme.activeIconPack": "react_redux",
 
   // Настройка иконок (Material Icon Theme)
-
   "material-icon-theme.files.associations": {
     "html.md": "html"
   },
@@ -223,7 +245,7 @@
   "php.validate.executablePath": "c:/php/php.exe",
 
   // Путь установки php на компьютере (phpserver)
-  // "phpserver.phpPath": "c:/php/php.exe",
+  "phpserver.phpPath": "c:/php/php.exe",
 
   // Cкобки вокруг единственного параметра стрелочной функции (Prettier)
   "prettier.arrowParens": "avoid",
@@ -305,7 +327,7 @@
   // Что отображается на вкладке
   "workbench.editor.labelFormat": "default",
 
-  // Запоминание положения курсора в редакторе
+  // Восстанавливает положение прокрутки при открытии редактора
   "workbench.editor.restoreViewState": false,
 
   // Отключает вкладки наверху

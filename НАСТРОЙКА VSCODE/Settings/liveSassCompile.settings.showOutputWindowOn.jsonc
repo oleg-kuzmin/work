@@ -1,0 +1,4 @@
+{
+  // Отключает появление терминала при отслеживании (LiveSass)
+  "liveSassCompile.settings.showOutputWindowOn": "None"
+}
