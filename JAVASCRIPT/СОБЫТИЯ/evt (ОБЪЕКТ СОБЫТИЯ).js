@@ -53,6 +53,3 @@ credit.addEventListener('click', function () {
 
 //* evt.type
 // В свойстве evt.type хранится тип события.
-
-//* evt.isTrusted
-// Проверяет пользователь ли сделал клик (защита от бота).
