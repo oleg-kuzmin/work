@@ -4,9 +4,6 @@
 //* evt.view
 // Возвращает объект window, в котором произошло событие.
 
-//* evt.preventDefault();
-// Отмена стандартного события
-
 //* evt.key
 // Хранит название нажатой клавиши
 
@@ -41,5 +38,3 @@ credit.addEventListener('click', function (evt) {
 credit.addEventListener('click', function () {
   console.log('Продал квартиру');
 });
-
-
