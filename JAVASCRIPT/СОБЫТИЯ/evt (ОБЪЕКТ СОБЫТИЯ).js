@@ -22,12 +22,6 @@
 //* evt.screenX и evt.screenY
 // Свойства event.screenX и event.screenY хранят координаты относительно угла монитора, на котором открыт сайт. Они используются крайне редко.
 
-//* evt.stopPropagation()
-function callback(evt) {
-  evt.stopPropagation();
-  console.log(evt.currentTarget.getAttribute('id')); // cобытие сработало на элементе
-}
-
 //* evt.stopImmediatePropagation()
 /*
 -Метод stopImmediatePropagation ещё суровее: он отменяет не только всплытие событий, но и срабатывание всех других обработчиков того же события на этом элементе.
@@ -50,6 +44,3 @@ credit.addEventListener('click', function () {
 
 //* evt.target
 // Элемент, где возникло событие. Свойство evt.target никак не зависит от того, куда вы повесили обработчик. Куда бы вы ни нажали, в evt.target попадёт самый глубокий элемент DOM-дерева из всех, где сработало событие.
-
-//* evt.type
-// В свойстве evt.type хранится тип события.
