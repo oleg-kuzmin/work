@@ -1,0 +1,4 @@
+{
+  // Отключает shell-терминал (ускоряет gitBash)
+  "terminal.integrated.shellIntegration.enabled": false
+}
