@@ -1,4 +1,0 @@
-{
-  // Добавление файлов в stage при коммите
-  "git.enableSmartCommit": true
-}

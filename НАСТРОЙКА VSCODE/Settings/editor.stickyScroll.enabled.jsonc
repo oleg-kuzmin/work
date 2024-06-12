@@ -1,4 +1,0 @@
-{
-  // Прилипание верхней строчки объявления функции
-  "editor.stickyScroll.enabled": false
-}

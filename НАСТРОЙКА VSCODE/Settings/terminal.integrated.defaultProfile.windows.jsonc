@@ -1,4 +1,0 @@
-{
-  // Использование Git Bash по умолчанию
-  "terminal.integrated.defaultProfile.windows": "Git Bash"
-}

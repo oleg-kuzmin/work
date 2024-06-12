@@ -1,4 +1,0 @@
-{
-  // Горизонтальная линия текущей строки
-  "editor.renderLineHighlight": "none"
-}

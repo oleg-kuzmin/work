@@ -1,4 +1,0 @@
-{
-  // Сохранение разделения экрана при закрытии вкладки
-  "workbench.editor.closeEmptyGroups": false
-}

@@ -1,4 +1,0 @@
-{
-    // Форматировщик по умолчанию
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-}

@@ -1,4 +1,0 @@
-{
-  // Подсветка ошибки в пустых scss
-  "scss.lint.emptyRules": "ignore"
-}

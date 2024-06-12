@@ -1,4 +1,0 @@
-{
-  // Переодическое использование git fetch
-  "git.autofetch": false
-}

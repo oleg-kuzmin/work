@@ -1,4 +1,0 @@
-{
-  // Запрет открытия файлов в новом окне
-  "window.openFilesInNewWindow": "off"
-}

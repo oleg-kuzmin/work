@@ -1,4 +1,0 @@
-{
-  // Подсказки слов abc в emmet
-  "editor.suggest.showWords": false
-}

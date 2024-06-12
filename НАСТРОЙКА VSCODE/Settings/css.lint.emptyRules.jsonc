@@ -1,4 +1,0 @@
-{
-  // Подсветка пустых css
-  "css.lint.emptyRules": "ignore"
-}

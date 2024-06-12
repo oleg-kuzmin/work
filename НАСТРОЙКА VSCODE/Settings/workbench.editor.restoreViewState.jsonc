@@ -1,4 +1,0 @@
-{
-  // Восстанавливает положение прокрутки при открытии редактора
-  "workbench.editor.restoreViewState": false
-}

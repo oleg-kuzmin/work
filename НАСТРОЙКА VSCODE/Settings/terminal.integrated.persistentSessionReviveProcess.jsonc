@@ -1,4 +1,0 @@
-{
-  // Восстановление сеанса терминала
-  "terminal.integrated.persistentSessionReviveProcess": "never"
-}

@@ -1,4 +1,0 @@
-{
-  // Открытие недоверенных файлов в доверенной области
-  "security.workspace.trust.untrustedFiles": "open"
-}

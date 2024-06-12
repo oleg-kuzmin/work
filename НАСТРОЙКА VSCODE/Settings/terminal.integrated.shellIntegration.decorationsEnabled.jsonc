@@ -1,4 +1,0 @@
-{
-  // Отключает точки рядом с командой терминала
-  "terminal.integrated.shellIntegration.decorationsEnabled": "never"
-}
