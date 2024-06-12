@@ -385,7 +385,5 @@
   "editor.hover.enabled": false,
 
   // Подсказки слов abc в emmet
-  "editor.suggest.showWords": false,
-  "markdown-preview-enhanced.enablePreviewZenMode": true,
-  "markdown-preview-enhanced.previewTheme": "github-light.css"
+  "editor.suggest.showWords": false
 }
