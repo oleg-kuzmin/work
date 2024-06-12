@@ -38,7 +38,7 @@
     "command": "quokka.stopAll"
   },
   {
-    "key": "ctrl+numpad6",
+    "key": "ctrl+numpad7",
     "command": "extension.translateTextPreferred",
     "when": "editorTextFocus"
   },
@@ -100,5 +100,9 @@
     "key": "shift+alt+f",
     "command": "-editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "ctrl+numpad6",
+    "command": "extension.ecsstractor_port_run"
   }
 ]

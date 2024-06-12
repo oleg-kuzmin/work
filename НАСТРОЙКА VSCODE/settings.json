@@ -115,7 +115,7 @@
   // Мини-карта
   "editor.minimap.enabled": false,
 
-  // Скорость прокрутки мышки
+  // Скорость скролла мышки
   "editor.mouseWheelScrollSensitivity": 2,
 
   // Изменение масштаба интерфейса при скроле колесиком
@@ -137,7 +137,7 @@
   "editor.scrollbar.verticalScrollbarSize": 12,
 
   // Перечеркивание устаревших переменных, в том числе name
-  "editor.showDeprecated": true,
+  "editor.showDeprecated": false,
 
   // Плавный скролл
   "editor.smoothScrolling": true,
@@ -216,7 +216,7 @@
   "markdown-preview-github-styles.darkTheme": "dark_dimmed",
 
   // Двойной клик мышкой для открытия редактора из режим просмотра
-  "markdown.preview.doubleClickToSwitchToEditor": false,
+  "markdown.preview.doubleClickToSwitchToEditor": true,
 
   // Отключает вертикальную полоску в редакторе при наведении мышки
   "markdown.preview.markEditorSelection": false,
@@ -226,16 +226,18 @@
 
   // Настройка иконок (Material Icon Theme)
   "material-icon-theme.files.associations": {
-    "html.md": "html"
+    "html.md": "html",
+    "css.md": "css",
+    "js.md": "javascript",
+    "git.md": "git",
+    "package manager.md": "webpack"
   },
 
   "material-icon-theme.folders.associations": {
-    "node": "node",
-    "настройка vscode": "vscode",
     "git": "github",
-    "00. work": "custom",
-    "next": "next",
-    "redux": "Redux-actions"
+    "package manager": "webpack",
+    "packages": "webpack",
+    "vite": "config"
   },
 
   // Скрытие стрелок возле папок в проводнике (Material Icon Theme)
@@ -271,8 +273,14 @@
   // Размер шрифта терминала
   "terminal.integrated.fontSize": 16,
 
+  // Отключает shell-терминал (ускоряет gitBash)
+  "terminal.integrated.shellIntegration.enabled": false,
+
   // Восстановление сеанса терминала
   "terminal.integrated.persistentSessionReviveProcess": "never",
+
+  // Отключает точки рядом с командой терминала
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
 
   // На какой язык переводить
   "vscodeGoogleTranslate.preferredLanguage": "Russian",
@@ -293,6 +301,8 @@
         "scope": ["support.type"],
         "settings": {
           // "foreground": "#7fc793"
+          // "foreground": "#8cd2ebbc"
+          "foreground": "#fc9937"
         }
       }
     ]
@@ -303,6 +313,8 @@
     "gitDecoration.ignoredResourceForeground": "#cccccc",
 
     "[Kimbie Dark]": {
+      // "editorIndentGuide.activeBackground1": "#681214", // цвет активной линии блока
+      // "editorIndentGuide.background1": "#ffffff59", // цвет линии блока
       "gitDecoration.ignoredResourceForeground": "#cccccc", // цвет игнорируемых файлов гита
       "tab.activeBackground": "#5e4416", // цвет вкладки
       "tab.activeBorder": "#cc8d21", // граница вкладки
@@ -341,7 +353,7 @@
 
   // Открыть файлы md с помощью
   "workbench.editorAssociations": {
-    "*.md": "vscode.markdown.preview.editor"
+    "*.md": "default"
   },
 
   // Иконки папок в проводнике по умолчанию
@@ -373,5 +385,7 @@
   "editor.hover.enabled": false,
 
   // Подсказки слов abc в emmet
-  "editor.suggest.showWords": false
+  "editor.suggest.showWords": false,
+  "markdown-preview-enhanced.enablePreviewZenMode": true,
+  "markdown-preview-enhanced.previewTheme": "github-light.css"
 }
