@@ -1,8 +1,0 @@
-# установка webpack-cli (интерфейса командной строки для webpack)
-
-npm i webpack-cli --save-dev
-
-# изменения в package.json:
-"devDependencies": {
-  "webpack-cli": "^5.0.1",
-}

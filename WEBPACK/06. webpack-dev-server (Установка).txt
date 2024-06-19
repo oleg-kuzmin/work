@@ -1,8 +1,0 @@
-# установка локального сервера
-
-npm i webpack-dev-server --save-dev
-
-# изменения в package.json:
-"devDependencies": {
-  "webpack-dev-server": "^4.13.3",
-}
