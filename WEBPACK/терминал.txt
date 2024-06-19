@@ -1,8 +1,0 @@
-npx create-react-app ******
-  # подключение react (****** название)
-
-npx create-react-app ****** --template typescript
-  # подключение react (****** название)
-
-npm install -g sass
-  # установка sass
