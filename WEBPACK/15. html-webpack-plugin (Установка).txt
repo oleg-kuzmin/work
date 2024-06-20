@@ -1,8 +1,0 @@
-# установка плагина для работы с html
-
-npm i html-webpack-plugin --save-dev
-
-# изменения в package.json:
-"devDependencies": {
-  "html-webpack-plugin": "^5.5.1",
-}

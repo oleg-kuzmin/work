@@ -1,8 +1,0 @@
-# плагин cssnano научит PostCSS минификации css-кода
-
-npm i cssnano --save-dev
-
-# изменения в package.json:
-"devDependencies": {
-  "cssnano": "^6.0.0",
-}

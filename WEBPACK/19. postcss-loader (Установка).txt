@@ -1,8 +1,0 @@
-# пакет postcss-loader нужен, чтобы подключить PostCSS (инструмент для трансформации CSS) к «Вебпаку»
-
-npm i postcss-loader --save-dev
-
-# изменения в package.json:
-"devDependencies": {
-  "postcss-loader": "^7.2.4",
-}

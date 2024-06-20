@@ -1,8 +1,0 @@
-# установка пресета для Babel (набор правил, по которым переводить код)
-
-npm i @babel/preset-env --save-dev
-
-# изменения в package.json:
-"devDependencies": {
-  "@babel/preset-env": "^7.21.4",
-}
