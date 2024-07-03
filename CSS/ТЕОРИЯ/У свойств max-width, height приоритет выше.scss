@@ -1,8 +1,0 @@
-//# У CSS-свойств max-width и height приоритет выше, чем у атрибутов width и height в разметке.
-
-//* <img class="image" src="img/mandarin.jpg" alt="Мандарин" width="120" height="120">
-
-img {
-  max-width: 100%;
-  height: auto;
-}
